@@ -21,15 +21,7 @@
           <a href="#introduction">Introduction</a>
           <h5>Operations</h5>
           <section>
-            <a href="#tag-inbound-ap-iv-2">inbound-ap-iv-2</a>
-            <ul>
-              <li>
-                <a href="#operation--api-v1-message-callback-post"> onMessageCallback </a>
-              </li>
-            </ul>
-          </section>
-          <section>
-            <a href="#tag-outbound-ap-iv-1">outbound-ap-iv-1</a>
+            <a href="#tag-outbound-api-v-1">outbound-api-v-1</a>
             <ul>
               <li>
                 <a href="#operation--api-v1-media-upload-post"> uploadMedia </a>
@@ -42,7 +34,16 @@
               </li>
             </ul>
           </section>
+          <section>
+            <a href="#tag-inbound-api-v-2">inbound-api-v-2</a>
+            <ul>
+              <li>
+                <a href="#operation--api-v1-message-callback-post"> onMessageCallback </a>
+              </li>
+            </ul>
+          </section>
           <h5>Schema Definitions</h5>
+          <a href="#definition-MessageSession"> MessageSession </a>
           <a href="#definition-OptInV1"> OptInV1 </a>
           <a href="#definition-OutboxMessageV1"> OutboxMessageV1 </a>
           <a href="#definition-ApiFieldError"> ApiFieldError </a>
@@ -91,289 +92,17 @@
               </div>
             </div>
           </div>
-          <h1 id="tag-inbound-ap-iv-2" class="swagger-summary-tag" data-traverse-target="tag-inbound-ap-iv-2">inbound-ap-iv-2</h1>
+          <h1 id="tag-outbound-api-v-1" class="swagger-summary-tag" data-traverse-target="tag-outbound-api-v-1">outbound-api-v-1</h1>
           <div class="tag-description doc-row">
             <div class="doc-copy">
-              <p>Inbound AP Iv 2</p>
-            </div>
-          </div>
-          <div id="operation--api-v1-message-callback-post" class="operation panel" data-traverse-target="operation--api-v1-message-callback-post">
-            <!-- <section class="operation-tags row"> -->
-            <!-- <div class="doc-copy"> -->
-            <div class="operation-tags">
-              <a class="label" href="#tag-inbound-ap-iv-2">inbound-ap-iv-2</a>
-              <!---->
-            </div>
-            <!-- </div> -->
-            <!-- </section> -->
-            <h2 class="operation-title">
-              <span class="operation-summary">onMessageCallback</span>
-            </h2>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-operation-path">
-                  <span class="operation-method">POST</span>
-                  <span class="operation-path">/api/v1/message/callback</span>
-                </section>
-              </div>
-            </div>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-request-body">
-                  <div class="prop-row">
-                    <div class="prop-name">
-                      <div class="swagger-request-model">
-                        <span class="">
-                          <a class="json-schema-ref" href="#/definitions/InboxMessageV1">InboxMessageV1</a>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="prop-value columns small-6">
-                      <!-- <div class="swagger-request-description"> -->
-                      <p>outboxMessageV1</p>
-                      <!-- </div> -->
-                    </div>
-                  </div>
-                </section>
-                <section class="swagger-request-params">
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">consumer-key:
-                        <span class="prop-type">
-                          <span class="json-property-type">string</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">abcvernorx</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in header </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Consumer Key</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">consumer-token:
-                        <span class="prop-type">
-                          <span class="json-property-type">string</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">kje34kipdghkjwww</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in header </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Consumer Token</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">access-key:
-                        <span class="prop-type">
-                          <span class="json-property-type">string</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">agent1</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in header </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Access Key</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">access-token:
-                        <span class="prop-type">
-                          <span class="json-property-type">string</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">s1agenttoken$$$</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in header </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Access Token</p>
-                    </div>
-                  </div>
-                </section>
-              </div>
-              <div class="doc-examples">
-                <section>
-                  <h5>Request Content-Types:
-                    <span>application/json</span>
-                  </h5>
-                  <h5>Request Example</h5>
-                  <!-- <div class="hljs"> -->
-                  <html>
-                  <head></head>
-                  <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">"attachment"</span>: {
-    <span class="hljs-attr">"mdeiaId"</span>: <span class="hljs-string">"12"</span>,
-    <span class="hljs-attr">"mdeiaType"</span>: <span class="hljs-string">"IMAGE"</span>,
-    <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
-  },
-  <span class="hljs-attr">"contactFrom"</span>: <span class="hljs-string">"919988776655"</span>,
-  <span class="hljs-attr">"contactType"</span>: <span class="hljs-string">"WHATSAPP"</span>,
-  <span class="hljs-attr">"lane"</span>: <span class="hljs-string">"919999998888"</span>,
-  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Hello User!"</span>,
-  <span class="hljs-attr">"sessionId"</span>: <span class="hljs-string">"xsds34434"</span>
-}
-</code></pre> </body>
-                  </html>
-                  <!-- </div> -->
-                </section>
-              </div>
-            </div>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-responses">
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">200 OK</div>
-                      <div class="prop-ref">
-                        <span class="">
-                          <a class="json-schema-ref" href="#/definitions/ApiResponse«InboxMessageV1,object»">ApiResponse«InboxMessageV1,object»</a>
-                        </span>
-                      </div>
-                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
-                    </div>
-                    <div class="prop-value">
-                      <p>OK</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">201 Created</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Created</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">401 Unauthorized</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Unauthorized</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">403 Forbidden</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Forbidden</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">404 Not Found</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Not Found</p>
-                    </div>
-                  </div>
-                </section>
-              </div>
-              <div class="doc-examples">
-                <h5>Response Content-Types:
-                  <span>*/*</span>
-                </h5>
-                <section>
-                  <h5>Response Example
-                    <span>(200 OK)</span>
-                  </h5>
-                  <!-- <div class="hljs"> -->
-                  <html>
-                  <head></head>
-                  <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">"data"</span>: {
-    <span class="hljs-attr">"attachment"</span>: {
-      <span class="hljs-attr">"mdeiaId"</span>: <span class="hljs-string">"12"</span>,
-      <span class="hljs-attr">"mdeiaType"</span>: <span class="hljs-string">"IMAGE"</span>,
-      <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
-    },
-    <span class="hljs-attr">"contactFrom"</span>: <span class="hljs-string">"919988776655"</span>,
-    <span class="hljs-attr">"contactType"</span>: <span class="hljs-string">"WHATSAPP"</span>,
-    <span class="hljs-attr">"lane"</span>: <span class="hljs-string">"919999998888"</span>,
-    <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Hello User!"</span>,
-    <span class="hljs-attr">"sessionId"</span>: <span class="hljs-string">"xsds34434"</span>
-  },
-  <span class="hljs-attr">"error"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"errors"</span>: [
-    {
-      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"codeKey"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"codes"</span>: [
-        <span class="hljs-string">"string"</span>
-      ],
-      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"descriptionKey"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"field"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"obzect"</span>: <span class="hljs-string">"string"</span>
-    }
-  ],
-  <span class="hljs-attr">"exception"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"logs"</span>: [
-    <span class="hljs-string">"string"</span>
-  ],
-  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"This is success message in plain english"</span>,
-  <span class="hljs-attr">"messageKey"</span>: <span class="hljs-string">"MESSAGE_SUCCESS:MOBILE:12"</span>,
-  <span class="hljs-attr">"meta"</span>: <span class="hljs-string">"object"</span>,
-  <span class="hljs-attr">"path"</span>: <span class="hljs-string">"/postman/email/send"</span>,
-  <span class="hljs-attr">"redirectUrl"</span>: <span class="hljs-string">"/go/to/some/other/url.html"</span>,
-  <span class="hljs-attr">"results"</span>: [
-    {
-      <span class="hljs-attr">"attachment"</span>: {
-        <span class="hljs-attr">"mdeiaId"</span>: <span class="hljs-string">"12"</span>,
-        <span class="hljs-attr">"mdeiaType"</span>: <span class="hljs-string">"IMAGE"</span>,
-        <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
-      },
-      <span class="hljs-attr">"contactFrom"</span>: <span class="hljs-string">"919988776655"</span>,
-      <span class="hljs-attr">"contactType"</span>: <span class="hljs-string">"WHATSAPP"</span>,
-      <span class="hljs-attr">"lane"</span>: <span class="hljs-string">"919999998888"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Hello User!"</span>,
-      <span class="hljs-attr">"sessionId"</span>: <span class="hljs-string">"xsds34434"</span>
-    }
-  ],
-  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"200"</span>,
-  <span class="hljs-attr">"statusKey"</span>: <span class="hljs-string">"SUCCESS"</span>,
-  <span class="hljs-attr">"timestamp"</span>: <span class="hljs-number">1541276788518</span>,
-  <span class="hljs-attr">"traceid"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"warningKey"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"warnings"</span>: [
-    {
-      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"codeKey"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"codes"</span>: [
-        <span class="hljs-string">"string"</span>
-      ],
-      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"descriptionKey"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"field"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"obzect"</span>: <span class="hljs-string">"string"</span>
-    }
-  ]
-}
-</code></pre> </body>
-                  </html>
-                  <!-- </div> -->
-                </section>
-              </div>
-            </div>
-          </div>
-          <h1 id="tag-outbound-ap-iv-1" class="swagger-summary-tag" data-traverse-target="tag-outbound-ap-iv-1">outbound-ap-iv-1</h1>
-          <div class="tag-description doc-row">
-            <div class="doc-copy">
-              <p>Outbound AP Iv 1</p>
+              <p>Outbound Api V 1</p>
             </div>
           </div>
           <div id="operation--api-v1-media-upload-post" class="operation panel" data-traverse-target="operation--api-v1-media-upload-post">
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-outbound-ap-iv-1">outbound-ap-iv-1</a>
+              <a class="label" href="#tag-outbound-api-v-1">outbound-api-v-1</a>
               <!---->
             </div>
             <!-- </div> -->
@@ -550,8 +279,8 @@
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"data"</span>: {
-    <span class="hljs-attr">"mdeiaId"</span>: <span class="hljs-string">"12"</span>,
-    <span class="hljs-attr">"mdeiaType"</span>: <span class="hljs-string">"IMAGE"</span>,
+    <span class="hljs-attr">"mediaId"</span>: <span class="hljs-string">"12"</span>,
+    <span class="hljs-attr">"mediaType"</span>: <span class="hljs-string">"IMAGE"</span>,
     <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
   },
   <span class="hljs-attr">"error"</span>: <span class="hljs-string">"string"</span>,
@@ -579,8 +308,8 @@
   <span class="hljs-attr">"redirectUrl"</span>: <span class="hljs-string">"/go/to/some/other/url.html"</span>,
   <span class="hljs-attr">"results"</span>: [
     {
-      <span class="hljs-attr">"mdeiaId"</span>: <span class="hljs-string">"12"</span>,
-      <span class="hljs-attr">"mdeiaType"</span>: <span class="hljs-string">"IMAGE"</span>,
+      <span class="hljs-attr">"mediaId"</span>: <span class="hljs-string">"12"</span>,
+      <span class="hljs-attr">"mediaType"</span>: <span class="hljs-string">"IMAGE"</span>,
       <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
     }
   ],
@@ -614,7 +343,7 @@
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-outbound-ap-iv-1">outbound-ap-iv-1</a>
+              <a class="label" href="#tag-outbound-api-v-1">outbound-api-v-1</a>
               <!---->
             </div>
             <!-- </div> -->
@@ -722,8 +451,8 @@
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"attachment"</span>: {
-    <span class="hljs-attr">"mdeiaId"</span>: <span class="hljs-string">"12"</span>,
-    <span class="hljs-attr">"mdeiaType"</span>: <span class="hljs-string">"IMAGE"</span>,
+    <span class="hljs-attr">"mediaId"</span>: <span class="hljs-string">"12"</span>,
+    <span class="hljs-attr">"mediaType"</span>: <span class="hljs-string">"IMAGE"</span>,
     <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
   },
   <span class="hljs-attr">"contactTo"</span>: <span class="hljs-string">"919988776655"</span>,
@@ -805,7 +534,13 @@
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"data"</span>: {
-    <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"string"</span>,
+    <span class="hljs-attr">"attachments"</span>: [
+      {
+        <span class="hljs-attr">"mediaId"</span>: <span class="hljs-string">"12"</span>,
+        <span class="hljs-attr">"mediaType"</span>: <span class="hljs-string">"IMAGE"</span>,
+        <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
+      }
+    ],
     <span class="hljs-attr">"attempt"</span>: <span class="hljs-string">"integer (int32)"</span>,
     <span class="hljs-attr">"channel"</span>: <span class="hljs-string">"string"</span>,
     <span class="hljs-attr">"collapseId"</span>: <span class="hljs-string">"string"</span>,
@@ -847,6 +582,11 @@
     <span class="hljs-attr">"priority"</span>: <span class="hljs-string">"integer (int32)"</span>,
     <span class="hljs-attr">"qrbuttons"</span>: <span class="hljs-string">"boolean"</span>,
     <span class="hljs-attr">"queue"</span>: <span class="hljs-string">"number"</span>,
+    <span class="hljs-attr">"session"</span>: {
+      <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"dept"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"mode"</span>: <span class="hljs-string">"string"</span>
+    },
     <span class="hljs-attr">"sessionId"</span>: <span class="hljs-string">"string"</span>,
     <span class="hljs-attr">"status"</span>: <span class="hljs-string">"string"</span>,
     <span class="hljs-attr">"subject"</span>: <span class="hljs-string">"string"</span>,
@@ -855,6 +595,7 @@
     <span class="hljs-attr">"to"</span>: [
       <span class="hljs-string">"string"</span>
     ],
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
     <span class="hljs-attr">"viaAgent"</span>: <span class="hljs-string">"boolean"</span>
   },
   <span class="hljs-attr">"error"</span>: <span class="hljs-string">"string"</span>,
@@ -882,7 +623,13 @@
   <span class="hljs-attr">"redirectUrl"</span>: <span class="hljs-string">"/go/to/some/other/url.html"</span>,
   <span class="hljs-attr">"results"</span>: [
     {
-      <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"attachments"</span>: [
+        {
+          <span class="hljs-attr">"mediaId"</span>: <span class="hljs-string">"12"</span>,
+          <span class="hljs-attr">"mediaType"</span>: <span class="hljs-string">"IMAGE"</span>,
+          <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
+        }
+      ],
       <span class="hljs-attr">"attempt"</span>: <span class="hljs-string">"integer (int32)"</span>,
       <span class="hljs-attr">"channel"</span>: <span class="hljs-string">"string"</span>,
       <span class="hljs-attr">"collapseId"</span>: <span class="hljs-string">"string"</span>,
@@ -924,6 +671,11 @@
       <span class="hljs-attr">"priority"</span>: <span class="hljs-string">"integer (int32)"</span>,
       <span class="hljs-attr">"qrbuttons"</span>: <span class="hljs-string">"boolean"</span>,
       <span class="hljs-attr">"queue"</span>: <span class="hljs-string">"number"</span>,
+      <span class="hljs-attr">"session"</span>: {
+        <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"string"</span>,
+        <span class="hljs-attr">"dept"</span>: <span class="hljs-string">"string"</span>,
+        <span class="hljs-attr">"mode"</span>: <span class="hljs-string">"string"</span>
+      },
       <span class="hljs-attr">"sessionId"</span>: <span class="hljs-string">"string"</span>,
       <span class="hljs-attr">"status"</span>: <span class="hljs-string">"string"</span>,
       <span class="hljs-attr">"subject"</span>: <span class="hljs-string">"string"</span>,
@@ -932,6 +684,7 @@
       <span class="hljs-attr">"to"</span>: [
         <span class="hljs-string">"string"</span>
       ],
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
       <span class="hljs-attr">"viaAgent"</span>: <span class="hljs-string">"boolean"</span>
     }
   ],
@@ -965,7 +718,7 @@
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-outbound-ap-iv-1">outbound-ap-iv-1</a>
+              <a class="label" href="#tag-outbound-api-v-1">outbound-api-v-1</a>
               <!---->
             </div>
             <!-- </div> -->
@@ -1206,7 +959,269 @@
               </div>
             </div>
           </div>
+          <h1 id="tag-inbound-api-v-2" class="swagger-summary-tag" data-traverse-target="tag-inbound-api-v-2">inbound-api-v-2</h1>
+          <div class="tag-description doc-row">
+            <div class="doc-copy">
+              <p>Inbound Api V 2</p>
+            </div>
+          </div>
+          <div id="operation--api-v1-message-callback-post" class="operation panel" data-traverse-target="operation--api-v1-message-callback-post">
+            <!-- <section class="operation-tags row"> -->
+            <!-- <div class="doc-copy"> -->
+            <div class="operation-tags">
+              <a class="label" href="#tag-inbound-api-v-2">inbound-api-v-2</a>
+              <!---->
+            </div>
+            <!-- </div> -->
+            <!-- </section> -->
+            <h2 class="operation-title">
+              <span class="operation-summary">onMessageCallback</span>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-path">
+                  <span class="operation-method">POST</span>
+                  <span class="operation-path">/api/v1/message/callback</span>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-body">
+                  <div class="prop-row">
+                    <div class="prop-name">
+                      <div class="swagger-request-model">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/InboxMessageV1">InboxMessageV1</a>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="prop-value columns small-6">
+                      <!-- <div class="swagger-request-description"> -->
+                      <p>outboxMessageV1</p>
+                      <!-- </div> -->
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Request Content-Types:
+                    <span>application/json</span>
+                  </h5>
+                  <h5>Request Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"attachment"</span>: {
+    <span class="hljs-attr">"mediaId"</span>: <span class="hljs-string">"12"</span>,
+    <span class="hljs-attr">"mediaType"</span>: <span class="hljs-string">"IMAGE"</span>,
+    <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
+  },
+  <span class="hljs-attr">"contactFrom"</span>: <span class="hljs-string">"919988776655"</span>,
+  <span class="hljs-attr">"contactType"</span>: <span class="hljs-string">"WHATSAPP"</span>,
+  <span class="hljs-attr">"lane"</span>: <span class="hljs-string">"919999998888"</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Hello User!"</span>,
+  <span class="hljs-attr">"sessionId"</span>: <span class="hljs-string">"xsds34434"</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-responses">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">200 OK</div>
+                      <div class="prop-ref">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/ApiResponse«InboxMessageV1,object»">ApiResponse«InboxMessageV1,object»</a>
+                        </span>
+                      </div>
+                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
+                    </div>
+                    <div class="prop-value">
+                      <p>OK</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">201 Created</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Created</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">401 Unauthorized</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Unauthorized</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">403 Forbidden</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Forbidden</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">404 Not Found</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Not Found</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <h5>Response Content-Types:
+                  <span>*/*</span>
+                </h5>
+                <section>
+                  <h5>Response Example
+                    <span>(200 OK)</span>
+                  </h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"attachment"</span>: {
+      <span class="hljs-attr">"mediaId"</span>: <span class="hljs-string">"12"</span>,
+      <span class="hljs-attr">"mediaType"</span>: <span class="hljs-string">"IMAGE"</span>,
+      <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
+    },
+    <span class="hljs-attr">"contactFrom"</span>: <span class="hljs-string">"919988776655"</span>,
+    <span class="hljs-attr">"contactType"</span>: <span class="hljs-string">"WHATSAPP"</span>,
+    <span class="hljs-attr">"lane"</span>: <span class="hljs-string">"919999998888"</span>,
+    <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Hello User!"</span>,
+    <span class="hljs-attr">"sessionId"</span>: <span class="hljs-string">"xsds34434"</span>
+  },
+  <span class="hljs-attr">"error"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"errors"</span>: [
+    {
+      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"codeKey"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"codes"</span>: [
+        <span class="hljs-string">"string"</span>
+      ],
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"descriptionKey"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"field"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"obzect"</span>: <span class="hljs-string">"string"</span>
+    }
+  ],
+  <span class="hljs-attr">"exception"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"logs"</span>: [
+    <span class="hljs-string">"string"</span>
+  ],
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"This is success message in plain english"</span>,
+  <span class="hljs-attr">"messageKey"</span>: <span class="hljs-string">"MESSAGE_SUCCESS:MOBILE:12"</span>,
+  <span class="hljs-attr">"meta"</span>: <span class="hljs-string">"object"</span>,
+  <span class="hljs-attr">"path"</span>: <span class="hljs-string">"/postman/email/send"</span>,
+  <span class="hljs-attr">"redirectUrl"</span>: <span class="hljs-string">"/go/to/some/other/url.html"</span>,
+  <span class="hljs-attr">"results"</span>: [
+    {
+      <span class="hljs-attr">"attachment"</span>: {
+        <span class="hljs-attr">"mediaId"</span>: <span class="hljs-string">"12"</span>,
+        <span class="hljs-attr">"mediaType"</span>: <span class="hljs-string">"IMAGE"</span>,
+        <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
+      },
+      <span class="hljs-attr">"contactFrom"</span>: <span class="hljs-string">"919988776655"</span>,
+      <span class="hljs-attr">"contactType"</span>: <span class="hljs-string">"WHATSAPP"</span>,
+      <span class="hljs-attr">"lane"</span>: <span class="hljs-string">"919999998888"</span>,
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Hello User!"</span>,
+      <span class="hljs-attr">"sessionId"</span>: <span class="hljs-string">"xsds34434"</span>
+    }
+  ],
+  <span class="hljs-attr">"status"</span>: <span class="hljs-string">"200"</span>,
+  <span class="hljs-attr">"statusKey"</span>: <span class="hljs-string">"SUCCESS"</span>,
+  <span class="hljs-attr">"timestamp"</span>: <span class="hljs-number">1541276788518</span>,
+  <span class="hljs-attr">"traceid"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"warningKey"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"warnings"</span>: [
+    {
+      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"codeKey"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"codes"</span>: [
+        <span class="hljs-string">"string"</span>
+      ],
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"descriptionKey"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"field"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"obzect"</span>: <span class="hljs-string">"string"</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
           <h1>Schema Definitions</h1>
+          <div id="definition-MessageSession" class="definition panel" data-traverse-target="definition-MessageSession">
+            <h2 class="panel-title">
+              <a name="/definitions/MessageSession"></a>MessageSession: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="agent">
+                      <span class="json-property-name">agent:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="dept">
+                      <span class="json-property-name">dept:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="mode">
+                      <span class="json-property-name">mode:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"dept"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"mode"</span>: <span class="hljs-string">"string"</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
           <div id="definition-OptInV1" class="definition panel" data-traverse-target="definition-OptInV1">
             <h2 class="panel-title">
               <a name="/definitions/OptInV1"></a>OptInV1: object
@@ -1581,8 +1596,8 @@
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"attachment"</span>: {
-    <span class="hljs-attr">"mdeiaId"</span>: <span class="hljs-string">"12"</span>,
-    <span class="hljs-attr">"mdeiaType"</span>: <span class="hljs-string">"IMAGE"</span>,
+    <span class="hljs-attr">"mediaId"</span>: <span class="hljs-string">"12"</span>,
+    <span class="hljs-attr">"mediaType"</span>: <span class="hljs-string">"IMAGE"</span>,
     <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
   },
   <span class="hljs-attr">"contactTo"</span>: <span class="hljs-string">"919988776655"</span>,
@@ -1703,8 +1718,8 @@
               <div class="doc-copy">
                 <section class="json-schema-properties">
                   <dl>
-                    <dt data-property-name="mdeiaId" class="has-description">
-                      <span class="json-property-name">mdeiaId:</span>
+                    <dt data-property-name="mediaId" class="has-description">
+                      <span class="json-property-name">mediaId:</span>
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
@@ -1712,8 +1727,8 @@
                     <dd>
                       <p>Media ID generated by MeherY</p>
                     </dd>
-                    <dt data-property-name="mdeiaType" class="has-description">
-                      <span class="json-property-name">mdeiaType:</span>
+                    <dt data-property-name="mediaType" class="has-description">
+                      <span class="json-property-name">mediaType:</span>
                       <span class="json-property-type">string</span>
                       <span class="json-property-enum" title="Possible values">
                         <span class="json-property-enum-item">IMAGE</span>,
@@ -1747,8 +1762,8 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">"mdeiaId"</span>: <span class="hljs-string">"12"</span>,
-  <span class="hljs-attr">"mdeiaType"</span>: <span class="hljs-string">"IMAGE"</span>,
+  <span class="hljs-attr">"mediaId"</span>: <span class="hljs-string">"12"</span>,
+  <span class="hljs-attr">"mediaType"</span>: <span class="hljs-string">"IMAGE"</span>,
   <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
 }
 </code></pre> </body>
@@ -1941,8 +1956,8 @@
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"data"</span>: {
-    <span class="hljs-attr">"mdeiaId"</span>: <span class="hljs-string">"12"</span>,
-    <span class="hljs-attr">"mdeiaType"</span>: <span class="hljs-string">"IMAGE"</span>,
+    <span class="hljs-attr">"mediaId"</span>: <span class="hljs-string">"12"</span>,
+    <span class="hljs-attr">"mediaType"</span>: <span class="hljs-string">"IMAGE"</span>,
     <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
   },
   <span class="hljs-attr">"error"</span>: <span class="hljs-string">"string"</span>,
@@ -1970,8 +1985,8 @@
   <span class="hljs-attr">"redirectUrl"</span>: <span class="hljs-string">"/go/to/some/other/url.html"</span>,
   <span class="hljs-attr">"results"</span>: [
     {
-      <span class="hljs-attr">"mdeiaId"</span>: <span class="hljs-string">"12"</span>,
-      <span class="hljs-attr">"mdeiaType"</span>: <span class="hljs-string">"IMAGE"</span>,
+      <span class="hljs-attr">"mediaId"</span>: <span class="hljs-string">"12"</span>,
+      <span class="hljs-attr">"mediaType"</span>: <span class="hljs-string">"IMAGE"</span>,
       <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
     }
   ],
@@ -2184,7 +2199,13 @@
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"data"</span>: {
-    <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"string"</span>,
+    <span class="hljs-attr">"attachments"</span>: [
+      {
+        <span class="hljs-attr">"mediaId"</span>: <span class="hljs-string">"12"</span>,
+        <span class="hljs-attr">"mediaType"</span>: <span class="hljs-string">"IMAGE"</span>,
+        <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
+      }
+    ],
     <span class="hljs-attr">"attempt"</span>: <span class="hljs-string">"integer (int32)"</span>,
     <span class="hljs-attr">"channel"</span>: <span class="hljs-string">"string"</span>,
     <span class="hljs-attr">"collapseId"</span>: <span class="hljs-string">"string"</span>,
@@ -2226,6 +2247,11 @@
     <span class="hljs-attr">"priority"</span>: <span class="hljs-string">"integer (int32)"</span>,
     <span class="hljs-attr">"qrbuttons"</span>: <span class="hljs-string">"boolean"</span>,
     <span class="hljs-attr">"queue"</span>: <span class="hljs-string">"number"</span>,
+    <span class="hljs-attr">"session"</span>: {
+      <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"dept"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"mode"</span>: <span class="hljs-string">"string"</span>
+    },
     <span class="hljs-attr">"sessionId"</span>: <span class="hljs-string">"string"</span>,
     <span class="hljs-attr">"status"</span>: <span class="hljs-string">"string"</span>,
     <span class="hljs-attr">"subject"</span>: <span class="hljs-string">"string"</span>,
@@ -2234,6 +2260,7 @@
     <span class="hljs-attr">"to"</span>: [
       <span class="hljs-string">"string"</span>
     ],
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
     <span class="hljs-attr">"viaAgent"</span>: <span class="hljs-string">"boolean"</span>
   },
   <span class="hljs-attr">"error"</span>: <span class="hljs-string">"string"</span>,
@@ -2261,7 +2288,13 @@
   <span class="hljs-attr">"redirectUrl"</span>: <span class="hljs-string">"/go/to/some/other/url.html"</span>,
   <span class="hljs-attr">"results"</span>: [
     {
-      <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"attachments"</span>: [
+        {
+          <span class="hljs-attr">"mediaId"</span>: <span class="hljs-string">"12"</span>,
+          <span class="hljs-attr">"mediaType"</span>: <span class="hljs-string">"IMAGE"</span>,
+          <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
+        }
+      ],
       <span class="hljs-attr">"attempt"</span>: <span class="hljs-string">"integer (int32)"</span>,
       <span class="hljs-attr">"channel"</span>: <span class="hljs-string">"string"</span>,
       <span class="hljs-attr">"collapseId"</span>: <span class="hljs-string">"string"</span>,
@@ -2303,6 +2336,11 @@
       <span class="hljs-attr">"priority"</span>: <span class="hljs-string">"integer (int32)"</span>,
       <span class="hljs-attr">"qrbuttons"</span>: <span class="hljs-string">"boolean"</span>,
       <span class="hljs-attr">"queue"</span>: <span class="hljs-string">"number"</span>,
+      <span class="hljs-attr">"session"</span>: {
+        <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"string"</span>,
+        <span class="hljs-attr">"dept"</span>: <span class="hljs-string">"string"</span>,
+        <span class="hljs-attr">"mode"</span>: <span class="hljs-string">"string"</span>
+      },
       <span class="hljs-attr">"sessionId"</span>: <span class="hljs-string">"string"</span>,
       <span class="hljs-attr">"status"</span>: <span class="hljs-string">"string"</span>,
       <span class="hljs-attr">"subject"</span>: <span class="hljs-string">"string"</span>,
@@ -2311,6 +2349,7 @@
       <span class="hljs-attr">"to"</span>: [
         <span class="hljs-string">"string"</span>
       ],
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
       <span class="hljs-attr">"viaAgent"</span>: <span class="hljs-string">"boolean"</span>
     }
   ],
@@ -3082,8 +3121,8 @@
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"data"</span>: {
     <span class="hljs-attr">"attachment"</span>: {
-      <span class="hljs-attr">"mdeiaId"</span>: <span class="hljs-string">"12"</span>,
-      <span class="hljs-attr">"mdeiaType"</span>: <span class="hljs-string">"IMAGE"</span>,
+      <span class="hljs-attr">"mediaId"</span>: <span class="hljs-string">"12"</span>,
+      <span class="hljs-attr">"mediaType"</span>: <span class="hljs-string">"IMAGE"</span>,
       <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
     },
     <span class="hljs-attr">"contactFrom"</span>: <span class="hljs-string">"919988776655"</span>,
@@ -3118,8 +3157,8 @@
   <span class="hljs-attr">"results"</span>: [
     {
       <span class="hljs-attr">"attachment"</span>: {
-        <span class="hljs-attr">"mdeiaId"</span>: <span class="hljs-string">"12"</span>,
-        <span class="hljs-attr">"mdeiaType"</span>: <span class="hljs-string">"IMAGE"</span>,
+        <span class="hljs-attr">"mediaId"</span>: <span class="hljs-string">"12"</span>,
+        <span class="hljs-attr">"mediaType"</span>: <span class="hljs-string">"IMAGE"</span>,
         <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
       },
       <span class="hljs-attr">"contactFrom"</span>: <span class="hljs-string">"919988776655"</span>,
@@ -3168,11 +3207,26 @@
               <div class="doc-copy">
                 <section class="json-schema-properties">
                   <dl>
-                    <dt data-property-name="agent">
-                      <span class="json-property-name">agent:</span>
-                      <span class="json-property-type">string</span>
+                    <dt data-property-name="attachments">
+                      <span class="json-property-name">attachments:</span>
+                      <span class="json-property-type">
+                        <span class="json-schema-ref-array">
+                          <a class="json-schema-ref" href="#/definitions/Attachment">Attachment</a>
+                        </span>
+                      </span>
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
+                    </dt>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">
+                          <span class="">
+                            <a class="json-schema-ref" href="#/definitions/Attachment">Attachment</a>
+                          </span>
+                        </span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
                     </dt>
                     <dt data-property-name="attempt">
                       <span class="json-property-name">attempt:</span>
@@ -3534,6 +3588,16 @@
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
+                    <dt data-property-name="session">
+                      <span class="json-property-name">session:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/MessageSession">MessageSession</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
                     <dt data-property-name="sessionId">
                       <span class="json-property-name">sessionId:</span>
                       <span class="json-property-type">string</span>
@@ -3587,6 +3651,12 @@
                         <div class="json-inner-schema"> </div>
                       </section>
                     </dt>
+                    <dt data-property-name="type">
+                      <span class="json-property-name">type:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
                     <dt data-property-name="viaAgent">
                       <span class="json-property-name">viaAgent:</span>
                       <span class="json-property-type">boolean</span>
@@ -3603,7 +3673,13 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"attachments"</span>: [
+    {
+      <span class="hljs-attr">"mediaId"</span>: <span class="hljs-string">"12"</span>,
+      <span class="hljs-attr">"mediaType"</span>: <span class="hljs-string">"IMAGE"</span>,
+      <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
+    }
+  ],
   <span class="hljs-attr">"attempt"</span>: <span class="hljs-string">"integer (int32)"</span>,
   <span class="hljs-attr">"channel"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"collapseId"</span>: <span class="hljs-string">"string"</span>,
@@ -3645,6 +3721,11 @@
   <span class="hljs-attr">"priority"</span>: <span class="hljs-string">"integer (int32)"</span>,
   <span class="hljs-attr">"qrbuttons"</span>: <span class="hljs-string">"boolean"</span>,
   <span class="hljs-attr">"queue"</span>: <span class="hljs-string">"number"</span>,
+  <span class="hljs-attr">"session"</span>: {
+    <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"string"</span>,
+    <span class="hljs-attr">"dept"</span>: <span class="hljs-string">"string"</span>,
+    <span class="hljs-attr">"mode"</span>: <span class="hljs-string">"string"</span>
+  },
   <span class="hljs-attr">"sessionId"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"status"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"subject"</span>: <span class="hljs-string">"string"</span>,
@@ -3653,6 +3734,7 @@
   <span class="hljs-attr">"to"</span>: [
     <span class="hljs-string">"string"</span>
   ],
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"viaAgent"</span>: <span class="hljs-string">"boolean"</span>
 }
 </code></pre> </body>
@@ -3819,8 +3901,8 @@
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"attachment"</span>: {
-    <span class="hljs-attr">"mdeiaId"</span>: <span class="hljs-string">"12"</span>,
-    <span class="hljs-attr">"mdeiaType"</span>: <span class="hljs-string">"IMAGE"</span>,
+    <span class="hljs-attr">"mediaId"</span>: <span class="hljs-string">"12"</span>,
+    <span class="hljs-attr">"mediaType"</span>: <span class="hljs-string">"IMAGE"</span>,
     <span class="hljs-attr">"mediaURL"</span>: <span class="hljs-string">"https://client.mehery.com/docs/media/12.png"</span>
   },
   <span class="hljs-attr">"contactFrom"</span>: <span class="hljs-string">"919988776655"</span>,
@@ -3879,6 +3961,38 @@
                         <span class="json-property-enum-item">ITEXT5</span>,
                         <span class="json-property-enum-item">ITEXT7</span>,
                         <span class="json-property-enum-item">JASPER</span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="fileFormat">
+                      <span class="json-property-name">fileFormat:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-enum" title="Possible values">
+                        <span class="json-property-enum-item">PDF</span>,
+                        <span class="json-property-enum-item">CSV</span>,
+                        <span class="json-property-enum-item">PNG</span>,
+                        <span class="json-property-enum-item">JPEG</span>,
+                        <span class="json-property-enum-item">JPG</span>,
+                        <span class="json-property-enum-item">BMP</span>,
+                        <span class="json-property-enum-item">GIF</span>,
+                        <span class="json-property-enum-item">TIFF</span>,
+                        <span class="json-property-enum-item">TIF</span>,
+                        <span class="json-property-enum-item">JSON</span>,
+                        <span class="json-property-enum-item">HTML</span>,
+                        <span class="json-property-enum-item">TEXT</span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="fileType">
+                      <span class="json-property-name">fileType:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-enum" title="Possible values">
+                        <span class="json-property-enum-item">IMAGE</span>,
+                        <span class="json-property-enum-item">VIDEO</span>,
+                        <span class="json-property-enum-item">TEXT</span>,
+                        <span class="json-property-enum-item">DOCUMENT</span>
                       </span>
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
@@ -4112,26 +4226,6 @@
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
-                    <dt data-property-name="type">
-                      <span class="json-property-name">type:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-enum" title="Possible values">
-                        <span class="json-property-enum-item">PDF</span>,
-                        <span class="json-property-enum-item">CSV</span>,
-                        <span class="json-property-enum-item">PNG</span>,
-                        <span class="json-property-enum-item">JPEG</span>,
-                        <span class="json-property-enum-item">JPG</span>,
-                        <span class="json-property-enum-item">BMP</span>,
-                        <span class="json-property-enum-item">GIF</span>,
-                        <span class="json-property-enum-item">TIFF</span>,
-                        <span class="json-property-enum-item">TIF</span>,
-                        <span class="json-property-enum-item">JSON</span>,
-                        <span class="json-property-enum-item">HTML</span>,
-                        <span class="json-property-enum-item">TEXT</span>
-                      </span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-required"></span>
-                    </dt>
                     <dt data-property-name="url">
                       <span class="json-property-name">url:</span>
                       <span class="json-property-type">string</span>
@@ -4153,6 +4247,8 @@
   ],
   <span class="hljs-attr">"content"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"converter"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"fileFormat"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"fileType"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"lang"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"model"</span>: <span class="hljs-string">"object"</span>,
   <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
@@ -4160,7 +4256,6 @@
   <span class="hljs-attr">"password"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"template"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"title"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"url"</span>: <span class="hljs-string">"string"</span>
 }
 </code></pre> </body>
