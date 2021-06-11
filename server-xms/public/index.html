@@ -35,7 +35,7 @@
             </ul>
           </section>
           <section>
-            <a href="#tag-inbound-api-v-2">inbound-api-v-2</a>
+            <a href="#tag-inbound-api-v-1">inbound-api-v-1</a>
             <ul>
               <li>
                 <a href="#operation--api-v1-callback-action-event-post"> onActionCallback </a>
@@ -55,7 +55,6 @@
           <a href="#definition-OutboxMessageV1"> OutboxMessageV1 </a>
           <a href="#definition-ContactInfoRequestV1"> ContactInfoRequestV1 </a>
           <a href="#definition-ApiFieldError"> ApiFieldError </a>
-          <a href="#definition-ActionInfo"> ActionInfo </a>
           <a href="#definition-Attachment"> Attachment </a>
           <a href="#definition-ApiResponse-Attachment-object-"> ApiResponse«Attachment,object» </a>
           <a href="#definition-ApiResponse-OutboxMessage-object-"> ApiResponse«OutboxMessage,object» </a>
@@ -65,6 +64,7 @@
           <a href="#definition-CustomerLabel"> CustomerLabel </a>
           <a href="#definition-Map-string-string-"> Map«string,string» </a>
           <a href="#definition-Map-string-object-"> Map«string,object» </a>
+          <a href="#definition-ActionInfoV1"> ActionInfoV1 </a>
           <a href="#definition-InboxMessageV1"> InboxMessageV1 </a>
           <a href="#definition-PostManFile"> PostManFile </a>
         </nav>
@@ -162,7 +162,7 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">consumer-key:
+                      <div class="prop-title">x-consumer-key:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
                           <span class="json-property-range" title="Value limits"></span>
@@ -177,7 +177,7 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">consumer-token:
+                      <div class="prop-title">x-consumer-token:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
                           <span class="json-property-range" title="Value limits"></span>
@@ -192,7 +192,7 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">access-key:
+                      <div class="prop-title">x-access-key:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
                           <span class="json-property-range" title="Value limits"></span>
@@ -207,7 +207,7 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">access-token:
+                      <div class="prop-title">x-access-token:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
                           <span class="json-property-range" title="Value limits"></span>
@@ -393,7 +393,7 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">consumer-key:
+                      <div class="prop-title">x-consumer-key:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
                           <span class="json-property-range" title="Value limits"></span>
@@ -408,7 +408,7 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">consumer-token:
+                      <div class="prop-title">x-consumer-token:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
                           <span class="json-property-range" title="Value limits"></span>
@@ -423,7 +423,7 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">access-key:
+                      <div class="prop-title">x-access-key:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
                           <span class="json-property-range" title="Value limits"></span>
@@ -438,7 +438,7 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">access-token:
+                      <div class="prop-title">x-access-token:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
                           <span class="json-property-range" title="Value limits"></span>
@@ -821,7 +821,7 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">consumer-key:
+                      <div class="prop-title">x-consumer-key:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
                           <span class="json-property-range" title="Value limits"></span>
@@ -836,7 +836,7 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">consumer-token:
+                      <div class="prop-title">x-consumer-token:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
                           <span class="json-property-range" title="Value limits"></span>
@@ -851,7 +851,7 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">access-key:
+                      <div class="prop-title">x-access-key:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
                           <span class="json-property-range" title="Value limits"></span>
@@ -866,7 +866,7 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">access-token:
+                      <div class="prop-title">x-access-token:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
                           <span class="json-property-range" title="Value limits"></span>
@@ -1025,17 +1025,17 @@
               </div>
             </div>
           </div>
-          <h1 id="tag-inbound-api-v-2" class="swagger-summary-tag" data-traverse-target="tag-inbound-api-v-2">inbound-api-v-2</h1>
+          <h1 id="tag-inbound-api-v-1" class="swagger-summary-tag" data-traverse-target="tag-inbound-api-v-1">inbound-api-v-1</h1>
           <div class="tag-description doc-row">
             <div class="doc-copy">
-              <p>Inbound Api V 2</p>
+              <p>Inbound Api V 1</p>
             </div>
           </div>
           <div id="operation--api-v1-callback-action-event-post" class="operation panel" data-traverse-target="operation--api-v1-callback-action-event-post">
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-inbound-api-v-2">inbound-api-v-2</a>
+              <a class="label" href="#tag-inbound-api-v-1">inbound-api-v-1</a>
               <!---->
             </div>
             <!-- </div> -->
@@ -1058,14 +1058,46 @@
                     <div class="prop-name">
                       <div class="swagger-request-model">
                         <span class="">
-                          <a class="json-schema-ref" href="#/definitions/ActionInfo">ActionInfo</a>
+                          <a class="json-schema-ref" href="#/definitions/ActionInfoV1">ActionInfoV1</a>
                         </span>
                       </div>
                     </div>
                     <div class="prop-value columns small-6">
                       <!-- <div class="swagger-request-description"> -->
-                      <p>outboxMessageV1</p>
+                      <p>actionInfo</p>
                       <!-- </div> -->
+                    </div>
+                  </div>
+                </section>
+                <section class="swagger-request-params">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">x-verify-key:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">abcvernorx</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in header </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Callback Verification Key</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">x-verify-token:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">s1agenttoken$$$</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in header </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Callback Verification Token</p>
                     </div>
                   </div>
                 </section>
@@ -1080,7 +1112,7 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">"actionCode"</span>: <span class="hljs-string">"abc@xyz.com"</span>,
+  <span class="hljs-attr">"actionCode"</span>: <span class="hljs-string">"SEND_INVOICE"</span>,
   <span class="hljs-attr">"contactId"</span>: <span class="hljs-string">"1234567"</span>,
   <span class="hljs-attr">"contactType"</span>: <span class="hljs-string">"WHATSAPP"</span>,
   <span class="hljs-attr">"email"</span>: <span class="hljs-string">"abc@xyz.com"</span>,
@@ -1102,7 +1134,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/definitions/ActionInfo">ActionInfo</a>
+                          <a class="json-schema-ref" href="#/definitions/ActionInfoV1">ActionInfoV1</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -1157,7 +1189,7 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">"actionCode"</span>: <span class="hljs-string">"abc@xyz.com"</span>,
+  <span class="hljs-attr">"actionCode"</span>: <span class="hljs-string">"SEND_INVOICE"</span>,
   <span class="hljs-attr">"contactId"</span>: <span class="hljs-string">"1234567"</span>,
   <span class="hljs-attr">"contactType"</span>: <span class="hljs-string">"WHATSAPP"</span>,
   <span class="hljs-attr">"email"</span>: <span class="hljs-string">"abc@xyz.com"</span>,
@@ -1176,7 +1208,7 @@
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-inbound-api-v-2">inbound-api-v-2</a>
+              <a class="label" href="#tag-inbound-api-v-1">inbound-api-v-1</a>
               <!---->
             </div>
             <!-- </div> -->
@@ -1205,8 +1237,40 @@
                     </div>
                     <div class="prop-value columns small-6">
                       <!-- <div class="swagger-request-description"> -->
-                      <p>outboxMessageV1</p>
+                      <p>contactInfoRequest</p>
                       <!-- </div> -->
+                    </div>
+                  </div>
+                </section>
+                <section class="swagger-request-params">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">x-verify-key:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">abcvernorx</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in header </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Callback Verification Key</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">x-verify-token:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">s1agenttoken$$$</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in header </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Callback Verification Token</p>
                     </div>
                   </div>
                 </section>
@@ -1323,7 +1387,7 @@
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-inbound-api-v-2">inbound-api-v-2</a>
+              <a class="label" href="#tag-inbound-api-v-1">inbound-api-v-1</a>
               <!---->
             </div>
             <!-- </div> -->
@@ -1352,8 +1416,40 @@
                     </div>
                     <div class="prop-value columns small-6">
                       <!-- <div class="swagger-request-description"> -->
-                      <p>outboxMessageV1</p>
+                      <p>inboxMessage</p>
                       <!-- </div> -->
+                    </div>
+                  </div>
+                </section>
+                <section class="swagger-request-params">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">x-verify-key:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">abcvernorx</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in header </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Callback Verification Key</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">x-verify-token:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">s1agenttoken$$$</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in header </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Callback Verification Token</p>
                     </div>
                   </div>
                 </section>
@@ -2227,115 +2323,6 @@
   <span class="hljs-attr">"descriptionKey"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"field"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"obzect"</span>: <span class="hljs-string">"string"</span>
-}
-</code></pre> </body>
-                  </html>
-                  <!-- </div> -->
-                </section>
-              </div>
-            </div>
-          </div>
-          <div id="definition-ActionInfo" class="definition panel" data-traverse-target="definition-ActionInfo">
-            <h2 class="panel-title">
-              <a name="/definitions/ActionInfo"></a>ActionInfo: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
-              <span class="json-property-range" title="Value limits"></span>
-              
-              
-              </span> -->
-            </h2>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="json-schema-properties">
-                  <dl>
-                    <dt data-property-name="actionCode" class="has-description">
-                      <span class="json-property-name">actionCode:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                    <dd>
-                      <p>Email Id collected from Channel</p>
-                    </dd>
-                    <dt data-property-name="contactId" class="has-description">
-                      <span class="json-property-name">contactId:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-required"></span>
-                    </dt>
-                    <dd>
-                      <p>Unique Id assigined to user by MeherY</p>
-                    </dd>
-                    <dt data-property-name="contactType" class="has-description">
-                      <span class="json-property-name">contactType:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-enum" title="Possible values">
-                        <span class="json-property-enum-item">SMS</span>,
-                        <span class="json-property-enum-item">EMAIL</span>,
-                        <span class="json-property-enum-item">WHATSAPP</span>,
-                        <span class="json-property-enum-item">PUSH</span>,
-                        <span class="json-property-enum-item">FACEBOOK</span>,
-                        <span class="json-property-enum-item">TELEGRAM</span>,
-                        <span class="json-property-enum-item">WEBSITE</span>,
-                        <span class="json-property-enum-item">TWITTER</span>,
-                        <span class="json-property-enum-item">DUMMY</span>,
-                        <span class="json-property-enum-item">EMPTY</span>
-                      </span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-required"></span>
-                    </dt>
-                    <dd>
-                      <p>Contact Type</p>
-                    </dd>
-                    <dt data-property-name="email" class="has-description">
-                      <span class="json-property-name">email:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                    <dd>
-                      <p>Email Id collected from Channel</p>
-                    </dd>
-                    <dt data-property-name="lane" class="has-description">
-                      <span class="json-property-name">lane:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-required"></span>
-                    </dt>
-                    <dd>
-                      <p>Contact Used by User while sending messageeg your business number or email address</p>
-                    </dd>
-                    <dt data-property-name="mobile" class="has-description">
-                      <span class="json-property-name">mobile:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                    <dd>
-                      <p>Mobile Number collected from Channel</p>
-                    </dd>
-                    <dt data-property-name="profileId" class="has-description">
-                      <span class="json-property-name">profileId:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                    <dd>
-                      <p>Unique Id assigned to Contact by Core Business Application</p>
-                    </dd>
-                  </dl>
-                </section>
-              </div>
-              <div class="doc-examples">
-                <section>
-                  <h5>Example</h5>
-                  <!-- <div class="hljs"> -->
-                  <html>
-                  <head></head>
-                  <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">"actionCode"</span>: <span class="hljs-string">"abc@xyz.com"</span>,
-  <span class="hljs-attr">"contactId"</span>: <span class="hljs-string">"1234567"</span>,
-  <span class="hljs-attr">"contactType"</span>: <span class="hljs-string">"WHATSAPP"</span>,
-  <span class="hljs-attr">"email"</span>: <span class="hljs-string">"abc@xyz.com"</span>,
-  <span class="hljs-attr">"lane"</span>: <span class="hljs-string">"919999998888"</span>,
-  <span class="hljs-attr">"mobile"</span>: <span class="hljs-string">"919988776655"</span>,
-  <span class="hljs-attr">"profileId"</span>: <span class="hljs-string">"C34567"</span>
 }
 </code></pre> </body>
                   </html>
@@ -4394,6 +4381,116 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-string">"object"</span>
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-ActionInfoV1" class="definition panel" data-traverse-target="definition-ActionInfoV1">
+            <h2 class="panel-title">
+              <a name="/definitions/ActionInfoV1"></a>ActionInfoV1: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="actionCode" class="has-description">
+                      <span class="json-property-name">actionCode:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Action Triggered by Agent/Service</p>
+                    </dd>
+                    <dt data-property-name="contactId" class="has-description">
+                      <span class="json-property-name">contactId:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Unique Id assigined to user by MeherY</p>
+                    </dd>
+                    <dt data-property-name="contactType" class="has-description">
+                      <span class="json-property-name">contactType:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-enum" title="Possible values">
+                        <span class="json-property-enum-item">SMS</span>,
+                        <span class="json-property-enum-item">EMAIL</span>,
+                        <span class="json-property-enum-item">WHATSAPP</span>,
+                        <span class="json-property-enum-item">PUSH</span>,
+                        <span class="json-property-enum-item">FACEBOOK</span>,
+                        <span class="json-property-enum-item">TELEGRAM</span>,
+                        <span class="json-property-enum-item">WEBSITE</span>,
+                        <span class="json-property-enum-item">TWITTER</span>,
+                        <span class="json-property-enum-item">DUMMY</span>,
+                        <span class="json-property-enum-item">EMPTY</span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Contact Type</p>
+                    </dd>
+                    <dt data-property-name="email" class="has-description">
+                      <span class="json-property-name">email:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Email Id collected from Channel</p>
+                    </dd>
+                    <dt data-property-name="lane" class="has-description">
+                      <span class="json-property-name">lane:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Contact Used by User while sending messageeg your business number or email address</p>
+                    </dd>
+                    <dt data-property-name="mobile" class="has-description">
+                      <span class="json-property-name">mobile:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Mobile Number collected from Channel</p>
+                    </dd>
+                    <dt data-property-name="profileId" class="has-description">
+                      <span class="json-property-name">profileId:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Unique Id assigned to Contact by Core Business Application</p>
+                    </dd>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"actionCode"</span>: <span class="hljs-string">"SEND_INVOICE"</span>,
+  <span class="hljs-attr">"contactId"</span>: <span class="hljs-string">"1234567"</span>,
+  <span class="hljs-attr">"contactType"</span>: <span class="hljs-string">"WHATSAPP"</span>,
+  <span class="hljs-attr">"email"</span>: <span class="hljs-string">"abc@xyz.com"</span>,
+  <span class="hljs-attr">"lane"</span>: <span class="hljs-string">"919999998888"</span>,
+  <span class="hljs-attr">"mobile"</span>: <span class="hljs-string">"919988776655"</span>,
+  <span class="hljs-attr">"profileId"</span>: <span class="hljs-string">"C34567"</span>
+}
 </code></pre> </body>
                   </html>
                   <!-- </div> -->
