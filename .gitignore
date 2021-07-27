@@ -1,1 +1,13 @@
-.DS_Store
+~*
+*~
+*bak
+*cache
+*.log
+node_modules
+.history
+.idea
+public
+public/*
+public/index.html
+spectacle-master
+
