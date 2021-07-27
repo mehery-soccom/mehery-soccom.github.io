@@ -7,9 +7,9 @@
 <!-- Add this snippt as last tag in body -->
 <script src="http://api.mehery.com/plugins/customer.js">
   {
-    "entity" : "<entity>",
-    "channelId" : "<channelId>",
-    "channelToken" : "<channelToken>",
+    "entity" : "app",
+    "channelId" : "MeherYWebsite",
+    "channelToken" : "xxxxxxxxxxx",
     "config" : {
       //Optional Config   
     }
