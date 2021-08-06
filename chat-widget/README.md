@@ -7,7 +7,7 @@
 <!-- Add this snippt as last tag in body -->
 <script src="https://cdn.jsdelivr.net/gh/mehery-soccom/mehery-web-dist@gh-pages/dist/plugins/customer.js?theme=bubble">
   {
-    "entity" : "app",
+    "entity" : "api",
     "channelId" : "MeherYWebsite",
     "channelToken" : "xxxxxxxxxxx",
     "config" : {   
