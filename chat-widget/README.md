@@ -5,13 +5,12 @@
 
 ```html
 <!-- Add this snippt as last tag in body -->
-<script src="http://api.mehery.com/plugins/customer.js">
+<script src="https://cdn.jsdelivr.net/gh/mehery-soccom/mehery-web-dist@gh-pages/dist/plugins/customer.js?theme=bubble">
   {
     "entity" : "app",
     "channelId" : "MeherYWebsite",
     "channelToken" : "xxxxxxxxxxx",
-    "config" : {
-      //Optional Config   
+    "config" : {   
     }
   }
 </script>
