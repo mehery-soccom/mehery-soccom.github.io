@@ -5,4 +5,4 @@
 1. Create a Twitter application.
 1. Edit the Twitter application’s permissions.
 1. Generate your access token and secret access token.
-1. Program your Twitter bot.
+1. Upload your tokens to MeherY Account
