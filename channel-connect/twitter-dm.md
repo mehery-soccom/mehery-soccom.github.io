@@ -25,7 +25,7 @@ Once you confirm your email address, you can start creating your application
 
 ## Edit the Twitter application’s permissions.
 1. Click the gear icon. It’ll be labelled “App Settings” if you hover over it.
-- ![How to Make a Twitter Bot](https://user-images.githubusercontent.com/5462166/134341751-1af9a9dc-f5ac-4d69-a605-6e35612b1ef1.jpeg)
+- ![How to Make a Twitter Bot](https://user-images.githubusercontent.com/5462166/134343794-ccba4c0c-8bfe-4c18-8dd8-1d0bc6db8bdf.png)
 2. Edit the App Permissions and select the **Read + Write + Direct Messages** option. Click **Save**
 
 ## Generate your access token and secret access token
