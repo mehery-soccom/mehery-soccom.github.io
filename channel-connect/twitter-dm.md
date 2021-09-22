@@ -9,7 +9,8 @@
 2. [Create a Twitter application](#create-twitter-application)
 3. [Edit the Twitter application’s permissions](#edit-the-twitter-applications-permissions)
 4. [Generate your access token and secret access token](#generate-your-access-token-and-secret-access-token)
-5. [Upload your tokens to MeherY Account](#upload-your-tokens-to-mehery-account)
+5. [Enable Twitter Webhook from Account Activity API](#enable-twitter-webhook-from-account-activity-api)
+6. [Upload your tokens to MeherY Account](#upload-your-tokens-to-mehery-account)
 
 ### Apply for a Twitter developer account.
 1. Go to https://developer.twitter.com
@@ -33,6 +34,15 @@ Once you confirm your email address, you can start creating your application
 2. Switch from Settings to the Keys and Tokens tab
 3. Next to Access token & secret, click Generate. You’ll need these in the next steps
 - ![How to Make a Twitter Bot](https://user-images.githubusercontent.com/5462166/134343289-af3529a7-1364-4ec1-b5ac-94bc8a11a5cb.png)
+
+### Enable Twitter Webhook from Account Activity API
+- After creating a Twitter app, the next step is applying for *Account Activity API access*. 
+  - Those needing enterprise level access to more than 250 account subscriptions and 3+ webhooks will need to submit an application at the [Enterprise Access](https://developer.twitter.com/en/products/twitter-api/enterprise/application). 
+  - If you can satisfy your use case with less access than this, you may want to check out [Account Activity API premium](https://developer.twitter.com/en/docs/twitter-api/premium/account-activity-api/overview). 
+  - To access Free *Sandbox Account Activity API* simply follow these steps
+  - Once your setup is ready follow these steps.
+  1. Login and navigate to the [Dev Environments](https://developer.twitter.com/content/developer-twitter/en/account/environments) page. 
+  2. Click 'Set up dev environment,' name your environment, and specify a Twitter app ID for the environment.
 
 ### Upload your tokens to MeherY Account
 
