@@ -1,2 +1,2 @@
-## Integrate Social Channels with MeherY
+## Channel Integration
 1. [**Twitter Direct Messag**e & **MeherY** Integration](twitter-dm)
