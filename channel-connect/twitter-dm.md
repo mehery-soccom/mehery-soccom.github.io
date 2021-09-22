@@ -1,3 +1,9 @@
+---
+layout: default
+title: Twitter DM integration
+parent: Channel Integration
+nav_order: 2
+---
 # Twitter DM integration
 
 ## Prerequisite
