@@ -1,6 +1,6 @@
 ---
 layout: default
-title: UI Components
+title: Channel Integration
 nav_order: 2
 has_children: true
 ---
