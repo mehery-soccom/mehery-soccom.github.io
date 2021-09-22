@@ -5,11 +5,11 @@
 2. Access to MeherY Client-Hub.
 
 ## Steps
-1. Apply for a Twitter developer account.
-2. Create a Twitter application.
-3. Edit the Twitter application’s permissions.
-4. Generate your access token and secret access token.
-5. Upload your tokens to MeherY Account
+1. [Apply for a Twitter developer account](#apply-for-a-twitter-developer-account)
+2. [Create a Twitter application](#create-twitter-application)
+3. [Edit the Twitter application’s permissions](#edit-the-twitter-applications-permissions)
+4. [Generate your access token and secret access token](#generate-your-access-token-and-secret-access-token)
+5. [Upload your tokens to MeherY Account](#upload-your-tokens-to-mehery-account)
 
 ### Apply for a Twitter developer account.
 1. Go to https://developer.twitter.com
@@ -23,18 +23,18 @@ Once you confirm your email address, you can start creating your application
 1. Create App 
 2. Copy *API key*, an *API secret key*, and *Bearer token*
 
-## Edit the Twitter application’s permissions.
+### Edit the Twitter application’s permissions.
 1. Click the gear icon. It’ll be labelled “App Settings” if you hover over it.
 - ![How to Make a Twitter Bot](https://user-images.githubusercontent.com/5462166/134343794-ccba4c0c-8bfe-4c18-8dd8-1d0bc6db8bdf.png)
 2. Edit the App Permissions and select the **Read + Write + Direct Messages** option. Click **Save**
 
-## Generate your access token and secret access token
+### Generate your access token and secret access token
 1. Once you save the app permissions, you’ll be redirected to your project dashboard.
 2. Switch from Settings to the Keys and Tokens tab
 3. Next to Access token & secret, click Generate. You’ll need these in the next steps
 - ![How to Make a Twitter Bot](https://user-images.githubusercontent.com/5462166/134343289-af3529a7-1364-4ec1-b5ac-94bc8a11a5cb.png)
 
-## Upload your tokens to MeherY Account
+### Upload your tokens to MeherY Account
 
 
 
