@@ -1,4 +1,4 @@
-# How to connect your Twitter DM to MeherY
+# Twitter DM integration
 
 ## Prerequisite
 1. Verified twitter handler

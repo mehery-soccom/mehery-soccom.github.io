@@ -1,4 +1,4 @@
-# Chat Widget
+# WebChat Integration
 
 ## Installation
 ### Website Integration
