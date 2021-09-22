@@ -1,3 +1,9 @@
+---
+layout: default
+title: 404
+nav_exclude: true
+---
+
 # [Foundation for Sites](http://foundation.zurb.com)
 
 [![Build Status](https://travis-ci.org/zurb/foundation-sites.svg?branch=develop)](https://travis-ci.org/zurb/foundation-sites)
