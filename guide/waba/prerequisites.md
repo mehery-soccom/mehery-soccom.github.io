@@ -37,7 +37,7 @@ To approve this request inside your FB Business Manager account, follow these st
 ## WhatsApp approval procedure / Verify your Business Client account
 Start the process of verifying your business in Facebook Business Manager. This procedure helps to protect users from false information.
 
-> [ATTENTION](){: .label .label-red } Once you’ve completed the official form with the legal business details, you won’t be able to change them.
+> [WARNING](){: .label .label-yellow } Once you’ve completed the official form with the legal business details, you won’t be able to change them.
 
 Go to Security Center and click Start Verification. If you haven’t logged in to your Business account, the button will be grayed out.
 - Enter your business details, click Next and select your business from the list.
