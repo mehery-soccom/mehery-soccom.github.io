@@ -1,3 +1,9 @@
+---
+layout: default
+title: WABA prerequisites
+parent: WhatsApp Business API
+nav_order: 1
+---
 # WABA prerequisites
 Before a business can access the WhatsApp Business API, each client has to go through an approval procedure
 
