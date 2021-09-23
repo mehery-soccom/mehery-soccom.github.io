@@ -30,13 +30,15 @@ To approve this request inside your FB Business Manager account, follow these st
 ![354225eaba7fd5ee8a46f2ba022964eb](https://user-images.githubusercontent.com/5462166/134468397-269b7e95-69df-40d3-93a4-d11c82f44e15.png)
 **Only the admin** of the FBM account can see this request and accepted it .
 
-> The next step you should take is to verify your Facebook Business account, if you have not done so previously.
-
+```info
+ The next step you should take is to verify your Facebook Business account, if you have not done so previously.
+```
 
 ## WhatsApp approval procedure / Verify your Business Client account
 Start the process of verifying your business in Facebook Business Manager. This procedure helps to protect users from false information.
-> Attention: Once you’ve completed the official form with the legal business details, you won’t be able to change them.
-
+```alert
+Attention: Once you’ve completed the official form with the legal business details, you won’t be able to change them.
+```
 Go to Security Center and click Start Verification. If you haven’t logged in to your Business account, the button will be grayed out.
 - Enter your business details, click Next and select your business from the list.
 - Select a phone number and confirm details.
@@ -49,5 +51,6 @@ After the verification is successful, you will be able to add your phone number 
 
 During the WhatsApp approval procedure, the WhatsApp team reviews the client’s request according to the [WhatsApp Business Policy](https://www.whatsapp.com/legal/business-policy/). You can check the status in the Facebook Business Manager account.
 
-> For more information, please read the [official WhatsApp API FAQ](https://developers.facebook.com/docs/whatsapp/faq/).
-
+```info
+ For more information, please read the [official WhatsApp API FAQ](https://developers.facebook.com/docs/whatsapp/faq/).
+```
