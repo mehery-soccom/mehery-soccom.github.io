@@ -30,9 +30,9 @@ To approve this request inside your FB Business Manager account, follow these st
 ![354225eaba7fd5ee8a46f2ba022964eb](https://user-images.githubusercontent.com/5462166/134468397-269b7e95-69df-40d3-93a4-d11c82f44e15.png)
 **Only the admin** of the FBM account can see this request and accepted it .
 
-```info
- The next step you should take is to verify your Facebook Business account, if you have not done so previously.
-```
+
+ > INFO {: .label .label-red } The next step you should take is to verify your Facebook Business account, if you have not done so previously.
+
 
 ## WhatsApp approval procedure / Verify your Business Client account
 Start the process of verifying your business in Facebook Business Manager. This procedure helps to protect users from false information.
