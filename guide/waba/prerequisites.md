@@ -23,9 +23,14 @@ More information about the [creation of the Facebook Business Manager you can fi
 
 After the Facebook Business Manager ID is provided, you will receive a Message on Behalf request. You need to accept it, so we can send messages on your behalf with your Facebook Business Manager ID.
 
-Please navigate in your Facebook Business Manager Account to Requests > Received to accept the request.
-
+To approve this request inside your FB Business Manager account, follow these steps:
+1. Go to “Business Settings”
+2. Click the option "Requests" and choose the section "Received".
+3. Approve the request
+![354225eaba7fd5ee8a46f2ba022964eb](https://user-images.githubusercontent.com/5462166/134468397-269b7e95-69df-40d3-93a4-d11c82f44e15.png)
 **Only the admin** of the FBM account can see this request and accepted it .
+
+> The next step you should take is to verify your Facebook Business account, if you have not done so previously.
 
 
 ## WhatsApp approval procedure / Verify your Business Client account
