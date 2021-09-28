@@ -10,4 +10,4 @@ node_modules
 #public/*
 public/index.html
 spectacle-master
-
+_site

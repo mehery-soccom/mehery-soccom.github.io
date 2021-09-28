@@ -2,6 +2,7 @@
 layout: default
 title: WABA prerequisites
 parent: WhatsApp Business API
+grand_parent: Channel Integration
 nav_order: 1
 ---
 # WABA prerequisites
