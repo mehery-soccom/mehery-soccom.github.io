@@ -48,8 +48,6 @@ This means that the number is already available. You can use the Client Hub to m
 > **"The source and destination WhatsApp Business Accounts need to represent the same business. Please use the same Facebook Business ID as before when submitting the number for migration."**
 
 This means that the Facebook Business ID sent in the form is not the same ID that currently manages this account. Please check the Facebook Business Manager and/or the old BSP dashboard to confirm which Facebook Business ID manages this WhatsApp account.
-Click here to understand more about the Facebook and WhatsApp accounts and IDs.
-
 
 > **"Something went wrong when trying to migrate your phone number. Please try again after some time. If that does not work, please contact our support."**
 
