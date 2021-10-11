@@ -1,7 +1,7 @@
 #theme: jekyll-theme-slate
 #theme: just-the-docs
 remote_theme: pmarsceill/just-the-docs
-title: MeherY
+title: MeherY Documentation
 description: Enterprise.Social.Communication
 logo: "https://cdn.jsdelivr.net/gh/mehery-soccom/mehery-content@main/static/app/logo/bg-x-logo.png"
 aux_links:
