@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Privace Policy
+title: Privacy Policy
 parent : About Us
 nav_order: 2
 ---
