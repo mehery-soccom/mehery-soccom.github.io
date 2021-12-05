@@ -74,6 +74,7 @@
           <a href="#definition-InBoundContactProfile"> InBoundContactProfile </a>
           <a href="#definition-InBoundMsg"> InBoundMsg </a>
           <a href="#definition-InBoundMsgMedia"> InBoundMsgMedia </a>
+          <a href="#definition-InBoundWrapper"> InBoundWrapper </a>
           <a href="#definition-Map-string-object-"> Map«string,object» </a>
           <a href="#definition-Map-string-string-"> Map«string,string» </a>
           <a href="#definition-MessageSession"> MessageSession </a>
@@ -85,6 +86,7 @@
           <a href="#definition-OutBoundReciept"> OutBoundReciept </a>
           <a href="#definition-OutboxMessage"> OutboxMessage </a>
           <a href="#definition-PostManFile"> PostManFile </a>
+          <a href="#definition-TagDocument"> TagDocument </a>
         </nav>
       </div>
       <div id="docs" class="row collapse expanded drawer" data-drawer>
@@ -113,7 +115,7 @@
                     <a href="Terms of service">Terms of service</a>
                   </h5>
                   <h5>Version:
-                    <span>1.0 - 2021-12-02 08:56</span>
+                    <span>1.0 - 2021-12-05 00:10</span>
                   </h5>
                 </section>
               </div>
@@ -728,7 +730,7 @@
                     <div class="prop-name">
                       <div class="swagger-request-model">
                         <span class="">
-                          <a class="json-schema-ref" href="#/definitions/InBoundMsg">InBoundMsg</a>
+                          <a class="json-schema-ref" href="#/definitions/InBoundWrapper">InBoundWrapper</a>
                         </span>
                       </div>
                     </div>
@@ -767,67 +769,123 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">&quot;audio&quot;</span>: {
-    <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
-    <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
-    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
-    <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
-    <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>
-  },
-  <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;WA919988776655&quot;</span>,
-  <span class="hljs-attr">&quot;document&quot;</span>: {
-    <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
-    <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
-    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
-    <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
-    <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>
-  },
-  <span class="hljs-attr">&quot;from&quot;</span>: <span class="hljs-number">919988776655</span>,
-  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">1234567</span>,
-  <span class="hljs-attr">&quot;image&quot;</span>: {
-    <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
-    <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
-    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
-    <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
-    <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>
-  },
-  <span class="hljs-attr">&quot;location&quot;</span>: {
-    <span class="hljs-attr">&quot;address&quot;</span>: <span class="hljs-string">&quot;1 Hacker Way, Menlo Park, CA, 94025&quot;</span>,
-    <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">12.90909</span>,
-    <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">6.90808</span>,
-    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Main Building&quot;</span>
-  },
-  <span class="hljs-attr">&quot;messageIdExt&quot;</span>: <span class="hljs-number">1234567</span>,
-  <span class="hljs-attr">&quot;originalMessage&quot;</span>: {},
-  <span class="hljs-attr">&quot;session&quot;</span>: {
-    <span class="hljs-attr">&quot;assignedToAgent&quot;</span>: <span class="hljs-string">&quot;SUPPORT&quot;</span>,
-    <span class="hljs-attr">&quot;assignedToDept&quot;</span>: <span class="hljs-string">&quot;SUPPORT&quot;</span>,
-    <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;xsds34434&quot;</span>
-  },
-  <span class="hljs-attr">&quot;text&quot;</span>: {
-    <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>
-  },
-  <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-number">156753339076</span>,
-  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;text&quot;</span>,
-  <span class="hljs-attr">&quot;video&quot;</span>: {
-    <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
-    <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
-    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
-    <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
-    <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>
-  },
-  <span class="hljs-attr">&quot;voice&quot;</span>: {
-    <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
-    <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
-    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
-    <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
-    <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>
-  }
+  <span class="hljs-attr">&quot;actions&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;actionCode&quot;</span>: <span class="hljs-string">&quot;SEND_INVOICE&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;contacts&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-number">1234567</span>,
+      <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;WHATSAPP&quot;</span>,
+      <span class="hljs-attr">&quot;csid&quot;</span>: <span class="hljs-string">&quot;91YOURNUMBER&quot;</span>,
+      <span class="hljs-attr">&quot;lane&quot;</span>: <span class="hljs-number">919999998888</span>,
+      <span class="hljs-attr">&quot;profile&quot;</span>: {
+        <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;abc@xyz.com&quot;</span>,
+        <span class="hljs-attr">&quot;mobile&quot;</span>: <span class="hljs-number">919988776655</span>,
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;John Doe&quot;</span>
+      },
+      <span class="hljs-attr">&quot;profileId&quot;</span>: <span class="hljs-string">&quot;C34567&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;messages&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;audio&quot;</span>: {
+        <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
+        <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
+        <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
+        <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
+        <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
+        <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+      },
+      <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;WA919988776655&quot;</span>,
+      <span class="hljs-attr">&quot;document&quot;</span>: {
+        <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
+        <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
+        <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
+        <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
+        <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
+        <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+      },
+      <span class="hljs-attr">&quot;from&quot;</span>: <span class="hljs-number">919988776655</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">1234567</span>,
+      <span class="hljs-attr">&quot;image&quot;</span>: {
+        <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
+        <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
+        <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
+        <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
+        <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
+        <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+      },
+      <span class="hljs-attr">&quot;location&quot;</span>: {
+        <span class="hljs-attr">&quot;address&quot;</span>: <span class="hljs-string">&quot;1 Hacker Way, Menlo Park, CA, 94025&quot;</span>,
+        <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">12.90909</span>,
+        <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">6.90808</span>,
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Main Building&quot;</span>
+      },
+      <span class="hljs-attr">&quot;messageIdExt&quot;</span>: <span class="hljs-number">1234567</span>,
+      <span class="hljs-attr">&quot;originalMessage&quot;</span>: {},
+      <span class="hljs-attr">&quot;session&quot;</span>: {
+        <span class="hljs-attr">&quot;assignedToAgent&quot;</span>: <span class="hljs-string">&quot;SUPPORT&quot;</span>,
+        <span class="hljs-attr">&quot;assignedToDept&quot;</span>: <span class="hljs-string">&quot;SUPPORT&quot;</span>,
+        <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;xsds34434&quot;</span>
+      },
+      <span class="hljs-attr">&quot;tags&quot;</span>: {
+        <span class="hljs-attr">&quot;categories&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;cities&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;countries&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;langs&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;locations&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;organizations&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;persons&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;sentimentScore&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+        <span class="hljs-attr">&quot;sentiments&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ]
+      },
+      <span class="hljs-attr">&quot;text&quot;</span>: {
+        <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+      },
+      <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-number">156753339076</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;text&quot;</span>,
+      <span class="hljs-attr">&quot;video&quot;</span>: {
+        <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
+        <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
+        <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
+        <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
+        <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
+        <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+      },
+      <span class="hljs-attr">&quot;voice&quot;</span>: {
+        <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
+        <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
+        <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
+        <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
+        <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
+        <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+      }
+    }
+  ]
 }
 </code></pre> </body>
                   </html>
@@ -904,7 +962,8 @@
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
     <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
     <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>
+    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
   },
   <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;WA919988776655&quot;</span>,
   <span class="hljs-attr">&quot;document&quot;</span>: {
@@ -913,7 +972,8 @@
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
     <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
     <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>
+    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
   },
   <span class="hljs-attr">&quot;from&quot;</span>: <span class="hljs-number">919988776655</span>,
   <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">1234567</span>,
@@ -923,7 +983,8 @@
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
     <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
     <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>
+    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
   },
   <span class="hljs-attr">&quot;location&quot;</span>: {
     <span class="hljs-attr">&quot;address&quot;</span>: <span class="hljs-string">&quot;1 Hacker Way, Menlo Park, CA, 94025&quot;</span>,
@@ -938,8 +999,36 @@
     <span class="hljs-attr">&quot;assignedToDept&quot;</span>: <span class="hljs-string">&quot;SUPPORT&quot;</span>,
     <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;xsds34434&quot;</span>
   },
+  <span class="hljs-attr">&quot;tags&quot;</span>: {
+    <span class="hljs-attr">&quot;categories&quot;</span>: [
+      <span class="hljs-string">&quot;string&quot;</span>
+    ],
+    <span class="hljs-attr">&quot;cities&quot;</span>: [
+      <span class="hljs-string">&quot;string&quot;</span>
+    ],
+    <span class="hljs-attr">&quot;countries&quot;</span>: [
+      <span class="hljs-string">&quot;string&quot;</span>
+    ],
+    <span class="hljs-attr">&quot;langs&quot;</span>: [
+      <span class="hljs-string">&quot;string&quot;</span>
+    ],
+    <span class="hljs-attr">&quot;locations&quot;</span>: [
+      <span class="hljs-string">&quot;string&quot;</span>
+    ],
+    <span class="hljs-attr">&quot;organizations&quot;</span>: [
+      <span class="hljs-string">&quot;string&quot;</span>
+    ],
+    <span class="hljs-attr">&quot;persons&quot;</span>: [
+      <span class="hljs-string">&quot;string&quot;</span>
+    ],
+    <span class="hljs-attr">&quot;sentimentScore&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+    <span class="hljs-attr">&quot;sentiments&quot;</span>: [
+      <span class="hljs-string">&quot;string&quot;</span>
+    ]
+  },
   <span class="hljs-attr">&quot;text&quot;</span>: {
-    <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>
+    <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
   },
   <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-number">156753339076</span>,
   <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;text&quot;</span>,
@@ -949,7 +1038,8 @@
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
     <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
     <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>
+    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
   },
   <span class="hljs-attr">&quot;voice&quot;</span>: {
     <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
@@ -957,7 +1047,8 @@
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
     <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
     <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>
+    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
   }
 }
 </code></pre> </body>
@@ -1074,7 +1165,8 @@
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;60d236c6142e53561cb7716c&quot;</span>
   },
   <span class="hljs-attr">&quot;text&quot;</span>: {
-    <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>
+    <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
   },
   <span class="hljs-attr">&quot;to&quot;</span>: {
     <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -1529,6 +1621,7 @@
   <span class="hljs-attr">&quot;data&quot;</span>: {
     <span class="hljs-attr">&quot;mediaCaption&quot;</span>: <span class="hljs-string">&quot;Transaction Receipt&quot;</span>,
     <span class="hljs-attr">&quot;mediaId&quot;</span>: <span class="hljs-number">12</span>,
+    <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
     <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
     <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
     <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
@@ -1567,6 +1660,7 @@
     {
       <span class="hljs-attr">&quot;mediaCaption&quot;</span>: <span class="hljs-string">&quot;Transaction Receipt&quot;</span>,
       <span class="hljs-attr">&quot;mediaId&quot;</span>: <span class="hljs-number">12</span>,
+      <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
       <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
       <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
       <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
@@ -2660,6 +2754,7 @@
       {
         <span class="hljs-attr">&quot;mediaCaption&quot;</span>: <span class="hljs-string">&quot;Transaction Receipt&quot;</span>,
         <span class="hljs-attr">&quot;mediaId&quot;</span>: <span class="hljs-number">12</span>,
+        <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
         <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
         <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
         <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
@@ -2725,6 +2820,8 @@
       }
     ],
     <span class="hljs-attr">&quot;footer&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;formatSubType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;formatType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;lines&quot;</span>: [
@@ -2801,6 +2898,7 @@
         {
           <span class="hljs-attr">&quot;mediaCaption&quot;</span>: <span class="hljs-string">&quot;Transaction Receipt&quot;</span>,
           <span class="hljs-attr">&quot;mediaId&quot;</span>: <span class="hljs-number">12</span>,
+          <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
           <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
           <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
           <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
@@ -2866,6 +2964,8 @@
         }
       ],
       <span class="hljs-attr">&quot;footer&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;formatSubType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;formatType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;lines&quot;</span>: [
@@ -2967,6 +3067,16 @@
                       <p>Media ID generated by Service</p>
                       <small>undefined</small>
                     </dd>
+                    <dt data-property-name="mediaMimeType" class="has-description">
+                      <span class="json-property-name">mediaMimeType:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Mime Type</p>
+                      <small>undefined</small>
+                    </dd>
                     <dt data-property-name="mediaName" class="has-description">
                       <span class="json-property-name">mediaName:</span>
                       <span class="json-property-type">string</span>
@@ -3026,6 +3136,7 @@
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">&quot;mediaCaption&quot;</span>: <span class="hljs-string">&quot;Transaction Receipt&quot;</span>,
   <span class="hljs-attr">&quot;mediaId&quot;</span>: <span class="hljs-number">12</span>,
+  <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
   <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
   <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
   <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
@@ -3181,6 +3292,16 @@
                       <p>Message Text</p>
                       <small>Contains the text of the message, which can contain URLs and formatting.</small>
                     </dd>
+                    <dt data-property-name="type" class="has-description">
+                      <span class="json-property-name">type:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Message Type</p>
+                      <small>undefined</small>
+                    </dd>
                   </dl>
                 </section>
               </div>
@@ -3191,7 +3312,8 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>
+  <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>,
+  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
 }
 </code></pre> </body>
                   </html>
@@ -4381,6 +4503,20 @@
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
+                    <dt data-property-name="tags" class="has-description">
+                      <span class="json-property-name">tags:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/TagDocument">TagDocument</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Several Tags/Categories Assigned by our ML/NLP program</p>
+                      <small>undefined</small>
+                    </dd>
                     <dt data-property-name="text">
                       <span class="json-property-name">text:</span>
                       <span class="json-property-type">
@@ -4458,7 +4594,8 @@
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
     <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
     <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>
+    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
   },
   <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;WA919988776655&quot;</span>,
   <span class="hljs-attr">&quot;document&quot;</span>: {
@@ -4467,7 +4604,8 @@
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
     <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
     <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>
+    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
   },
   <span class="hljs-attr">&quot;from&quot;</span>: <span class="hljs-number">919988776655</span>,
   <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">1234567</span>,
@@ -4477,7 +4615,8 @@
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
     <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
     <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>
+    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
   },
   <span class="hljs-attr">&quot;location&quot;</span>: {
     <span class="hljs-attr">&quot;address&quot;</span>: <span class="hljs-string">&quot;1 Hacker Way, Menlo Park, CA, 94025&quot;</span>,
@@ -4492,8 +4631,36 @@
     <span class="hljs-attr">&quot;assignedToDept&quot;</span>: <span class="hljs-string">&quot;SUPPORT&quot;</span>,
     <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;xsds34434&quot;</span>
   },
+  <span class="hljs-attr">&quot;tags&quot;</span>: {
+    <span class="hljs-attr">&quot;categories&quot;</span>: [
+      <span class="hljs-string">&quot;string&quot;</span>
+    ],
+    <span class="hljs-attr">&quot;cities&quot;</span>: [
+      <span class="hljs-string">&quot;string&quot;</span>
+    ],
+    <span class="hljs-attr">&quot;countries&quot;</span>: [
+      <span class="hljs-string">&quot;string&quot;</span>
+    ],
+    <span class="hljs-attr">&quot;langs&quot;</span>: [
+      <span class="hljs-string">&quot;string&quot;</span>
+    ],
+    <span class="hljs-attr">&quot;locations&quot;</span>: [
+      <span class="hljs-string">&quot;string&quot;</span>
+    ],
+    <span class="hljs-attr">&quot;organizations&quot;</span>: [
+      <span class="hljs-string">&quot;string&quot;</span>
+    ],
+    <span class="hljs-attr">&quot;persons&quot;</span>: [
+      <span class="hljs-string">&quot;string&quot;</span>
+    ],
+    <span class="hljs-attr">&quot;sentimentScore&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+    <span class="hljs-attr">&quot;sentiments&quot;</span>: [
+      <span class="hljs-string">&quot;string&quot;</span>
+    ]
+  },
   <span class="hljs-attr">&quot;text&quot;</span>: {
-    <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>
+    <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
   },
   <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-number">156753339076</span>,
   <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;text&quot;</span>,
@@ -4503,7 +4670,8 @@
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
     <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
     <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>
+    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
   },
   <span class="hljs-attr">&quot;voice&quot;</span>: {
     <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
@@ -4511,7 +4679,8 @@
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
     <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
     <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>
+    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
   }
 }
 </code></pre> </body>
@@ -4592,6 +4761,16 @@
                       <p>checksum</p>
                       <small>undefined</small>
                     </dd>
+                    <dt data-property-name="type" class="has-description">
+                      <span class="json-property-name">type:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Message Type</p>
+                      <small>undefined</small>
+                    </dd>
                   </dl>
                 </section>
               </div>
@@ -4607,7 +4786,219 @@
   <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
   <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
   <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-  <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>
+  <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-InBoundWrapper" class="definition panel" data-traverse-target="definition-InBoundWrapper">
+            <h2 class="panel-title">
+              <a name="/definitions/InBoundWrapper"></a>InBoundWrapper: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="actions">
+                      <span class="json-property-name">actions:</span>
+                      <span class="json-property-type">
+                        <span class="json-schema-ref-array">
+                          <a class="json-schema-ref" href="#/definitions/InBoundAction">InBoundAction</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">
+                          <span class="">
+                            <a class="json-schema-ref" href="#/definitions/InBoundAction">InBoundAction</a>
+                          </span>
+                        </span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                    <dt data-property-name="contacts">
+                      <span class="json-property-name">contacts:</span>
+                      <span class="json-property-type">
+                        <span class="json-schema-ref-array">
+                          <a class="json-schema-ref" href="#/definitions/InBoundContact">InBoundContact</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">
+                          <span class="">
+                            <a class="json-schema-ref" href="#/definitions/InBoundContact">InBoundContact</a>
+                          </span>
+                        </span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                    <dt data-property-name="messages">
+                      <span class="json-property-name">messages:</span>
+                      <span class="json-property-type">
+                        <span class="json-schema-ref-array">
+                          <a class="json-schema-ref" href="#/definitions/InBoundMsg">InBoundMsg</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">
+                          <span class="">
+                            <a class="json-schema-ref" href="#/definitions/InBoundMsg">InBoundMsg</a>
+                          </span>
+                        </span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;actions&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;actionCode&quot;</span>: <span class="hljs-string">&quot;SEND_INVOICE&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;contacts&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-number">1234567</span>,
+      <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;WHATSAPP&quot;</span>,
+      <span class="hljs-attr">&quot;csid&quot;</span>: <span class="hljs-string">&quot;91YOURNUMBER&quot;</span>,
+      <span class="hljs-attr">&quot;lane&quot;</span>: <span class="hljs-number">919999998888</span>,
+      <span class="hljs-attr">&quot;profile&quot;</span>: {
+        <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;abc@xyz.com&quot;</span>,
+        <span class="hljs-attr">&quot;mobile&quot;</span>: <span class="hljs-number">919988776655</span>,
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;John Doe&quot;</span>
+      },
+      <span class="hljs-attr">&quot;profileId&quot;</span>: <span class="hljs-string">&quot;C34567&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;messages&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;audio&quot;</span>: {
+        <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
+        <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
+        <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
+        <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
+        <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
+        <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+      },
+      <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;WA919988776655&quot;</span>,
+      <span class="hljs-attr">&quot;document&quot;</span>: {
+        <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
+        <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
+        <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
+        <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
+        <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
+        <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+      },
+      <span class="hljs-attr">&quot;from&quot;</span>: <span class="hljs-number">919988776655</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">1234567</span>,
+      <span class="hljs-attr">&quot;image&quot;</span>: {
+        <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
+        <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
+        <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
+        <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
+        <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
+        <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+      },
+      <span class="hljs-attr">&quot;location&quot;</span>: {
+        <span class="hljs-attr">&quot;address&quot;</span>: <span class="hljs-string">&quot;1 Hacker Way, Menlo Park, CA, 94025&quot;</span>,
+        <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">12.90909</span>,
+        <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">6.90808</span>,
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Main Building&quot;</span>
+      },
+      <span class="hljs-attr">&quot;messageIdExt&quot;</span>: <span class="hljs-number">1234567</span>,
+      <span class="hljs-attr">&quot;originalMessage&quot;</span>: {},
+      <span class="hljs-attr">&quot;session&quot;</span>: {
+        <span class="hljs-attr">&quot;assignedToAgent&quot;</span>: <span class="hljs-string">&quot;SUPPORT&quot;</span>,
+        <span class="hljs-attr">&quot;assignedToDept&quot;</span>: <span class="hljs-string">&quot;SUPPORT&quot;</span>,
+        <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;xsds34434&quot;</span>
+      },
+      <span class="hljs-attr">&quot;tags&quot;</span>: {
+        <span class="hljs-attr">&quot;categories&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;cities&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;countries&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;langs&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;locations&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;organizations&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;persons&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;sentimentScore&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+        <span class="hljs-attr">&quot;sentiments&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ]
+      },
+      <span class="hljs-attr">&quot;text&quot;</span>: {
+        <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+      },
+      <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-number">156753339076</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;text&quot;</span>,
+      <span class="hljs-attr">&quot;video&quot;</span>: {
+        <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
+        <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
+        <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
+        <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
+        <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
+        <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+      },
+      <span class="hljs-attr">&quot;voice&quot;</span>: {
+        <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
+        <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
+        <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
+        <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
+        <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
+        <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+      }
+    }
+  ]
 }
 </code></pre> </body>
                   </html>
@@ -5030,7 +5421,8 @@
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;60d236c6142e53561cb7716c&quot;</span>
   },
   <span class="hljs-attr">&quot;text&quot;</span>: {
-    <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>
+    <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
   },
   <span class="hljs-attr">&quot;to&quot;</span>: {
     <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -5341,6 +5733,18 @@
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
+                    <dt data-property-name="formatSubType">
+                      <span class="json-property-name">formatSubType:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="formatType">
+                      <span class="json-property-name">formatType:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
                     <dt data-property-name="id">
                       <span class="json-property-name">id:</span>
                       <span class="json-property-type">string</span>
@@ -5556,6 +5960,7 @@
     {
       <span class="hljs-attr">&quot;mediaCaption&quot;</span>: <span class="hljs-string">&quot;Transaction Receipt&quot;</span>,
       <span class="hljs-attr">&quot;mediaId&quot;</span>: <span class="hljs-number">12</span>,
+      <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
       <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
       <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
       <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
@@ -5621,6 +6026,8 @@
     }
   ],
   <span class="hljs-attr">&quot;footer&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;formatSubType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;formatType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;lines&quot;</span>: [
@@ -5858,6 +6265,173 @@
   <span class="hljs-attr">&quot;templateId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-TagDocument" class="definition panel" data-traverse-target="definition-TagDocument">
+            <h2 class="panel-title">
+              <a name="/definitions/TagDocument"></a>TagDocument: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="categories">
+                      <span class="json-property-name">categories:</span>
+                      <span class="json-property-type">string[]</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                    <dt data-property-name="cities">
+                      <span class="json-property-name">cities:</span>
+                      <span class="json-property-type">string[]</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                    <dt data-property-name="countries">
+                      <span class="json-property-name">countries:</span>
+                      <span class="json-property-type">string[]</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                    <dt data-property-name="langs">
+                      <span class="json-property-name">langs:</span>
+                      <span class="json-property-type">string[]</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                    <dt data-property-name="locations">
+                      <span class="json-property-name">locations:</span>
+                      <span class="json-property-type">string[]</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                    <dt data-property-name="organizations">
+                      <span class="json-property-name">organizations:</span>
+                      <span class="json-property-type">string[]</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                    <dt data-property-name="persons">
+                      <span class="json-property-name">persons:</span>
+                      <span class="json-property-type">string[]</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                    <dt data-property-name="sentimentScore">
+                      <span class="json-property-name">sentimentScore:</span>
+                      <span class="json-property-type">integer</span>
+                      <span class="json-property-format">(int32)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="sentiments">
+                      <span class="json-property-name">sentiments:</span>
+                      <span class="json-property-type">string[]</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;categories&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;cities&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;countries&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;langs&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;locations&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;organizations&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;persons&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;sentimentScore&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+  <span class="hljs-attr">&quot;sentiments&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ]
 }
 </code></pre> </body>
                   </html>
