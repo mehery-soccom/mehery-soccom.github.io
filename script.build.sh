@@ -9,7 +9,11 @@ cd reslate
 npm i
 npm run build
 cd ..
-mv reslate/_site server-xms/public2 
+echo  "deleting... server-xms/public2"
+rm -r server-xms/public2
+echo  "moving... to server-xms/public2"
+mv reslate/_site server-xms/public2
+echo  "removing... reslate/source/index.md"
 rm reslate/source/index.md
 
 #cd ..
