@@ -4,6 +4,7 @@
   @api public
 --}}
 <nav id="nav" role="navigation">
+  <img src="../public2/slate/img/navbar.png" alt="Logo" class="logo">
   <h5>Topics</h5>
   {{#unless info.x-spectacle-hide}}
     <a href="#introduction">Introduction</a>
@@ -72,6 +73,16 @@
       {{@key}}
     </a>
   {{/each}}
-
-
+  <h5>Links</h5>
+  <rapi-pdf
+                style = "width:700px; height:40px; font-size:18px;" 
+                spec-url = "https://demo.mehery.io/xms/v2/api-docs"
+                button-label="Download PDF"
+                hide-input=true
+                pdf-title="Mehery Documentation"
+                pdf-footer-text="Copyright © MeherY SocCom. All Rights Reserved."
+                include-api-list=false
+                include-example=true
+                button-bg = "#292d30" 
+    ></rapi-pdf>
 </nav>

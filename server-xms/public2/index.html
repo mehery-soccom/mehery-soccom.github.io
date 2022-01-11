@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>SERVER-XMS v1.0 - 2022-01-07 13:05</title>
+    <title>Messaging APIs v1.0 - 2022-01-11 13:07</title>
 
     <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" media="screen" rel="stylesheet">
     <link href="slate/css/print.css" media="print" rel="stylesheet">
@@ -46,6 +46,7 @@
     <!-- slate; content for the head element from source/includes/head.ejs -->
 <meta name="theme-color" content="#F3F7F9">
 
+    <script src="https://unpkg.com/rapipdf/dist/rapipdf-min.js"></script>
   </head>
 
   <body data-languages="[&quot;shell&quot;,&quot;http&quot;,&quot;javascript&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;php&quot;,&quot;java&quot;,&quot;go&quot;]">
@@ -107,7 +108,7 @@
 	  	<ul class="toc-list-h1">
         
           <li>
-            <a href="#server-xms" class="toc-h1 toc-link" data-title="SERVER-XMS v1.0 - 2022-01-07 13:05">SERVER-XMS v1.0 - 2022-01-07 13:05</a>
+            <a href="#messaging-apis" class="toc-h1 toc-link" data-title="Messaging APIs v1.0 - 2022-01-11 13:07">Messaging APIs v1.0 - 2022-01-11 13:07</a>
             
           </li>
         
@@ -117,7 +118,7 @@
           </li>
         
           <li>
-            <a href="#server-xms-config-apis" class="toc-h1 toc-link" data-title="Config APIs">Config APIs</a>
+            <a href="#messaging-apis-config-apis" class="toc-h1 toc-link" data-title="Config APIs">Config APIs</a>
             
               <ul class="toc-list-h2">
                 
@@ -131,7 +132,7 @@
           </li>
         
           <li>
-            <a href="#server-xms-digital-analytics" class="toc-h1 toc-link" data-title="Digital Analytics">Digital Analytics</a>
+            <a href="#messaging-apis-digital-analytics" class="toc-h1 toc-link" data-title="Digital Analytics">Digital Analytics</a>
             
               <ul class="toc-list-h2">
                 
@@ -145,7 +146,7 @@
           </li>
         
           <li>
-            <a href="#server-xms-inbound-callbacks" class="toc-h1 toc-link" data-title="InBound Callbacks">InBound Callbacks</a>
+            <a href="#messaging-apis-inbound-callbacks" class="toc-h1 toc-link" data-title="InBound Callbacks">InBound Callbacks</a>
             
               <ul class="toc-list-h2">
                 
@@ -169,7 +170,7 @@
           </li>
         
           <li>
-            <a href="#server-xms-outbound-messages" class="toc-h1 toc-link" data-title="OutBound Messages">OutBound Messages</a>
+            <a href="#messaging-apis-outbound-messages" class="toc-h1 toc-link" data-title="OutBound Messages">OutBound Messages</a>
             
               <ul class="toc-list-h2">
                 
@@ -183,7 +184,7 @@
           </li>
         
           <li>
-            <a href="#server-xms-session-apis" class="toc-h1 toc-link" data-title="Session APIs">Session APIs</a>
+            <a href="#messaging-apis-session-apis" class="toc-h1 toc-link" data-title="Session APIs">Session APIs</a>
             
               <ul class="toc-list-h2">
                 
@@ -410,6 +411,19 @@
       
         <ul class="toc-footer">
           
+          <li>
+            <rapi-pdf
+                style = "width:700px; height:40px; font-size:18px;" 
+                spec-url = "https://demo.mehery.io/xms/v2/api-docs"
+                button-label="Download PDF"
+                hide-input=true
+                pdf-title="Mehery Documentation"
+                pdf-footer-text="Copyright © MeherY SocCom. All Rights Reserved."
+                include-api-list=false
+                include-example=true
+                button-bg = "#2a2a7e00" 
+              ></rapi-pdf>
+          </li>
         </ul>
       
     </div>
@@ -417,7 +431,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <!-- Generator: Widdershins v4.0.1 -->
-<h1 id="server-xms">SERVER-XMS v1.0 - 2022-01-07 13:05</h1>
+<h1 id="messaging-apis">Messaging APIs v1.0 - 2022-01-11 13:07</h1>
 <blockquote>
 <p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.</p>
 </blockquote>
@@ -437,7 +451,7 @@ To get your <em>x-api-key</em> contact TechSupport</p>
 </ul>
 </li>
 </ul>
-<h1 id="server-xms-config-apis">Config APIs</h1>
+<h1 id="messaging-apis-config-apis">Config APIs</h1>
 <p>API’s for configuration</p>
 <h2 id="set-webhook-url">Set Webhook URL</h2>
 <p><a id="opIdsetWebhookUrlUsingPOST"></a></p>
@@ -538,7 +552,7 @@ To get your <em>x-api-key</em> contact TechSupport</p>
 <aside class="success">
 This operation does not require authentication
 </aside>
-<h1 id="server-xms-digital-analytics">Digital Analytics</h1>
+<h1 id="messaging-apis-digital-analytics">Digital Analytics</h1>
 <p>Analytics APIS</p>
 <h2 id="dataevent">dataEvent</h2>
 <p><a id="opIddataEventUsingPOST"></a></p>
@@ -638,7 +652,7 @@ This operation does not require authentication
 <aside class="success">
 This operation does not require authentication
 </aside>
-<h1 id="server-xms-inbound-callbacks">InBound Callbacks</h1>
+<h1 id="messaging-apis-inbound-callbacks">InBound Callbacks</h1>
 <p>API’s to be implemented by Clients, to recieve inbound messages</p>
 <h2 id="onactioncallback">onActionCallback</h2>
 <p><a id="opIdonActionCallbackUsingPOST"></a></p>
@@ -934,7 +948,7 @@ This operation does not require authentication
 <aside class="success">
 This operation does not require authentication
 </aside>
-<h1 id="server-xms-outbound-messages">OutBound Messages</h1>
+<h1 id="messaging-apis-outbound-messages">OutBound Messages</h1>
 <p>API’s to send OutBound Messages</p>
 <h2 id="send-message">Send Message</h2>
 <p><a id="opIdsendMessageUsingPOST_1"></a></p>
@@ -1035,7 +1049,7 @@ This operation does not require authentication
 <aside class="success">
 This operation does not require authentication
 </aside>
-<h1 id="server-xms-session-apis">Session APIs</h1>
+<h1 id="messaging-apis-session-apis">Session APIs</h1>
 <p>API’s for Session Management</p>
 <h2 id="read-all-messages-for-a-session">Read all messages for a session</h2>
 <p><a id="opIdsetWebhookUrlUsingGET"></a></p>

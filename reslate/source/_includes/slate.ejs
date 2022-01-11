@@ -60,6 +60,7 @@ under the License.
       };
     </script>
     <%- include('head.ejs',{}) %>
+    <script src="https://unpkg.com/rapipdf/dist/rapipdf-min.js"></script>
   </head>
 
   <body <% if (page_classes) {%>class="<%= page_classes %>" <% } %>data-languages="<%- language_array(language_tabs) %>">
@@ -125,6 +126,19 @@ under the License.
           <% for (var footer in toc_footers) { %>
             <li><%- toc_footers[footer] %></li>
           <% } %>
+          <li>
+            <rapi-pdf
+                style = "width:700px; height:40px; font-size:18px;" 
+                spec-url = "https://demo.mehery.io/xms/v2/api-docs"
+                button-label="Download PDF"
+                hide-input=true
+                pdf-title="Mehery Documentation"
+                pdf-footer-text="Copyright © MeherY SocCom. All Rights Reserved."
+                include-api-list=false
+                include-example=true
+                button-bg = "#2a2a7e00" 
+              ></rapi-pdf>
+          </li>
         </ul>
       <% } %>
     </div>
