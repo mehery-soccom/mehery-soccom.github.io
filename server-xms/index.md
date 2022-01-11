@@ -19,5 +19,5 @@ has_children: true
   <img width="590" alt="Screenshot 2022-01-11 at 6 05 19 PM" src="https://user-images.githubusercontent.com/5462166/148944522-dbd2541e-5144-4272-87c3-49436878ce92.png">
 5. Once you enter name you will eb able to see genrated API key, copy and store Id and Keys securely, you will not be able to retrieve it later.
 <img width="681" alt="Screenshot 2022-01-11 at 6 05 25 PM" src="https://user-images.githubusercontent.com/5462166/148944752-3d8accd0-42b9-4d70-a9d2-669492abb6a6.png">
-6. For all Api's you can use  this *API key* in header.
+6. For all Api's you can use this **API key** in header.
 
