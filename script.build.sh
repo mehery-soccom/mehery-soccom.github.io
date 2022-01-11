@@ -9,6 +9,6 @@ cd reslate
 npm i
 npm run build
 cd ..
-mv reslate/_site reslate/public 
+mv reslate/_site server-xms/public2 
 
 #cd ..
