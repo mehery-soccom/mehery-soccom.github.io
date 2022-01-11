@@ -9,4 +9,6 @@ cd reslate
 npm i
 npm run build
 cd ..
+mv reslate/_site reslate/public 
+
 #cd ..

@@ -14,7 +14,7 @@ includes: []
 search: true
 highlight_theme: darkula
 headingLevel: 2
-nav_exclude : true
+
 ---
 
 <!-- Generator: Widdershins v4.0.1 -->
