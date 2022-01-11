@@ -10,5 +10,6 @@ npm i
 npm run build
 cd ..
 mv reslate/_site server-xms/public2 
+rm reslate/source/index.md
 
 #cd ..
