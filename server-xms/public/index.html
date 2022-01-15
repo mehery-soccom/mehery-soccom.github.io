@@ -35,26 +35,15 @@
             <a href="#tag-Digital-Analytics">Digital Analytics</a>
             <ul>
               <li>
-                <a href="#operation--api-v1-event-push-post"> dataEvent </a>
+                <a href="#operation--api-v1-data-push-post"> Push Customer Data </a>
+              </li>
+              <li>
+                <a href="#operation--api-v1-event-push-post"> Push Customer Event </a>
               </li>
             </ul>
           </section>
           <section>
-            <a href="#tag-InBound-Callbacks">InBound Callbacks</a>
-            <ul>
-              <li>
-                <a href="#operation--api-v1-action-event-post"> onActionCallback </a>
-              </li>
-              <li>
-                <a href="#operation--api-v1-contact-info-post"> onProfileCallback </a>
-              </li>
-              <li>
-                <a href="#operation--api-v1-message-receive-post"> onMessageCallback </a>
-              </li>
-            </ul>
-          </section>
-          <section>
-            <a href="#tag-OutBound-Messages">OutBound Messages</a>
+            <a href="#tag-Outbound-Messages">Outbound Messages</a>
             <ul>
               <li>
                 <a href="#operation--api-v1-message-send-post"> Send Message </a>
@@ -62,12 +51,30 @@
             </ul>
           </section>
           <section>
-            <a href="#tag-Session-APIs">Session APIs</a>
+            <a href="#tag-Session-Management">Session Management</a>
             <ul>
               <li>
-                <a href="#operation--api-v1-session-messages-get"> Read all messages for a session </a>
+                <a href="#operation--api-v1-session-messages-get"> Fetch session messages </a>
               </li>
             </ul>
+          </section>
+          <section>
+            <a href="#tag-Webhooks">Webhooks</a>
+            <ul>
+              <li>
+                <a href="#operation--api-v1-action-event-post"> Receiving Events </a>
+              </li>
+              <li>
+                <a href="#operation--api-v1-contact-info-post"> Contact Information </a>
+              </li>
+              <li>
+                <a href="#operation--api-v1-message-receive-post"> Receiving Messages </a>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <a href="#tag-XMS-ViewConroller">XMS ViewConroller</a>
+            <ul> </ul>
           </section>
           <h5>Schema Definitions</h5>
           <a href="#definition-ApiFieldError"> ApiFieldError </a>
@@ -126,10 +133,11 @@
           <div id="introduction" data-traverse-target="introduction">
             <div class="doc-row">
               <div class="doc-copy">
-                <p>Use API key for authentication. An API key is a token that a client provides when making API calls. </p>
-                <p>API key can be set in the headers with param
-                  <em>x-api-key</em> To get your
-                  <em>x-api-key</em> contact TechSupport</p>
+                <p>Every request to the needs to be authorized using an API Key authentication. Adding
+                  <em>x-api-key</em> in the header with your unique API Key as a value will grant access. To get your
+                  <em>x-api-key</em>
+                  <a href="/xms/docs?path=/server-xms">visit documentation</a>
+                </p>
               </div>
               <div class="doc-examples">
                 <section>
@@ -140,7 +148,7 @@
                     <a href="Terms of service">Terms of service</a>
                   </h5>
                   <h5>Version:
-                    <span>1.0 - 2022-01-11 13:07</span>
+                    <span>1.0 - 2022-01-15 20:23</span>
                   </h5>
                 </section>
               </div>
@@ -181,7 +189,7 @@
           <h1 id="tag-Config-APIs" class="swagger-summary-tag" data-traverse-target="tag-Config-APIs">Config APIs</h1>
           <div class="tag-description doc-row">
             <div class="doc-copy">
-              <p>API&#39;s for configuration</p>
+              <p>API&#39;s for configuration management</p>
             </div>
           </div>
           <div id="operation--api-v1-config-webhook-post" class="operation panel" data-traverse-target="operation--api-v1-config-webhook-post">
@@ -207,7 +215,7 @@
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-description">
-                  <p>The webhook URL is a URL where the WhatsApp Business API sends the notifications to, triggered by specific events</p>
+                  <p>You must configure a callback (webhook URL) to receive messages.To deploy a live webhook that can receive webhook events, your code must have the following* HTTPS support* A valid SSL certificate</p>
                 </section>
               </div>
             </div>
@@ -404,6 +412,241 @@
               <p>Analytics APIS</p>
             </div>
           </div>
+          <div id="operation--api-v1-data-push-post" class="operation panel" data-traverse-target="operation--api-v1-data-push-post">
+            <!-- <section class="operation-tags row"> -->
+            <!-- <div class="doc-copy"> -->
+            <div class="operation-tags">
+              <a class="label" href="#tag-Digital-Analytics">Digital Analytics</a>
+              <!---->
+            </div>
+            <!-- </div> -->
+            <!-- </section> -->
+            <h2 class="operation-title">
+              <span class="operation-summary">Push Customer Data</span>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-path">
+                  <span class="operation-method">POST</span>
+                  <span class="operation-path">/api/v1/data/push</span>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description">
+                  <p>This API can be used to upload customer details</p>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-body">
+                  <div class="prop-row">
+                    <div class="prop-name">
+                      <div class="swagger-request-model">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/DigitalObjectDto">DigitalObjectDto</a>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="prop-value columns small-6">
+                      <!-- <div class="swagger-request-description"> -->
+                      <p>digitalObjectDto</p>
+                      <!-- </div> -->
+                    </div>
+                  </div>
+                </section>
+                <section class="swagger-request-params">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">x-api-key:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">thisduMmykEy4maTD0NTUsEit</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in header </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>API Key</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Request Content-Types:
+                    <span>application/json</span>
+                  </h5>
+                  <h5>Request Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;links&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;linkName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;linkType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;linkValue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-responses">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">200 OK</div>
+                      <div class="prop-ref">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/ApiResponse«DigitalObjectDto,object»">ApiResponse«DigitalObjectDto,object»</a>
+                        </span>
+                      </div>
+                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
+                    </div>
+                    <div class="prop-value">
+                      <p>OK</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">201 Created</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Created</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">401 Unauthorized</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Unauthorized</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">403 Forbidden</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Forbidden</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">404 Not Found</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Not Found</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <h5>Response Content-Types:
+                  <span>*/*</span>
+                </h5>
+                <section>
+                  <h5>Response Example
+                    <span>(200 OK)</span>
+                  </h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: {
+    <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;links&quot;</span>: [
+      {
+        <span class="hljs-attr">&quot;linkName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;linkType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;linkValue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      }
+    ],
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;details&quot;</span>: [
+    <span class="hljs-string">&quot;object&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;error&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;codeKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;codes&quot;</span>: [
+        <span class="hljs-string">&quot;string&quot;</span>
+      ],
+      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;descriptionKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;field&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;obzect&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;exception&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;extra&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-attr">&quot;logs&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;This is success message in plain english&quot;</span>,
+  <span class="hljs-attr">&quot;messageKey&quot;</span>: <span class="hljs-string">&quot;MESSAGE_SUCCESS:MOBILE:12&quot;</span>,
+  <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-attr">&quot;params&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/postman/email/send&quot;</span>,
+  <span class="hljs-attr">&quot;redirectUrl&quot;</span>: <span class="hljs-string">&quot;/go/to/some/other/url.html&quot;</span>,
+  <span class="hljs-attr">&quot;results&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;links&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;linkName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;linkType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;linkValue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        }
+      ],
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-attr">&quot;statusKey&quot;</span>: <span class="hljs-string">&quot;SUCCESS&quot;</span>,
+  <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-number">1541276788518</span>,
+  <span class="hljs-attr">&quot;traceid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;warningKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;warnings&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;codeKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;codes&quot;</span>: [
+        <span class="hljs-string">&quot;string&quot;</span>
+      ],
+      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;descriptionKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;field&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;obzect&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
           <div id="operation--api-v1-event-push-post" class="operation panel" data-traverse-target="operation--api-v1-event-push-post">
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
@@ -414,13 +657,20 @@
             <!-- </div> -->
             <!-- </section> -->
             <h2 class="operation-title">
-              <span class="operation-summary">dataEvent</span>
+              <span class="operation-summary">Push Customer Event</span>
             </h2>
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-path">
                   <span class="operation-method">POST</span>
                   <span class="operation-path">/api/v1/event/push</span>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description">
+                  <p>This API can be used to upload customer event</p>
                 </section>
               </div>
             </div>
@@ -629,29 +879,613 @@
               </div>
             </div>
           </div>
-          <h1 id="tag-InBound-Callbacks" class="swagger-summary-tag" data-traverse-target="tag-InBound-Callbacks">InBound Callbacks</h1>
+          <h1 id="tag-Outbound-Messages" class="swagger-summary-tag" data-traverse-target="tag-Outbound-Messages">Outbound Messages</h1>
           <div class="tag-description doc-row">
             <div class="doc-copy">
-              <p>API&#39;s to be implemented by Clients, to recieve inbound messages</p>
+              <p>API&#39;s to send OutBound Messages</p>
+            </div>
+          </div>
+          <div id="operation--api-v1-message-send-post" class="operation panel" data-traverse-target="operation--api-v1-message-send-post">
+            <!-- <section class="operation-tags row"> -->
+            <!-- <div class="doc-copy"> -->
+            <div class="operation-tags">
+              <a class="label" href="#tag-Outbound-Messages">Outbound Messages</a>
+              <!---->
+            </div>
+            <!-- </div> -->
+            <!-- </section> -->
+            <h2 class="operation-title">
+              <span class="operation-summary">Send Message</span>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-path">
+                  <span class="operation-method">POST</span>
+                  <span class="operation-path">/api/v1/message/send</span>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description">
+                  <p>Use the message API to send text messages, media, documents, and message templates to your customersYou can send messages by making a POST call regardless of message type. The content of the JSON message body differs for each type of message (text, image, etc.).</p>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-body">
+                  <div class="prop-row">
+                    <div class="prop-name">
+                      <div class="swagger-request-model">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/OutBoundMsg">OutBoundMsg</a>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="prop-value columns small-6">
+                      <!-- <div class="swagger-request-description"> -->
+                      <p>message</p>
+                      <!-- </div> -->
+                    </div>
+                  </div>
+                </section>
+                <section class="swagger-request-params">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">x-api-key:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">thisduMmykEy4maTD0NTUsEit</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in header </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>API Key</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Request Content-Types:
+                    <span>application/json</span>
+                  </h5>
+                  <h5>Request Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;audio&quot;</span>: {
+    <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;your-video-caption&quot;</span>,
+    <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;your-video-caption&quot;</span>,
+    <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://the-url&quot;</span>
+  },
+  <span class="hljs-attr">&quot;channelId&quot;</span>: <span class="hljs-string">&quot;91SERVICENUMBER&quot;</span>,
+  <span class="hljs-attr">&quot;document&quot;</span>: {
+    <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;your-video-caption&quot;</span>,
+    <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;your-video-caption&quot;</span>,
+    <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://the-url&quot;</span>
+  },
+  <span class="hljs-attr">&quot;image&quot;</span>: {
+    <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;your-video-caption&quot;</span>,
+    <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;your-video-caption&quot;</span>,
+    <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://the-url&quot;</span>
+  },
+  <span class="hljs-attr">&quot;mask&quot;</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">&quot;template&quot;</span>: {
+    <span class="hljs-attr">&quot;data&quot;</span>: {
+      <span class="hljs-attr">&quot;amount&quot;</span>: <span class="hljs-number">10</span>,
+      <span class="hljs-attr">&quot;currency&quot;</span>: <span class="hljs-string">&quot;INR&quot;</span>
+    },
+    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;60d236c6142e53561cb7716c&quot;</span>
+  },
+  <span class="hljs-attr">&quot;text&quot;</span>: {
+    <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+  },
+  <span class="hljs-attr">&quot;to&quot;</span>: {
+    <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;text&quot;</span>,
+  <span class="hljs-attr">&quot;video&quot;</span>: {
+    <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;your-video-caption&quot;</span>,
+    <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;your-video-caption&quot;</span>,
+    <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://the-url&quot;</span>
+  }
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-responses">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">200 OK</div>
+                      <div class="prop-ref">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/ApiResponse«OutBoundReciept,object»">ApiResponse«OutBoundReciept,object»</a>
+                        </span>
+                      </div>
+                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
+                    </div>
+                    <div class="prop-value">
+                      <p>OK</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">201 Created</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Created</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">401 Unauthorized</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Unauthorized</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">403 Forbidden</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Forbidden</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">404 Not Found</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Not Found</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <h5>Response Content-Types:
+                  <span>*/*</span>
+                </h5>
+                <section>
+                  <h5>Response Example
+                    <span>(200 OK)</span>
+                  </h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: {
+    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;gBEGkYiEB1VXAglK1ZEqA1YKPrU&quot;</span>
+  },
+  <span class="hljs-attr">&quot;details&quot;</span>: [
+    <span class="hljs-string">&quot;object&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;error&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;codeKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;codes&quot;</span>: [
+        <span class="hljs-string">&quot;string&quot;</span>
+      ],
+      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;descriptionKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;field&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;obzect&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;exception&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;extra&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-attr">&quot;logs&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;This is success message in plain english&quot;</span>,
+  <span class="hljs-attr">&quot;messageKey&quot;</span>: <span class="hljs-string">&quot;MESSAGE_SUCCESS:MOBILE:12&quot;</span>,
+  <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-attr">&quot;params&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/postman/email/send&quot;</span>,
+  <span class="hljs-attr">&quot;redirectUrl&quot;</span>: <span class="hljs-string">&quot;/go/to/some/other/url.html&quot;</span>,
+  <span class="hljs-attr">&quot;results&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;gBEGkYiEB1VXAglK1ZEqA1YKPrU&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-attr">&quot;statusKey&quot;</span>: <span class="hljs-string">&quot;SUCCESS&quot;</span>,
+  <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-number">1541276788518</span>,
+  <span class="hljs-attr">&quot;traceid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;warningKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;warnings&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;codeKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;codes&quot;</span>: [
+        <span class="hljs-string">&quot;string&quot;</span>
+      ],
+      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;descriptionKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;field&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;obzect&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <h1 id="tag-Session-Management" class="swagger-summary-tag" data-traverse-target="tag-Session-Management">Session Management</h1>
+          <div class="tag-description doc-row">
+            <div class="doc-copy">
+              <p>Session API can be used:</p>
+              <ul>
+                <li>to fetch all session messages. A session usually starts with first messages and stays active for 24 hours by default.</li>
+              </ul>
+            </div>
+          </div>
+          <div id="operation--api-v1-session-messages-get" class="operation panel" data-traverse-target="operation--api-v1-session-messages-get">
+            <!-- <section class="operation-tags row"> -->
+            <!-- <div class="doc-copy"> -->
+            <div class="operation-tags">
+              <a class="label" href="#tag-Session-Management">Session Management</a>
+              <!---->
+            </div>
+            <!-- </div> -->
+            <!-- </section> -->
+            <h2 class="operation-title">
+              <span class="operation-summary">Fetch session messages</span>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-path">
+                  <span class="operation-method">GET</span>
+                  <span class="operation-path">/api/v1/session/messages</span>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-params">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">sessionId:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <span class="json-property-required"></span>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>sessionId</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">x-api-key:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">thisduMmykEy4maTD0NTUsEit</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in header </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>API Key</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples"></div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-responses">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">200 OK</div>
+                      <div class="prop-ref">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/ApiResponse«ChatMessageDTO,object»">ApiResponse«ChatMessageDTO,object»</a>
+                        </span>
+                      </div>
+                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
+                    </div>
+                    <div class="prop-value">
+                      <p>OK</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">401 Unauthorized</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Unauthorized</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">403 Forbidden</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Forbidden</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">404 Not Found</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Not Found</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <h5>Response Content-Types:
+                  <span>*/*</span>
+                </h5>
+                <section>
+                  <h5>Response Example
+                    <span>(200 OK)</span>
+                  </h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: {
+    <span class="hljs-attr">&quot;action&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;attachments&quot;</span>: [
+      {
+        <span class="hljs-attr">&quot;mediaCaption&quot;</span>: <span class="hljs-string">&quot;Transaction Receipt&quot;</span>,
+        <span class="hljs-attr">&quot;mediaId&quot;</span>: <span class="hljs-number">12</span>,
+        <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
+        <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
+        <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
+        <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
+        <span class="hljs-attr">&quot;mediaURL&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>
+      }
+    ],
+    <span class="hljs-attr">&quot;bulkSessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;contact&quot;</span>: {
+      <span class="hljs-attr">&quot;channelType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;csid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;lane&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    },
+    <span class="hljs-attr">&quot;logs&quot;</span>: [
+      <span class="hljs-string">&quot;string&quot;</span>
+    ],
+    <span class="hljs-attr">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;messageIdExt&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;messageIdRef&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;replyId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;replyIdExt&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;sender&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;stamps&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+    <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;tags&quot;</span>: {
+      <span class="hljs-attr">&quot;categories&quot;</span>: [
+        <span class="hljs-string">&quot;string&quot;</span>
+      ],
+      <span class="hljs-attr">&quot;cities&quot;</span>: [
+        <span class="hljs-string">&quot;string&quot;</span>
+      ],
+      <span class="hljs-attr">&quot;countries&quot;</span>: [
+        <span class="hljs-string">&quot;string&quot;</span>
+      ],
+      <span class="hljs-attr">&quot;langs&quot;</span>: [
+        <span class="hljs-string">&quot;string&quot;</span>
+      ],
+      <span class="hljs-attr">&quot;locations&quot;</span>: [
+        <span class="hljs-string">&quot;string&quot;</span>
+      ],
+      <span class="hljs-attr">&quot;organizations&quot;</span>: [
+        <span class="hljs-string">&quot;string&quot;</span>
+      ],
+      <span class="hljs-attr">&quot;persons&quot;</span>: [
+        <span class="hljs-string">&quot;string&quot;</span>
+      ],
+      <span class="hljs-attr">&quot;sentimentScore&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+      <span class="hljs-attr">&quot;sentiments&quot;</span>: [
+        <span class="hljs-string">&quot;string&quot;</span>
+      ]
+    },
+    <span class="hljs-attr">&quot;template&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;templateId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-string">&quot;integer (int64)&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;details&quot;</span>: [
+    <span class="hljs-string">&quot;object&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;error&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;codeKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;codes&quot;</span>: [
+        <span class="hljs-string">&quot;string&quot;</span>
+      ],
+      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;descriptionKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;field&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;obzect&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;exception&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;extra&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-attr">&quot;logs&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;This is success message in plain english&quot;</span>,
+  <span class="hljs-attr">&quot;messageKey&quot;</span>: <span class="hljs-string">&quot;MESSAGE_SUCCESS:MOBILE:12&quot;</span>,
+  <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-attr">&quot;params&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/postman/email/send&quot;</span>,
+  <span class="hljs-attr">&quot;redirectUrl&quot;</span>: <span class="hljs-string">&quot;/go/to/some/other/url.html&quot;</span>,
+  <span class="hljs-attr">&quot;results&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;action&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;attachments&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;mediaCaption&quot;</span>: <span class="hljs-string">&quot;Transaction Receipt&quot;</span>,
+          <span class="hljs-attr">&quot;mediaId&quot;</span>: <span class="hljs-number">12</span>,
+          <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
+          <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
+          <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
+          <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
+          <span class="hljs-attr">&quot;mediaURL&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>
+        }
+      ],
+      <span class="hljs-attr">&quot;bulkSessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;contact&quot;</span>: {
+        <span class="hljs-attr">&quot;channelType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;csid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;lane&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
+      <span class="hljs-attr">&quot;logs&quot;</span>: [
+        <span class="hljs-string">&quot;string&quot;</span>
+      ],
+      <span class="hljs-attr">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;messageIdExt&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;messageIdRef&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;replyId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;replyIdExt&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;sender&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;stamps&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;tags&quot;</span>: {
+        <span class="hljs-attr">&quot;categories&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;cities&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;countries&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;langs&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;locations&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;organizations&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;persons&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;sentimentScore&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+        <span class="hljs-attr">&quot;sentiments&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ]
+      },
+      <span class="hljs-attr">&quot;template&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;templateId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-string">&quot;integer (int64)&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-attr">&quot;statusKey&quot;</span>: <span class="hljs-string">&quot;SUCCESS&quot;</span>,
+  <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-number">1541276788518</span>,
+  <span class="hljs-attr">&quot;traceid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;warningKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;warnings&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;codeKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;codes&quot;</span>: [
+        <span class="hljs-string">&quot;string&quot;</span>
+      ],
+      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;descriptionKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;field&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;obzect&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <h1 id="tag-Webhooks" class="swagger-summary-tag" data-traverse-target="tag-Webhooks">Webhooks</h1>
+          <div class="tag-description doc-row">
+            <div class="doc-copy">
+              <p>Webhooks can be used for:</p>
+              <ul>
+                <li>Inbound Message Notifications: Use it to get a notification you when you have received a message.</li>
+                <li>Message Status Notifications: Monitor the status of sent messages. Webhook must be implemented by client and should be available on public internet</li>
+              </ul>
             </div>
           </div>
           <div id="operation--api-v1-action-event-post" class="operation panel" data-traverse-target="operation--api-v1-action-event-post">
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-InBound-Callbacks">InBound Callbacks</a>
+              <a class="label" href="#tag-Webhooks">Webhooks</a>
               <!---->
             </div>
             <!-- </div> -->
             <!-- </section> -->
             <h2 class="operation-title">
-              <span class="operation-summary">onActionCallback</span>
+              <span class="operation-summary">Receiving Events</span>
             </h2>
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-path">
                   <span class="operation-method">POST</span>
                   <span class="operation-path">/api/v1/action/event</span>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description">
+                  <p>Action Callback : Use it to get a notification when agent clicks on any action in AgentPanel</p>
                 </section>
               </div>
             </div>
@@ -785,19 +1619,26 @@
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-InBound-Callbacks">InBound Callbacks</a>
+              <a class="label" href="#tag-Webhooks">Webhooks</a>
               <!---->
             </div>
             <!-- </div> -->
             <!-- </section> -->
             <h2 class="operation-title">
-              <span class="operation-summary">onProfileCallback</span>
+              <span class="operation-summary">Contact Information</span>
             </h2>
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-path">
                   <span class="operation-method">POST</span>
                   <span class="operation-path">/api/v1/contact/info</span>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description">
+                  <p>Inbound Message Notifications: Use it to get a notification when you have received a message.</p>
                 </section>
               </div>
             </div>
@@ -952,19 +1793,26 @@
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-InBound-Callbacks">InBound Callbacks</a>
+              <a class="label" href="#tag-Webhooks">Webhooks</a>
               <!---->
             </div>
             <!-- </div> -->
             <!-- </section> -->
             <h2 class="operation-title">
-              <span class="operation-summary">onMessageCallback</span>
+              <span class="operation-summary">Receiving Messages</span>
             </h2>
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-path">
                   <span class="operation-method">POST</span>
                   <span class="operation-path">/api/v1/message/receive</span>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description">
+                  <p>Inbound Message Notifications: Use it to get a notification when you have received a message.</p>
                 </section>
               </div>
             </div>
@@ -1303,574 +2151,10 @@
               </div>
             </div>
           </div>
-          <h1 id="tag-OutBound-Messages" class="swagger-summary-tag" data-traverse-target="tag-OutBound-Messages">OutBound Messages</h1>
+          <h1 id="tag-XMS-ViewConroller" class="swagger-summary-tag" data-traverse-target="tag-XMS-ViewConroller">XMS ViewConroller</h1>
           <div class="tag-description doc-row">
             <div class="doc-copy">
-              <p>API&#39;s to send OutBound Messages</p>
-            </div>
-          </div>
-          <div id="operation--api-v1-message-send-post" class="operation panel" data-traverse-target="operation--api-v1-message-send-post">
-            <!-- <section class="operation-tags row"> -->
-            <!-- <div class="doc-copy"> -->
-            <div class="operation-tags">
-              <a class="label" href="#tag-OutBound-Messages">OutBound Messages</a>
-              <!---->
-            </div>
-            <!-- </div> -->
-            <!-- </section> -->
-            <h2 class="operation-title">
-              <span class="operation-summary">Send Message</span>
-            </h2>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-operation-path">
-                  <span class="operation-method">POST</span>
-                  <span class="operation-path">/api/v1/message/send</span>
-                </section>
-              </div>
-            </div>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-operation-description">
-                  <p>This API can be used to Send Message</p>
-                </section>
-              </div>
-            </div>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-request-body">
-                  <div class="prop-row">
-                    <div class="prop-name">
-                      <div class="swagger-request-model">
-                        <span class="">
-                          <a class="json-schema-ref" href="#/definitions/OutBoundMsg">OutBoundMsg</a>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="prop-value columns small-6">
-                      <!-- <div class="swagger-request-description"> -->
-                      <p>message</p>
-                      <!-- </div> -->
-                    </div>
-                  </div>
-                </section>
-                <section class="swagger-request-params">
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">x-api-key:
-                        <span class="prop-type">
-                          <span class="json-property-type">string</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">thisduMmykEy4maTD0NTUsEit</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in header </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>API Key</p>
-                    </div>
-                  </div>
-                </section>
-              </div>
-              <div class="doc-examples">
-                <section>
-                  <h5>Request Content-Types:
-                    <span>application/json</span>
-                  </h5>
-                  <h5>Request Example</h5>
-                  <!-- <div class="hljs"> -->
-                  <html>
-                  <head></head>
-                  <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">&quot;audio&quot;</span>: {
-    <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;your-video-caption&quot;</span>,
-    <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;your-video-caption&quot;</span>,
-    <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://the-url&quot;</span>
-  },
-  <span class="hljs-attr">&quot;channelId&quot;</span>: <span class="hljs-string">&quot;91SERVICENUMBER&quot;</span>,
-  <span class="hljs-attr">&quot;document&quot;</span>: {
-    <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;your-video-caption&quot;</span>,
-    <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;your-video-caption&quot;</span>,
-    <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://the-url&quot;</span>
-  },
-  <span class="hljs-attr">&quot;image&quot;</span>: {
-    <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;your-video-caption&quot;</span>,
-    <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;your-video-caption&quot;</span>,
-    <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://the-url&quot;</span>
-  },
-  <span class="hljs-attr">&quot;mask&quot;</span>: <span class="hljs-literal">false</span>,
-  <span class="hljs-attr">&quot;template&quot;</span>: {
-    <span class="hljs-attr">&quot;data&quot;</span>: {
-      <span class="hljs-attr">&quot;amount&quot;</span>: <span class="hljs-number">10</span>,
-      <span class="hljs-attr">&quot;currency&quot;</span>: <span class="hljs-string">&quot;INR&quot;</span>
-    },
-    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;60d236c6142e53561cb7716c&quot;</span>
-  },
-  <span class="hljs-attr">&quot;text&quot;</span>: {
-    <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>,
-    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
-  },
-  <span class="hljs-attr">&quot;to&quot;</span>: {
-    <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-  },
-  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;text&quot;</span>,
-  <span class="hljs-attr">&quot;video&quot;</span>: {
-    <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;your-video-caption&quot;</span>,
-    <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;your-video-caption&quot;</span>,
-    <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://the-url&quot;</span>
-  }
-}
-</code></pre> </body>
-                  </html>
-                  <!-- </div> -->
-                </section>
-              </div>
-            </div>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-responses">
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">200 OK</div>
-                      <div class="prop-ref">
-                        <span class="">
-                          <a class="json-schema-ref" href="#/definitions/ApiResponse«OutBoundReciept,object»">ApiResponse«OutBoundReciept,object»</a>
-                        </span>
-                      </div>
-                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
-                    </div>
-                    <div class="prop-value">
-                      <p>OK</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">201 Created</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Created</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">401 Unauthorized</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Unauthorized</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">403 Forbidden</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Forbidden</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">404 Not Found</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Not Found</p>
-                    </div>
-                  </div>
-                </section>
-              </div>
-              <div class="doc-examples">
-                <h5>Response Content-Types:
-                  <span>*/*</span>
-                </h5>
-                <section>
-                  <h5>Response Example
-                    <span>(200 OK)</span>
-                  </h5>
-                  <!-- <div class="hljs"> -->
-                  <html>
-                  <head></head>
-                  <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">&quot;data&quot;</span>: {
-    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;gBEGkYiEB1VXAglK1ZEqA1YKPrU&quot;</span>
-  },
-  <span class="hljs-attr">&quot;details&quot;</span>: [
-    <span class="hljs-string">&quot;object&quot;</span>
-  ],
-  <span class="hljs-attr">&quot;error&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;errors&quot;</span>: [
-    {
-      <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;codeKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;codes&quot;</span>: [
-        <span class="hljs-string">&quot;string&quot;</span>
-      ],
-      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;descriptionKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;field&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;obzect&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-    }
-  ],
-  <span class="hljs-attr">&quot;exception&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;extra&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-  <span class="hljs-attr">&quot;logs&quot;</span>: [
-    <span class="hljs-string">&quot;string&quot;</span>
-  ],
-  <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;This is success message in plain english&quot;</span>,
-  <span class="hljs-attr">&quot;messageKey&quot;</span>: <span class="hljs-string">&quot;MESSAGE_SUCCESS:MOBILE:12&quot;</span>,
-  <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-  <span class="hljs-attr">&quot;params&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-  <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/postman/email/send&quot;</span>,
-  <span class="hljs-attr">&quot;redirectUrl&quot;</span>: <span class="hljs-string">&quot;/go/to/some/other/url.html&quot;</span>,
-  <span class="hljs-attr">&quot;results&quot;</span>: [
-    {
-      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;gBEGkYiEB1VXAglK1ZEqA1YKPrU&quot;</span>
-    }
-  ],
-  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-number">200</span>,
-  <span class="hljs-attr">&quot;statusKey&quot;</span>: <span class="hljs-string">&quot;SUCCESS&quot;</span>,
-  <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-number">1541276788518</span>,
-  <span class="hljs-attr">&quot;traceid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;warningKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;warnings&quot;</span>: [
-    {
-      <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;codeKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;codes&quot;</span>: [
-        <span class="hljs-string">&quot;string&quot;</span>
-      ],
-      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;descriptionKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;field&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;obzect&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-    }
-  ]
-}
-</code></pre> </body>
-                  </html>
-                  <!-- </div> -->
-                </section>
-              </div>
-            </div>
-          </div>
-          <h1 id="tag-Session-APIs" class="swagger-summary-tag" data-traverse-target="tag-Session-APIs">Session APIs</h1>
-          <div class="tag-description doc-row">
-            <div class="doc-copy">
-              <p>API&#39;s for Session Management</p>
-            </div>
-          </div>
-          <div id="operation--api-v1-session-messages-get" class="operation panel" data-traverse-target="operation--api-v1-session-messages-get">
-            <!-- <section class="operation-tags row"> -->
-            <!-- <div class="doc-copy"> -->
-            <div class="operation-tags">
-              <a class="label" href="#tag-Session-APIs">Session APIs</a>
-              <!---->
-            </div>
-            <!-- </div> -->
-            <!-- </section> -->
-            <h2 class="operation-title">
-              <span class="operation-summary">Read all messages for a session</span>
-            </h2>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-operation-path">
-                  <span class="operation-method">GET</span>
-                  <span class="operation-path">/api/v1/session/messages</span>
-                </section>
-              </div>
-            </div>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-request-params">
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">sessionId:
-                        <span class="prop-type">
-                          <span class="json-property-type">string</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                        </span>
-                      </div>
-                      <span class="json-property-required"></span>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>sessionId</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">x-api-key:
-                        <span class="prop-type">
-                          <span class="json-property-type">string</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">thisduMmykEy4maTD0NTUsEit</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in header </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>API Key</p>
-                    </div>
-                  </div>
-                </section>
-              </div>
-              <div class="doc-examples"></div>
-            </div>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-responses">
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">200 OK</div>
-                      <div class="prop-ref">
-                        <span class="">
-                          <a class="json-schema-ref" href="#/definitions/ApiResponse«ChatMessageDTO,object»">ApiResponse«ChatMessageDTO,object»</a>
-                        </span>
-                      </div>
-                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
-                    </div>
-                    <div class="prop-value">
-                      <p>OK</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">401 Unauthorized</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Unauthorized</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">403 Forbidden</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Forbidden</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">404 Not Found</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Not Found</p>
-                    </div>
-                  </div>
-                </section>
-              </div>
-              <div class="doc-examples">
-                <h5>Response Content-Types:
-                  <span>*/*</span>
-                </h5>
-                <section>
-                  <h5>Response Example
-                    <span>(200 OK)</span>
-                  </h5>
-                  <!-- <div class="hljs"> -->
-                  <html>
-                  <head></head>
-                  <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">&quot;data&quot;</span>: {
-    <span class="hljs-attr">&quot;action&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;attachments&quot;</span>: [
-      {
-        <span class="hljs-attr">&quot;mediaCaption&quot;</span>: <span class="hljs-string">&quot;Transaction Receipt&quot;</span>,
-        <span class="hljs-attr">&quot;mediaId&quot;</span>: <span class="hljs-number">12</span>,
-        <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
-        <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
-        <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
-        <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
-        <span class="hljs-attr">&quot;mediaURL&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>
-      }
-    ],
-    <span class="hljs-attr">&quot;bulkSessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;contact&quot;</span>: {
-      <span class="hljs-attr">&quot;channelType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;csid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;lane&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-    },
-    <span class="hljs-attr">&quot;logs&quot;</span>: [
-      <span class="hljs-string">&quot;string&quot;</span>
-    ],
-    <span class="hljs-attr">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;messageIdExt&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;messageIdRef&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;replyId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;replyIdExt&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;sender&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;stamps&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-    <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;tags&quot;</span>: {
-      <span class="hljs-attr">&quot;categories&quot;</span>: [
-        <span class="hljs-string">&quot;string&quot;</span>
-      ],
-      <span class="hljs-attr">&quot;cities&quot;</span>: [
-        <span class="hljs-string">&quot;string&quot;</span>
-      ],
-      <span class="hljs-attr">&quot;countries&quot;</span>: [
-        <span class="hljs-string">&quot;string&quot;</span>
-      ],
-      <span class="hljs-attr">&quot;langs&quot;</span>: [
-        <span class="hljs-string">&quot;string&quot;</span>
-      ],
-      <span class="hljs-attr">&quot;locations&quot;</span>: [
-        <span class="hljs-string">&quot;string&quot;</span>
-      ],
-      <span class="hljs-attr">&quot;organizations&quot;</span>: [
-        <span class="hljs-string">&quot;string&quot;</span>
-      ],
-      <span class="hljs-attr">&quot;persons&quot;</span>: [
-        <span class="hljs-string">&quot;string&quot;</span>
-      ],
-      <span class="hljs-attr">&quot;sentimentScore&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
-      <span class="hljs-attr">&quot;sentiments&quot;</span>: [
-        <span class="hljs-string">&quot;string&quot;</span>
-      ]
-    },
-    <span class="hljs-attr">&quot;template&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;templateId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-string">&quot;integer (int64)&quot;</span>,
-    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-  },
-  <span class="hljs-attr">&quot;details&quot;</span>: [
-    <span class="hljs-string">&quot;object&quot;</span>
-  ],
-  <span class="hljs-attr">&quot;error&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;errors&quot;</span>: [
-    {
-      <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;codeKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;codes&quot;</span>: [
-        <span class="hljs-string">&quot;string&quot;</span>
-      ],
-      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;descriptionKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;field&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;obzect&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-    }
-  ],
-  <span class="hljs-attr">&quot;exception&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;extra&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-  <span class="hljs-attr">&quot;logs&quot;</span>: [
-    <span class="hljs-string">&quot;string&quot;</span>
-  ],
-  <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;This is success message in plain english&quot;</span>,
-  <span class="hljs-attr">&quot;messageKey&quot;</span>: <span class="hljs-string">&quot;MESSAGE_SUCCESS:MOBILE:12&quot;</span>,
-  <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-  <span class="hljs-attr">&quot;params&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-  <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/postman/email/send&quot;</span>,
-  <span class="hljs-attr">&quot;redirectUrl&quot;</span>: <span class="hljs-string">&quot;/go/to/some/other/url.html&quot;</span>,
-  <span class="hljs-attr">&quot;results&quot;</span>: [
-    {
-      <span class="hljs-attr">&quot;action&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;attachments&quot;</span>: [
-        {
-          <span class="hljs-attr">&quot;mediaCaption&quot;</span>: <span class="hljs-string">&quot;Transaction Receipt&quot;</span>,
-          <span class="hljs-attr">&quot;mediaId&quot;</span>: <span class="hljs-number">12</span>,
-          <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
-          <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
-          <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
-          <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
-          <span class="hljs-attr">&quot;mediaURL&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>
-        }
-      ],
-      <span class="hljs-attr">&quot;bulkSessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;contact&quot;</span>: {
-        <span class="hljs-attr">&quot;channelType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-        <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-        <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-        <span class="hljs-attr">&quot;csid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-        <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-        <span class="hljs-attr">&quot;lane&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-        <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-      },
-      <span class="hljs-attr">&quot;logs&quot;</span>: [
-        <span class="hljs-string">&quot;string&quot;</span>
-      ],
-      <span class="hljs-attr">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;messageIdExt&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;messageIdRef&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;replyId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;replyIdExt&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;sender&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;stamps&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-      <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;tags&quot;</span>: {
-        <span class="hljs-attr">&quot;categories&quot;</span>: [
-          <span class="hljs-string">&quot;string&quot;</span>
-        ],
-        <span class="hljs-attr">&quot;cities&quot;</span>: [
-          <span class="hljs-string">&quot;string&quot;</span>
-        ],
-        <span class="hljs-attr">&quot;countries&quot;</span>: [
-          <span class="hljs-string">&quot;string&quot;</span>
-        ],
-        <span class="hljs-attr">&quot;langs&quot;</span>: [
-          <span class="hljs-string">&quot;string&quot;</span>
-        ],
-        <span class="hljs-attr">&quot;locations&quot;</span>: [
-          <span class="hljs-string">&quot;string&quot;</span>
-        ],
-        <span class="hljs-attr">&quot;organizations&quot;</span>: [
-          <span class="hljs-string">&quot;string&quot;</span>
-        ],
-        <span class="hljs-attr">&quot;persons&quot;</span>: [
-          <span class="hljs-string">&quot;string&quot;</span>
-        ],
-        <span class="hljs-attr">&quot;sentimentScore&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
-        <span class="hljs-attr">&quot;sentiments&quot;</span>: [
-          <span class="hljs-string">&quot;string&quot;</span>
-        ]
-      },
-      <span class="hljs-attr">&quot;template&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;templateId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;text&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-string">&quot;integer (int64)&quot;</span>,
-      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-    }
-  ],
-  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-number">200</span>,
-  <span class="hljs-attr">&quot;statusKey&quot;</span>: <span class="hljs-string">&quot;SUCCESS&quot;</span>,
-  <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-number">1541276788518</span>,
-  <span class="hljs-attr">&quot;traceid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;warningKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;warnings&quot;</span>: [
-    {
-      <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;codeKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;codes&quot;</span>: [
-        <span class="hljs-string">&quot;string&quot;</span>
-      ],
-      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;descriptionKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;field&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;obzect&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-    }
-  ]
-}
-</code></pre> </body>
-                  </html>
-                  <!-- </div> -->
-                </section>
-              </div>
+              <p>API&#39;s for Messaging</p>
             </div>
           </div>
           <h1>Schema Definitions</h1>
