@@ -25,10 +25,10 @@ The Sandbox is pre-provisioned with a MeherY phone number (+91 88282 18374) that
 
 To send or receive WhatsApp messages to an end user from the Sandbox, you must first have any user proxy the Sandbox.
 
-First, send the message "/proxy <your domain>" to your Sandbox number in WhatsApp to join your sandbox.
+First, send the message **"/proxy <your domain>"** to your Sandbox number in WhatsApp to join your sandbox.
 
 When MeherY receives the proxy message, we will reply with a confirmation to that user that they have joined the Sandbox.
 
-Upon joining your sandbox, end users will only receive messages from your specific sandbox. To disconnect from the Sandbox, they can reply to the message from WhatsApp with the word "/unproxy  <your domain>". You can switch to a different Sandbox by messaging "/proxy <other domain>".
+Upon joining your sandbox, end users will only receive messages from your specific sandbox. To disconnect from the Sandbox, they can reply to the message from WhatsApp with the word **"/unproxy  <your domain>"**. You can switch to a different Sandbox by messaging **"/proxy <other domain>"**.
 
-> *Please note that the Sandbox expires 24 hours after joining. After this time, you should re-join to continue testing.*
+> *Please note that the **Sandbox expires 24 hours after joining**. After this time, you should re-join to continue testing.*
