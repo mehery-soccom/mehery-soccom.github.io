@@ -19,7 +19,7 @@ The MeherY Sandbox for WhatsApp is a pre-configured environment available to you
 
 The Sandbox is pre-provisioned with a MeherY phone number (+91 88282 18374) that is shared across all sandbox users. However, other users who share the same sandbox number won't receive your messages, only the ones who have opted in to your sandbox.
 
-> Please be aware that the MeherY Sandbox for WhatsApp is meant for **testing and discovery purposes only**. It should not be used for production.
+> *Please be aware that the MeherY Sandbox for WhatsApp is meant for **testing and discovery purposes only**. It should not be used for production.*
 
 ## How to proxy a MeherY Sandbox
 
@@ -31,4 +31,4 @@ When MeherY receives the proxy message, we will reply with a confirmation to tha
 
 Upon joining your sandbox, end users will only receive messages from your specific sandbox. To disconnect from the Sandbox, they can reply to the message from WhatsApp with the word "/unproxy  <your domain>". You can switch to a different Sandbox by messaging "/proxy <other domain>".
 
-Please note that the Sandbox expires 24 hours after joining. After this time, you should re-join to continue testing.
+> *Please note that the Sandbox expires 24 hours after joining. After this time, you should re-join to continue testing.*
