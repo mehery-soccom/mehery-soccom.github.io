@@ -1,6 +1,10 @@
 mkdir -p server-xms 
 #cd server-xms
-curl -GET https://app.mehery.io/xms/v2/api-docs -o server-xms/api-docs.json
+mkdir -p temp/ssl
+echo "HEAD / HTTP/1.0\n Host: api.mehery.io\n\n EOT\n" | openssl s_client -prexit -connect demo.mehery.io:443 > temp/ssl/cert.pem
+#curl --cacert ssl/cert.pem https://api.mehery.io/xms/v2/api-docs?group=latest
+curl --cacert temp/ssl/cert.pem https://api.mehery.io/xms/v2/api-docs?group=latest -o server-xms/api-docs.json
+
 node bin/spectacle  server-xms/api-docs.json -t server-xms/public -f index.html 
 
 widdershins --summary server-xms/api-docs.json -o reslate/source/index.md
