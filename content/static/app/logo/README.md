@@ -1,0 +1,9 @@
+```.properties
+mry.prop.logo.bg-x-logo-w=${mry.prop.cdn-server}/brand/bg-x-logo-w.png
+mry.prop.logo.bg-x-logo-b=${mry.prop.cdn-server}/brand/bg-x-logo-b.png
+mry.prop.logo.bg-x-icon-w=${mry.prop.cdn-server}/brand/bg-x-icon-w.png
+mry.prop.logo.bg-x-icon=${mry.prop.cdn-server}/brand/bg-x-icon.png
+mry.prop.logo.bg-w-logo-b=${mry.prop.cdn-server}/brand/bg-w-logo-b.png
+mry.prop.logo.bg-w-logo=${mry.prop.cdn-server}/brand/bg-w-logo.png
+mry.prop.logo.bg-b-logo-w=${mry.prop.cdn-server}/brand/bg-b-logo-w.png
+```
