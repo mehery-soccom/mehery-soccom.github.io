@@ -46,9 +46,6 @@
             <a href="#tag-Inbound-Requests">Inbound Requests</a>
             <ul>
               <li>
-                <a href="#operation--api-v1-action-event-post"> Receiving Events </a>
-              </li>
-              <li>
                 <a href="#operation--api-v1-contact-info-post"> Contact Information </a>
               </li>
               <li>
@@ -101,6 +98,7 @@
           <a href="#definition-InBoundAction"> InBoundAction </a>
           <a href="#definition-InBoundContact"> InBoundContact </a>
           <a href="#definition-InBoundContactProfile"> InBoundContactProfile </a>
+          <a href="#definition-InBoundMeta"> InBoundMeta </a>
           <a href="#definition-InBoundMsg"> InBoundMsg </a>
           <a href="#definition-InBoundMsgMedia"> InBoundMsgMedia </a>
           <a href="#definition-InBoundWrapper"> InBoundWrapper </a>
@@ -148,7 +146,7 @@
                     <a href="Terms of service">Terms of service</a>
                   </h5>
                   <h5>Version:
-                    <span>1.0 - 2022-01-18 15:12</span>
+                    <span>1.0 - 2022-01-19 08:40</span>
                   </h5>
                 </section>
               </div>
@@ -889,159 +887,6 @@
               </ul>
             </div>
           </div>
-          <div id="operation--api-v1-action-event-post" class="operation panel" data-traverse-target="operation--api-v1-action-event-post">
-            <!-- <section class="operation-tags row"> -->
-            <!-- <div class="doc-copy"> -->
-            <div class="operation-tags">
-              <a class="label" href="#tag-Inbound-Requests">Inbound Requests</a>
-              <!---->
-            </div>
-            <!-- </div> -->
-            <!-- </section> -->
-            <h2 class="operation-title">
-              <span class="operation-summary">Receiving Events</span>
-            </h2>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-operation-path">
-                  <span class="operation-method">POST</span>
-                  <span class="operation-path">/api/v1/action/event</span>
-                </section>
-              </div>
-            </div>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-operation-description">
-                  <p>Action Callback : Use it to get a notification when agent clicks on any action in AgentPanel</p>
-                </section>
-              </div>
-            </div>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-request-body">
-                  <div class="prop-row">
-                    <div class="prop-name">
-                      <div class="swagger-request-model">
-                        <span class="">
-                          <a class="json-schema-ref" href="#/definitions/InBoundAction">InBoundAction</a>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="prop-value columns small-6">
-                      <!-- <div class="swagger-request-description"> -->
-                      <p>actionInfo</p>
-                      <!-- </div> -->
-                    </div>
-                  </div>
-                </section>
-                <section class="swagger-request-params">
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">x-verify-token:
-                        <span class="prop-type">
-                          <span class="json-property-type">string</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">s1agenttoken$$$</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in header </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Callback Verification Token</p>
-                    </div>
-                  </div>
-                </section>
-              </div>
-              <div class="doc-examples">
-                <section>
-                  <h5>Request Content-Types:
-                    <span>application/json</span>
-                  </h5>
-                  <h5>Request Example</h5>
-                  <!-- <div class="hljs"> -->
-                  <html>
-                  <head></head>
-                  <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">&quot;actionCode&quot;</span>: <span class="hljs-string">&quot;SEND_INVOICE&quot;</span>
-}
-</code></pre> </body>
-                  </html>
-                  <!-- </div> -->
-                </section>
-              </div>
-            </div>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-responses">
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">200 OK</div>
-                      <div class="prop-ref">
-                        <span class="">
-                          <a class="json-schema-ref" href="#/definitions/InBoundAction">InBoundAction</a>
-                        </span>
-                      </div>
-                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
-                    </div>
-                    <div class="prop-value">
-                      <p>OK</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">201 Created</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Created</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">401 Unauthorized</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Unauthorized</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">403 Forbidden</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Forbidden</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">404 Not Found</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Not Found</p>
-                    </div>
-                  </div>
-                </section>
-              </div>
-              <div class="doc-examples">
-                <h5>Response Content-Types:
-                  <span>*/*</span>
-                </h5>
-                <section>
-                  <h5>Response Example
-                    <span>(200 OK)</span>
-                  </h5>
-                  <!-- <div class="hljs"> -->
-                  <html>
-                  <head></head>
-                  <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">&quot;actionCode&quot;</span>: <span class="hljs-string">&quot;SEND_INVOICE&quot;</span>
-}
-</code></pre> </body>
-                  </html>
-                  <!-- </div> -->
-                </section>
-              </div>
-            </div>
-          </div>
           <div id="operation--api-v1-contact-info-post" class="operation panel" data-traverse-target="operation--api-v1-contact-info-post">
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
@@ -1319,7 +1164,7 @@
         <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
         <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
       },
-      <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;WA919988776655&quot;</span>,
+      <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;wa919988776655_918828218374&quot;</span>,
       <span class="hljs-attr">&quot;document&quot;</span>: {
         <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
         <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
@@ -1406,7 +1251,15 @@
       }
     }
   ],
-  <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>
+  <span class="hljs-attr">&quot;meta&quot;</span>: {
+    <span class="hljs-attr">&quot;domain&quot;</span>: <span class="hljs-string">&quot;alex&quot;</span>,
+    <span class="hljs-attr">&quot;server&quot;</span>: <span class="hljs-string">&quot;server.com&quot;</span>
+  },
+  <span class="hljs-attr">&quot;statuses&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;actionCode&quot;</span>: <span class="hljs-string">&quot;SEND_INVOICE&quot;</span>
+    }
+  ]
 }
 </code></pre> </body>
                   </html>
@@ -1486,7 +1339,7 @@
     <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
     <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
   },
-  <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;WA919988776655&quot;</span>,
+  <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;wa919988776655_918828218374&quot;</span>,
   <span class="hljs-attr">&quot;document&quot;</span>: {
     <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
     <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
@@ -6251,6 +6104,59 @@
               </div>
             </div>
           </div>
+          <div id="definition-InBoundMeta" class="definition panel" data-traverse-target="definition-InBoundMeta">
+            <h2 class="panel-title">
+              <a name="/definitions/InBoundMeta"></a>InBoundMeta: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="domain" class="has-description">
+                      <span class="json-property-name">domain:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>your domain name</p>
+                      <small>undefined</small>
+                    </dd>
+                    <dt data-property-name="server" class="has-description">
+                      <span class="json-property-name">server:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Server as per Enviroment</p>
+                      <small>undefined</small>
+                    </dd>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;domain&quot;</span>: <span class="hljs-string">&quot;alex&quot;</span>,
+  <span class="hljs-attr">&quot;server&quot;</span>: <span class="hljs-string">&quot;server.com&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
           <div id="definition-InBoundMsg" class="definition panel" data-traverse-target="definition-InBoundMsg">
             <h2 class="panel-title">
               <a name="/definitions/InBoundMsg"></a>InBoundMsg: object
@@ -6458,7 +6364,7 @@
     <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
     <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
   },
-  <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;WA919988776655&quot;</span>,
+  <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;wa919988776655_918828218374&quot;</span>,
   <span class="hljs-attr">&quot;document&quot;</span>: {
     <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
     <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
@@ -6735,9 +6641,34 @@
                     </dt>
                     <dt data-property-name="meta">
                       <span class="json-property-name">meta:</span>
-                      <span class="json-property-type">object</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/InBoundMeta">InBoundMeta</a>
+                        </span>
+                      </span>
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="statuses">
+                      <span class="json-property-name">statuses:</span>
+                      <span class="json-property-type">
+                        <span class="json-schema-ref-array">
+                          <a class="json-schema-ref" href="#/definitions/InBoundAction">InBoundAction</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">
+                          <span class="">
+                            <a class="json-schema-ref" href="#/definitions/InBoundAction">InBoundAction</a>
+                          </span>
+                        </span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
                     </dt>
                   </dl>
                 </section>
@@ -6779,7 +6710,7 @@
         <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
         <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
       },
-      <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;WA919988776655&quot;</span>,
+      <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;wa919988776655_918828218374&quot;</span>,
       <span class="hljs-attr">&quot;document&quot;</span>: {
         <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
         <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
@@ -6866,7 +6797,15 @@
       }
     }
   ],
-  <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>
+  <span class="hljs-attr">&quot;meta&quot;</span>: {
+    <span class="hljs-attr">&quot;domain&quot;</span>: <span class="hljs-string">&quot;alex&quot;</span>,
+    <span class="hljs-attr">&quot;server&quot;</span>: <span class="hljs-string">&quot;server.com&quot;</span>
+  },
+  <span class="hljs-attr">&quot;statuses&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;actionCode&quot;</span>: <span class="hljs-string">&quot;SEND_INVOICE&quot;</span>
+    }
+  ]
 }
 </code></pre> </body>
                   </html>
