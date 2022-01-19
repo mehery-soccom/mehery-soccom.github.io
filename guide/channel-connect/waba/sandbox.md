@@ -17,7 +17,7 @@ During the migration process, a few errors might occur. Here is how to solve the
 
 The MeherY Sandbox for WhatsApp is a pre-configured environment available to your domain in which you can prototype sending outbound messages, replying to incoming messages, and configuring things like message delivery callbacks. While you wait for your WhatsApp Business Profile to be connected with your phone number, it's a quick way to test out the functionality of the WhatsApp Business API with MeherY.
 
-The Sandbox is pre-provisioned with a MeherY phone number (+91 88282 18374) that is shared across all sandbox users. However, other users who share the same sandbox number won't receive your messages, only the ones who have opted in to your sandbox.
+The Sandbox is pre-provisioned with a MeherY phone number (+91 8689909204) that is shared across all sandbox users. However, other users who share the same sandbox number won't receive your messages, only the ones who have opted in to your sandbox.
 
 > *Please be aware that the MeherY Sandbox for WhatsApp is meant for **testing and discovery purposes only**. It should not be used for production.*
 
