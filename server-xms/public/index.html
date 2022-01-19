@@ -101,6 +101,7 @@
           <a href="#definition-InBoundMeta"> InBoundMeta </a>
           <a href="#definition-InBoundMsg"> InBoundMsg </a>
           <a href="#definition-InBoundMsgMedia"> InBoundMsgMedia </a>
+          <a href="#definition-InBoundMsgStatusError"> InBoundMsgStatusError </a>
           <a href="#definition-InBoundWrapper"> InBoundWrapper </a>
           <a href="#definition-Map-string-object-"> Map«string,object» </a>
           <a href="#definition-Map-string-string-"> Map«string,string» </a>
@@ -146,7 +147,7 @@
                     <a href="Terms of service">Terms of service</a>
                   </h5>
                   <h5>Version:
-                    <span>1.0 - 2022-01-19 08:40</span>
+                    <span>1.0 - 2022-01-19 09:30</span>
                   </h5>
                 </section>
               </div>
@@ -1257,7 +1258,10 @@
   },
   <span class="hljs-attr">&quot;statuses&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;actionCode&quot;</span>: <span class="hljs-string">&quot;SEND_INVOICE&quot;</span>
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-number">470</span>,
+      <span class="hljs-attr">&quot;details&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;https://developers.facebook.com/docs/whatsapp/api/errors#error&quot;</span>,
+      <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;Failed to send message because you are outside the support window for freeform messages to this user. Please use a valid HSM notification or reconsider.&quot;</span>
     }
   ]
 }
@@ -6563,6 +6567,79 @@
               </div>
             </div>
           </div>
+          <div id="definition-InBoundMsgStatusError" class="definition panel" data-traverse-target="definition-InBoundMsgStatusError">
+            <h2 class="panel-title">
+              <a name="/definitions/InBoundMsgStatusError"></a>InBoundMsgStatusError: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="code" class="has-description">
+                      <span class="json-property-name">code:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Error code.</p>
+                      <small>undefined</small>
+                    </dd>
+                    <dt data-property-name="details" class="has-description">
+                      <span class="json-property-name">details:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Error details provided, if available/applicable</p>
+                      <small>undefined</small>
+                    </dd>
+                    <dt data-property-name="href" class="has-description">
+                      <span class="json-property-name">href:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Location for error detail</p>
+                      <small>undefined</small>
+                    </dd>
+                    <dt data-property-name="title" class="has-description">
+                      <span class="json-property-name">title:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Error code</p>
+                      <small>undefined</small>
+                    </dd>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-number">470</span>,
+  <span class="hljs-attr">&quot;details&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;https://developers.facebook.com/docs/whatsapp/api/errors#error&quot;</span>,
+  <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;Failed to send message because you are outside the support window for freeform messages to this user. Please use a valid HSM notification or reconsider.&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
           <div id="definition-InBoundWrapper" class="definition panel" data-traverse-target="definition-InBoundWrapper">
             <h2 class="panel-title">
               <a name="/definitions/InBoundWrapper"></a>InBoundWrapper: object
@@ -6653,7 +6730,7 @@
                       <span class="json-property-name">statuses:</span>
                       <span class="json-property-type">
                         <span class="json-schema-ref-array">
-                          <a class="json-schema-ref" href="#/definitions/InBoundAction">InBoundAction</a>
+                          <a class="json-schema-ref" href="#/definitions/InBoundMsgStatusError">InBoundMsgStatusError</a>
                         </span>
                       </span>
                       <span class="json-property-range" title="Value limits"></span>
@@ -6663,7 +6740,7 @@
                       <section class="json-schema-array-items">
                         <span class="json-property-type">
                           <span class="">
-                            <a class="json-schema-ref" href="#/definitions/InBoundAction">InBoundAction</a>
+                            <a class="json-schema-ref" href="#/definitions/InBoundMsgStatusError">InBoundMsgStatusError</a>
                           </span>
                         </span>
                         <span class="json-property-range" title="Value limits"></span>
@@ -6803,7 +6880,10 @@
   },
   <span class="hljs-attr">&quot;statuses&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;actionCode&quot;</span>: <span class="hljs-string">&quot;SEND_INVOICE&quot;</span>
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-number">470</span>,
+      <span class="hljs-attr">&quot;details&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;https://developers.facebook.com/docs/whatsapp/api/errors#error&quot;</span>,
+      <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;Failed to send message because you are outside the support window for freeform messages to this user. Please use a valid HSM notification or reconsider.&quot;</span>
     }
   ]
 }
