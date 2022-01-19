@@ -101,6 +101,7 @@
           <a href="#definition-InBoundMeta"> InBoundMeta </a>
           <a href="#definition-InBoundMsg"> InBoundMsg </a>
           <a href="#definition-InBoundMsgMedia"> InBoundMsgMedia </a>
+          <a href="#definition-InBoundMsgStatus"> InBoundMsgStatus </a>
           <a href="#definition-InBoundMsgStatusError"> InBoundMsgStatusError </a>
           <a href="#definition-InBoundWrapper"> InBoundWrapper </a>
           <a href="#definition-Map-string-object-"> Map«string,object» </a>
@@ -147,7 +148,7 @@
                     <a href="Terms of service">Terms of service</a>
                   </h5>
                   <h5>Version:
-                    <span>1.0 - 2022-01-19 09:30</span>
+                    <span>1.0 - 2022-01-19 11:30</span>
                   </h5>
                 </section>
               </div>
@@ -1258,10 +1259,19 @@
   },
   <span class="hljs-attr">&quot;statuses&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-number">470</span>,
-      <span class="hljs-attr">&quot;details&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;https://developers.facebook.com/docs/whatsapp/api/errors#error&quot;</span>,
-      <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;Failed to send message because you are outside the support window for freeform messages to this user. Please use a valid HSM notification or reconsider.&quot;</span>
+      <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;wa919988776655_918828218374&quot;</span>,
+      <span class="hljs-attr">&quot;errors&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-number">470</span>,
+          <span class="hljs-attr">&quot;details&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;https://developers.facebook.com/docs/whatsapp/api/errors#error&quot;</span>,
+          <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;Failed to send message because you are outside the support window for freeform messages to this user. Please use a valid HSM notification or reconsider.&quot;</span>
+        }
+      ],
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">1234567</span>,
+      <span class="hljs-attr">&quot;messageIdExt&quot;</span>: <span class="hljs-number">1234567</span>,
+      <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;DLVRD&quot;</span>,
+      <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-number">156753339076</span>
     }
   ]
 }
@@ -6567,6 +6577,129 @@
               </div>
             </div>
           </div>
+          <div id="definition-InBoundMsgStatus" class="definition panel" data-traverse-target="definition-InBoundMsgStatus">
+            <h2 class="panel-title">
+              <a name="/definitions/InBoundMsgStatus"></a>InBoundMsgStatus: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="contactId" class="has-description">
+                      <span class="json-property-name">contactId:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Unique Contact Id of user</p>
+                      <small>undefined</small>
+                    </dd>
+                    <dt data-property-name="errors">
+                      <span class="json-property-name">errors:</span>
+                      <span class="json-property-type">
+                        <span class="json-schema-ref-array">
+                          <a class="json-schema-ref" href="#/definitions/InBoundMsgStatusError">InBoundMsgStatusError</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">
+                          <span class="">
+                            <a class="json-schema-ref" href="#/definitions/InBoundMsgStatusError">InBoundMsgStatusError</a>
+                          </span>
+                        </span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                    <dt data-property-name="id" class="has-description">
+                      <span class="json-property-name">id:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Unique Message Id assigined by Service</p>
+                      <small>undefined</small>
+                    </dd>
+                    <dt data-property-name="messageIdExt" class="has-description">
+                      <span class="json-property-name">messageIdExt:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Unique Message Id assigined by Channel if any</p>
+                      <small>undefined</small>
+                    </dd>
+                    <dt data-property-name="status" class="has-description">
+                      <span class="json-property-name">status:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-enum" title="Possible values">
+                        <span class="json-property-enum-item">READ</span>,
+                        <span class="json-property-enum-item">DLVRD</span>,
+                        <span class="json-property-enum-item">SENT</span>,
+                        <span class="json-property-enum-item">FAILD</span>,
+                        <span class="json-property-enum-item">DELTD</span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>latest status shortcode of message</p>
+                      <small>undefined</small>
+                    </dd>
+                    <dt data-property-name="timestamp" class="has-description">
+                      <span class="json-property-name">timestamp:</span>
+                      <span class="json-property-type">integer</span>
+                      <span class="json-property-format">(int64)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>message-timestamp</p>
+                      <small>undefined</small>
+                    </dd>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;wa919988776655_918828218374&quot;</span>,
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-number">470</span>,
+      <span class="hljs-attr">&quot;details&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;https://developers.facebook.com/docs/whatsapp/api/errors#error&quot;</span>,
+      <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;Failed to send message because you are outside the support window for freeform messages to this user. Please use a valid HSM notification or reconsider.&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">1234567</span>,
+  <span class="hljs-attr">&quot;messageIdExt&quot;</span>: <span class="hljs-number">1234567</span>,
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;DLVRD&quot;</span>,
+  <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-number">156753339076</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
           <div id="definition-InBoundMsgStatusError" class="definition panel" data-traverse-target="definition-InBoundMsgStatusError">
             <h2 class="panel-title">
               <a name="/definitions/InBoundMsgStatusError"></a>InBoundMsgStatusError: object
@@ -6730,7 +6863,7 @@
                       <span class="json-property-name">statuses:</span>
                       <span class="json-property-type">
                         <span class="json-schema-ref-array">
-                          <a class="json-schema-ref" href="#/definitions/InBoundMsgStatusError">InBoundMsgStatusError</a>
+                          <a class="json-schema-ref" href="#/definitions/InBoundMsgStatus">InBoundMsgStatus</a>
                         </span>
                       </span>
                       <span class="json-property-range" title="Value limits"></span>
@@ -6740,7 +6873,7 @@
                       <section class="json-schema-array-items">
                         <span class="json-property-type">
                           <span class="">
-                            <a class="json-schema-ref" href="#/definitions/InBoundMsgStatusError">InBoundMsgStatusError</a>
+                            <a class="json-schema-ref" href="#/definitions/InBoundMsgStatus">InBoundMsgStatus</a>
                           </span>
                         </span>
                         <span class="json-property-range" title="Value limits"></span>
@@ -6880,10 +7013,19 @@
   },
   <span class="hljs-attr">&quot;statuses&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-number">470</span>,
-      <span class="hljs-attr">&quot;details&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;https://developers.facebook.com/docs/whatsapp/api/errors#error&quot;</span>,
-      <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;Failed to send message because you are outside the support window for freeform messages to this user. Please use a valid HSM notification or reconsider.&quot;</span>
+      <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;wa919988776655_918828218374&quot;</span>,
+      <span class="hljs-attr">&quot;errors&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-number">470</span>,
+          <span class="hljs-attr">&quot;details&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;https://developers.facebook.com/docs/whatsapp/api/errors#error&quot;</span>,
+          <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;Failed to send message because you are outside the support window for freeform messages to this user. Please use a valid HSM notification or reconsider.&quot;</span>
+        }
+      ],
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">1234567</span>,
+      <span class="hljs-attr">&quot;messageIdExt&quot;</span>: <span class="hljs-number">1234567</span>,
+      <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;DLVRD&quot;</span>,
+      <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-number">156753339076</span>
     }
   ]
 }
