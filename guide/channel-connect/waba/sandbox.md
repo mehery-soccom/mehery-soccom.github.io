@@ -32,3 +32,6 @@ When MeherY receives the proxy message, we will reply with a confirmation to tha
 Upon joining your sandbox, end users will only receive messages from your specific sandbox. To disconnect from the Sandbox, they can reply to the message from WhatsApp with the word **"/unproxy  <your domain>"**. You can switch to a different Sandbox by messaging **"/proxy <other domain>"**.
 
 > *Please note that the **Sandbox expires 24 hours after joining**. After this time, you should re-join to continue testing.*
+  
+ ## Test API's with sample code
+ * [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/tame-neon-chestnut)
