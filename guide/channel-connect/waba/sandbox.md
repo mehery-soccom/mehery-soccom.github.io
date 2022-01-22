@@ -25,7 +25,7 @@ The Sandbox is pre-provisioned with a MeherY phone number (+91 8689909204) that 
 
 To send or receive WhatsApp messages to an end user from the Sandbox, you must first have any user proxy the Sandbox.
 
-First, send the message **"/proxy <your domain>"** to your Sandbox number in WhatsApp to join your sandbox.
+First, send the message **/proxy <your domain>** to your Sandbox number in WhatsApp to join your sandbox.
 
 When MeherY receives the proxy message, we will reply with a confirmation to that user that they have joined the Sandbox.
 
