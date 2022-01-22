@@ -33,5 +33,5 @@ Upon joining your sandbox, end users will only receive messages from your specif
 
 > *Please note that the **Sandbox expires 24 hours after joining**. After this time, you should re-join to continue testing.*
   
- ## Test API's with sample code
+## Test API's with sample code
  * [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/tame-neon-chestnut)
