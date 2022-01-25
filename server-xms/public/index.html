@@ -27,6 +27,9 @@
             <a href="#tag-Config-APIs">Config APIs</a>
             <ul>
               <li>
+                <a href="#operation--api-v1-config-channels-post"> Get Channels </a>
+              </li>
+              <li>
                 <a href="#operation--api-v1-config-webhook-post"> Set Webhook URL </a>
               </li>
             </ul>
@@ -81,12 +84,12 @@
           <a href="#definition-ApiResponse-DigitalObjectDto-object-"> ApiResponse«DigitalObjectDto,object» </a>
           <a href="#definition-ApiResponse-OutBoundReciept-object-"> ApiResponse«OutBoundReciept,object» </a>
           <a href="#definition-ApiResponse-OutboxMessage-object-"> ApiResponse«OutboxMessage,object» </a>
-          <a href="#definition-ApiResponse-PMConfigurationObject-object-"> ApiResponse«PMConfigurationObject,object» </a>
+          <a href="#definition-ApiResultsMetaCompactResponse-MsgChannel-object-"> ApiResultsMetaCompactResponse«MsgChannel,object» </a>
+          <a href="#definition-ApiResultsMetaCompactResponse-PMConfigurationObject-object-"> ApiResultsMetaCompactResponse«PMConfigurationObject,object» </a>
           <a href="#definition-Attachment"> Attachment </a>
           <a href="#definition-BasicExternalTemplate"> BasicExternalTemplate </a>
           <a href="#definition-ChatMessageDTO"> ChatMessageDTO </a>
           <a href="#definition-CommonMsgLocation"> CommonMsgLocation </a>
-          <a href="#definition-CommonMsgText"> CommonMsgText </a>
           <a href="#definition-CommonTemplate"> CommonTemplate </a>
           <a href="#definition-ContactInfoUpdate"> ContactInfoUpdate </a>
           <a href="#definition-ContactMeta"> ContactMeta </a>
@@ -102,15 +105,18 @@
           <a href="#definition-InBoundMsg"> InBoundMsg </a>
           <a href="#definition-InBoundMsgMedia"> InBoundMsgMedia </a>
           <a href="#definition-InBoundMsgStatus"> InBoundMsgStatus </a>
-          <a href="#definition-InBoundMsgStatusError"> InBoundMsgStatusError </a>
+          <a href="#definition-InBoundMsgText"> InBoundMsgText </a>
           <a href="#definition-InBoundWrapper"> InBoundWrapper </a>
           <a href="#definition-Map-string-object-"> Map«string,object» </a>
           <a href="#definition-Map-string-string-"> Map«string,string» </a>
+          <a href="#definition-MessageReportError"> MessageReportError </a>
           <a href="#definition-MessageSession"> MessageSession </a>
+          <a href="#definition-MsgChannel"> MsgChannel </a>
           <a href="#definition-MsgSession"> MsgSession </a>
           <a href="#definition-OutBoundContact"> OutBoundContact </a>
           <a href="#definition-OutBoundMsg"> OutBoundMsg </a>
           <a href="#definition-OutBoundMsgMedia"> OutBoundMsgMedia </a>
+          <a href="#definition-OutBoundMsgText"> OutBoundMsgText </a>
           <a href="#definition-OutBoundReciept"> OutBoundReciept </a>
           <a href="#definition-OutboxMessage"> OutboxMessage </a>
           <a href="#definition-PMConfigurationObject"> PMConfigurationObject </a>
@@ -148,7 +154,7 @@
                     <a href="Terms of service">Terms of service</a>
                   </h5>
                   <h5>Version:
-                    <span>1.0 - 2022-01-19 11:30</span>
+                    <span>1.0 - 2022-01-24 10:14</span>
                   </h5>
                 </section>
               </div>
@@ -192,6 +198,156 @@
               <p>API&#39;s for configuration management</p>
             </div>
           </div>
+          <div id="operation--api-v1-config-channels-post" class="operation panel" data-traverse-target="operation--api-v1-config-channels-post">
+            <!-- <section class="operation-tags row"> -->
+            <!-- <div class="doc-copy"> -->
+            <div class="operation-tags">
+              <a class="label" href="#tag-Config-APIs">Config APIs</a>
+              <!---->
+            </div>
+            <!-- </div> -->
+            <!-- </section> -->
+            <h2 class="operation-title">
+              <span class="operation-summary">Get Channels</span>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-path">
+                  <span class="operation-method">POST</span>
+                  <span class="operation-path">/api/v1/config/channels</span>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description">
+                  <p>List of all the configured channelsPass sandbox=true if you want sandbox channels also to be part of list</p>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-params">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">sabdnox:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">false</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>sabdnox</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">x-api-key:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">thisduMmykEy4maTD0NTUsEit</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in header </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>API Key</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples"></div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-responses">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">200 OK</div>
+                      <div class="prop-ref">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/ApiResultsMetaCompactResponse«MsgChannel,object»">ApiResultsMetaCompactResponse«MsgChannel,object»</a>
+                        </span>
+                      </div>
+                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
+                    </div>
+                    <div class="prop-value">
+                      <p>OK</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">201 Created</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Created</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">401 Unauthorized</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Unauthorized</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">403 Forbidden</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Forbidden</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">404 Not Found</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Not Found</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <h5>Response Content-Types:
+                  <span>*/*</span>
+                </h5>
+                <section>
+                  <h5>Response Example
+                    <span>(200 OK)</span>
+                  </h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;This is success message in plain english&quot;</span>,
+  <span class="hljs-attr">&quot;messageKey&quot;</span>: <span class="hljs-string">&quot;MESSAGE_SUCCESS:MOBILE:12&quot;</span>,
+  <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-attr">&quot;results&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;channelId&quot;</span>: <span class="hljs-string">&quot;wa360:918828218374&quot;</span>,
+      <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;WHATSAPP&quot;</span>,
+      <span class="hljs-attr">&quot;lane&quot;</span>: <span class="hljs-number">919999998888</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Customer Support&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-attr">&quot;statusKey&quot;</span>: <span class="hljs-string">&quot;SUCCESS&quot;</span>,
+  <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-number">1541276788518</span>,
+  <span class="hljs-attr">&quot;traceid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
           <div id="operation--api-v1-config-webhook-post" class="operation panel" data-traverse-target="operation--api-v1-config-webhook-post">
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
@@ -215,7 +371,7 @@
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-description">
-                  <p>You must configure a callback (webhook URL) to receive messages. To deploy a live webhook that can receive webhook events, your code must have the following* HTTPS support* A valid SSL certificate</p>
+                  <p>You must configure a callback (Webhook URL) to receive messages. To deploy a live webhook that can receive webhook events, your code must have the following* HTTPS support* A valid SSL certificate</p>
                 </section>
               </div>
             </div>
@@ -281,7 +437,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/definitions/ApiResponse«PMConfigurationObject,object»">ApiResponse«PMConfigurationObject,object»</a>
+                          <a class="json-schema-ref" href="#/definitions/ApiResultsMetaCompactResponse«PMConfigurationObject,object»">ApiResultsMetaCompactResponse«PMConfigurationObject,object»</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -336,41 +492,9 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">&quot;data&quot;</span>: {
-    <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;key&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;shared&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
-    <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>
-  },
-  <span class="hljs-attr">&quot;details&quot;</span>: [
-    <span class="hljs-string">&quot;object&quot;</span>
-  ],
-  <span class="hljs-attr">&quot;error&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;errors&quot;</span>: [
-    {
-      <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;codeKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;codes&quot;</span>: [
-        <span class="hljs-string">&quot;string&quot;</span>
-      ],
-      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;descriptionKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;field&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;obzect&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-    }
-  ],
-  <span class="hljs-attr">&quot;exception&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;extra&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-  <span class="hljs-attr">&quot;logs&quot;</span>: [
-    <span class="hljs-string">&quot;string&quot;</span>
-  ],
   <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;This is success message in plain english&quot;</span>,
   <span class="hljs-attr">&quot;messageKey&quot;</span>: <span class="hljs-string">&quot;MESSAGE_SUCCESS:MOBILE:12&quot;</span>,
   <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-  <span class="hljs-attr">&quot;params&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-  <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/postman/email/send&quot;</span>,
-  <span class="hljs-attr">&quot;redirectUrl&quot;</span>: <span class="hljs-string">&quot;/go/to/some/other/url.html&quot;</span>,
   <span class="hljs-attr">&quot;results&quot;</span>: [
     {
       <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -382,22 +506,7 @@
   <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-number">200</span>,
   <span class="hljs-attr">&quot;statusKey&quot;</span>: <span class="hljs-string">&quot;SUCCESS&quot;</span>,
   <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-number">1541276788518</span>,
-  <span class="hljs-attr">&quot;traceid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;warningKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;warnings&quot;</span>: [
-    {
-      <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;codeKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;codes&quot;</span>: [
-        <span class="hljs-string">&quot;string&quot;</span>
-      ],
-      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;descriptionKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;field&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;obzect&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-    }
-  ]
+  <span class="hljs-attr">&quot;traceid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
 }
 </code></pre> </body>
                   </html>
@@ -962,6 +1071,7 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;channelId&quot;</span>: <span class="hljs-string">&quot;wa360:919988776655&quot;</span>,
   <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-number">1234567</span>,
   <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;WHATSAPP&quot;</span>,
   <span class="hljs-attr">&quot;csid&quot;</span>: <span class="hljs-string">&quot;91YOURNUMBER&quot;</span>,
@@ -1143,6 +1253,7 @@
   ],
   <span class="hljs-attr">&quot;contacts&quot;</span>: [
     {
+      <span class="hljs-attr">&quot;channelId&quot;</span>: <span class="hljs-string">&quot;wa360:919988776655&quot;</span>,
       <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-number">1234567</span>,
       <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;WHATSAPP&quot;</span>,
       <span class="hljs-attr">&quot;csid&quot;</span>: <span class="hljs-string">&quot;91YOURNUMBER&quot;</span>,
@@ -1550,8 +1661,7 @@
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;60d236c6142e53561cb7716c&quot;</span>
   },
   <span class="hljs-attr">&quot;text&quot;</span>: {
-    <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>,
-    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+    <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>
   },
   <span class="hljs-attr">&quot;to&quot;</span>: {
     <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -4168,9 +4278,9 @@
               </div>
             </div>
           </div>
-          <div id="definition-ApiResponse-PMConfigurationObject-object-" class="definition panel" data-traverse-target="definition-ApiResponse-PMConfigurationObject-object-">
+          <div id="definition-ApiResultsMetaCompactResponse-MsgChannel-object-" class="definition panel" data-traverse-target="definition-ApiResultsMetaCompactResponse-MsgChannel-object-">
             <h2 class="panel-title">
-              <a name="/definitions/ApiResponse«PMConfigurationObject,object»"></a>ApiResponse«PMConfigurationObject,object»: object
+              <a name="/definitions/ApiResultsMetaCompactResponse«MsgChannel,object»"></a>ApiResultsMetaCompactResponse«MsgChannel,object»: object
               <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
@@ -4181,81 +4291,6 @@
               <div class="doc-copy">
                 <section class="json-schema-properties">
                   <dl>
-                    <dt data-property-name="data">
-                      <span class="json-property-name">data:</span>
-                      <span class="json-property-type">
-                        <span class="">
-                          <a class="json-schema-ref" href="#/definitions/PMConfigurationObject">PMConfigurationObject</a>
-                        </span>
-                      </span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-required"></span>
-                    </dt>
-                    <dt data-property-name="details">
-                      <span class="json-property-name">details:</span>
-                      <span class="json-property-type">object[]</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-required"></span>
-                    </dt>
-                    <dt class="json-inner-schema">
-                      <section class="json-schema-array-items">
-                        <span class="json-property-type">object</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <div class="json-inner-schema"> </div>
-                      </section>
-                    </dt>
-                    <dt data-property-name="error">
-                      <span class="json-property-name">error:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-required"></span>
-                    </dt>
-                    <dt data-property-name="errors">
-                      <span class="json-property-name">errors:</span>
-                      <span class="json-property-type">
-                        <span class="json-schema-ref-array">
-                          <a class="json-schema-ref" href="#/definitions/ApiFieldError">ApiFieldError</a>
-                        </span>
-                      </span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-required"></span>
-                    </dt>
-                    <dt class="json-inner-schema">
-                      <section class="json-schema-array-items">
-                        <span class="json-property-type">
-                          <span class="">
-                            <a class="json-schema-ref" href="#/definitions/ApiFieldError">ApiFieldError</a>
-                          </span>
-                        </span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <div class="json-inner-schema"> </div>
-                      </section>
-                    </dt>
-                    <dt data-property-name="exception">
-                      <span class="json-property-name">exception:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-required"></span>
-                    </dt>
-                    <dt data-property-name="extra">
-                      <span class="json-property-name">extra:</span>
-                      <span class="json-property-type">object</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-required"></span>
-                    </dt>
-                    <dt data-property-name="logs">
-                      <span class="json-property-name">logs:</span>
-                      <span class="json-property-type">string[]</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-required"></span>
-                    </dt>
-                    <dt class="json-inner-schema">
-                      <section class="json-schema-array-items">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <div class="json-inner-schema"> </div>
-                      </section>
-                    </dt>
                     <dt data-property-name="message">
                       <span class="json-property-name">message:</span>
                       <span class="json-property-type">string</span>
@@ -4274,21 +4309,113 @@
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
-                    <dt data-property-name="params">
-                      <span class="json-property-name">params:</span>
+                    <dt data-property-name="results">
+                      <span class="json-property-name">results:</span>
+                      <span class="json-property-type">
+                        <span class="json-schema-ref-array">
+                          <a class="json-schema-ref" href="#/definitions/MsgChannel">MsgChannel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">
+                          <span class="">
+                            <a class="json-schema-ref" href="#/definitions/MsgChannel">MsgChannel</a>
+                          </span>
+                        </span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                    <dt data-property-name="status">
+                      <span class="json-property-name">status:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="statusKey">
+                      <span class="json-property-name">statusKey:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="timestamp">
+                      <span class="json-property-name">timestamp:</span>
+                      <span class="json-property-type">integer</span>
+                      <span class="json-property-format">(int64)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="traceid">
+                      <span class="json-property-name">traceid:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;This is success message in plain english&quot;</span>,
+  <span class="hljs-attr">&quot;messageKey&quot;</span>: <span class="hljs-string">&quot;MESSAGE_SUCCESS:MOBILE:12&quot;</span>,
+  <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-attr">&quot;results&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;channelId&quot;</span>: <span class="hljs-string">&quot;wa360:918828218374&quot;</span>,
+      <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;WHATSAPP&quot;</span>,
+      <span class="hljs-attr">&quot;lane&quot;</span>: <span class="hljs-number">919999998888</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Customer Support&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-attr">&quot;statusKey&quot;</span>: <span class="hljs-string">&quot;SUCCESS&quot;</span>,
+  <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-number">1541276788518</span>,
+  <span class="hljs-attr">&quot;traceid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-ApiResultsMetaCompactResponse-PMConfigurationObject-object-" class="definition panel" data-traverse-target="definition-ApiResultsMetaCompactResponse-PMConfigurationObject-object-">
+            <h2 class="panel-title">
+              <a name="/definitions/ApiResultsMetaCompactResponse«PMConfigurationObject,object»"></a>ApiResultsMetaCompactResponse«PMConfigurationObject,object»: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="message">
+                      <span class="json-property-name">message:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="messageKey">
+                      <span class="json-property-name">messageKey:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="meta">
+                      <span class="json-property-name">meta:</span>
                       <span class="json-property-type">object</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-required"></span>
-                    </dt>
-                    <dt data-property-name="path">
-                      <span class="json-property-name">path:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-required"></span>
-                    </dt>
-                    <dt data-property-name="redirectUrl">
-                      <span class="json-property-name">redirectUrl:</span>
-                      <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
@@ -4338,33 +4465,6 @@
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
-                    <dt data-property-name="warningKey">
-                      <span class="json-property-name">warningKey:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-required"></span>
-                    </dt>
-                    <dt data-property-name="warnings">
-                      <span class="json-property-name">warnings:</span>
-                      <span class="json-property-type">
-                        <span class="json-schema-ref-array">
-                          <a class="json-schema-ref" href="#/definitions/ApiFieldError">ApiFieldError</a>
-                        </span>
-                      </span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-required"></span>
-                    </dt>
-                    <dt class="json-inner-schema">
-                      <section class="json-schema-array-items">
-                        <span class="json-property-type">
-                          <span class="">
-                            <a class="json-schema-ref" href="#/definitions/ApiFieldError">ApiFieldError</a>
-                          </span>
-                        </span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <div class="json-inner-schema"> </div>
-                      </section>
-                    </dt>
                   </dl>
                 </section>
               </div>
@@ -4375,41 +4475,9 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">&quot;data&quot;</span>: {
-    <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;key&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;shared&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
-    <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>
-  },
-  <span class="hljs-attr">&quot;details&quot;</span>: [
-    <span class="hljs-string">&quot;object&quot;</span>
-  ],
-  <span class="hljs-attr">&quot;error&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;errors&quot;</span>: [
-    {
-      <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;codeKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;codes&quot;</span>: [
-        <span class="hljs-string">&quot;string&quot;</span>
-      ],
-      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;descriptionKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;field&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;obzect&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-    }
-  ],
-  <span class="hljs-attr">&quot;exception&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;extra&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-  <span class="hljs-attr">&quot;logs&quot;</span>: [
-    <span class="hljs-string">&quot;string&quot;</span>
-  ],
   <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;This is success message in plain english&quot;</span>,
   <span class="hljs-attr">&quot;messageKey&quot;</span>: <span class="hljs-string">&quot;MESSAGE_SUCCESS:MOBILE:12&quot;</span>,
   <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-  <span class="hljs-attr">&quot;params&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-  <span class="hljs-attr">&quot;path&quot;</span>: <span class="hljs-string">&quot;/postman/email/send&quot;</span>,
-  <span class="hljs-attr">&quot;redirectUrl&quot;</span>: <span class="hljs-string">&quot;/go/to/some/other/url.html&quot;</span>,
   <span class="hljs-attr">&quot;results&quot;</span>: [
     {
       <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -4421,22 +4489,7 @@
   <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-number">200</span>,
   <span class="hljs-attr">&quot;statusKey&quot;</span>: <span class="hljs-string">&quot;SUCCESS&quot;</span>,
   <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-number">1541276788518</span>,
-  <span class="hljs-attr">&quot;traceid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;warningKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;warnings&quot;</span>: [
-    {
-      <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;codeKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;codes&quot;</span>: [
-        <span class="hljs-string">&quot;string&quot;</span>
-      ],
-      <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;descriptionKey&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;field&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;obzect&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-    }
-  ]
+  <span class="hljs-attr">&quot;traceid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
 }
 </code></pre> </body>
                   </html>
@@ -4935,59 +4988,6 @@
   <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">12.90909</span>,
   <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">6.90808</span>,
   <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Main Building&quot;</span>
-}
-</code></pre> </body>
-                  </html>
-                  <!-- </div> -->
-                </section>
-              </div>
-            </div>
-          </div>
-          <div id="definition-CommonMsgText" class="definition panel" data-traverse-target="definition-CommonMsgText">
-            <h2 class="panel-title">
-              <a name="/definitions/CommonMsgText"></a>CommonMsgText: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
-              <span class="json-property-range" title="Value limits"></span>
-              
-              
-              </span> -->
-            </h2>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="json-schema-properties">
-                  <dl>
-                    <dt data-property-name="body" class="has-description">
-                      <span class="json-property-name">body:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-required"></span>
-                    </dt>
-                    <dd>
-                      <p>Message Text</p>
-                      <small>Contains the text of the message, which can contain URLs and formatting.</small>
-                    </dd>
-                    <dt data-property-name="type" class="has-description">
-                      <span class="json-property-name">type:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-required"></span>
-                    </dt>
-                    <dd>
-                      <p>Message Type</p>
-                      <small>undefined</small>
-                    </dd>
-                  </dl>
-                </section>
-              </div>
-              <div class="doc-examples">
-                <section>
-                  <h5>Example</h5>
-                  <!-- <div class="hljs"> -->
-                  <html>
-                  <head></head>
-                  <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>,
-  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
 }
 </code></pre> </body>
                   </html>
@@ -5958,6 +5958,16 @@
               <div class="doc-copy">
                 <section class="json-schema-properties">
                   <dl>
+                    <dt data-property-name="channelId" class="has-description">
+                      <span class="json-property-name">channelId:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Channel for message</p>
+                      <small>undefined</small>
+                    </dd>
                     <dt data-property-name="contactId" class="has-description">
                       <span class="json-property-name">contactId:</span>
                       <span class="json-property-type">string</span>
@@ -6039,6 +6049,7 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;channelId&quot;</span>: <span class="hljs-string">&quot;wa360:919988776655&quot;</span>,
   <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-number">1234567</span>,
   <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;WHATSAPP&quot;</span>,
   <span class="hljs-attr">&quot;csid&quot;</span>: <span class="hljs-string">&quot;91YOURNUMBER&quot;</span>,
@@ -6302,7 +6313,7 @@
                       <span class="json-property-name">text:</span>
                       <span class="json-property-type">
                         <span class="">
-                          <a class="json-schema-ref" href="#/definitions/CommonMsgText">CommonMsgText</a>
+                          <a class="json-schema-ref" href="#/definitions/InBoundMsgText">InBoundMsgText</a>
                         </span>
                       </span>
                       <span class="json-property-range" title="Value limits"></span>
@@ -6604,7 +6615,7 @@
                       <span class="json-property-name">errors:</span>
                       <span class="json-property-type">
                         <span class="json-schema-ref-array">
-                          <a class="json-schema-ref" href="#/definitions/InBoundMsgStatusError">InBoundMsgStatusError</a>
+                          <a class="json-schema-ref" href="#/definitions/MessageReportError">MessageReportError</a>
                         </span>
                       </span>
                       <span class="json-property-range" title="Value limits"></span>
@@ -6614,7 +6625,7 @@
                       <section class="json-schema-array-items">
                         <span class="json-property-type">
                           <span class="">
-                            <a class="json-schema-ref" href="#/definitions/InBoundMsgStatusError">InBoundMsgStatusError</a>
+                            <a class="json-schema-ref" href="#/definitions/MessageReportError">MessageReportError</a>
                           </span>
                         </span>
                         <span class="json-property-range" title="Value limits"></span>
@@ -6700,9 +6711,9 @@
               </div>
             </div>
           </div>
-          <div id="definition-InBoundMsgStatusError" class="definition panel" data-traverse-target="definition-InBoundMsgStatusError">
+          <div id="definition-InBoundMsgText" class="definition panel" data-traverse-target="definition-InBoundMsgText">
             <h2 class="panel-title">
-              <a name="/definitions/InBoundMsgStatusError"></a>InBoundMsgStatusError: object
+              <a name="/definitions/InBoundMsgText"></a>InBoundMsgText: object
               <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
@@ -6713,42 +6724,24 @@
               <div class="doc-copy">
                 <section class="json-schema-properties">
                   <dl>
-                    <dt data-property-name="code" class="has-description">
-                      <span class="json-property-name">code:</span>
+                    <dt data-property-name="body" class="has-description">
+                      <span class="json-property-name">body:</span>
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
                     <dd>
-                      <p>Error code.</p>
-                      <small>undefined</small>
+                      <p>Message Text</p>
+                      <small>Contains the text of the message, which can contain URLs and formatting.</small>
                     </dd>
-                    <dt data-property-name="details" class="has-description">
-                      <span class="json-property-name">details:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                    <dd>
-                      <p>Error details provided, if available/applicable</p>
-                      <small>undefined</small>
-                    </dd>
-                    <dt data-property-name="href" class="has-description">
-                      <span class="json-property-name">href:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                    <dd>
-                      <p>Location for error detail</p>
-                      <small>undefined</small>
-                    </dd>
-                    <dt data-property-name="title" class="has-description">
-                      <span class="json-property-name">title:</span>
+                    <dt data-property-name="type" class="has-description">
+                      <span class="json-property-name">type:</span>
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
                     <dd>
-                      <p>Error code</p>
+                      <p>Message Type</p>
                       <small>undefined</small>
                     </dd>
                   </dl>
@@ -6761,10 +6754,8 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-number">470</span>,
-  <span class="hljs-attr">&quot;details&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;https://developers.facebook.com/docs/whatsapp/api/errors#error&quot;</span>,
-  <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;Failed to send message because you are outside the support window for freeform messages to this user. Please use a valid HSM notification or reconsider.&quot;</span>
+  <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>,
+  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
 }
 </code></pre> </body>
                   </html>
@@ -6897,6 +6888,7 @@
   ],
   <span class="hljs-attr">&quot;contacts&quot;</span>: [
     {
+      <span class="hljs-attr">&quot;channelId&quot;</span>: <span class="hljs-string">&quot;wa360:919988776655&quot;</span>,
       <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-number">1234567</span>,
       <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;WHATSAPP&quot;</span>,
       <span class="hljs-attr">&quot;csid&quot;</span>: <span class="hljs-string">&quot;91YOURNUMBER&quot;</span>,
@@ -7100,6 +7092,79 @@
               </div>
             </div>
           </div>
+          <div id="definition-MessageReportError" class="definition panel" data-traverse-target="definition-MessageReportError">
+            <h2 class="panel-title">
+              <a name="/definitions/MessageReportError"></a>MessageReportError: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="code" class="has-description">
+                      <span class="json-property-name">code:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Error code.</p>
+                      <small>undefined</small>
+                    </dd>
+                    <dt data-property-name="details" class="has-description">
+                      <span class="json-property-name">details:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Error details provided, if available/applicable</p>
+                      <small>undefined</small>
+                    </dd>
+                    <dt data-property-name="href" class="has-description">
+                      <span class="json-property-name">href:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Location for error detail</p>
+                      <small>undefined</small>
+                    </dd>
+                    <dt data-property-name="title" class="has-description">
+                      <span class="json-property-name">title:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Error code</p>
+                      <small>undefined</small>
+                    </dd>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-number">470</span>,
+  <span class="hljs-attr">&quot;details&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;https://developers.facebook.com/docs/whatsapp/api/errors#error&quot;</span>,
+  <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;Failed to send message because you are outside the support window for freeform messages to this user. Please use a valid HSM notification or reconsider.&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
           <div id="definition-MessageSession" class="definition panel" data-traverse-target="definition-MessageSession">
             <h2 class="panel-title">
               <a name="/definitions/MessageSession"></a>MessageSession: object
@@ -7151,6 +7216,94 @@
   <span class="hljs-attr">&quot;dept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;mode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-MsgChannel" class="definition panel" data-traverse-target="definition-MsgChannel">
+            <h2 class="panel-title">
+              <a name="/definitions/MsgChannel"></a>MsgChannel: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="channelId" class="has-description">
+                      <span class="json-property-name">channelId:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Channel used</p>
+                      <small>undefined</small>
+                    </dd>
+                    <dt data-property-name="contactType" class="has-description">
+                      <span class="json-property-name">contactType:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-enum" title="Possible values">
+                        <span class="json-property-enum-item">SMS</span>,
+                        <span class="json-property-enum-item">EMAIL</span>,
+                        <span class="json-property-enum-item">WHATSAPP</span>,
+                        <span class="json-property-enum-item">PUSH</span>,
+                        <span class="json-property-enum-item">FACEBOOK</span>,
+                        <span class="json-property-enum-item">TELEGRAM</span>,
+                        <span class="json-property-enum-item">WEBSITE</span>,
+                        <span class="json-property-enum-item">TWITTER</span>,
+                        <span class="json-property-enum-item">INSTAGRAM</span>,
+                        <span class="json-property-enum-item">DUMMY</span>,
+                        <span class="json-property-enum-item">EMPTY</span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Contact Type</p>
+                      <small>undefined</small>
+                    </dd>
+                    <dt data-property-name="lane" class="has-description">
+                      <span class="json-property-name">lane:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Contact Used by User while sending messageeg your business number or email address</p>
+                      <small>undefined</small>
+                    </dd>
+                    <dt data-property-name="name" class="has-description">
+                      <span class="json-property-name">name:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Channel name set in configuration</p>
+                      <small>undefined</small>
+                    </dd>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;channelId&quot;</span>: <span class="hljs-string">&quot;wa360:918828218374&quot;</span>,
+  <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;WHATSAPP&quot;</span>,
+  <span class="hljs-attr">&quot;lane&quot;</span>: <span class="hljs-number">919999998888</span>,
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Customer Support&quot;</span>
 }
 </code></pre> </body>
                   </html>
@@ -7360,7 +7513,7 @@
                       <span class="json-property-name">text:</span>
                       <span class="json-property-type">
                         <span class="">
-                          <a class="json-schema-ref" href="#/definitions/CommonMsgText">CommonMsgText</a>
+                          <a class="json-schema-ref" href="#/definitions/OutBoundMsgText">OutBoundMsgText</a>
                         </span>
                       </span>
                       <span class="json-property-range" title="Value limits"></span>
@@ -7447,8 +7600,7 @@
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;60d236c6142e53561cb7716c&quot;</span>
   },
   <span class="hljs-attr">&quot;text&quot;</span>: {
-    <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>,
-    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+    <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>
   },
   <span class="hljs-attr">&quot;to&quot;</span>: {
     <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -7528,6 +7680,48 @@
   <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;your-video-caption&quot;</span>,
   <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;your-video-caption&quot;</span>,
   <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://the-url&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-OutBoundMsgText" class="definition panel" data-traverse-target="definition-OutBoundMsgText">
+            <h2 class="panel-title">
+              <a name="/definitions/OutBoundMsgText"></a>OutBoundMsgText: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="body" class="has-description">
+                      <span class="json-property-name">body:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Message Text</p>
+                      <small>Contains the text of the message, which can contain URLs and formatting.</small>
+                    </dd>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>
 }
 </code></pre> </body>
                   </html>

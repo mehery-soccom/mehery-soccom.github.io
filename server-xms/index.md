@@ -6,9 +6,9 @@ has_children: true
 ---
 # API Documentation
 1. [Generate API keys](#generate-api-keys)
-1. [Authentication](public/index.html)
-1. [InBound API](public/index.html#tag-InBound-Callbacks)
-1. [OutBound API](public/index.html#tag-OutBound-Messages)
+1. [Authentication](public2/index.html)
+1. [InBound API](public2/index.html?shell#messaging-apis-inbound-requests)
+1. [OutBound API](public2/index.html?shell#messaging-apis-outbound-messages)
 
 ## Generate API keys
 1. To interact with MeherY API's you will need to create API keys.
