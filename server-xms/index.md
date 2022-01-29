@@ -13,12 +13,19 @@ has_children: true
 ## Generate API keys
 1. To interact with MeherY API's you will need to create API keys.
 2. To Create API keys login to your **Admin Panel**
-3. Use Left Menu to Navigate to **API Keys**
-  <img width="682" alt="Screenshot 2022-01-11 at 6 04 38 PM" src="https://user-images.githubusercontent.com/5462166/148944156-ca1f2805-9d63-4ef7-a5a3-edea3620791e.png">
-4. Click on **Add Keys** on right top, you will be prompted to name your Key
-  <img width="590" alt="Screenshot 2022-01-11 at 6 05 19 PM" src="https://user-images.githubusercontent.com/5462166/148944522-dbd2541e-5144-4272-87c3-49436878ce92.png">
+3. Use Left Menu to Navigate to **Client Apps**
+  <img width="725" alt="Screenshot 2022-01-29 at 8 09 51 PM" src="https://user-images.githubusercontent.com/5462166/151665159-a7f53012-1d4c-4093-898b-cbc7133f1476.png">
+  
+  
+4. Click on **Create App** on right top, you will be prompted to name your Key
+  <img width="544" alt="Screenshot 2022-01-29 at 8 11 08 PM" src="https://user-images.githubusercontent.com/5462166/151665205-325645db-7a37-4423-a9ec-ffdc7763d39a.png">
 5. Once you enter name you will eb able to see generated API key.
-<img width="681" alt="Screenshot 2022-01-11 at 6 05 25 PM" src="https://user-images.githubusercontent.com/5462166/148944752-3d8accd0-42b9-4d70-a9d2-669492abb6a6.png">
+<img width="596" alt="Screenshot 2022-01-29 at 8 14 20 PM" src="https://user-images.githubusercontent.com/5462166/151665302-7ba41ea6-c0c8-43c9-b34d-791f49c59b79.png">
 6. Copy and store Id and Keys securely, you will not be able to retrieve it later.
 7. For all Apis you can use this _API key_ in header.
+
+
+
+
+
 
