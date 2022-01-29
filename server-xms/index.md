@@ -1,31 +1,41 @@
 ---
 layout: default
 title: API Integration
+description : 
 nav_order: 2
 has_children: true
 ---
 # API Integration
-1. [Generate API keys](#generate-api-keys)
-1. [Authentication](public2/index.html)
-1. [InBound API](public2/index.html?shell#messaging-apis-inbound-requests)
-1. [OutBound API](public2/index.html?shell#messaging-apis-outbound-messages)
+Before you can integrate or access any of our APIs, you must first register a **_domain_** with us and create an App. These documents explain how to create, configure app and how to integrate your application with our multichannel API's.
 
-## Generate API keys
-1. To interact with MeherY API's you will need to create API keys.
-2. To Create API keys login to your **Admin Panel**
-3. Use Left Menu to Navigate to **Client Apps**
-  <img width="725" alt="Screenshot 2022-01-29 at 8 09 51 PM" src="https://user-images.githubusercontent.com/5462166/151665159-a7f53012-1d4c-4093-898b-cbc7133f1476.png">
-  
-  
-4. Click on **Create App** on right top, you will be prompted to provide details about app
-  <img width="544" alt="Screenshot 2022-01-29 at 8 11 08 PM" src="https://user-images.githubusercontent.com/5462166/151665205-325645db-7a37-4423-a9ec-ffdc7763d39a.png">
-5. Once you enter name you will eb able to see generated API key.
-<img width="596" alt="Screenshot 2022-01-29 at 8 14 20 PM" src="https://user-images.githubusercontent.com/5462166/151665302-7ba41ea6-c0c8-43c9-b34d-791f49c59b79.png">
-6. Copy and store Id and Keys securely, you will not be able to retrieve it later.
-7. For all Apis you can use this _API key_ in header.
+### Domain
+Your domain is unique name you get when you register with us. Your team will use it to login.
+If your registered domain is **_abcorp_** then your domain url will be 
+> https://**abcorp**.mehery.com
+
+You will receive your Domain URL when you register your business with MeherY. [Visit to register](https://app.mehery.com/partner/auth/register)
+
+### Base Path
+To interect with our API's you will require _Base Path_ for each resource. Sample base would look like : 
+ >  https://abcorp.mehery.io/xms/
+
+ If you want to send a message using the  _/api/v1/message/send_  endpoint, you must append the endpoint to your base URL then make the POST request. Below is an example of a full POST request to the resource
+ > https://abcorp.mehery.io/xms/api/v1/message/send
 
 
+### Authorization
+Currently, there is only 1 method of authorization available. 
+ * API KEY
 
+Once all of the steps from the setup process are successfully completed, you can create an _Client App_ and generate _Key_. 
 
-
-
+Every request to the needs to be authorized using an API Key authentication. Adding **x-api-key** in the header with your unique API Key as a value will grant access.
+Example for POST request with curl:
+```bash
+curl \
+    -H "x-api-key: {{your-api-key}}" \
+    -X POST \
+    https://<base-url>/xms/api/v1/message/send \
+    -H "Accept: application/json"
+    ...
+```
