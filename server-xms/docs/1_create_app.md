@@ -14,10 +14,11 @@ parent : API Integration
   
 4. Click on **Create App** on right top, you will be prompted to provide details about app
   <img width="544" alt="Screenshot 2022-01-29 at 8 11 08 PM" src="https://user-images.githubusercontent.com/5462166/151665205-325645db-7a37-4423-a9ec-ffdc7763d39a.png">
-5. Once you enter name you will eb able to see generated API key.
+5. To use API's set _AppType_ as **Webhook**  
+6. Enter all details and save to see generated API key.
 <img width="596" alt="Screenshot 2022-01-29 at 8 14 20 PM" src="https://user-images.githubusercontent.com/5462166/151665302-7ba41ea6-c0c8-43c9-b34d-791f49c59b79.png">
-6. Copy and store Id and Keys securely, you will not be able to retrieve it later.
-7. For all Apis you can use this _API key_ in header.
+7. Copy and store Id and Key securely, you will not be able to retrieve it later.
+8. For all Apis you can use this _API key_ in header.
 
 
 
