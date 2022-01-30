@@ -6,7 +6,7 @@ has_children: true
 parent : API Integration
 ---
 # Routing Messages to Queue
-By default all your inbound messages are forward to AgentDesk, or ClientApp configred with __Default Inbound Queue__. 
+By default all your inbound messages are forwarded to AgentDesk or ClientApp configred with __Default Inbound Queue__. 
 To change routing of current session you can use session routing API. [Full Documentation](/server-xms/public2/index.html?shell#session-routing):
 
 ### Switch to External Server
