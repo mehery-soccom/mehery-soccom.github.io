@@ -27,7 +27,7 @@ To interect with our API's you will require _Base Path_ for each resource. Sampl
 Currently, there is only 1 method of authorization available. 
  * API KEY
 
-Once all of the steps from the setup process are successfully completed, you can create an _Client App_ and generate _Key_. 
+Once all of the steps from the setup process are successfully completed, you can create a _Client App_ and generate _Key_. 
 
 Every request to the needs to be authorized using an API Key authentication. Adding **x-api-key** in the header with your unique API Key as a value will grant access.
 Example for POST request with curl:
