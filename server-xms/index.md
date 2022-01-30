@@ -31,9 +31,9 @@ To recieve or send messags you will be required to create a _Client App_. Each c
 Currently, there is only 1 method of authorization available. 
  * API KEY
 
-Once all of the steps from the setup process are successfully completed, you can create a _Client App_ and generate _Key_. 
+Once you can create a _Client App_ you will receive _API Key_. 
 
-Every request to the needs to be authorized using an API Key authentication. Adding **x-api-key** in the header with your unique API Key as a value will grant access.
+Every request to the _Client App_ needs to be authorized using an API Key authentication. Adding **x-api-key** in the header with your unique API Key as a value will grant access.
 Example for POST request with curl:
 ```bash
 curl \
