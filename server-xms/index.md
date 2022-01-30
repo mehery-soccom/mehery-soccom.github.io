@@ -26,6 +26,8 @@ To interect with our API's you will require _Base Path_ for each resource. Sampl
 ### Client App
 To recieve or send messags you will be required to create a _Client App_. Each client app has spepcific _**QUEUE**_ associated with it. When a message is pushed to specific queue, associated app can forward the the message to webhook url configured for it. And using same app's credentials you reply to message or push new message to the queue.
 
+> Channel &rarr; Queue &rarr; ClientApp &rarr; Webhook 
+
 
 ### Authorization
 Currently, there is only 1 method of authorization available. 
