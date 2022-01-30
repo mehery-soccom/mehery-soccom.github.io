@@ -2,7 +2,7 @@
 layout: default
 title: Routing Messages
 nav_order: 4
-has_children: true
+has_children: false
 parent : API Integration
 ---
 # Routing Messages to Queue

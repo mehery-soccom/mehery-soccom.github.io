@@ -2,7 +2,7 @@
 layout: default
 title: Send Messages
 nav_order: 3
-has_children: true
+has_children: false
 parent : API Integration
 ---
 # Sending Messages
