@@ -52,7 +52,7 @@
                 <a href="#operation--api-v1-contact-info-post"> Contact Information </a>
               </li>
               <li>
-                <a href="#operation--api-v1-message-receive-post"> Receiving Messages </a>
+                <a href="#operation--api-v1-message-receive-post"> Receive Notifications </a>
               </li>
             </ul>
           </section>
@@ -71,7 +71,7 @@
                 <a href="#operation--api-v1-session-messages-get"> Session Messages </a>
               </li>
               <li>
-                <a href="#operation--api-v1-session-queue-post"> Session Routing </a>
+                <a href="#operation--api-v1-session-routing-post"> Session Routing </a>
               </li>
             </ul>
           </section>
@@ -161,7 +161,7 @@
                     <a href="Terms of service">Terms of service</a>
                   </h5>
                   <h5>Version:
-                    <span>1.0 - 2022-01-30 15:41</span>
+                    <span>1.0 - 2022-01-30 16:06</span>
                   </h5>
                 </section>
               </div>
@@ -1332,7 +1332,7 @@
             <!-- </div> -->
             <!-- </section> -->
             <h2 class="operation-title">
-              <span class="operation-summary">Receiving Messages</span>
+              <span class="operation-summary">Receive Notifications</span>
             </h2>
             <div class="doc-row">
               <div class="doc-copy">
@@ -1554,7 +1554,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/definitions/InBoundMsg">InBoundMsg</a>
+                          <a class="json-schema-ref" href="#/definitions/InBoundWrapper">InBoundWrapper</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -1609,100 +1609,150 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">&quot;audio&quot;</span>: {
-    <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
-    <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
-    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
-    <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
-    <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
-    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+  <span class="hljs-attr">&quot;actions&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;actionCode&quot;</span>: <span class="hljs-string">&quot;SEND_INVOICE&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;contacts&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;businessProfile&quot;</span>: {
+        <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;abc@xyz.com&quot;</span>,
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;John Doe&quot;</span>,
+        <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-number">919988776655</span>,
+        <span class="hljs-attr">&quot;profileId&quot;</span>: <span class="hljs-string">&quot;C34567&quot;</span>
+      },
+      <span class="hljs-attr">&quot;channelId&quot;</span>: <span class="hljs-string">&quot;wa360:919988776655&quot;</span>,
+      <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-number">1234567</span>,
+      <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;WHATSAPP&quot;</span>,
+      <span class="hljs-attr">&quot;csid&quot;</span>: <span class="hljs-string">&quot;91YOURNUMBER&quot;</span>,
+      <span class="hljs-attr">&quot;lane&quot;</span>: <span class="hljs-number">919999998888</span>,
+      <span class="hljs-attr">&quot;profile&quot;</span>: {
+        <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;abc@xyz.com&quot;</span>,
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;John Doe&quot;</span>,
+        <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-number">919988776655</span>
+      }
+    }
+  ],
+  <span class="hljs-attr">&quot;messages&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;audio&quot;</span>: {
+        <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
+        <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
+        <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
+        <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
+        <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
+        <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+      },
+      <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;wa919988776655_918828218374&quot;</span>,
+      <span class="hljs-attr">&quot;document&quot;</span>: {
+        <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
+        <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
+        <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
+        <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
+        <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
+        <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+      },
+      <span class="hljs-attr">&quot;from&quot;</span>: <span class="hljs-number">919988776655</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">1234567</span>,
+      <span class="hljs-attr">&quot;image&quot;</span>: {
+        <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
+        <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
+        <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
+        <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
+        <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
+        <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+      },
+      <span class="hljs-attr">&quot;location&quot;</span>: {
+        <span class="hljs-attr">&quot;address&quot;</span>: <span class="hljs-string">&quot;1 Hacker Way, Menlo Park, CA, 94025&quot;</span>,
+        <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">12.90909</span>,
+        <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">6.90808</span>,
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Main Building&quot;</span>
+      },
+      <span class="hljs-attr">&quot;messageIdExt&quot;</span>: <span class="hljs-number">1234567</span>,
+      <span class="hljs-attr">&quot;originalMessage&quot;</span>: {},
+      <span class="hljs-attr">&quot;session&quot;</span>: {
+        <span class="hljs-attr">&quot;assignedToAgent&quot;</span>: <span class="hljs-string">&quot;SUPPORT&quot;</span>,
+        <span class="hljs-attr">&quot;assignedToDept&quot;</span>: <span class="hljs-string">&quot;SUPPORT&quot;</span>,
+        <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;xsds34434&quot;</span>
+      },
+      <span class="hljs-attr">&quot;tags&quot;</span>: {
+        <span class="hljs-attr">&quot;categories&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;cities&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;countries&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;langs&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;locations&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;organizations&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;persons&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ],
+        <span class="hljs-attr">&quot;sentimentScore&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+        <span class="hljs-attr">&quot;sentiments&quot;</span>: [
+          <span class="hljs-string">&quot;string&quot;</span>
+        ]
+      },
+      <span class="hljs-attr">&quot;text&quot;</span>: {
+        <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+      },
+      <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-number">156753339076</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;text&quot;</span>,
+      <span class="hljs-attr">&quot;video&quot;</span>: {
+        <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
+        <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
+        <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
+        <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
+        <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
+        <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+      },
+      <span class="hljs-attr">&quot;voice&quot;</span>: {
+        <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
+        <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
+        <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
+        <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
+        <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
+        <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+      }
+    }
+  ],
+  <span class="hljs-attr">&quot;meta&quot;</span>: {
+    <span class="hljs-attr">&quot;domain&quot;</span>: <span class="hljs-string">&quot;alex&quot;</span>,
+    <span class="hljs-attr">&quot;server&quot;</span>: <span class="hljs-string">&quot;server.com&quot;</span>
   },
-  <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;wa919988776655_918828218374&quot;</span>,
-  <span class="hljs-attr">&quot;document&quot;</span>: {
-    <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
-    <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
-    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
-    <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
-    <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
-    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
-  },
-  <span class="hljs-attr">&quot;from&quot;</span>: <span class="hljs-number">919988776655</span>,
-  <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">1234567</span>,
-  <span class="hljs-attr">&quot;image&quot;</span>: {
-    <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
-    <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
-    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
-    <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
-    <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
-    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
-  },
-  <span class="hljs-attr">&quot;location&quot;</span>: {
-    <span class="hljs-attr">&quot;address&quot;</span>: <span class="hljs-string">&quot;1 Hacker Way, Menlo Park, CA, 94025&quot;</span>,
-    <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">12.90909</span>,
-    <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">6.90808</span>,
-    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Main Building&quot;</span>
-  },
-  <span class="hljs-attr">&quot;messageIdExt&quot;</span>: <span class="hljs-number">1234567</span>,
-  <span class="hljs-attr">&quot;originalMessage&quot;</span>: {},
-  <span class="hljs-attr">&quot;session&quot;</span>: {
-    <span class="hljs-attr">&quot;assignedToAgent&quot;</span>: <span class="hljs-string">&quot;SUPPORT&quot;</span>,
-    <span class="hljs-attr">&quot;assignedToDept&quot;</span>: <span class="hljs-string">&quot;SUPPORT&quot;</span>,
-    <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;xsds34434&quot;</span>
-  },
-  <span class="hljs-attr">&quot;tags&quot;</span>: {
-    <span class="hljs-attr">&quot;categories&quot;</span>: [
-      <span class="hljs-string">&quot;string&quot;</span>
-    ],
-    <span class="hljs-attr">&quot;cities&quot;</span>: [
-      <span class="hljs-string">&quot;string&quot;</span>
-    ],
-    <span class="hljs-attr">&quot;countries&quot;</span>: [
-      <span class="hljs-string">&quot;string&quot;</span>
-    ],
-    <span class="hljs-attr">&quot;langs&quot;</span>: [
-      <span class="hljs-string">&quot;string&quot;</span>
-    ],
-    <span class="hljs-attr">&quot;locations&quot;</span>: [
-      <span class="hljs-string">&quot;string&quot;</span>
-    ],
-    <span class="hljs-attr">&quot;organizations&quot;</span>: [
-      <span class="hljs-string">&quot;string&quot;</span>
-    ],
-    <span class="hljs-attr">&quot;persons&quot;</span>: [
-      <span class="hljs-string">&quot;string&quot;</span>
-    ],
-    <span class="hljs-attr">&quot;sentimentScore&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
-    <span class="hljs-attr">&quot;sentiments&quot;</span>: [
-      <span class="hljs-string">&quot;string&quot;</span>
-    ]
-  },
-  <span class="hljs-attr">&quot;text&quot;</span>: {
-    <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>,
-    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
-  },
-  <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-number">156753339076</span>,
-  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;text&quot;</span>,
-  <span class="hljs-attr">&quot;video&quot;</span>: {
-    <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
-    <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
-    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
-    <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
-    <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
-    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
-  },
-  <span class="hljs-attr">&quot;voice&quot;</span>: {
-    <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
-    <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
-    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
-    <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
-    <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
-    <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
-    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
-  }
+  <span class="hljs-attr">&quot;statuses&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;wa919988776655_918828218374&quot;</span>,
+      <span class="hljs-attr">&quot;errors&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-number">470</span>,
+          <span class="hljs-attr">&quot;details&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;https://developers.facebook.com/docs/whatsapp/api/errors#error&quot;</span>,
+          <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;Failed to send message because you are outside the support window for freeform messages to this user. Please use a valid HSM notification or reconsider.&quot;</span>
+        }
+      ],
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">1234567</span>,
+      <span class="hljs-attr">&quot;messageIdExt&quot;</span>: <span class="hljs-number">1234567</span>,
+      <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;DLVRD&quot;</span>,
+      <span class="hljs-attr">&quot;timestamp&quot;</span>: <span class="hljs-number">156753339076</span>
+    }
+  ]
 }
 </code></pre> </body>
                   </html>
@@ -2333,7 +2383,7 @@
               </div>
             </div>
           </div>
-          <div id="operation--api-v1-session-queue-post" class="operation panel" data-traverse-target="operation--api-v1-session-queue-post">
+          <div id="operation--api-v1-session-routing-post" class="operation panel" data-traverse-target="operation--api-v1-session-routing-post">
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
@@ -2349,7 +2399,7 @@
               <div class="doc-copy">
                 <section class="swagger-operation-path">
                   <span class="operation-method">POST</span>
-                  <span class="operation-path">/api/v1/session/queue</span>
+                  <span class="operation-path">/api/v1/session/routing</span>
                 </section>
               </div>
             </div>
