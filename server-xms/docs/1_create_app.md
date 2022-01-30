@@ -18,6 +18,7 @@ parent : API Integration
   
 7. Copy and store Id and Key securely, you will not be able to retrieve it later.
 8. For all Apis you can use this _API key_ in header.
+9. _**Queue Code**_ can be used to change routing of inbound messages for particular session.
 
 
 
