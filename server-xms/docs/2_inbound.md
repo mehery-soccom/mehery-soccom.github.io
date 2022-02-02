@@ -2,7 +2,7 @@
 layout: default
 title: Receive Messages
 nav_order: 2
-has_children: true
+has_children: false
 parent : API Integration
 ---
 # Received Messages Notifications
