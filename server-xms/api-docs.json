@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "All the requests are required to be authorized using an API Key authentication. \n Adding *x-api-key* in the header with your unique API Key as a value will grant access.\n To get your *x-api-key* [visit documentation](/server-xms/)",
-    "version": "1.0 - 2022-01-30 17:44",
+    "version": "1.0 - 2022-02-02 13:07",
     "title": "Messaging APIs",
     "termsOfService": "Terms of service",
     "contact": {},
@@ -2960,11 +2960,16 @@
     "OutBoundContact": {
       "type": "object",
       "required": [
+        "contactId",
         "email",
         "name",
         "phone"
       ],
       "properties": {
+        "contactId": {
+          "type": "string",
+          "description": "Contact Id is unique id for any contact, you will recieve it in Inbound.contact"
+        },
         "email": {
           "type": "string",
           "description": "Email Address for email message."

@@ -161,7 +161,7 @@
                     <a href="Terms of service">Terms of service</a>
                   </h5>
                   <h5>Version:
-                    <span>1.0 - 2022-01-30 17:44</span>
+                    <span>1.0 - 2022-02-02 13:07</span>
                   </h5>
                 </section>
               </div>
@@ -1867,6 +1867,7 @@
     <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>
   },
   <span class="hljs-attr">&quot;to&quot;</span>: {
+    <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
@@ -9307,6 +9308,16 @@
               <div class="doc-copy">
                 <section class="json-schema-properties">
                   <dl>
+                    <dt data-property-name="contactId" class="has-description">
+                      <span class="json-property-name">contactId:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Contact Id is unique id for any contact, you will recieve it in Inbound.contact</p>
+                      <small>undefined</small>
+                    </dd>
                     <dt data-property-name="email" class="has-description">
                       <span class="json-property-name">email:</span>
                       <span class="json-property-type">string</span>
@@ -9347,6 +9358,7 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
@@ -9521,6 +9533,7 @@
     <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>
   },
   <span class="hljs-attr">&quot;to&quot;</span>: {
+    <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
