@@ -7,6 +7,9 @@ nav_order: 10
 ---
 # WebChat Integration
 
+## Creat WebChat plugin
+To use webchat you will need to add WebChat keys. To get Webchat keys, go to admin panel and add WebChat channel, enter details and after channel creation you will recieve _channelId_ & _channelKey_. Use both keys to install webchat in your website in next steps.
+
 ## Installation
 ### HTML Script Tag
 
@@ -43,9 +46,9 @@ nav_order: 10
 ## Config Options
 ```javascript
   {
-    "domain" : "<domain>",
-    "channelId" : "<channelId>",
-    "channelKey" : "<channelKey>",
+    "domain" : "abcorp.mehery.com",
+    "channelId" : "web:mywebsite.com",
+    "channelKey" : "R45j45omwpaoifbtqlp",
     "config" : {
       "header.bg.color" : "#000",
       "header.text.color" : "#ffffff",
