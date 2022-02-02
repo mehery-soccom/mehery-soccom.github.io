@@ -32,3 +32,4 @@ nav_order: 4
 6. Connect MeherY platform to your app
   - On the Products > Messenger > Settings page, go to the Webhooks section and click Subscribe To Events.
   - ![Webhook](https://miro.medium.com/max/1400/1*2PvIugb_27r0V9S--mnuWA.png)
+  - Enter your webhook and Verification key
