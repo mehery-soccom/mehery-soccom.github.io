@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "All the requests are required to be authorized using an API Key authentication. \n Adding *x-api-key* in the header with your unique API Key as a value will grant access.\n To get your *x-api-key* [visit documentation](/server-xms/)",
-    "version": "1.0 - 2022-02-02 13:07",
+    "version": "1.0 - 2022-02-04 09:12",
     "title": "Messaging APIs",
     "termsOfService": "Terms of service",
     "contact": {},
@@ -41,16 +41,13 @@
   ],
   "paths": {
     "/api/v1/config/channels": {
-      "post": {
+      "get": {
         "tags": [
           "Configuration"
         ],
         "summary": "Channels List",
         "description": "List of all the configured channelsPass sandbox=true if you want sandbox channels also to be part of list",
-        "operationId": "getChannelsUsingPOST",
-        "consumes": [
-          "application/json"
-        ],
+        "operationId": "getChannelsUsingGET",
         "produces": [
           "*/*"
         ],
@@ -78,8 +75,56 @@
               "$ref": "#/definitions/ApiResultsMetaCompactResponse«MsgChannel,object»"
             }
           },
-          "201": {
-            "description": "Created"
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "X_API_KEY": []
+          }
+        ]
+      }
+    },
+    "/api/v1/config/tmpl/hsm": {
+      "get": {
+        "tags": [
+          "Configuration"
+        ],
+        "summary": "HSM Templates",
+        "description": "List of all the configured templatesPass channelId=<channelId> if you want templates approved for specific channels",
+        "operationId": "getHSMTemplatesUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "query",
+            "description": "channelId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "description": "API Key",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse«HSMTemplateDoc,object»"
+            }
           },
           "401": {
             "description": "Unauthorized"
@@ -1272,6 +1317,117 @@
       },
       "title": "ApiResponse«DigitalObjectDto,object»"
     },
+    "ApiResponse«HSMTemplateDoc,object»": {
+      "type": "object",
+      "required": [
+        "data",
+        "details",
+        "error",
+        "errors",
+        "exception",
+        "extra",
+        "logs",
+        "message",
+        "messageKey",
+        "meta",
+        "params",
+        "path",
+        "redirectUrl",
+        "results",
+        "status",
+        "statusKey",
+        "timestamp",
+        "traceid",
+        "warningKey",
+        "warnings"
+      ],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/HSMTemplateDoc"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "error": {
+          "type": "string"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ApiFieldError"
+          }
+        },
+        "exception": {
+          "type": "string"
+        },
+        "extra": {
+          "type": "object"
+        },
+        "logs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "message": {
+          "type": "string",
+          "example": "This is success message in plain english"
+        },
+        "messageKey": {
+          "type": "string",
+          "example": "MESSAGE_SUCCESS:MOBILE:12"
+        },
+        "meta": {
+          "type": "object"
+        },
+        "params": {
+          "type": "object"
+        },
+        "path": {
+          "type": "string",
+          "example": "/postman/email/send"
+        },
+        "redirectUrl": {
+          "type": "string",
+          "example": "/go/to/some/other/url.html"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/HSMTemplateDoc"
+          }
+        },
+        "status": {
+          "type": "string",
+          "example": 200
+        },
+        "statusKey": {
+          "type": "string",
+          "example": "SUCCESS"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1541276788518
+        },
+        "traceid": {
+          "type": "string"
+        },
+        "warningKey": {
+          "type": "string"
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ApiFieldError"
+          }
+        }
+      },
+      "title": "ApiResponse«HSMTemplateDoc,object»"
+    },
     "ApiResponse«OutBoundReciept,object»": {
       "type": "object",
       "required": [
@@ -1542,6 +1698,22 @@
         }
       },
       "title": "ApiResultsMetaCompactResponse«MsgChannel,object»"
+    },
+    "ApprovedChannels": {
+      "type": "object",
+      "required": [
+        "channelId",
+        "templateId"
+      ],
+      "properties": {
+        "channelId": {
+          "type": "string"
+        },
+        "templateId": {
+          "type": "string"
+        }
+      },
+      "title": "ApprovedChannels"
     },
     "Attachment": {
       "type": "object",
@@ -2439,6 +2611,101 @@
         }
       },
       "title": "DigitalObjectLink"
+    },
+    "HSMTemplateDoc": {
+      "type": "object",
+      "required": [
+        "approved",
+        "attachments",
+        "body",
+        "category",
+        "categoryType",
+        "code",
+        "contactType",
+        "createdBy",
+        "createdStamp",
+        "desc",
+        "footer",
+        "formatType",
+        "header",
+        "id",
+        "lang",
+        "meta",
+        "model",
+        "name",
+        "options",
+        "template"
+      ],
+      "properties": {
+        "approved": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ApprovedChannels"
+          }
+        },
+        "attachments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Attachment"
+          }
+        },
+        "body": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "categoryType": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "contactType": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "createdStamp": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "desc": {
+          "type": "string"
+        },
+        "footer": {
+          "type": "string"
+        },
+        "formatType": {
+          "type": "string"
+        },
+        "header": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "lang": {
+          "type": "string"
+        },
+        "meta": {
+          "type": "object"
+        },
+        "model": {
+          "type": "object"
+        },
+        "name": {
+          "type": "string"
+        },
+        "options": {
+          "type": "object"
+        },
+        "template": {
+          "type": "string"
+        }
+      },
+      "title": "HSMTemplateDoc"
     },
     "InBoundAction": {
       "type": "object",
