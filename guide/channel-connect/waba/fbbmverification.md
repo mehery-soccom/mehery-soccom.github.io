@@ -40,5 +40,5 @@ After you upload the documents, Facebook will review them as quickly as they can
 
 When your business is verified you will be notified and you will also see the verified status in your account. 
 
-<img width="200" alt="Screenshot 2022-02-04 at 6 42 59 PM" src="https://2420607013-files.gitbook.io/~/files/v0/b/gitbook-28427.appspot.com/o/assets%2F-M4sMxKjL6eJRvZn6jeG%2F-MHGihwZinQRINMJOanq%2F-MHGj81e7x39Fwimh8H1%2Fbusiness_verification_badge.PNG?alt=media&token=f37478cf-8b0d-45e5-b3c8-45e44a2bbbf0">
+<img width="300" alt="Screenshot 2022-02-04 at 6 42 59 PM" src="https://2420607013-files.gitbook.io/~/files/v0/b/gitbook-28427.appspot.com/o/assets%2F-M4sMxKjL6eJRvZn6jeG%2F-MHGihwZinQRINMJOanq%2F-MHGj81e7x39Fwimh8H1%2Fbusiness_verification_badge.PNG?alt=media&token=f37478cf-8b0d-45e5-b3c8-45e44a2bbbf0">
 
