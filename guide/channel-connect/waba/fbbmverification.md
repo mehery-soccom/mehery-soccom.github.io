@@ -16,14 +16,26 @@ For support about issues with the [Business Manager](https://business.facebook.c
 
 ## Facebook Business Manager Verification Process
 
-### Access Business Manager Security Center
+### 1. Access Business Manager Security Center
 To start the verification process go to [Security Center](https://business.facebook.com/settings/security) and click Start Verification in the Business verification section.
 
-<img width="479" alt="Screenshot 2022-02-04 at 6 42 59 PM" src="https://2420607013-files.gitbook.io/~/files/v0/b/gitbook-28427.appspot.com/o/assets%2F-M4sMxKjL6eJRvZn6jeG%2F-MHGgf32FSV1ho8w693s%2F-MHGh-C0vl8fPj4SkMgN%2Fsecurity_center.PNG?alt=media&token=7fd030fb-ec27-4de1-844c-4ef58beef246">
+<img width="200" alt="Screenshot 2022-02-04 at 6 42 59 PM" src="https://2420607013-files.gitbook.io/~/files/v0/b/gitbook-28427.appspot.com/o/assets%2F-M4sMxKjL6eJRvZn6jeG%2F-MHGgf32FSV1ho8w693s%2F-MHGh-C0vl8fPj4SkMgN%2Fsecurity_center.PNG?alt=media&token=7fd030fb-ec27-4de1-844c-4ef58beef246">
 
+### 2. Select Your Business
 
+| If your business is already listed | If your business is not listed |   
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| Confirm your business details Select a phone number that you have access to from the drop-down menu and click  Next . Double check for any typos or other errors: you will not be able to edit this information upon submission.   Get a verification code Choose to receive the verification code on your business phone number via a text message or a phone call or via email. The phone number option may not be available in all countries. Please make sure that the email registered has the same domain as the website.   Accepted example Email: name@business.com Site: www.business.com   Not accepted example Email: name@gmail.com or name@otherbusiness.com Site: www.business.com   Or verify your domain If your domain is already verified, click Use Domain Verification. If not, complete the domain verification process, then return to the Security Centre and select Continue.   Enter verification code (not applicable if you use domain verification) Enter your verification code. Click  Submit .   You can skip the remaining steps 3 & 4 below. | If you cannot see your business in the list please select  None of these match . Then proceed with the Steps 3 & 4 below. |
 
+### 3. Verify the Legal Business Name
+You may be asked in step 3 to provide official documentation of your business’s legal name. Upload an official document that matches the business’s legal name you entered in step 1, such as a business license, articles of incorporation or business tax registration. 
 
-<img width="816" alt="Screenshot 2022-02-04 at 6 43 10 PM" src="https://user-images.githubusercontent.com/5462166/152536480-9ca8aeeb-6f35-40ff-bbe5-04a3af9c4778.png">
-<img width="684" alt="Screenshot 2022-02-04 at 6 43 37 PM" src="https://user-images.githubusercontent.com/5462166/152536706-b64227bc-5479-4aac-880c-9f7c731b3f26.png">
-<img width="833" alt="Screenshot 2022-02-04 at 6 43 54 PM" src="https://user-images.githubusercontent.com/5462166/152536910-d578d9dd-713c-4155-b715-20d4e1cffcee.png">
+Please check here the list of the documents accepted and not accepted before submitting them.
+
+### 4.  Verify the Business Address or Phone Number
+Upload a document that shows both the legal name of your business and the mailing address or phone number shown on the screen.
+Please check here the list of the documents accepted and not accepted before submitting them.
+
+After you upload the documents, Facebook will review them as quickly as they can. This may take several days. You can check the current status of your verification by going to your Security Center. 
+
+When your business is verified you will be notified and you will also see the verified status in your account. 
