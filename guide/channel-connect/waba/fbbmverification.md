@@ -5,10 +5,21 @@ parent: WhatsApp Business API
 grand_parent: Channel Integration
 nav_order: 50
 ---
-# Facebook Business Manager Verification
+# Facebook Business Verification
+
+In order to have access to higher account tiers in the WhatsApp Business API account, you must complete Business Verification within the Facebook Business Manager. This means you will have to provide Facebook with some documents to prove the existence and legitimacy of your business. 
 
 
-<img width="479" alt="Screenshot 2022-02-04 at 6 42 59 PM" src="https://user-images.githubusercontent.com/5462166/152536355-22d06b63-b486-4a4a-84e3-50545b64e95f.png">
+> Even though the Facebook Business Verification is required by Facebook for a company to have access to higher account tiers the WhatsApp Business API, this process is completely unrelated to WhatsApp.
+For support about issues with the [Business Manager](https://business.facebook.com/home/accounts), please reach out to direct Facebook support through the "?" (help) icon on the bottom left corner of the page.
+
+
+## Facebook Business Manager Verification Process
+
+### Access Business Manager Security Center
+To start the verification process go to [Security Center](https://business.facebook.com/settings/security) and click Start Verification in the Business verification section.
+
+<img width="479" alt="Screenshot 2022-02-04 at 6 42 59 PM" src="https://2420607013-files.gitbook.io/~/files/v0/b/gitbook-28427.appspot.com/o/assets%2F-M4sMxKjL6eJRvZn6jeG%2F-MHGgf32FSV1ho8w693s%2F-MHGh-C0vl8fPj4SkMgN%2Fsecurity_center.PNG?alt=media&token=7fd030fb-ec27-4de1-844c-4ef58beef246">
 
 
 
