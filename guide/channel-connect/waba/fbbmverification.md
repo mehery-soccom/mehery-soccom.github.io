@@ -62,7 +62,7 @@ Your Business Manager may not be eligible verification. In this case, you won’
 To enable the button, please: 
 
 * Fill out all of the information in the Business Info page, inside the Facebook Business Manager settings
-* Create a WhatsApp Business API account with 360dialog using the signup form
+* Create a WhatsApp Business API account with MeherY using admin Panel
 
 The WhatsApp Business API account will be placed under the Limited Access Tier and the Start Verification button will be available. As soon as the verification process is completed, the account will be placed in the Standard Access Tier.
 
