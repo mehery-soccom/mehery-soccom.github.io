@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "All the requests are required to be authorized using an API Key authentication. \n Adding *x-api-key* in the header with your unique API Key as a value will grant access.\n To get your *x-api-key* [visit documentation](/server-xms/)",
-    "version": "1.0 - 2022-02-04 09:12",
+    "version": "1.0 - 2022-02-08 08:15",
     "title": "Messaging APIs",
     "termsOfService": "Terms of service",
     "contact": {},
@@ -3531,7 +3531,11 @@
             "BLCKD",
             "FAILD",
             "DELTD",
-            "CCWIN"
+            "CCWIN",
+            "RECEIVD",
+            "FORWARDED",
+            "FORWARD_ERR",
+            "STATUS_FORWARD_ERR"
           ]
         },
         "subject": {
