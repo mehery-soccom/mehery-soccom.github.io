@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "All the requests are required to be authorized using an API Key authentication. \n Adding *x-api-key* in the header with your unique API Key as a value will grant access.\n To get your *x-api-key* [visit documentation](/server-xms/)",
-    "version": "1.0 - 2022-02-08 08:15",
+    "version": "1.0 - 2022-02-11 01:09",
     "title": "Messaging APIs",
     "termsOfService": "Terms of service",
     "contact": {},
@@ -576,7 +576,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/ApiResponse«ChatSessionDTO,object»"
+              "$ref": "#/definitions/ApiResponse«InBoundEvent,object»"
             }
           },
           "201": {
@@ -872,117 +872,6 @@
         }
       },
       "title": "ApiResponse«ChatMessageDTO,object»"
-    },
-    "ApiResponse«ChatSessionDTO,object»": {
-      "type": "object",
-      "required": [
-        "data",
-        "details",
-        "error",
-        "errors",
-        "exception",
-        "extra",
-        "logs",
-        "message",
-        "messageKey",
-        "meta",
-        "params",
-        "path",
-        "redirectUrl",
-        "results",
-        "status",
-        "statusKey",
-        "timestamp",
-        "traceid",
-        "warningKey",
-        "warnings"
-      ],
-      "properties": {
-        "data": {
-          "$ref": "#/definitions/ChatSessionDTO"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object"
-          }
-        },
-        "error": {
-          "type": "string"
-        },
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ApiFieldError"
-          }
-        },
-        "exception": {
-          "type": "string"
-        },
-        "extra": {
-          "type": "object"
-        },
-        "logs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "message": {
-          "type": "string",
-          "example": "This is success message in plain english"
-        },
-        "messageKey": {
-          "type": "string",
-          "example": "MESSAGE_SUCCESS:MOBILE:12"
-        },
-        "meta": {
-          "type": "object"
-        },
-        "params": {
-          "type": "object"
-        },
-        "path": {
-          "type": "string",
-          "example": "/postman/email/send"
-        },
-        "redirectUrl": {
-          "type": "string",
-          "example": "/go/to/some/other/url.html"
-        },
-        "results": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ChatSessionDTO"
-          }
-        },
-        "status": {
-          "type": "string",
-          "example": 200
-        },
-        "statusKey": {
-          "type": "string",
-          "example": "SUCCESS"
-        },
-        "timestamp": {
-          "type": "integer",
-          "format": "int64",
-          "example": 1541276788518
-        },
-        "traceid": {
-          "type": "string"
-        },
-        "warningKey": {
-          "type": "string"
-        },
-        "warnings": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ApiFieldError"
-          }
-        }
-      },
-      "title": "ApiResponse«ChatSessionDTO,object»"
     },
     "ApiResponse«ClientApp,object»": {
       "type": "object",
@@ -1427,6 +1316,117 @@
         }
       },
       "title": "ApiResponse«HSMTemplateDoc,object»"
+    },
+    "ApiResponse«InBoundEvent,object»": {
+      "type": "object",
+      "required": [
+        "data",
+        "details",
+        "error",
+        "errors",
+        "exception",
+        "extra",
+        "logs",
+        "message",
+        "messageKey",
+        "meta",
+        "params",
+        "path",
+        "redirectUrl",
+        "results",
+        "status",
+        "statusKey",
+        "timestamp",
+        "traceid",
+        "warningKey",
+        "warnings"
+      ],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/InBoundEvent"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "error": {
+          "type": "string"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ApiFieldError"
+          }
+        },
+        "exception": {
+          "type": "string"
+        },
+        "extra": {
+          "type": "object"
+        },
+        "logs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "message": {
+          "type": "string",
+          "example": "This is success message in plain english"
+        },
+        "messageKey": {
+          "type": "string",
+          "example": "MESSAGE_SUCCESS:MOBILE:12"
+        },
+        "meta": {
+          "type": "object"
+        },
+        "params": {
+          "type": "object"
+        },
+        "path": {
+          "type": "string",
+          "example": "/postman/email/send"
+        },
+        "redirectUrl": {
+          "type": "string",
+          "example": "/go/to/some/other/url.html"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InBoundEvent"
+          }
+        },
+        "status": {
+          "type": "string",
+          "example": 200
+        },
+        "statusKey": {
+          "type": "string",
+          "example": "SUCCESS"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1541276788518
+        },
+        "traceid": {
+          "type": "string"
+        },
+        "warningKey": {
+          "type": "string"
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ApiFieldError"
+          }
+        }
+      },
+      "title": "ApiResponse«InBoundEvent,object»"
     },
     "ApiResponse«OutBoundReciept,object»": {
       "type": "object",
@@ -1894,157 +1894,6 @@
         }
       },
       "title": "ChatMessageDTO"
-    },
-    "ChatSessionDTO": {
-      "type": "object",
-      "required": [
-        "active",
-        "agentSessionStamp",
-        "assigned",
-        "assignedAgentStamp",
-        "assignedDeptStamp",
-        "assignedToAgent",
-        "assignedToDept",
-        "assignedToQueue",
-        "closeSessionStamp",
-        "contact",
-        "contactId",
-        "contactType",
-        "email",
-        "expired",
-        "fistResponseStamp",
-        "lastInComingStamp",
-        "lastResponseStamp",
-        "messages",
-        "mode",
-        "msg",
-        "name",
-        "phone",
-        "primary",
-        "profilePic",
-        "resolveSessionStamp",
-        "resolved",
-        "sessionId",
-        "startSessionStamp",
-        "status",
-        "tagId",
-        "updatedStamp"
-      ],
-      "properties": {
-        "active": {
-          "type": "boolean"
-        },
-        "agentSessionStamp": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "assigned": {
-          "type": "boolean"
-        },
-        "assignedAgentStamp": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "assignedDeptStamp": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "assignedToAgent": {
-          "type": "string"
-        },
-        "assignedToDept": {
-          "type": "string"
-        },
-        "assignedToQueue": {
-          "type": "string"
-        },
-        "closeSessionStamp": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "contact": {
-          "$ref": "#/definitions/Contactable"
-        },
-        "contactId": {
-          "type": "string"
-        },
-        "contactType": {
-          "type": "string"
-        },
-        "email": {
-          "type": "string"
-        },
-        "expired": {
-          "type": "boolean"
-        },
-        "fistResponseStamp": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "lastInComingStamp": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "lastResponseStamp": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "messages": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ChatMessageDTO"
-          }
-        },
-        "mode": {
-          "type": "string"
-        },
-        "msg": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/ChatMessageDTO"
-          }
-        },
-        "name": {
-          "type": "string"
-        },
-        "phone": {
-          "type": "string"
-        },
-        "primary": {
-          "type": "boolean"
-        },
-        "profilePic": {
-          "type": "string"
-        },
-        "resolveSessionStamp": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "resolved": {
-          "type": "boolean"
-        },
-        "sessionId": {
-          "type": "string"
-        },
-        "startSessionStamp": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "status": {
-          "type": "string"
-        },
-        "tagId": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "updatedStamp": {
-          "type": "integer",
-          "format": "int64"
-        }
-      },
-      "title": "ChatSessionDTO"
     },
     "ClientApp": {
       "type": "object",
@@ -2800,6 +2649,32 @@
       },
       "title": "InBoundContactProfile"
     },
+    "InBoundEvent": {
+      "type": "object",
+      "required": [
+        "contactId",
+        "eventCode",
+        "sessionId",
+        "sessionRouted"
+      ],
+      "properties": {
+        "contactId": {
+          "type": "string"
+        },
+        "eventCode": {
+          "type": "string",
+          "example": "SESSION_ROUTED",
+          "description": "Event Triggered by App/Service"
+        },
+        "sessionId": {
+          "type": "string"
+        },
+        "sessionRouted": {
+          "$ref": "#/definitions/SessionRouted"
+        }
+      },
+      "title": "InBoundEvent"
+    },
     "InBoundMeta": {
       "type": "object",
       "required": [
@@ -2807,6 +2682,11 @@
         "server"
       ],
       "properties": {
+        "appId": {
+          "type": "string",
+          "example": "61ec7d9c2ce85742b201c5ab",
+          "description": "Client App Id if webhook is set for an App "
+        },
         "domain": {
           "type": "string",
           "example": "alex",
@@ -3047,6 +2927,7 @@
       "required": [
         "actions",
         "contacts",
+        "events",
         "messages",
         "meta",
         "statuses"
@@ -3062,6 +2943,12 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/InBoundContact"
+          }
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InBoundEvent"
           }
         },
         "messages": {
@@ -3679,10 +3566,14 @@
     "SessionQueueAssignment": {
       "type": "object",
       "required": [
+        "params",
         "queue",
         "sessionId"
       ],
       "properties": {
+        "params": {
+          "type": "object"
+        },
         "queue": {
           "type": "string",
           "example": "external_bot",
@@ -3695,6 +3586,27 @@
         }
       },
       "title": "SessionQueueAssignment"
+    },
+    "SessionRouted": {
+      "type": "object",
+      "required": [
+        "params",
+        "sourceQueue",
+        "targetQueue"
+      ],
+      "properties": {
+        "params": {
+          "type": "object",
+          "description": "Additional params sent by Router"
+        },
+        "sourceQueue": {
+          "type": "string"
+        },
+        "targetQueue": {
+          "type": "string"
+        }
+      },
+      "title": "SessionRouted"
     },
     "TagDocument": {
       "type": "object",
