@@ -27,15 +27,21 @@ Message API calls are sent to the **/api/v1/message/send** endpoint regardless o
 ```
 
 ### Template Message
+You can create templates in *MeherY Admin Panel* under HSM templates. Once template is created you can use :-  
+  1. _Template ID_ 
+  2. _Template Code_ with _lang_ as optional paramenter for Language.
+
+> if you are going to send templates after session has go started, templates do not need any approval, ont the other hand, in case you are going to use template to initiate conversation (without customer's response), you will need to submit template for apporval to channel. For example to push message to any _Whatsapp_ channel you will need to submit it for waba approval and track request progress under _Waba Templates_.
+
 #### Sample Request 1 : 
 ##### POST : /api/v1/message/send
 ```javascript
 {
   "channelId": "91SERVICENUMBER",
   "to": {
-    "email": "string",
-    "name": "string",
-    "phone": "string"
+    "email": "john.doe@example.com",
+    "name": "John Doe",
+    "phone": "919988776655"
   },
   "type": "template",
   "template": {
@@ -53,9 +59,9 @@ Message API calls are sent to the **/api/v1/message/send** endpoint regardless o
 {
   "channelId": "91SERVICENUMBER",
   "to": {
-    "email": "string",
-    "name": "string",
-    "phone": "string"
+    "email": "john.doe@example.com",
+    "name": "John Doe",
+    "phone": "919988776655"
   },
   "type": "template",
   "template": {
@@ -63,7 +69,7 @@ Message API calls are sent to the **/api/v1/message/send** endpoint regardless o
       "amount": 10,
       "currency": "INR"
     },
-    "code": "feedback",
+    "code": "transaction_acknowledgment",
     "lang" : "en"
   }
 }
