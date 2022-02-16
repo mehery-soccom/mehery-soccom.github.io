@@ -27,9 +27,11 @@ Message API calls are sent to the **/api/v1/message/send** endpoint regardless o
 ```
 
 ### Template Message
-You can create templates in *MeherY Admin Panel* under HSM templates. Once template is created you can use :-  
+You can create templates in *MeherY Admin Panel* under HSM templates. Once template is created you can use any of the following paramenter to select template :-  
   1. _Template ID_ 
   2. _Template Code_ with _lang_ as optional paramenter for Language.
+
+In additon to template, you can custom variables in _data_, which will be supplied to eventually create your message from template, defined by you.
 
 > if you are going to send templates after session has go started, templates do not need any approval, ont the other hand, in case you are going to use template to initiate conversation (without customer's response), you will need to submit template for apporval to channel. For example to push message to any _Whatsapp_ channel you will need to submit it for waba approval and track request progress under _Waba Templates_.
 
