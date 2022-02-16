@@ -35,6 +35,9 @@ In additon to template, you can custom variables in _data_, which will be suppli
 
 > if you are going to send templates after session has go started, templates do not need any approval, ont the other hand, in case you are going to use template to initiate conversation (without customer's response), you will need to submit template for apporval to channel. For example to push message to any _Whatsapp_ channel you will need to submit it for waba approval and track request progress under _Waba Templates_.
 
+<img width="600" alt="Screenshot 2022-02-16 at 6 14 24 PM" src="https://user-images.githubusercontent.com/5462166/154267267-f035746b-a9eb-47d7-b193-f6a2403a6910.png">
+
+
 #### Sample Request 1 : 
 ##### POST : /api/v1/message/send
 ```javascript
