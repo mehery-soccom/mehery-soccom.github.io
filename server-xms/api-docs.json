@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "All the requests are required to be authorized using an API Key authentication. \n Adding *x-api-key* in the header with your unique API Key as a value will grant access.\n To get your *x-api-key* [visit documentation](/server-xms/)",
-    "version": "1.0 - 2022-02-11 01:09",
+    "version": "1.0 - 2022-03-03 13:50",
     "title": "Messaging APIs",
     "termsOfService": "Terms of service",
     "contact": {},
@@ -489,24 +489,29 @@
         ]
       }
     },
-    "/api/v1/session/messages": {
-      "get": {
+    "/api/v1/session/close": {
+      "post": {
         "tags": [
           "Session Management"
         ],
-        "summary": "Session Messages",
-        "description": "use this api to fetch list of all messages for sessionId.\nyou can get _sessionId_ from inbound message body",
-        "operationId": "getSessionMessagesUsingGET",
+        "summary": "Session Close",
+        "description": "Close the active session\t",
+        "operationId": "sessionCloseUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
         "produces": [
           "*/*"
         ],
         "parameters": [
           {
-            "name": "sessionId",
-            "in": "query",
-            "description": "sessionId",
+            "in": "body",
+            "name": "req",
+            "description": "req",
             "required": true,
-            "type": "string"
+            "schema": {
+              "$ref": "#/definitions/SessionStatusClose"
+            }
           },
           {
             "name": "x-api-key",
@@ -520,8 +525,70 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/ApiResponse«ChatMessageDTO,object»"
+              "$ref": "#/definitions/ApiResultsMetaCompactResponse«InBoundEvent,object»"
             }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "X_API_KEY": []
+          }
+        ]
+      }
+    },
+    "/api/v1/session/messages": {
+      "post": {
+        "tags": [
+          "Session Management"
+        ],
+        "summary": "Session Messages",
+        "description": "use this api to fetch list of all messages for sessionId.\nyou can get _sessionId_ from inbound message body",
+        "operationId": "getSessionMessagesPostUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SessionStatusClose"
+            }
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "description": "API Key",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResultsMetaCompactResponse«ChatMessageDTO,object»"
+            }
+          },
+          "201": {
+            "description": "Created"
           },
           "401": {
             "description": "Unauthorized"
@@ -576,7 +643,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/ApiResponse«InBoundEvent,object»"
+              "$ref": "#/definitions/ApiResultsMetaCompactResponse«InBoundEvent,object»"
             }
           },
           "201": {
@@ -618,7 +685,8 @@
         "description",
         "descriptionKey",
         "field",
-        "obzect"
+        "obzect",
+        "possibleValues"
       ],
       "properties": {
         "body": {
@@ -647,6 +715,12 @@
         },
         "obzect": {
           "type": "string"
+        },
+        "possibleValues": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
         }
       },
       "title": "ApiFieldError"
@@ -761,117 +835,6 @@
         }
       },
       "title": "ApiResponse«Attachment,object»"
-    },
-    "ApiResponse«ChatMessageDTO,object»": {
-      "type": "object",
-      "required": [
-        "data",
-        "details",
-        "error",
-        "errors",
-        "exception",
-        "extra",
-        "logs",
-        "message",
-        "messageKey",
-        "meta",
-        "params",
-        "path",
-        "redirectUrl",
-        "results",
-        "status",
-        "statusKey",
-        "timestamp",
-        "traceid",
-        "warningKey",
-        "warnings"
-      ],
-      "properties": {
-        "data": {
-          "$ref": "#/definitions/ChatMessageDTO"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object"
-          }
-        },
-        "error": {
-          "type": "string"
-        },
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ApiFieldError"
-          }
-        },
-        "exception": {
-          "type": "string"
-        },
-        "extra": {
-          "type": "object"
-        },
-        "logs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "message": {
-          "type": "string",
-          "example": "This is success message in plain english"
-        },
-        "messageKey": {
-          "type": "string",
-          "example": "MESSAGE_SUCCESS:MOBILE:12"
-        },
-        "meta": {
-          "type": "object"
-        },
-        "params": {
-          "type": "object"
-        },
-        "path": {
-          "type": "string",
-          "example": "/postman/email/send"
-        },
-        "redirectUrl": {
-          "type": "string",
-          "example": "/go/to/some/other/url.html"
-        },
-        "results": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ChatMessageDTO"
-          }
-        },
-        "status": {
-          "type": "string",
-          "example": 200
-        },
-        "statusKey": {
-          "type": "string",
-          "example": "SUCCESS"
-        },
-        "timestamp": {
-          "type": "integer",
-          "format": "int64",
-          "example": 1541276788518
-        },
-        "traceid": {
-          "type": "string"
-        },
-        "warningKey": {
-          "type": "string"
-        },
-        "warnings": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ApiFieldError"
-          }
-        }
-      },
-      "title": "ApiResponse«ChatMessageDTO,object»"
     },
     "ApiResponse«ClientApp,object»": {
       "type": "object",
@@ -1317,117 +1280,6 @@
       },
       "title": "ApiResponse«HSMTemplateDoc,object»"
     },
-    "ApiResponse«InBoundEvent,object»": {
-      "type": "object",
-      "required": [
-        "data",
-        "details",
-        "error",
-        "errors",
-        "exception",
-        "extra",
-        "logs",
-        "message",
-        "messageKey",
-        "meta",
-        "params",
-        "path",
-        "redirectUrl",
-        "results",
-        "status",
-        "statusKey",
-        "timestamp",
-        "traceid",
-        "warningKey",
-        "warnings"
-      ],
-      "properties": {
-        "data": {
-          "$ref": "#/definitions/InBoundEvent"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object"
-          }
-        },
-        "error": {
-          "type": "string"
-        },
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ApiFieldError"
-          }
-        },
-        "exception": {
-          "type": "string"
-        },
-        "extra": {
-          "type": "object"
-        },
-        "logs": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "message": {
-          "type": "string",
-          "example": "This is success message in plain english"
-        },
-        "messageKey": {
-          "type": "string",
-          "example": "MESSAGE_SUCCESS:MOBILE:12"
-        },
-        "meta": {
-          "type": "object"
-        },
-        "params": {
-          "type": "object"
-        },
-        "path": {
-          "type": "string",
-          "example": "/postman/email/send"
-        },
-        "redirectUrl": {
-          "type": "string",
-          "example": "/go/to/some/other/url.html"
-        },
-        "results": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/InBoundEvent"
-          }
-        },
-        "status": {
-          "type": "string",
-          "example": 200
-        },
-        "statusKey": {
-          "type": "string",
-          "example": "SUCCESS"
-        },
-        "timestamp": {
-          "type": "integer",
-          "format": "int64",
-          "example": 1541276788518
-        },
-        "traceid": {
-          "type": "string"
-        },
-        "warningKey": {
-          "type": "string"
-        },
-        "warnings": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ApiFieldError"
-          }
-        }
-      },
-      "title": "ApiResponse«InBoundEvent,object»"
-    },
     "ApiResponse«OutBoundReciept,object»": {
       "type": "object",
       "required": [
@@ -1649,6 +1501,104 @@
         }
       },
       "title": "ApiResponse«OutboxMessage,object»"
+    },
+    "ApiResultsMetaCompactResponse«ChatMessageDTO,object»": {
+      "type": "object",
+      "required": [
+        "message",
+        "messageKey",
+        "meta",
+        "results",
+        "status",
+        "statusKey",
+        "timestamp",
+        "traceid"
+      ],
+      "properties": {
+        "message": {
+          "type": "string",
+          "example": "This is success message in plain english"
+        },
+        "messageKey": {
+          "type": "string",
+          "example": "MESSAGE_SUCCESS:MOBILE:12"
+        },
+        "meta": {
+          "type": "object"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChatMessageDTO"
+          }
+        },
+        "status": {
+          "type": "string",
+          "example": 200
+        },
+        "statusKey": {
+          "type": "string",
+          "example": "SUCCESS"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1541276788518
+        },
+        "traceid": {
+          "type": "string"
+        }
+      },
+      "title": "ApiResultsMetaCompactResponse«ChatMessageDTO,object»"
+    },
+    "ApiResultsMetaCompactResponse«InBoundEvent,object»": {
+      "type": "object",
+      "required": [
+        "message",
+        "messageKey",
+        "meta",
+        "results",
+        "status",
+        "statusKey",
+        "timestamp",
+        "traceid"
+      ],
+      "properties": {
+        "message": {
+          "type": "string",
+          "example": "This is success message in plain english"
+        },
+        "messageKey": {
+          "type": "string",
+          "example": "MESSAGE_SUCCESS:MOBILE:12"
+        },
+        "meta": {
+          "type": "object"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InBoundEvent"
+          }
+        },
+        "status": {
+          "type": "string",
+          "example": 200
+        },
+        "statusKey": {
+          "type": "string",
+          "example": "SUCCESS"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1541276788518
+        },
+        "traceid": {
+          "type": "string"
+        }
+      },
+      "title": "ApiResultsMetaCompactResponse«InBoundEvent,object»"
     },
     "ApiResultsMetaCompactResponse«MsgChannel,object»": {
       "type": "object",
@@ -1899,15 +1849,21 @@
       "type": "object",
       "required": [
         "appType",
+        "forward",
         "id",
         "key",
         "keyName",
         "keyVersion",
+        "props",
         "queue",
+        "secret",
         "webhook"
       ],
       "properties": {
         "appType": {
+          "type": "string"
+        },
+        "forward": {
           "type": "string"
         },
         "id": {
@@ -1922,8 +1878,14 @@
         "keyVersion": {
           "type": "string"
         },
+        "props": {
+          "type": "object"
+        },
         "queue": {
           "type": "string"
+        },
+        "secret": {
+          "type": "object"
         },
         "webhook": {
           "type": "string"
@@ -1966,6 +1928,12 @@
     "CommonTemplate": {
       "type": "object",
       "properties": {
+        "code": {
+          "type": "string",
+          "example": "FEEDBACK",
+          "description": "Code of Template",
+          "notes": "Template Code will be searched in the repository and match will be served.\n code will be ignored in case template.id is provided"
+        },
         "data": {
           "type": "object",
           "example": {
@@ -1979,6 +1947,12 @@
           "example": "60d236c6142e53561cb7716c",
           "description": "Unique Template Id",
           "notes": "Explicit template.id to be used for message"
+        },
+        "lang": {
+          "type": "string",
+          "example": "en_US",
+          "description": "Language of Template to pick",
+          "notes": "Language is an optional param which fallback to en, in all the scenarios of missing params/template\n lang will ignored when template.id is provided"
         }
       },
       "title": "CommonTemplate"
@@ -2803,6 +2777,7 @@
       "required": [
         "id",
         "link",
+        "linkSecure",
         "mime_type",
         "sha256",
         "type"
@@ -2828,7 +2803,12 @@
         "link": {
           "type": "string",
           "example": "http(s)://link-to-media-file-url",
-          "description": "link-to-audio-file"
+          "description": "link-to-file"
+        },
+        "linkSecure": {
+          "type": "string",
+          "example": "https://link-to-media-file-url",
+          "description": "secure-link-to-file"
         },
         "mime_type": {
           "type": "string",
@@ -2982,6 +2962,27 @@
       "additionalProperties": {
         "type": "string"
       }
+    },
+    "MessagePrompt": {
+      "type": "object",
+      "required": [
+        "messageId",
+        "pageIndex",
+        "type"
+      ],
+      "properties": {
+        "messageId": {
+          "type": "string"
+        },
+        "pageIndex": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "title": "MessagePrompt"
     },
     "MessageReportError": {
       "type": "object",
@@ -3281,6 +3282,7 @@
         "model",
         "options",
         "priority",
+        "prompt",
         "queue",
         "session",
         "sessionId",
@@ -3385,6 +3387,9 @@
         "priority": {
           "type": "integer",
           "format": "int32"
+        },
+        "prompt": {
+          "$ref": "#/definitions/MessagePrompt"
         },
         "queue": {
           "type": "number"
@@ -3607,6 +3612,20 @@
         }
       },
       "title": "SessionRouted"
+    },
+    "SessionStatusClose": {
+      "type": "object",
+      "required": [
+        "sessionId"
+      ],
+      "properties": {
+        "sessionId": {
+          "type": "string",
+          "example": "61f3810a02e14c0877fc1a32",
+          "description": "Session to be closed"
+        }
+      },
+      "title": "SessionStatusClose"
     },
     "TagDocument": {
       "type": "object",
