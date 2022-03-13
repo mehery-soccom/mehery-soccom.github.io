@@ -1,8 +1,9 @@
 ---
 layout: default
-title: Facebook DM integration
+title: Facebook DM Integration
 parent: Channel Integration
 nav_order: 4
+has_children: true
 ---
 # Facebook DM integration
 
