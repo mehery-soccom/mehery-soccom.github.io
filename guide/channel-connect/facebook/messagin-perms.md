@@ -11,7 +11,11 @@ nav_order: 4
 2. Select Your App
 3. Go to _**App Review** &#8594; **Permissions and Features**_
   - ![Perms](fb-perms-1.png)
-4. Search _pages_messaging_
+4. Permissons you will need approval for 
+    * pages_messaging
+    * Business Asset User Profile Access
+    * public_profile
+    * email
 5. Click _Request Advance Access_
 6. Click _Edit App Review Request_
   - ![Perms](fb-perms-2.png)
