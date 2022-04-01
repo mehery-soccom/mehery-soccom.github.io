@@ -8,7 +8,7 @@ nav_order: 1000
 # Official Business Account (OBA) or green badge
 In contrast to the regular Business Account, an Official Business Account will receive a green checkmark (green tick) badge in the WhatsApp profile.
 
-> Please read this document carefully if you wish to apply for a Official Business Account (OBA), known also as green badge or green tick 
+> [WARNING](){: .label .label-yellow } Please read this document carefully if you wish to apply for a Official Business Account (OBA), known also as green badge or green tick 
 
 ## Types of accounts
 A WhatsApp Business Account is your company’s way to communicate directly with customers. There are two types of WhatsApp Enterprise Accounts. The Business Account and the Official Business Account. They often get confused, because of course the simple Business Account also has to be verified by WhatsApp, therefore is it still is somehow official. However, the term "official" here is reserved for a certain amount of Business Accounts that meet certain criteria.
