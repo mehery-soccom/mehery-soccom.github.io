@@ -3,7 +3,7 @@ layout: default
 title: Official Business Account
 parent: WhatsApp Business API
 grand_parent: Channel Integration
-nav_order: 100
+nav_order: 1000
 ---
 # Official Business Account (OBA) or green badge
 In contrast to the regular Business Account, an Official Business Account will receive a green checkmark (green tick) badge in the WhatsApp profile.
