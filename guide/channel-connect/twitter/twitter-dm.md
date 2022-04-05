@@ -51,6 +51,9 @@ Once you confirm your email address, you can start creating your application
   2. Click 'Set up dev environment,' name your environment, and specify a Twitter app ID for the environment.
 
 ### Upload your tokens to MeherY Account
+  - Add new "Channel"  in MeherY admin panel.
+  - Enter all the details
+  - ![Add](add-details.png)
 
 
 
