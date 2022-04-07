@@ -5,10 +5,12 @@ parent: WhatsApp Business API
 grand_parent: Channel Integration
 nav_order: 1
 ---
+# WABA Business Account API - Onboarding an Enterprise
 
 This part of the documentation details the processes to onboard an Enterprise onto the Mehery Smart Conversations platform with WhatsApp Business Account API. Components are related to activities with Facebook (Meta), with WhatsApp and with the Mehery platform. 
 
-# WABA prerequisites
+## WABA prerequisites
+
 These are the basic prerequisites, without which we will not be able to proceed with getting a Phone Number allocated and operational for WhatsApp. So please read these and verify for yourself that they are all in place, before you go any further.
 
 A Facebook Page should be available in the name of the enterprise seeking to use WhatsApp Business Account API. If the Facebook Business Account page shows any documentation as "pending", please review and submit the same.
@@ -19,16 +21,13 @@ WhatsApp Number (Landline or Mobile), which can receive an incoming call from WA
 
 Provide the Business Description which is required to be shown in the WhatsApp Business Account, to your end customers.
 
-# Conditions
-1. The number being proposed to be used for WhatsApp Business Account API should not be used for WhatsApp at the time of migration. If it is being used for WhatsApp, the WhatsApp Account has to be deleted, not just the WhatsApp App on your mobile.
+## Conditions
 
-The Guidelines for deleting a WhatsApp Account are detailed here https://developers.facebook.com/docs/whatsapp/overview/phone-number#migrate
+The number being proposed to be used for WhatsApp Business Account API should not be used for WhatsApp at the time of migration. If it is being used for WhatsApp, the WhatsApp Account has to be deleted, not just the WhatsApp App on your mobile. The Guidelines for deleting a WhatsApp Account are detailed here https://developers.facebook.com/docs/whatsapp/overview/phone-number#migrate
 
-2. You need to define a Display Name which will be shown on WhatsApp. The display name has to be close to your organisations name. 
- 
-The guidelines for Display name are detailed here https://developers.facebook.com/docs/whatsapp/overview/display-name
+You need to define a Display Name which will be shown on WhatsApp. The display name has to be close to your organisations name. The guidelines for Display name are detailed here https://developers.facebook.com/docs/whatsapp/overview/display-name
 
-### The approval procedure includes the following steps:
+## The approval procedure includes the following steps:
 
 ## Facebook Business ID
 You need to have a Facebook Business ID before you can proceed to the WhatsApp approval process. To find your Business ID, log into the Facebook Business Manager of the business and navigate to Business Settings. The Business Manager ID is displayed under the business name. 
