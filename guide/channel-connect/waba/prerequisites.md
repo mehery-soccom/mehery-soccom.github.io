@@ -5,11 +5,19 @@ parent: WhatsApp Business API
 grand_parent: Channel Integration
 nav_order: 1
 ---
+
+This part of the documentation details the processes to onboard an Enterprise onto the Mehery Smart Conversations platform with WhatsApp Business Account API. Components are related to activities with Facebook (Meta), with WhatsApp and with the Mehery platform. 
+
 # WABA prerequisites
-1. Facebook Page should be available in the name of the business seeking to use WhatsApp Business Account API
-2. A Facebook Business ID (with a verified Business if possible)
-3. WhatsApp Number (Landline or Mobile), which can receive an incoming call from WA for validation of the access
-4. Provide the Business Description which is required to be shown in the WhatsApp Business Account, to your end customers.
+These are the basic prerequisites, without which we will not be able to proceed with getting a Phone Number allocated and operational for WhatsApp. So please read these and verify for yourself that they are all in place, before you go any further.
+
+A Facebook Page should be available in the name of the enterprise seeking to use WhatsApp Business Account API. If the Facebook Business Account page shows any documentation as "pending", please review and submit the same.
+
+A Facebook Business ID (with a verified Business if possible) should be visible on your Facebook Business Account Page
+
+WhatsApp Number (Landline or Mobile), which can receive an incoming call from WA for validation of the access
+
+Provide the Business Description which is required to be shown in the WhatsApp Business Account, to your end customers.
 
 # Conditions
 1. The number being proposed to be used for WhatsApp Business Account API should not be used for WhatsApp at the time of migration. If it is being used for WhatsApp, the WhatsApp Account has to be deleted, not just the WhatsApp App on your mobile.
