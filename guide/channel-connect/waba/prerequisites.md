@@ -1,17 +1,24 @@
 ---
 layout: default
-title: WABA prerequisites
+title: WhatsApp Business Account API - Onboarding an Enterprise
 parent: WhatsApp Business API
 grand_parent: Channel Integration
 nav_order: 1
 ---
 # WABA prerequisites
-Before a business can access the WhatsApp Business API, each client has to go through an approval procedure
+1. Facebook Page should be available in the name of the business seeking to use WhatsApp Business Account API
+2. A Facebook Business ID (with a verified Business if possible)
+3. WhatsApp Number (Landline or Mobile), which can receive an incoming call from WA for validation of the access
+4. Provide the Business Description which is required to be shown in the WhatsApp Business Account, to your end customers.
 
-To start using the WhatsApp Business API, you will need the following:
-1. A Facebook Business ID (with a verified Business if possible)
-2. A valid phone number with the ability to receive phone calls or SMS
+# Conditions
+1. The number being proposed to be used for WhatsApp Business Account API should not be used for WhatsApp at the time of migration. If it is being used for WhatsApp, the WhatsApp Account has to be deleted, not just the WhatsApp App on your mobile.
 
+The Guidelines for deleting a WhatsApp Account are detailed here https://developers.facebook.com/docs/whatsapp/overview/phone-number#migrate
+
+2. You need to define a Display Name which will be shown on WhatsApp. The display name has to be close to your organisations name. 
+ 
+The guidelines for Display name are detailed here https://developers.facebook.com/docs/whatsapp/overview/display-name
 
 ### The approval procedure includes the following steps:
 
