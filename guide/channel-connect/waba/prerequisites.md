@@ -34,7 +34,7 @@ If you are using a phone number for WhatsApp and you have several customer conve
 2. Once this is done, you can upload all the conversations onto your Mehery platform
 3. These conversations will be visible as past conversations under (a) admin / sessions and (b) under teams / closed / expired sections
 
-## The Facebook (Meta) approval procedure includes the following steps
+## The Facebook (Meta) approval procedure
 
 ## Facebook Business ID
 You need to have a Facebook Business ID before you can proceed to the WhatsApp approval process. To find your Business ID, log into the Facebook Business Manager of the business and navigate to Business Settings. The Business Manager ID is displayed under the business name. 
