@@ -5,7 +5,7 @@ parent: WhatsApp Business API
 grand_parent: Channel Integration
 nav_order: 1
 ---
-# WABA Business Account API - Onboarding an Enterprise
+# WABA API - Onboarding an Enterprise
 
 This part of the documentation details the processes to onboard an Enterprise onto the Mehery Smart Conversations platform with WhatsApp Business Account API. Components are related to activities with Facebook (Meta), with WhatsApp and with the Mehery platform. 
 
@@ -23,11 +23,18 @@ Provide the Business Description which is required to be shown in the WhatsApp B
 
 ## Conditions
 
-The number being proposed to be used for WhatsApp Business Account API should not be used for WhatsApp at the time of migration. If it is being used for WhatsApp, the WhatsApp Account has to be deleted, not just the WhatsApp App on your mobile. The Guidelines for deleting a WhatsApp Account are detailed here https://developers.facebook.com/docs/whatsapp/overview/phone-number#migrate
+The number being proposed to be used for WhatsApp Business Account API should not be used for WhatsApp at the time of migration. If it is being used for WhatsApp, the WhatsApp Account has to be deleted, not just the WhatsApp App on your mobile. The Guidelines for deleting a WhatsApp Account are detailed here https://developers.facebook.com/docs/whatsapp/overview/phone-number#migrate 
 
-You need to define a Display Name which will be shown on WhatsApp. The display name has to be close to your organisations name. The guidelines for Display name are detailed here https://developers.facebook.com/docs/whatsapp/overview/display-name
+You need to define a Display Name which will be shown on WhatsApp. The display name has to be close to your organisations name. The guidelines for Display name are detailed here https://developers.facebook.com/docs/whatsapp/overview/display-name 
 
-## The approval procedure includes the following steps:
+## Migrating your WhatsApp Conversations from a mobile to the Mehery Platform (optional, where relevant)
+
+If you are using a phone number for WhatsApp and you have several customer conversations on the phone, your enterprise may want to migrate these to your new Mehery Smart Conversation platform, so that you do not loose your historical conversations. To migrate these conversations, you need to do the following steps:
+1. Individually for each user, export the conversation and save it either on your desktop or on a cloud drive
+2. Once this is done, you can upload all the conversations onto your Mehery platform
+3. These conversations will be visible as past conversations under (a) admin / sessions and (b) under teams / closed / expired sections
+
+## The Facebook (Meta) approval procedure includes the following steps
 
 ## Facebook Business ID
 You need to have a Facebook Business ID before you can proceed to the WhatsApp approval process. To find your Business ID, log into the Facebook Business Manager of the business and navigate to Business Settings. The Business Manager ID is displayed under the business name. 
