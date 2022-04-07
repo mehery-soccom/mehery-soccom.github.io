@@ -1,6 +1,6 @@
 ---
 layout: default
-title: WhatsApp Business Account API - Onboarding an Enterprise
+title: WABA - Onboarding
 parent: WhatsApp Business API
 grand_parent: Channel Integration
 nav_order: 1
