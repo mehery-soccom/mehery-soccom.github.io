@@ -72,11 +72,11 @@ If your request for business verification was rejected by the Facebook team, you
 
 To know more information about the rejection, you should go to your Facebook Business Manager → Security Center → Contact Facebook (under the message that the request was rejected).
 
-![s](https://2420607013-files.gitbook.io/~/files/v0/b/gitbook-28427.appspot.com/o/assets%2F-M4sMxKjL6eJRvZn6jeG%2F-MbB_G68d58mNu6-mI50%2F-MbBaIeRmBVfYJwPCg-N%2F%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202020-06-24%20%D0%B2%2018.08.40.png?alt=media&token=1dd19272-7fe8-4866-a231-592d3b77208f)
+![s](%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202020-06-24%20%D0%B2%2018.08.40.png?alt=media&token=1dd19272-7fe8-4866-a231-592d3b77208f)
 
 On the new page, you will see your ticket/case number.
 
-![s](https://2420607013-files.gitbook.io/~/files/v0/b/gitbook-28427.appspot.com/o/assets%2F-M4sMxKjL6eJRvZn6jeG%2F-MbB_G68d58mNu6-mI50%2F-MbBaTKmLOw5vPzWa8Fj%2F%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202020-06-24%20%D0%B2%2018.22.43.png?alt=media&token=48e82a85-ac8d-410d-ab47-b2fb7793890b)
+![s](%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202020-06-24%20%D0%B2%2018.22.43.png?alt=media&token=48e82a85-ac8d-410d-ab47-b2fb7793890b)
 
 If you click on the ‘Read More’ button, you can start interacting directly with Facebook Support to find out what is missing or which documents are not correct. 
 
