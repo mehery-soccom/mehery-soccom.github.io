@@ -103,7 +103,7 @@
           <a href="#definition-ChatMessageDTO"> ChatMessageDTO </a>
           <a href="#definition-ClientApp"> ClientApp </a>
           <a href="#definition-CommonMsgLocation"> CommonMsgLocation </a>
-          <a href="#definition-CommonTemplate"> CommonTemplate </a>
+          <a href="#definition-CommonTemplateMeta"> CommonTemplateMeta </a>
           <a href="#definition-ContactBusinessProfile"> ContactBusinessProfile </a>
           <a href="#definition-ContactInfoUpdate"> ContactInfoUpdate </a>
           <a href="#definition-ContactMeta"> ContactMeta </a>
@@ -127,6 +127,7 @@
           <a href="#definition-Map-string-string-"> Map«string,string» </a>
           <a href="#definition-MessagePrompt"> MessagePrompt </a>
           <a href="#definition-MessageReportError"> MessageReportError </a>
+          <a href="#definition-MessageRouter"> MessageRouter </a>
           <a href="#definition-MessageSession"> MessageSession </a>
           <a href="#definition-MsgChannel"> MsgChannel </a>
           <a href="#definition-MsgSession"> MsgSession </a>
@@ -137,6 +138,7 @@
           <a href="#definition-OutBoundReciept"> OutBoundReciept </a>
           <a href="#definition-OutboxMessage"> OutboxMessage </a>
           <a href="#definition-PostManFile"> PostManFile </a>
+          <a href="#definition-SessionAssigned"> SessionAssigned </a>
           <a href="#definition-SessionQueueAssignment"> SessionQueueAssignment </a>
           <a href="#definition-SessionRouted"> SessionRouted </a>
           <a href="#definition-SessionStatusClose"> SessionStatusClose </a>
@@ -173,7 +175,7 @@
                     <a href="Terms of service">Terms of service</a>
                   </h5>
                   <h5>Version:
-                    <span>1.0 - 2022-03-03 13:50</span>
+                    <span>1.0 - 2022-05-22 11:20 UTC</span>
                   </h5>
                 </section>
               </div>
@@ -512,6 +514,7 @@
         <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
         <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
         <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
+        <span class="hljs-attr">&quot;mediaSubType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
         <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
         <span class="hljs-attr">&quot;mediaURL&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>
       }
@@ -582,6 +585,7 @@
           <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
           <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
           <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
+          <span class="hljs-attr">&quot;mediaSubType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
           <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
           <span class="hljs-attr">&quot;mediaURL&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>
         }
@@ -802,6 +806,8 @@
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">&quot;data&quot;</span>: {
+    <span class="hljs-attr">&quot;agentApp&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+    <span class="hljs-attr">&quot;appMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;appType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;forward&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -810,7 +816,9 @@
     <span class="hljs-attr">&quot;keyVersion&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;props&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
     <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;readOnly&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
     <span class="hljs-attr">&quot;secret&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+    <span class="hljs-attr">&quot;shared&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
     <span class="hljs-attr">&quot;webhook&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
   },
   <span class="hljs-attr">&quot;details&quot;</span>: [
@@ -847,6 +855,8 @@
   <span class="hljs-attr">&quot;redirectUrl&quot;</span>: <span class="hljs-string">&quot;/go/to/some/other/url.html&quot;</span>,
   <span class="hljs-attr">&quot;results&quot;</span>: [
     {
+      <span class="hljs-attr">&quot;agentApp&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;appMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;appType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;forward&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -855,7 +865,9 @@
       <span class="hljs-attr">&quot;keyVersion&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;props&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
       <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;readOnly&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
       <span class="hljs-attr">&quot;secret&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;shared&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
       <span class="hljs-attr">&quot;webhook&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
@@ -1728,8 +1740,27 @@
   ],
   <span class="hljs-attr">&quot;events&quot;</span>: [
     {
+      <span class="hljs-attr">&quot;checksum&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;contact&quot;</span>: {
+        <span class="hljs-attr">&quot;channelType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;csid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;lane&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;eventCode&quot;</span>: <span class="hljs-string">&quot;SESSION_ROUTED&quot;</span>,
+      <span class="hljs-attr">&quot;sessionAssigned&quot;</span>: {
+        <span class="hljs-attr">&quot;newAgent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;newBot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;newDept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;oldAgent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;oldBot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;oldDept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;sessionRouted&quot;</span>: {
         <span class="hljs-attr">&quot;params&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -1960,8 +1991,27 @@
   ],
   <span class="hljs-attr">&quot;events&quot;</span>: [
     {
+      <span class="hljs-attr">&quot;checksum&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;contact&quot;</span>: {
+        <span class="hljs-attr">&quot;channelType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;csid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;lane&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;eventCode&quot;</span>: <span class="hljs-string">&quot;SESSION_ROUTED&quot;</span>,
+      <span class="hljs-attr">&quot;sessionAssigned&quot;</span>: {
+        <span class="hljs-attr">&quot;newAgent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;newBot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;newDept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;oldAgent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;oldBot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;oldDept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;sessionRouted&quot;</span>: {
         <span class="hljs-attr">&quot;params&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -2541,8 +2591,27 @@
   <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
   <span class="hljs-attr">&quot;results&quot;</span>: [
     {
+      <span class="hljs-attr">&quot;checksum&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;contact&quot;</span>: {
+        <span class="hljs-attr">&quot;channelType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;csid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;lane&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;eventCode&quot;</span>: <span class="hljs-string">&quot;SESSION_ROUTED&quot;</span>,
+      <span class="hljs-attr">&quot;sessionAssigned&quot;</span>: {
+        <span class="hljs-attr">&quot;newAgent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;newBot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;newDept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;oldAgent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;oldBot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;oldDept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;sessionRouted&quot;</span>: {
         <span class="hljs-attr">&quot;params&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -2742,6 +2811,7 @@
           <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
           <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
           <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
+          <span class="hljs-attr">&quot;mediaSubType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
           <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
           <span class="hljs-attr">&quot;mediaURL&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>
         }
@@ -2767,6 +2837,13 @@
       <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;replyId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;replyIdExt&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;replyTo&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;route&quot;</span>: {
+        <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;sender&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;stamps&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -2989,8 +3066,27 @@
   <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
   <span class="hljs-attr">&quot;results&quot;</span>: [
     {
+      <span class="hljs-attr">&quot;checksum&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;contact&quot;</span>: {
+        <span class="hljs-attr">&quot;channelType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;csid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;lane&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;eventCode&quot;</span>: <span class="hljs-string">&quot;SESSION_ROUTED&quot;</span>,
+      <span class="hljs-attr">&quot;sessionAssigned&quot;</span>: {
+        <span class="hljs-attr">&quot;newAgent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;newBot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;newDept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;oldAgent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;oldBot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;oldDept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;sessionRouted&quot;</span>: {
         <span class="hljs-attr">&quot;params&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -3365,6 +3461,7 @@
     <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
     <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
     <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
+    <span class="hljs-attr">&quot;mediaSubType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
     <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
     <span class="hljs-attr">&quot;mediaURL&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>
   },
@@ -3407,6 +3504,7 @@
       <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
       <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
       <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
+      <span class="hljs-attr">&quot;mediaSubType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
       <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
       <span class="hljs-attr">&quot;mediaURL&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>
     }
@@ -3649,6 +3747,8 @@
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">&quot;data&quot;</span>: {
+    <span class="hljs-attr">&quot;agentApp&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+    <span class="hljs-attr">&quot;appMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;appType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;forward&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -3657,7 +3757,9 @@
     <span class="hljs-attr">&quot;keyVersion&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;props&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
     <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;readOnly&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
     <span class="hljs-attr">&quot;secret&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+    <span class="hljs-attr">&quot;shared&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
     <span class="hljs-attr">&quot;webhook&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
   },
   <span class="hljs-attr">&quot;details&quot;</span>: [
@@ -3694,6 +3796,8 @@
   <span class="hljs-attr">&quot;redirectUrl&quot;</span>: <span class="hljs-string">&quot;/go/to/some/other/url.html&quot;</span>,
   <span class="hljs-attr">&quot;results&quot;</span>: [
     {
+      <span class="hljs-attr">&quot;agentApp&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;appMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;appType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;forward&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -3702,7 +3806,9 @@
       <span class="hljs-attr">&quot;keyVersion&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;props&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
       <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;readOnly&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
       <span class="hljs-attr">&quot;secret&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;shared&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
       <span class="hljs-attr">&quot;webhook&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
@@ -4545,6 +4651,7 @@
         <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
         <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
         <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
+        <span class="hljs-attr">&quot;mediaSubType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
         <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
         <span class="hljs-attr">&quot;mediaURL&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>
       }
@@ -4615,6 +4722,7 @@
           <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
           <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
           <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
+          <span class="hljs-attr">&quot;mediaSubType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
           <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
           <span class="hljs-attr">&quot;mediaURL&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>
         }
@@ -5162,6 +5270,7 @@
         <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
         <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
         <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
+        <span class="hljs-attr">&quot;mediaSubType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
         <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
         <span class="hljs-attr">&quot;mediaURL&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>
       }
@@ -5212,6 +5321,7 @@
         <span class="hljs-attr">&quot;fileFormat&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;fileType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;headers&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+        <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
         <span class="hljs-attr">&quot;model&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
         <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;options&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -5233,6 +5343,8 @@
     <span class="hljs-attr">&quot;footer&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;formatSubType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;formatType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;from&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;fromName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;hsm&quot;</span>: {
       <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;FEEDBACK&quot;</span>,
       <span class="hljs-attr">&quot;data&quot;</span>: {
@@ -5253,7 +5365,6 @@
     <span class="hljs-attr">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;messageIdExt&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;messageIdRef&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;messageType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
     <span class="hljs-attr">&quot;model&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
     <span class="hljs-attr">&quot;options&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -5264,12 +5375,23 @@
       <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     },
     <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;number&quot;</span>,
+    <span class="hljs-attr">&quot;replyId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;replyIdExt&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;route&quot;</span>: {
+      <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;senderType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    },
     <span class="hljs-attr">&quot;session&quot;</span>: {
       <span class="hljs-attr">&quot;agent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;bot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;dept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;firstMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
       <span class="hljs-attr">&quot;mode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+      <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;ticketHash&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     },
     <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;stamps&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -5327,6 +5449,7 @@
           <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
           <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
           <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
+          <span class="hljs-attr">&quot;mediaSubType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
           <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
           <span class="hljs-attr">&quot;mediaURL&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>
         }
@@ -5377,6 +5500,7 @@
           <span class="hljs-attr">&quot;fileFormat&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;fileType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;headers&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+          <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
           <span class="hljs-attr">&quot;model&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
           <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;options&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -5398,6 +5522,8 @@
       <span class="hljs-attr">&quot;footer&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;formatSubType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;formatType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;from&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;fromName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;hsm&quot;</span>: {
         <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;FEEDBACK&quot;</span>,
         <span class="hljs-attr">&quot;data&quot;</span>: {
@@ -5418,7 +5544,6 @@
       <span class="hljs-attr">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;messageIdExt&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;messageIdRef&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;messageType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
       <span class="hljs-attr">&quot;model&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
       <span class="hljs-attr">&quot;options&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -5429,12 +5554,23 @@
         <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
       },
       <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;number&quot;</span>,
+      <span class="hljs-attr">&quot;replyId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;replyIdExt&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;route&quot;</span>: {
+        <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;session&quot;</span>: {
         <span class="hljs-attr">&quot;agent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;bot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;dept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;firstMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
         <span class="hljs-attr">&quot;mode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-        <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+        <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+        <span class="hljs-attr">&quot;ticketHash&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
       },
       <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;stamps&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -5581,6 +5717,7 @@
           <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
           <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
           <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
+          <span class="hljs-attr">&quot;mediaSubType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
           <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
           <span class="hljs-attr">&quot;mediaURL&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>
         }
@@ -5606,6 +5743,13 @@
       <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;replyId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;replyIdExt&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;replyTo&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;route&quot;</span>: {
+        <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;sender&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;stamps&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -5748,8 +5892,27 @@
   <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
   <span class="hljs-attr">&quot;results&quot;</span>: [
     {
+      <span class="hljs-attr">&quot;checksum&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;contact&quot;</span>: {
+        <span class="hljs-attr">&quot;channelType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;csid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;lane&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;eventCode&quot;</span>: <span class="hljs-string">&quot;SESSION_ROUTED&quot;</span>,
+      <span class="hljs-attr">&quot;sessionAssigned&quot;</span>: {
+        <span class="hljs-attr">&quot;newAgent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;newBot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;newDept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;oldAgent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;oldBot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;oldDept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;sessionRouted&quot;</span>: {
         <span class="hljs-attr">&quot;params&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -5988,6 +6151,20 @@
                       <p>Media URL generated by Channel</p>
                       <small>undefined</small>
                     </dd>
+                    <dt data-property-name="mediaSubType" class="has-description">
+                      <span class="json-property-name">mediaSubType:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-enum" title="Possible values">
+                        <span class="json-property-enum-item">STORY_MENTION</span>,
+                        <span class="json-property-enum-item">SHARE etc</span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Media SubType Type</p>
+                      <small>undefined</small>
+                    </dd>
                     <dt data-property-name="mediaType" class="has-description">
                       <span class="json-property-name">mediaType:</span>
                       <span class="json-property-type">string</span>
@@ -5996,7 +6173,8 @@
                         <span class="json-property-enum-item">DOCUMENT</span>,
                         <span class="json-property-enum-item">TEXT</span>,
                         <span class="json-property-enum-item">PDF</span>,
-                        <span class="json-property-enum-item">VIDEO</span>
+                        <span class="json-property-enum-item">VIDEO</span>,
+                        <span class="json-property-enum-item">URL</span>
                       </span>
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
@@ -6030,6 +6208,7 @@
   <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
   <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
   <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
+  <span class="hljs-attr">&quot;mediaSubType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
   <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
   <span class="hljs-attr">&quot;mediaURL&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>
 }
@@ -6196,6 +6375,22 @@
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
+                    <dt data-property-name="replyTo">
+                      <span class="json-property-name">replyTo:</span>
+                      <span class="json-property-type">object</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="route">
+                      <span class="json-property-name">route:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/MessageRouter">MessageRouter</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
                     <dt data-property-name="sender">
                       <span class="json-property-name">sender:</span>
                       <span class="json-property-type">string</span>
@@ -6279,6 +6474,7 @@
       <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
       <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
       <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
+      <span class="hljs-attr">&quot;mediaSubType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
       <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
       <span class="hljs-attr">&quot;mediaURL&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>
     }
@@ -6304,6 +6500,13 @@
   <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;replyId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;replyIdExt&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;replyTo&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-attr">&quot;route&quot;</span>: {
+    <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;senderType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
   <span class="hljs-attr">&quot;sender&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;stamps&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -6361,6 +6564,18 @@
               <div class="doc-copy">
                 <section class="json-schema-properties">
                   <dl>
+                    <dt data-property-name="agentApp">
+                      <span class="json-property-name">agentApp:</span>
+                      <span class="json-property-type">boolean</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="appMode">
+                      <span class="json-property-name">appMode:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
                     <dt data-property-name="appType">
                       <span class="json-property-name">appType:</span>
                       <span class="json-property-type">string</span>
@@ -6409,9 +6624,21 @@
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
+                    <dt data-property-name="readOnly">
+                      <span class="json-property-name">readOnly:</span>
+                      <span class="json-property-type">boolean</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
                     <dt data-property-name="secret">
                       <span class="json-property-name">secret:</span>
                       <span class="json-property-type">object</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="shared">
+                      <span class="json-property-name">shared:</span>
+                      <span class="json-property-type">boolean</span>
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
@@ -6431,6 +6658,8 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;agentApp&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+  <span class="hljs-attr">&quot;appMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;appType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;forward&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -6439,7 +6668,9 @@
   <span class="hljs-attr">&quot;keyVersion&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;props&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
   <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;readOnly&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
   <span class="hljs-attr">&quot;secret&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-attr">&quot;shared&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
   <span class="hljs-attr">&quot;webhook&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
 }
 </code></pre> </body>
@@ -6524,9 +6755,9 @@
               </div>
             </div>
           </div>
-          <div id="definition-CommonTemplate" class="definition panel" data-traverse-target="definition-CommonTemplate">
+          <div id="definition-CommonTemplateMeta" class="definition panel" data-traverse-target="definition-CommonTemplateMeta">
             <h2 class="panel-title">
-              <a name="/definitions/CommonTemplate"></a>CommonTemplate: object
+              <a name="/definitions/CommonTemplateMeta"></a>CommonTemplateMeta: object
               <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
@@ -7709,6 +7940,7 @@
       <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
       <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
       <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
+      <span class="hljs-attr">&quot;mediaSubType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
       <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
       <span class="hljs-attr">&quot;mediaURL&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>
     }
@@ -7984,6 +8216,22 @@
               <div class="doc-copy">
                 <section class="json-schema-properties">
                   <dl>
+                    <dt data-property-name="checksum">
+                      <span class="json-property-name">checksum:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="contact">
+                      <span class="json-property-name">contact:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/Contactable">Contactable</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
                     <dt data-property-name="contactId">
                       <span class="json-property-name">contactId:</span>
                       <span class="json-property-type">string</span>
@@ -8000,6 +8248,16 @@
                       <p>Event Triggered by App/Service</p>
                       <small>undefined</small>
                     </dd>
+                    <dt data-property-name="sessionAssigned">
+                      <span class="json-property-name">sessionAssigned:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/SessionAssigned">SessionAssigned</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
                     <dt data-property-name="sessionId">
                       <span class="json-property-name">sessionId:</span>
                       <span class="json-property-type">string</span>
@@ -8026,8 +8284,27 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;checksum&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;contact&quot;</span>: {
+    <span class="hljs-attr">&quot;channelType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;csid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;lane&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
   <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;eventCode&quot;</span>: <span class="hljs-string">&quot;SESSION_ROUTED&quot;</span>,
+  <span class="hljs-attr">&quot;sessionAssigned&quot;</span>: {
+    <span class="hljs-attr">&quot;newAgent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;newBot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;newDept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;oldAgent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;oldBot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;oldDept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
   <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;sessionRouted&quot;</span>: {
     <span class="hljs-attr">&quot;params&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -8868,8 +9145,27 @@
   ],
   <span class="hljs-attr">&quot;events&quot;</span>: [
     {
+      <span class="hljs-attr">&quot;checksum&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;contact&quot;</span>: {
+        <span class="hljs-attr">&quot;channelType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;contactType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;csid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;lane&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;eventCode&quot;</span>: <span class="hljs-string">&quot;SESSION_ROUTED&quot;</span>,
+      <span class="hljs-attr">&quot;sessionAssigned&quot;</span>: {
+        <span class="hljs-attr">&quot;newAgent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;newBot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;newDept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;oldAgent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;oldBot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;oldDept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;sessionRouted&quot;</span>: {
         <span class="hljs-attr">&quot;params&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -9201,6 +9497,65 @@
               </div>
             </div>
           </div>
+          <div id="definition-MessageRouter" class="definition panel" data-traverse-target="definition-MessageRouter">
+            <h2 class="panel-title">
+              <a name="/definitions/MessageRouter"></a>MessageRouter: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="queueCode">
+                      <span class="json-property-name">queueCode:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="sendMode">
+                      <span class="json-property-name">sendMode:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="senderCode">
+                      <span class="json-property-name">senderCode:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="senderType">
+                      <span class="json-property-name">senderType:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;senderType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
           <div id="definition-MessageSession" class="definition panel" data-traverse-target="definition-MessageSession">
             <h2 class="panel-title">
               <a name="/definitions/MessageSession"></a>MessageSession: object
@@ -9220,9 +9575,21 @@
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
+                    <dt data-property-name="bot">
+                      <span class="json-property-name">bot:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
                     <dt data-property-name="dept">
                       <span class="json-property-name">dept:</span>
                       <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="firstMessage">
+                      <span class="json-property-name">firstMessage:</span>
+                      <span class="json-property-type">boolean</span>
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
@@ -9244,6 +9611,12 @@
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
+                    <dt data-property-name="ticketHash">
+                      <span class="json-property-name">ticketHash:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
                   </dl>
                 </section>
               </div>
@@ -9255,10 +9628,13 @@
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">&quot;agent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;bot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;dept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;firstMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
   <span class="hljs-attr">&quot;mode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+  <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+  <span class="hljs-attr">&quot;ticketHash&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
 }
 </code></pre> </body>
                   </html>
@@ -9558,7 +9934,7 @@
                       <span class="json-property-name">template:</span>
                       <span class="json-property-type">
                         <span class="">
-                          <a class="json-schema-ref" href="#/definitions/CommonTemplate">CommonTemplate</a>
+                          <a class="json-schema-ref" href="#/definitions/CommonTemplateMeta">CommonTemplateMeta</a>
                         </span>
                       </span>
                       <span class="json-property-range" title="Value limits"></span>
@@ -9954,11 +10330,23 @@
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
+                    <dt data-property-name="from">
+                      <span class="json-property-name">from:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="fromName">
+                      <span class="json-property-name">fromName:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
                     <dt data-property-name="hsm">
                       <span class="json-property-name">hsm:</span>
                       <span class="json-property-type">
                         <span class="">
-                          <a class="json-schema-ref" href="#/definitions/CommonTemplate">CommonTemplate</a>
+                          <a class="json-schema-ref" href="#/definitions/CommonTemplateMeta">CommonTemplateMeta</a>
                         </span>
                       </span>
                       <span class="json-property-range" title="Value limits"></span>
@@ -10020,16 +10408,6 @@
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
-                    <dt data-property-name="messageType">
-                      <span class="json-property-name">messageType:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-enum" title="Possible values">
-                        <span class="json-property-enum-item">SOA</span>,
-                        <span class="json-property-enum-item">IT</span>
-                      </span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-required"></span>
-                    </dt>
                     <dt data-property-name="meta">
                       <span class="json-property-name">meta:</span>
                       <span class="json-property-type">object</span>
@@ -10068,6 +10446,28 @@
                     <dt data-property-name="queue">
                       <span class="json-property-name">queue:</span>
                       <span class="json-property-type">number</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="replyId">
+                      <span class="json-property-name">replyId:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="replyIdExt">
+                      <span class="json-property-name">replyIdExt:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="route">
+                      <span class="json-property-name">route:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/MessageRouter">MessageRouter</a>
+                        </span>
+                      </span>
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
@@ -10179,6 +10579,7 @@
       <span class="hljs-attr">&quot;mediaMimeType&quot;</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
       <span class="hljs-attr">&quot;mediaName&quot;</span>: <span class="hljs-string">&quot;TransactionReceipt.pdf&quot;</span>,
       <span class="hljs-attr">&quot;mediaSrc&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>,
+      <span class="hljs-attr">&quot;mediaSubType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
       <span class="hljs-attr">&quot;mediaType&quot;</span>: <span class="hljs-string">&quot;IMAGE&quot;</span>,
       <span class="hljs-attr">&quot;mediaURL&quot;</span>: <span class="hljs-string">&quot;https://client.service.com/docs/media/12.png&quot;</span>
     }
@@ -10229,6 +10630,7 @@
       <span class="hljs-attr">&quot;fileFormat&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;fileType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;headers&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
       <span class="hljs-attr">&quot;model&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
       <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;options&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -10250,6 +10652,8 @@
   <span class="hljs-attr">&quot;footer&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;formatSubType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;formatType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;from&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;fromName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;hsm&quot;</span>: {
     <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;FEEDBACK&quot;</span>,
     <span class="hljs-attr">&quot;data&quot;</span>: {
@@ -10270,7 +10674,6 @@
   <span class="hljs-attr">&quot;messageId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;messageIdExt&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;messageIdRef&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;messageType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
   <span class="hljs-attr">&quot;model&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
   <span class="hljs-attr">&quot;options&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -10281,12 +10684,23 @@
     <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
   },
   <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;number&quot;</span>,
+  <span class="hljs-attr">&quot;replyId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;replyIdExt&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;route&quot;</span>: {
+    <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;senderType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
   <span class="hljs-attr">&quot;session&quot;</span>: {
     <span class="hljs-attr">&quot;agent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;bot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;dept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;firstMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
     <span class="hljs-attr">&quot;mode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+    <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+    <span class="hljs-attr">&quot;ticketHash&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
   },
   <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;stamps&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -10400,13 +10814,21 @@
                         <span class="json-property-enum-item">VIDEO</span>,
                         <span class="json-property-enum-item">AUDIO</span>,
                         <span class="json-property-enum-item">TEXT</span>,
-                        <span class="json-property-enum-item">DOCUMENT</span>
+                        <span class="json-property-enum-item">DOCUMENT</span>,
+                        <span class="json-property-enum-item">FILE</span>,
+                        <span class="json-property-enum-item">URL</span>
                       </span>
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
                     <dt data-property-name="headers">
                       <span class="json-property-name">headers:</span>
+                      <span class="json-property-type">object</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="meta">
+                      <span class="json-property-name">meta:</span>
                       <span class="json-property-type">object</span>
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
@@ -10445,7 +10867,7 @@
                       <span class="json-property-name">template:</span>
                       <span class="json-property-type">
                         <span class="">
-                          <a class="json-schema-ref" href="#/definitions/CommonTemplate">CommonTemplate</a>
+                          <a class="json-schema-ref" href="#/definitions/CommonTemplateMeta">CommonTemplateMeta</a>
                         </span>
                       </span>
                       <span class="json-property-range" title="Value limits"></span>
@@ -10481,6 +10903,7 @@
   <span class="hljs-attr">&quot;fileFormat&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;fileType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;headers&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-attr">&quot;meta&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
   <span class="hljs-attr">&quot;model&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
   <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;options&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
@@ -10497,6 +10920,79 @@
   },
   <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-SessionAssigned" class="definition panel" data-traverse-target="definition-SessionAssigned">
+            <h2 class="panel-title">
+              <a name="/definitions/SessionAssigned"></a>SessionAssigned: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="newAgent">
+                      <span class="json-property-name">newAgent:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="newBot">
+                      <span class="json-property-name">newBot:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="newDept">
+                      <span class="json-property-name">newDept:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="oldAgent">
+                      <span class="json-property-name">oldAgent:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="oldBot">
+                      <span class="json-property-name">oldBot:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="oldDept">
+                      <span class="json-property-name">oldDept:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;newAgent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;newBot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;newDept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;oldAgent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;oldBot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;oldDept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
 }
 </code></pre> </body>
                   </html>
