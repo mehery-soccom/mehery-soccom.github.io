@@ -37,7 +37,7 @@ Notability, on the other hand, reflects a substantial presence in online news ar
 
 Official business accounts are issued at the phone number and display name level. Meta assesses notability for the Display Name of the business account that is requesting OBA status —If the display name is changed after receiving the OBA status, the account will need to go through the approval process again.
 
-Additionally, previous OBA approvals within a WhatsApp Business Account do not guarantee approval for other numbers (with different display names) associated with that account. If your WABA contains one main parent brand and the phone number associated with that brand meet notability requirements, we suggest updating the display names for the child brands as follows: '{{sub-brand name}} by {{notable name}}'.
+Additionally, previous OBA approvals within a WhatsApp Business Account do not guarantee approval for other numbers (with different display names) associated with that account. If your WABA contains one main parent brand and the phone number associated with that brand meet notability requirements, we suggest updating the display names for the child brands as follows: _<sub-brand name> by <notable name>_.
 
 ### Denied Requests
 If your OBA request has been denied, it means the Meta team has carefully reviewed your account, and unfortunately, your account is not eligible for the OBA status at this time. Currently, these decisions cannot be appealed.
