@@ -1,4 +1,4 @@
-# About MeherY
+# About Socnect
 
 
 Socnect is a young, one year old company, building solutions in the digital space.  
