@@ -3,7 +3,7 @@ Privacy Policy
 
 * Effective date: Sept 1, 2021
 
-Mehery SocCom Pvt Ltd (“us”, “we”, or “our”) operates the website and the Mehery application, which is a message aggregation and distribution service (the “Service”). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
+Socnect Pvt Ltd (“us”, “we”, or “our”) operates the website and the Socnect application, which is a message aggregation and distribution service (the “Service”). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
 
 We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions.
 
@@ -76,7 +76,7 @@ Your consent to this Privacy Policy followed by your submission of such informat
 We may disclose your Data in the good faith belief that such action is necessary to:
 
 * To comply with a legal obligation
-* To protect and defend the rights or property of Mehery SocCom Pvt Ltd
+* To protect and defend the rights or property of Socnect Pvt Ltd
 * To prevent or investigate possible wrongdoing in connection with the Service
 * To protect the personal safety of users of the Service or the public
 * To protect against legal liability
@@ -136,4 +136,4 @@ You are advised to review this Privacy Policy periodically for any changes. Chan
 
 ## Contact Us
 
-If you have any questions about this Privacy Policy, please contact us at legal@mehery.com
+If you have any questions about this Privacy Policy, please contact us at legal@socnect.com
