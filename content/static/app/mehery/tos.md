@@ -1,5 +1,4 @@
 ---
-layout: default
 title: TERMS OF SERVICE
 nav_exclude: true
 search_exclude: true

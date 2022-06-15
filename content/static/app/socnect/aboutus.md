@@ -1,5 +1,4 @@
 ---
-layout: default
 title: About Socnect
 nav_exclude: true
 search_exclude: true

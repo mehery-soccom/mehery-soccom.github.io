@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Privacy Policy
 nav_exclude: true
 search_exclude: true
