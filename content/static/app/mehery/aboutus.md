@@ -1,3 +1,10 @@
+---
+layout: default
+title: About MeherY
+nav_exclude: true
+search_exclude: true
+---
+
 # About MeherY
 
 
