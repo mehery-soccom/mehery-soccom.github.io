@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "All the requests are required to be authorized using an API Key authentication. \n Adding *x-api-key* in the header with your unique API Key as a value will grant access.\n To get your *x-api-key* [visit documentation](/server-xms/)",
-    "version": "1.0 - 2022-05-22 11:20 UTC",
+    "version": "1.0 - 2022-06-21 17:31 UTC",
     "title": "Messaging APIs",
     "termsOfService": "Terms of service",
     "contact": {},
@@ -66,6 +66,13 @@
             "description": "API Key",
             "required": false,
             "type": "string"
+          },
+          {
+            "name": "x-api-id",
+            "in": "header",
+            "description": "API Id",
+            "required": false,
+            "type": "string"
           }
         ],
         "responses": {
@@ -115,6 +122,13 @@
             "name": "x-api-key",
             "in": "header",
             "description": "API Key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "x-api-id",
+            "in": "header",
+            "description": "API Id",
             "required": false,
             "type": "string"
           }
@@ -171,6 +185,13 @@
             "name": "x-api-key",
             "in": "header",
             "description": "API Key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "x-api-id",
+            "in": "header",
+            "description": "API Id",
             "required": false,
             "type": "string"
           }
@@ -287,6 +308,13 @@
             "description": "API Key",
             "required": false,
             "type": "string"
+          },
+          {
+            "name": "x-api-id",
+            "in": "header",
+            "description": "API Id",
+            "required": false,
+            "type": "string"
           }
         ],
         "responses": {
@@ -344,6 +372,13 @@
             "name": "x-api-key",
             "in": "header",
             "description": "API Key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "x-api-id",
+            "in": "header",
+            "description": "API Id",
             "required": false,
             "type": "string"
           }
@@ -460,6 +495,13 @@
             "description": "API Key",
             "required": false,
             "type": "string"
+          },
+          {
+            "name": "x-api-id",
+            "in": "header",
+            "description": "API Id",
+            "required": false,
+            "type": "string"
           }
         ],
         "responses": {
@@ -517,6 +559,13 @@
             "name": "x-api-key",
             "in": "header",
             "description": "API Key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "x-api-id",
+            "in": "header",
+            "description": "API Id",
             "required": false,
             "type": "string"
           }
@@ -578,6 +627,13 @@
             "description": "API Key",
             "required": false,
             "type": "string"
+          },
+          {
+            "name": "x-api-id",
+            "in": "header",
+            "description": "API Id",
+            "required": false,
+            "type": "string"
           }
         ],
         "responses": {
@@ -585,6 +641,72 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/ApiResultsMetaCompactResponse«ChatMessageDTO,object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "X_API_KEY": []
+          }
+        ]
+      }
+    },
+    "/api/v1/session/resolve": {
+      "post": {
+        "tags": [
+          "Session Management"
+        ],
+        "summary": "Session Resolve",
+        "description": "Resolve the active session, will leave the scope of closing session to end user\t",
+        "operationId": "sessionResolveUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SessionStatusClose"
+            }
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "description": "API Key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "x-api-id",
+            "in": "header",
+            "description": "API Id",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResultsMetaCompactResponse«InBoundEvent,object»"
             }
           },
           "201": {
@@ -635,6 +757,13 @@
             "name": "x-api-key",
             "in": "header",
             "description": "API Key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "x-api-id",
+            "in": "header",
+            "description": "API Id",
             "required": false,
             "type": "string"
           }
@@ -740,6 +869,7 @@
         "meta",
         "params",
         "path",
+        "query",
         "redirectUrl",
         "results",
         "status",
@@ -798,6 +928,9 @@
           "type": "string",
           "example": "/postman/email/send"
         },
+        "query": {
+          "type": "object"
+        },
         "redirectUrl": {
           "type": "string",
           "example": "/go/to/some/other/url.html"
@@ -851,6 +984,7 @@
         "meta",
         "params",
         "path",
+        "query",
         "redirectUrl",
         "results",
         "status",
@@ -909,6 +1043,9 @@
           "type": "string",
           "example": "/postman/email/send"
         },
+        "query": {
+          "type": "object"
+        },
         "redirectUrl": {
           "type": "string",
           "example": "/go/to/some/other/url.html"
@@ -962,6 +1099,7 @@
         "meta",
         "params",
         "path",
+        "query",
         "redirectUrl",
         "results",
         "status",
@@ -1020,6 +1158,9 @@
           "type": "string",
           "example": "/postman/email/send"
         },
+        "query": {
+          "type": "object"
+        },
         "redirectUrl": {
           "type": "string",
           "example": "/go/to/some/other/url.html"
@@ -1073,6 +1214,7 @@
         "meta",
         "params",
         "path",
+        "query",
         "redirectUrl",
         "results",
         "status",
@@ -1131,6 +1273,9 @@
           "type": "string",
           "example": "/postman/email/send"
         },
+        "query": {
+          "type": "object"
+        },
         "redirectUrl": {
           "type": "string",
           "example": "/go/to/some/other/url.html"
@@ -1184,6 +1329,7 @@
         "meta",
         "params",
         "path",
+        "query",
         "redirectUrl",
         "results",
         "status",
@@ -1242,6 +1388,9 @@
           "type": "string",
           "example": "/postman/email/send"
         },
+        "query": {
+          "type": "object"
+        },
         "redirectUrl": {
           "type": "string",
           "example": "/go/to/some/other/url.html"
@@ -1295,6 +1444,7 @@
         "meta",
         "params",
         "path",
+        "query",
         "redirectUrl",
         "results",
         "status",
@@ -1353,6 +1503,9 @@
           "type": "string",
           "example": "/postman/email/send"
         },
+        "query": {
+          "type": "object"
+        },
         "redirectUrl": {
           "type": "string",
           "example": "/go/to/some/other/url.html"
@@ -1406,6 +1559,7 @@
         "meta",
         "params",
         "path",
+        "query",
         "redirectUrl",
         "results",
         "status",
@@ -1463,6 +1617,9 @@
         "path": {
           "type": "string",
           "example": "/postman/email/send"
+        },
+        "query": {
+          "type": "object"
         },
         "redirectUrl": {
           "type": "string",
@@ -1775,7 +1932,8 @@
         "templateId",
         "text",
         "timestamp",
-        "type"
+        "type",
+        "vccards"
       ],
       "properties": {
         "action": {
@@ -1860,6 +2018,12 @@
         },
         "type": {
           "type": "string"
+        },
+        "vccards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PBVCard"
+          }
         }
       },
       "title": "ChatMessageDTO"
@@ -1959,6 +2123,21 @@
         }
       },
       "title": "CommonMsgLocation"
+    },
+    "CommonMsgOptions": {
+      "type": "object",
+      "required": [
+        "buttons"
+      ],
+      "properties": {
+        "buttons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TmplElement"
+          }
+        }
+      },
+      "title": "CommonMsgOptions"
     },
     "CommonTemplateMeta": {
       "type": "object",
@@ -2665,6 +2844,7 @@
         "contact",
         "contactId",
         "eventCode",
+        "session",
         "sessionAssigned",
         "sessionId",
         "sessionRouted"
@@ -2684,6 +2864,9 @@
           "example": "SESSION_ROUTED",
           "description": "Event Triggered by App/Service"
         },
+        "session": {
+          "$ref": "#/definitions/MessageSession"
+        },
         "sessionAssigned": {
           "$ref": "#/definitions/SessionAssigned"
         },
@@ -2699,6 +2882,7 @@
     "InBoundMeta": {
       "type": "object",
       "required": [
+        "debug",
         "domain",
         "server"
       ],
@@ -2707,6 +2891,9 @@
           "type": "string",
           "example": "61ec7d9c2ce85742b201c5ab",
           "description": "Client App Id if webhook is set for an App "
+        },
+        "debug": {
+          "type": "boolean"
         },
         "domain": {
           "type": "string",
@@ -3065,6 +3252,7 @@
       "required": [
         "queueCode",
         "sendMode",
+        "senderApp",
         "senderCode",
         "senderType"
       ],
@@ -3073,6 +3261,9 @@
           "type": "string"
         },
         "sendMode": {
+          "type": "string"
+        },
+        "senderApp": {
           "type": "string"
         },
         "senderCode": {
@@ -3094,6 +3285,8 @@
         "mode",
         "queue",
         "resolved",
+        "routingId",
+        "sessionStamp",
         "ticketHash"
       ],
       "properties": {
@@ -3117,6 +3310,13 @@
         },
         "resolved": {
           "type": "boolean"
+        },
+        "routingId": {
+          "type": "string"
+        },
+        "sessionStamp": {
+          "type": "integer",
+          "format": "int64"
         },
         "ticketHash": {
           "type": "string"
@@ -3174,6 +3374,7 @@
       "required": [
         "assignedToAgent",
         "assignedToDept",
+        "routingId",
         "sessionId"
       ],
       "properties": {
@@ -3186,6 +3387,11 @@
           "type": "string",
           "example": "SUPPORT",
           "description": "Message Assignment If Any"
+        },
+        "routingId": {
+          "type": "string",
+          "example": "xsds34434-323-232",
+          "description": "RoutingId"
         },
         "sessionId": {
           "type": "string",
@@ -3250,6 +3456,9 @@
           "type": "boolean",
           "example": false,
           "description": "Mask the outgoing message data"
+        },
+        "options": {
+          "$ref": "#/definitions/CommonMsgOptions"
         },
         "template": {
           "$ref": "#/definitions/CommonTemplateMeta"
@@ -3379,7 +3588,8 @@
         "templateExt",
         "timestamp",
         "to",
-        "type"
+        "type",
+        "vccards"
       ],
       "properties": {
         "action": {
@@ -3543,9 +3753,303 @@
         },
         "type": {
           "type": "string"
+        },
+        "vccards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PBVCard"
+          }
         }
       },
       "title": "OutboxMessage"
+    },
+    "PBAddress": {
+      "type": "object",
+      "required": [
+        "city",
+        "country",
+        "countryCode",
+        "state",
+        "street",
+        "type",
+        "zip"
+      ],
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "street": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "string"
+        }
+      },
+      "title": "PBAddress"
+    },
+    "PBDate": {
+      "type": "object",
+      "required": [
+        "date",
+        "label",
+        "type"
+      ],
+      "properties": {
+        "date": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "title": "PBDate"
+    },
+    "PBEmail": {
+      "type": "object",
+      "required": [
+        "email",
+        "label",
+        "type"
+      ],
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "title": "PBEmail"
+    },
+    "PBLocation": {
+      "type": "object",
+      "required": [
+        "address",
+        "latitude",
+        "longitude",
+        "name",
+        "url"
+      ],
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "latitude": {
+          "type": "string"
+        },
+        "longitude": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "PBLocation"
+    },
+    "PBName": {
+      "type": "object",
+      "required": [
+        "firstName",
+        "formattedName",
+        "lastName"
+      ],
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "formattedName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        }
+      },
+      "title": "PBName"
+    },
+    "PBPhone": {
+      "type": "object",
+      "required": [
+        "country",
+        "countryCallingCode",
+        "ext",
+        "label",
+        "nationalNumber",
+        "phone",
+        "type",
+        "whatsAppId"
+      ],
+      "properties": {
+        "country": {
+          "type": "string"
+        },
+        "countryCallingCode": {
+          "type": "string"
+        },
+        "ext": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "nationalNumber": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "whatsAppId": {
+          "type": "string"
+        }
+      },
+      "title": "PBPhone"
+    },
+    "PBSocial": {
+      "type": "object",
+      "required": [
+        "service",
+        "userid"
+      ],
+      "properties": {
+        "service": {
+          "type": "string"
+        },
+        "userid": {
+          "type": "string"
+        }
+      },
+      "title": "PBSocial"
+    },
+    "PBVCard": {
+      "type": "object",
+      "required": [
+        "addresses",
+        "dates",
+        "emails",
+        "ims",
+        "locations",
+        "name",
+        "phones",
+        "urls",
+        "work"
+      ],
+      "properties": {
+        "addresses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PBAddress"
+          }
+        },
+        "dates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PBDate"
+          }
+        },
+        "emails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PBEmail"
+          }
+        },
+        "ims": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PBSocial"
+          }
+        },
+        "locations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PBLocation"
+          }
+        },
+        "name": {
+          "$ref": "#/definitions/PBName"
+        },
+        "phones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PBPhone"
+          }
+        },
+        "urls": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PBWebsite"
+          }
+        },
+        "work": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PBWork"
+          }
+        }
+      },
+      "title": "PBVCard"
+    },
+    "PBWebsite": {
+      "type": "object",
+      "required": [
+        "label",
+        "type",
+        "url"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "PBWebsite"
+    },
+    "PBWork": {
+      "type": "object",
+      "required": [
+        "company",
+        "department",
+        "title"
+      ],
+      "properties": {
+        "company": {
+          "type": "string"
+        },
+        "department": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "title": "PBWork"
     },
     "PostManFile": {
       "type": "object",
@@ -3709,6 +4213,11 @@
         "sessionId"
       ],
       "properties": {
+        "agent": {
+          "type": "string",
+          "example": "external_bot",
+          "description": "Agent Code, applicable only if queue type is Agent"
+        },
         "params": {
           "type": "object"
         },
@@ -3721,6 +4230,11 @@
           "type": "string",
           "example": "61f3810a02e14c0877fc1a32",
           "description": "Session to be routed"
+        },
+        "team": {
+          "type": "string",
+          "example": "external_bot",
+          "description": "Team Code, applicable only if queue type is Agent"
         }
       },
       "title": "SessionQueueAssignment"
@@ -3729,6 +4243,8 @@
       "type": "object",
       "required": [
         "params",
+        "routingId",
+        "sessionStart",
         "sourceQueue",
         "targetQueue"
       ],
@@ -3736,6 +4252,12 @@
         "params": {
           "type": "object",
           "description": "Additional params sent by Router"
+        },
+        "routingId": {
+          "type": "string"
+        },
+        "sessionStart": {
+          "type": "boolean"
         },
         "sourceQueue": {
           "type": "string"
@@ -3828,6 +4350,47 @@
         }
       },
       "title": "TagDocument"
+    },
+    "TmplElement": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "example": "occupation",
+          "description": "key to be used programmatically"
+        },
+        "desc": {
+          "type": "string",
+          "example": "What occupation you have",
+          "description": "Description of of element"
+        },
+        "label": {
+          "type": "string",
+          "example": "Occupation",
+          "description": "Display Text to be used programmatically"
+        },
+        "phone": {
+          "type": "string",
+          "example": "+91 9988776655",
+          "description": "If type is set to PHONE_NUMBER"
+        },
+        "type": {
+          "type": "string",
+          "example": "QUICK_REPLY",
+          "description": "Display Text",
+          "enum": [
+            "QUICK_REPLY",
+            "URL",
+            "PHONE_NUMBER"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "example": "http://url",
+          "description": "If type is set to URL"
+        }
+      },
+      "title": "TmplElement"
     },
     "WebhookUrlRequest": {
       "type": "object",
