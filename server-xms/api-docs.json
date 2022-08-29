@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "All the requests are required to be authorized using an API Key authentication. \n Adding *x-api-key* in the header with your unique API Key as a value will grant access.\n To get your *x-api-key* [visit documentation](/server-xms/)",
-    "version": "1.0 - 2022-06-21 17:31 UTC",
+    "version": "1.0 - 2022-08-29 09:13 UTC",
     "title": "Messaging APIs",
     "termsOfService": "Terms of service",
     "contact": {},
@@ -17,6 +17,10 @@
     {
       "name": "Configuration",
       "description": "API's for configuration management"
+    },
+    {
+      "name": "Contact Management",
+      "description": "Contact API can be used:\n* to modify contact details and prefs.\n"
     },
     {
       "name": "Digital Analytics",
@@ -80,6 +84,64 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/ApiResultsMetaCompactResponse«MsgChannel,object»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "X_API_KEY": []
+          }
+        ]
+      }
+    },
+    "/api/v1/config/global/vars": {
+      "get": {
+        "tags": [
+          "Configuration"
+        ],
+        "summary": "Global Vars",
+        "description": "List of global variables",
+        "operationId": "getGlobalVarsUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "channelId",
+            "in": "query",
+            "description": "channelId",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "description": "API Key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "x-api-id",
+            "in": "header",
+            "description": "API Id",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse«CompanyVarsConfigDoc,object»"
             }
           },
           "401": {
@@ -276,6 +338,72 @@
             "description": "Not Found"
           }
         }
+      }
+    },
+    "/api/v1/contact/prefs/lang": {
+      "post": {
+        "tags": [
+          "Contact Management"
+        ],
+        "summary": "Contact Preferences",
+        "description": "Update language prefs for Contact\t",
+        "operationId": "sessionRoutingUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "req",
+            "description": "req",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ContactPrefsUpdate"
+            }
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "description": "API Key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "x-api-id",
+            "in": "header",
+            "description": "API Id",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResultsMetaCompactResponse«InBoundEvent,object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "X_API_KEY": []
+          }
+        ]
       }
     },
     "/api/v1/data/push": {
@@ -736,7 +864,7 @@
         ],
         "summary": "Session Routing",
         "description": "Assign session to different queue, all the future inbound messages will be sent to this queue\t",
-        "operationId": "sessionRoutingUsingPOST",
+        "operationId": "sessionRoutingUsingPOST_1",
         "consumes": [
           "application/json"
         ],
@@ -1083,6 +1211,121 @@
         }
       },
       "title": "ApiResponse«ClientApp,object»"
+    },
+    "ApiResponse«CompanyVarsConfigDoc,object»": {
+      "type": "object",
+      "required": [
+        "data",
+        "details",
+        "error",
+        "errors",
+        "exception",
+        "extra",
+        "logs",
+        "message",
+        "messageKey",
+        "meta",
+        "params",
+        "path",
+        "query",
+        "redirectUrl",
+        "results",
+        "status",
+        "statusKey",
+        "timestamp",
+        "traceid",
+        "warningKey",
+        "warnings"
+      ],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/CompanyVarsConfigDoc"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "error": {
+          "type": "string"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ApiFieldError"
+          }
+        },
+        "exception": {
+          "type": "string"
+        },
+        "extra": {
+          "type": "object"
+        },
+        "logs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "message": {
+          "type": "string",
+          "example": "This is success message in plain english"
+        },
+        "messageKey": {
+          "type": "string",
+          "example": "MESSAGE_SUCCESS:MOBILE:12"
+        },
+        "meta": {
+          "type": "object"
+        },
+        "params": {
+          "type": "object"
+        },
+        "path": {
+          "type": "string",
+          "example": "/postman/email/send"
+        },
+        "query": {
+          "type": "object"
+        },
+        "redirectUrl": {
+          "type": "string",
+          "example": "/go/to/some/other/url.html"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CompanyVarsConfigDoc"
+          }
+        },
+        "status": {
+          "type": "string",
+          "example": 200
+        },
+        "statusKey": {
+          "type": "string",
+          "example": "SUCCESS"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1541276788518
+        },
+        "traceid": {
+          "type": "string"
+        },
+        "warningKey": {
+          "type": "string"
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ApiFieldError"
+          }
+        }
+      },
+      "title": "ApiResponse«CompanyVarsConfigDoc,object»"
     },
     "ApiResponse«DigitalEventDto,object»": {
       "type": "object",
@@ -1810,10 +2053,14 @@
       "type": "object",
       "required": [
         "channelId",
+        "status",
         "templateId"
       ],
       "properties": {
         "channelId": {
+          "type": "string"
+        },
+        "status": {
           "type": "string"
         },
         "templateId": {
@@ -1919,6 +2166,7 @@
         "messageIdRef",
         "meta",
         "name",
+        "options",
         "replyId",
         "replyIdExt",
         "replyTo",
@@ -1954,7 +2202,7 @@
         "logs": {
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "object"
           }
         },
         "messageId": {
@@ -1971,6 +2219,9 @@
         },
         "name": {
           "type": "string"
+        },
+        "options": {
+          "type": "object"
         },
         "replyId": {
           "type": "string"
@@ -2039,6 +2290,7 @@
         "key",
         "keyName",
         "keyVersion",
+        "outboundhook",
         "props",
         "queue",
         "readOnly",
@@ -2069,6 +2321,9 @@
           "type": "string"
         },
         "keyVersion": {
+          "type": "string"
+        },
+        "outboundhook": {
           "type": "string"
         },
         "props": {
@@ -2170,6 +2425,54 @@
         }
       },
       "title": "CommonTemplateMeta"
+    },
+    "CompanyVarsConfigDoc": {
+      "type": "object",
+      "required": [
+        "description",
+        "disabled",
+        "domain",
+        "group",
+        "id",
+        "key",
+        "server",
+        "shared",
+        "type",
+        "value"
+      ],
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "group": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "server": {
+          "type": "string"
+        },
+        "shared": {
+          "type": "boolean"
+        },
+        "type": {
+          "type": "string"
+        },
+        "value": {
+          "type": "object"
+        }
+      },
+      "title": "CompanyVarsConfigDoc"
     },
     "ContactBusinessProfile": {
       "type": "object",
@@ -2490,6 +2793,26 @@
         }
       },
       "title": "ContactMeta"
+    },
+    "ContactPrefsUpdate": {
+      "type": "object",
+      "required": [
+        "contactId",
+        "lang"
+      ],
+      "properties": {
+        "contactId": {
+          "type": "string",
+          "example": "fb:12121212121",
+          "description": "Contact to update"
+        },
+        "lang": {
+          "type": "string",
+          "example": "en_US",
+          "description": "Language to set"
+        }
+      },
+      "title": "ContactPrefsUpdate"
     },
     "Contactable": {
       "type": "object",
@@ -2844,10 +3167,12 @@
         "contact",
         "contactId",
         "eventCode",
+        "eventId",
         "session",
         "sessionAssigned",
         "sessionId",
-        "sessionRouted"
+        "sessionRouted",
+        "trace"
       ],
       "properties": {
         "checksum": {
@@ -2864,6 +3189,9 @@
           "example": "SESSION_ROUTED",
           "description": "Event Triggered by App/Service"
         },
+        "eventId": {
+          "type": "string"
+        },
         "session": {
           "$ref": "#/definitions/MessageSession"
         },
@@ -2875,6 +3203,12 @@
         },
         "sessionRouted": {
           "$ref": "#/definitions/SessionRouted"
+        },
+        "trace": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
         }
       },
       "title": "InBoundEvent"
@@ -3144,7 +3478,8 @@
         "events",
         "messages",
         "meta",
-        "statuses"
+        "statuses",
+        "type"
       ],
       "properties": {
         "actions": {
@@ -3179,6 +3514,17 @@
           "items": {
             "$ref": "#/definitions/InBoundMsgStatus"
           }
+        },
+        "type": {
+          "type": "string",
+          "example": "message",
+          "description": "Type of Event",
+          "enum": [
+            "messages",
+            "actions",
+            "events",
+            "statuses"
+          ]
         }
       },
       "title": "InBoundWrapper"
@@ -3577,6 +3923,7 @@
         "priority",
         "prompt",
         "queue",
+        "referenceKey",
         "replyId",
         "replyIdExt",
         "route",
@@ -3588,6 +3935,7 @@
         "templateExt",
         "timestamp",
         "to",
+        "trace",
         "type",
         "vccards"
       ],
@@ -3656,7 +4004,7 @@
         "logs": {
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "object"
           }
         },
         "message": {
@@ -3690,6 +4038,9 @@
         "queue": {
           "type": "number"
         },
+        "referenceKey": {
+          "type": "string"
+        },
         "replyId": {
           "type": "string"
         },
@@ -3720,12 +4071,14 @@
             "INIT",
             "SENT",
             "SENT_ERR",
+            "SENT_EXC",
             "SENTX",
             "SENTX_ERR",
             "DLVRD",
             "READ",
             "NSENT",
             "BLCKD",
+            "LIMIT",
             "FAILD",
             "DELTD",
             "CCWIN",
@@ -3749,6 +4102,12 @@
           "type": "array",
           "items": {
             "type": "string"
+          }
+        },
+        "trace": {
+          "type": "array",
+          "items": {
+            "type": "object"
           }
         },
         "type": {
@@ -4117,6 +4476,9 @@
             "OGG_PLUS",
             "AUDIO_MP4",
             "AUDIO_MPEG",
+            "AUDIO_WEBM",
+            "AUDIO_OPUS",
+            "AUDIO_WEBM_OPUS",
             "MP4",
             "VIDEO_3GPP",
             "JSON",
