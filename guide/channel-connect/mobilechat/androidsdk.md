@@ -56,7 +56,7 @@ dependencies {
 To invoke the chat . Please follow the following code.
 ```sh
 MChat mChat = new MChat(MainActivity.this);
-MChatConfig config = new MChatConfig(headerTitle);
+new MChatConfig(headerTitle,headerColor,headerLogo,headerTitleColor);
 mChat.start(domain,channelKey,channelId,config);
 ```
 
