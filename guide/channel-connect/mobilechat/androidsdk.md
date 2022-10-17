@@ -47,7 +47,7 @@ allprojects {
 
 ```gradle
 dependencies {
-      implementation 'com.github.mehery-soccom:mChat-Android:v1.0.1'
+      implementation 'com.github.mehery-soccom:mChat-Android:1.0.2'
 }
 ```
 
