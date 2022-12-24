@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "All the requests are required to be authorized using an API Key authentication. \n Adding *x-api-key* in the header with your unique API Key as a value will grant access.\n To get your *x-api-key* [visit documentation](/server-xms/)",
-    "version": "1.0 - 2022-08-29 09:13 UTC",
+    "version": "1.0 - 2022-12-23 14:25 UTC",
     "title": "Messaging APIs",
     "termsOfService": "Terms of service",
     "contact": {},
@@ -2283,6 +2283,8 @@
       "type": "object",
       "required": [
         "agentApp",
+        "appHook",
+        "appHookFrwrd",
         "appMode",
         "appType",
         "forward",
@@ -2290,7 +2292,6 @@
         "key",
         "keyName",
         "keyVersion",
-        "outboundhook",
         "props",
         "queue",
         "readOnly",
@@ -2301,6 +2302,12 @@
       "properties": {
         "agentApp": {
           "type": "boolean"
+        },
+        "appHook": {
+          "type": "string"
+        },
+        "appHookFrwrd": {
+          "type": "string"
         },
         "appMode": {
           "type": "string"
@@ -2321,9 +2328,6 @@
           "type": "string"
         },
         "keyVersion": {
-          "type": "string"
-        },
-        "outboundhook": {
           "type": "string"
         },
         "props": {
@@ -2353,7 +2357,8 @@
         "address",
         "latitude",
         "longitude",
-        "name"
+        "name",
+        "url"
       ],
       "properties": {
         "address": {
@@ -2375,6 +2380,11 @@
           "type": "string",
           "example": "Main Building",
           "description": "location-name"
+        },
+        "url": {
+          "type": "string",
+          "example": "Location URL",
+          "description": "location-url"
         }
       },
       "title": "CommonMsgLocation"
@@ -2396,6 +2406,9 @@
     },
     "CommonTemplateMeta": {
       "type": "object",
+      "required": [
+        "linked"
+      ],
       "properties": {
         "code": {
           "type": "string",
@@ -2422,6 +2435,9 @@
           "example": "en_US",
           "description": "Language of Template to pick",
           "notes": "Language is an optional param which fallback to en, in all the scenarios of missing params/template\n lang will ignored when template.id is provided"
+        },
+        "linked": {
+          "type": "string"
         }
       },
       "title": "CommonTemplateMeta"
@@ -3168,6 +3184,7 @@
         "contactId",
         "eventCode",
         "eventId",
+        "route",
         "session",
         "sessionAssigned",
         "sessionId",
@@ -3191,6 +3208,9 @@
         },
         "eventId": {
           "type": "string"
+        },
+        "route": {
+          "$ref": "#/definitions/MessageRouter"
         },
         "session": {
           "$ref": "#/definitions/MessageSession"
@@ -3245,6 +3265,7 @@
     "InBoundMsg": {
       "type": "object",
       "required": [
+        "attachments",
         "audio",
         "contactId",
         "document",
@@ -3263,6 +3284,12 @@
         "voice"
       ],
       "properties": {
+        "attachments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InBoundMsgMedia"
+          }
+        },
         "audio": {
           "$ref": "#/definitions/InBoundMsgMedia"
         },
@@ -3597,6 +3624,7 @@
       "type": "object",
       "required": [
         "queueCode",
+        "routerId",
         "sendMode",
         "senderApp",
         "senderCode",
@@ -3604,6 +3632,9 @@
       ],
       "properties": {
         "queueCode": {
+          "type": "string"
+        },
+        "routerId": {
           "type": "string"
         },
         "sendMode": {
@@ -3628,6 +3659,7 @@
         "bot",
         "dept",
         "firstMessage",
+        "initMessage",
         "mode",
         "queue",
         "resolved",
@@ -3646,6 +3678,9 @@
           "type": "string"
         },
         "firstMessage": {
+          "type": "boolean"
+        },
+        "initMessage": {
           "type": "boolean"
         },
         "mode": {
@@ -3779,6 +3814,7 @@
       "type": "object",
       "required": [
         "channelId",
+        "location",
         "mask",
         "to",
         "type"
@@ -3797,6 +3833,9 @@
         },
         "image": {
           "$ref": "#/definitions/OutBoundMsgMedia"
+        },
+        "location": {
+          "$ref": "#/definitions/CommonMsgLocation"
         },
         "mask": {
           "type": "boolean",
@@ -4131,6 +4170,7 @@
         "state",
         "street",
         "type",
+        "uuid",
         "zip"
       ],
       "properties": {
@@ -4150,6 +4190,9 @@
           "type": "string"
         },
         "type": {
+          "type": "string"
+        },
+        "uuid": {
           "type": "string"
         },
         "zip": {
@@ -4183,7 +4226,8 @@
       "required": [
         "email",
         "label",
-        "type"
+        "type",
+        "uuid"
       ],
       "properties": {
         "email": {
@@ -4193,6 +4237,9 @@
           "type": "string"
         },
         "type": {
+          "type": "string"
+        },
+        "uuid": {
           "type": "string"
         }
       },
@@ -4231,7 +4278,8 @@
       "required": [
         "firstName",
         "formattedName",
-        "lastName"
+        "lastName",
+        "middleName"
       ],
       "properties": {
         "firstName": {
@@ -4241,6 +4289,9 @@
           "type": "string"
         },
         "lastName": {
+          "type": "string"
+        },
+        "middleName": {
           "type": "string"
         }
       },
@@ -4256,6 +4307,7 @@
         "nationalNumber",
         "phone",
         "type",
+        "uuid",
         "whatsAppId"
       ],
       "properties": {
@@ -4278,6 +4330,9 @@
           "type": "string"
         },
         "type": {
+          "type": "string"
+        },
+        "uuid": {
           "type": "string"
         },
         "whatsAppId": {
@@ -4375,7 +4430,8 @@
       "required": [
         "label",
         "type",
-        "url"
+        "url",
+        "uuid"
       ],
       "properties": {
         "label": {
@@ -4385,6 +4441,9 @@
           "type": "string"
         },
         "url": {
+          "type": "string"
+        },
+        "uuid": {
           "type": "string"
         }
       },
@@ -4592,6 +4651,17 @@
           "type": "string",
           "example": "61f3810a02e14c0877fc1a32",
           "description": "Session to be routed"
+        },
+        "skills": {
+          "type": "array",
+          "example": [
+            "dental",
+            "ortho"
+          ],
+          "description": "Agent Skills, applicable only if queue type is Agent",
+          "items": {
+            "type": "string"
+          }
         },
         "team": {
           "type": "string",

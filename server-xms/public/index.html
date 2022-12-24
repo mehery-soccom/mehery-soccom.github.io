@@ -204,7 +204,7 @@
                     <a href="Terms of service">Terms of service</a>
                   </h5>
                   <h5>Version:
-                    <span>1.0 - 2022-08-29 09:13 UTC</span>
+                    <span>1.0 - 2022-12-23 14:25 UTC</span>
                   </h5>
                 </section>
               </div>
@@ -1123,6 +1123,8 @@
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">&quot;data&quot;</span>: {
     <span class="hljs-attr">&quot;agentApp&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+    <span class="hljs-attr">&quot;appHook&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;appHookFrwrd&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;appMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;appType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;forward&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -1130,7 +1132,6 @@
     <span class="hljs-attr">&quot;key&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;keyName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;keyVersion&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;outboundhook&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;props&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
     <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;readOnly&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
@@ -1174,6 +1175,8 @@
   <span class="hljs-attr">&quot;results&quot;</span>: [
     {
       <span class="hljs-attr">&quot;agentApp&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;appHook&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;appHookFrwrd&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;appMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;appType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;forward&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -1181,7 +1184,6 @@
       <span class="hljs-attr">&quot;key&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;keyName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;keyVersion&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;outboundhook&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;props&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
       <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;readOnly&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
@@ -1428,11 +1430,20 @@
       <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;eventCode&quot;</span>: <span class="hljs-string">&quot;SESSION_ROUTED&quot;</span>,
       <span class="hljs-attr">&quot;eventId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;route&quot;</span>: {
+        <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;routerId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderApp&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;session&quot;</span>: {
         <span class="hljs-attr">&quot;agent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;bot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;dept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;firstMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+        <span class="hljs-attr">&quot;initMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
         <span class="hljs-attr">&quot;mode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
@@ -2356,11 +2367,20 @@
       <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;eventCode&quot;</span>: <span class="hljs-string">&quot;SESSION_ROUTED&quot;</span>,
       <span class="hljs-attr">&quot;eventId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;route&quot;</span>: {
+        <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;routerId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderApp&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;session&quot;</span>: {
         <span class="hljs-attr">&quot;agent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;bot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;dept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;firstMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+        <span class="hljs-attr">&quot;initMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
         <span class="hljs-attr">&quot;mode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
@@ -2391,6 +2411,18 @@
   ],
   <span class="hljs-attr">&quot;messages&quot;</span>: [
     {
+      <span class="hljs-attr">&quot;attachments&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
+          <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
+          <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
+          <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
+          <span class="hljs-attr">&quot;linkSecure&quot;</span>: <span class="hljs-string">&quot;https://link-to-media-file-url&quot;</span>,
+          <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
+          <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+          <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+        }
+      ],
       <span class="hljs-attr">&quot;audio&quot;</span>: {
         <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
         <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
@@ -2428,7 +2460,8 @@
         <span class="hljs-attr">&quot;address&quot;</span>: <span class="hljs-string">&quot;1 Hacker Way, Menlo Park, CA, 94025&quot;</span>,
         <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">12.90909</span>,
         <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">6.90808</span>,
-        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Main Building&quot;</span>
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Main Building&quot;</span>,
+        <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;Location URL&quot;</span>
       },
       <span class="hljs-attr">&quot;messageIdExt&quot;</span>: <span class="hljs-number">1234567</span>,
       <span class="hljs-attr">&quot;originalMessage&quot;</span>: {},
@@ -2628,11 +2661,20 @@
       <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;eventCode&quot;</span>: <span class="hljs-string">&quot;SESSION_ROUTED&quot;</span>,
       <span class="hljs-attr">&quot;eventId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;route&quot;</span>: {
+        <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;routerId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderApp&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;session&quot;</span>: {
         <span class="hljs-attr">&quot;agent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;bot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;dept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;firstMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+        <span class="hljs-attr">&quot;initMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
         <span class="hljs-attr">&quot;mode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
@@ -2663,6 +2705,18 @@
   ],
   <span class="hljs-attr">&quot;messages&quot;</span>: [
     {
+      <span class="hljs-attr">&quot;attachments&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
+          <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
+          <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
+          <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
+          <span class="hljs-attr">&quot;linkSecure&quot;</span>: <span class="hljs-string">&quot;https://link-to-media-file-url&quot;</span>,
+          <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
+          <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+          <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+        }
+      ],
       <span class="hljs-attr">&quot;audio&quot;</span>: {
         <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
         <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
@@ -2700,7 +2754,8 @@
         <span class="hljs-attr">&quot;address&quot;</span>: <span class="hljs-string">&quot;1 Hacker Way, Menlo Park, CA, 94025&quot;</span>,
         <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">12.90909</span>,
         <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">6.90808</span>,
-        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Main Building&quot;</span>
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Main Building&quot;</span>,
+        <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;Location URL&quot;</span>
       },
       <span class="hljs-attr">&quot;messageIdExt&quot;</span>: <span class="hljs-number">1234567</span>,
       <span class="hljs-attr">&quot;originalMessage&quot;</span>: {},
@@ -2905,6 +2960,13 @@
     <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;your-video-caption&quot;</span>,
     <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://the-url&quot;</span>
   },
+  <span class="hljs-attr">&quot;location&quot;</span>: {
+    <span class="hljs-attr">&quot;address&quot;</span>: <span class="hljs-string">&quot;1 Hacker Way, Menlo Park, CA, 94025&quot;</span>,
+    <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">12.90909</span>,
+    <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">6.90808</span>,
+    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Main Building&quot;</span>,
+    <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;Location URL&quot;</span>
+  },
   <span class="hljs-attr">&quot;mask&quot;</span>: <span class="hljs-literal">false</span>,
   <span class="hljs-attr">&quot;options&quot;</span>: {
     <span class="hljs-attr">&quot;buttons&quot;</span>: [
@@ -2925,7 +2987,8 @@
       <span class="hljs-attr">&quot;currency&quot;</span>: <span class="hljs-string">&quot;INR&quot;</span>
     },
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;60d236c6142e53561cb7716c&quot;</span>,
-    <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en_US&quot;</span>
+    <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en_US&quot;</span>,
+    <span class="hljs-attr">&quot;linked&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
   },
   <span class="hljs-attr">&quot;text&quot;</span>: {
     <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>
@@ -3290,11 +3353,20 @@
       <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;eventCode&quot;</span>: <span class="hljs-string">&quot;SESSION_ROUTED&quot;</span>,
       <span class="hljs-attr">&quot;eventId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;route&quot;</span>: {
+        <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;routerId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderApp&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;session&quot;</span>: {
         <span class="hljs-attr">&quot;agent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;bot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;dept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;firstMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+        <span class="hljs-attr">&quot;initMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
         <span class="hljs-attr">&quot;mode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
@@ -3558,6 +3630,7 @@
       <span class="hljs-attr">&quot;replyTo&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
       <span class="hljs-attr">&quot;route&quot;</span>: {
         <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;routerId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;senderApp&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -3609,6 +3682,7 @@
               <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;street&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;zip&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
             }
           ],
@@ -3623,7 +3697,8 @@
             {
               <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-              <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+              <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
             }
           ],
           <span class="hljs-attr">&quot;ims&quot;</span>: [
@@ -3644,7 +3719,8 @@
           <span class="hljs-attr">&quot;name&quot;</span>: {
             <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
             <span class="hljs-attr">&quot;formattedName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-            <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+            <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-attr">&quot;middleName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
           },
           <span class="hljs-attr">&quot;phones&quot;</span>: [
             {
@@ -3655,6 +3731,7 @@
               <span class="hljs-attr">&quot;nationalNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;whatsAppId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
             }
           ],
@@ -3662,7 +3739,8 @@
             {
               <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-              <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+              <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
             }
           ],
           <span class="hljs-attr">&quot;work&quot;</span>: [
@@ -3886,11 +3964,20 @@
       <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;eventCode&quot;</span>: <span class="hljs-string">&quot;SESSION_ROUTED&quot;</span>,
       <span class="hljs-attr">&quot;eventId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;route&quot;</span>: {
+        <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;routerId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderApp&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;session&quot;</span>: {
         <span class="hljs-attr">&quot;agent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;bot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;dept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;firstMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+        <span class="hljs-attr">&quot;initMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
         <span class="hljs-attr">&quot;mode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
@@ -4043,6 +4130,10 @@
   <span class="hljs-attr">&quot;params&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
   <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;external_bot&quot;</span>,
   <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;61f3810a02e14c0877fc1a32&quot;</span>,
+  <span class="hljs-attr">&quot;skills&quot;</span>: [
+    <span class="hljs-string">&quot;dental&quot;</span>,
+    <span class="hljs-string">&quot;ortho&quot;</span>
+  ],
   <span class="hljs-attr">&quot;team&quot;</span>: <span class="hljs-string">&quot;external_bot&quot;</span>
 }
 </code></pre> </body>
@@ -4133,11 +4224,20 @@
       <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;eventCode&quot;</span>: <span class="hljs-string">&quot;SESSION_ROUTED&quot;</span>,
       <span class="hljs-attr">&quot;eventId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;route&quot;</span>: {
+        <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;routerId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderApp&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;session&quot;</span>: {
         <span class="hljs-attr">&quot;agent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;bot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;dept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;firstMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+        <span class="hljs-attr">&quot;initMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
         <span class="hljs-attr">&quot;mode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
@@ -4832,6 +4932,8 @@
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">&quot;data&quot;</span>: {
     <span class="hljs-attr">&quot;agentApp&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+    <span class="hljs-attr">&quot;appHook&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;appHookFrwrd&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;appMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;appType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;forward&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -4839,7 +4941,6 @@
     <span class="hljs-attr">&quot;key&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;keyName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;keyVersion&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;outboundhook&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;props&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
     <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;readOnly&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
@@ -4883,6 +4984,8 @@
   <span class="hljs-attr">&quot;results&quot;</span>: [
     {
       <span class="hljs-attr">&quot;agentApp&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;appHook&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;appHookFrwrd&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;appMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;appType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;forward&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -4890,7 +4993,6 @@
       <span class="hljs-attr">&quot;key&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;keyName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;keyVersion&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;outboundhook&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;props&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
       <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;readOnly&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
@@ -6759,7 +6861,8 @@
             <span class="hljs-attr">&quot;currency&quot;</span>: <span class="hljs-string">&quot;INR&quot;</span>
           },
           <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;60d236c6142e53561cb7716c&quot;</span>,
-          <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en_US&quot;</span>
+          <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en_US&quot;</span>,
+          <span class="hljs-attr">&quot;linked&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
         },
         <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
@@ -6777,7 +6880,8 @@
         <span class="hljs-attr">&quot;currency&quot;</span>: <span class="hljs-string">&quot;INR&quot;</span>
       },
       <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;60d236c6142e53561cb7716c&quot;</span>,
-      <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en_US&quot;</span>
+      <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en_US&quot;</span>,
+      <span class="hljs-attr">&quot;linked&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     },
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;lines&quot;</span>: [
@@ -6805,6 +6909,7 @@
     <span class="hljs-attr">&quot;replyIdExt&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;route&quot;</span>: {
       <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;routerId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;senderApp&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -6815,6 +6920,7 @@
       <span class="hljs-attr">&quot;bot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;dept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;firstMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;initMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
       <span class="hljs-attr">&quot;mode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
@@ -6848,6 +6954,7 @@
             <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
             <span class="hljs-attr">&quot;street&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
             <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
             <span class="hljs-attr">&quot;zip&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
           }
         ],
@@ -6862,7 +6969,8 @@
           {
             <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
             <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-            <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+            <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
           }
         ],
         <span class="hljs-attr">&quot;ims&quot;</span>: [
@@ -6883,7 +6991,8 @@
         <span class="hljs-attr">&quot;name&quot;</span>: {
           <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;formattedName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-          <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+          <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;middleName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
         },
         <span class="hljs-attr">&quot;phones&quot;</span>: [
           {
@@ -6894,6 +7003,7 @@
             <span class="hljs-attr">&quot;nationalNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
             <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
             <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
             <span class="hljs-attr">&quot;whatsAppId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
           }
         ],
@@ -6901,7 +7011,8 @@
           {
             <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
             <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-            <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+            <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
           }
         ],
         <span class="hljs-attr">&quot;work&quot;</span>: [
@@ -7021,7 +7132,8 @@
               <span class="hljs-attr">&quot;currency&quot;</span>: <span class="hljs-string">&quot;INR&quot;</span>
             },
             <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;60d236c6142e53561cb7716c&quot;</span>,
-            <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en_US&quot;</span>
+            <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en_US&quot;</span>,
+            <span class="hljs-attr">&quot;linked&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
           },
           <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
@@ -7039,7 +7151,8 @@
           <span class="hljs-attr">&quot;currency&quot;</span>: <span class="hljs-string">&quot;INR&quot;</span>
         },
         <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;60d236c6142e53561cb7716c&quot;</span>,
-        <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en_US&quot;</span>
+        <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en_US&quot;</span>,
+        <span class="hljs-attr">&quot;linked&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
       },
       <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;lines&quot;</span>: [
@@ -7067,6 +7180,7 @@
       <span class="hljs-attr">&quot;replyIdExt&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;route&quot;</span>: {
         <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;routerId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;senderApp&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -7077,6 +7191,7 @@
         <span class="hljs-attr">&quot;bot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;dept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;firstMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+        <span class="hljs-attr">&quot;initMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
         <span class="hljs-attr">&quot;mode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
@@ -7110,6 +7225,7 @@
               <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;street&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;zip&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
             }
           ],
@@ -7124,7 +7240,8 @@
             {
               <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-              <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+              <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
             }
           ],
           <span class="hljs-attr">&quot;ims&quot;</span>: [
@@ -7145,7 +7262,8 @@
           <span class="hljs-attr">&quot;name&quot;</span>: {
             <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
             <span class="hljs-attr">&quot;formattedName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-            <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+            <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-attr">&quot;middleName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
           },
           <span class="hljs-attr">&quot;phones&quot;</span>: [
             {
@@ -7156,6 +7274,7 @@
               <span class="hljs-attr">&quot;nationalNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;whatsAppId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
             }
           ],
@@ -7163,7 +7282,8 @@
             {
               <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-              <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+              <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
             }
           ],
           <span class="hljs-attr">&quot;work&quot;</span>: [
@@ -7337,6 +7457,7 @@
       <span class="hljs-attr">&quot;replyTo&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
       <span class="hljs-attr">&quot;route&quot;</span>: {
         <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;routerId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;senderApp&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -7388,6 +7509,7 @@
               <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;street&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;zip&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
             }
           ],
@@ -7402,7 +7524,8 @@
             {
               <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-              <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+              <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
             }
           ],
           <span class="hljs-attr">&quot;ims&quot;</span>: [
@@ -7423,7 +7546,8 @@
           <span class="hljs-attr">&quot;name&quot;</span>: {
             <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
             <span class="hljs-attr">&quot;formattedName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-            <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+            <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-attr">&quot;middleName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
           },
           <span class="hljs-attr">&quot;phones&quot;</span>: [
             {
@@ -7434,6 +7558,7 @@
               <span class="hljs-attr">&quot;nationalNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;whatsAppId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
             }
           ],
@@ -7441,7 +7566,8 @@
             {
               <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
               <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-              <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+              <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
             }
           ],
           <span class="hljs-attr">&quot;work&quot;</span>: [
@@ -7573,11 +7699,20 @@
       <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;eventCode&quot;</span>: <span class="hljs-string">&quot;SESSION_ROUTED&quot;</span>,
       <span class="hljs-attr">&quot;eventId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;route&quot;</span>: {
+        <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;routerId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderApp&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;session&quot;</span>: {
         <span class="hljs-attr">&quot;agent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;bot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;dept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;firstMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+        <span class="hljs-attr">&quot;initMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
         <span class="hljs-attr">&quot;mode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
@@ -8223,6 +8358,7 @@
   <span class="hljs-attr">&quot;replyTo&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
   <span class="hljs-attr">&quot;route&quot;</span>: {
     <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;routerId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;senderApp&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -8274,6 +8410,7 @@
           <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;street&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;zip&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
         }
       ],
@@ -8288,7 +8425,8 @@
         {
           <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-          <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+          <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
         }
       ],
       <span class="hljs-attr">&quot;ims&quot;</span>: [
@@ -8309,7 +8447,8 @@
       <span class="hljs-attr">&quot;name&quot;</span>: {
         <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;formattedName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-        <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;middleName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
       },
       <span class="hljs-attr">&quot;phones&quot;</span>: [
         {
@@ -8320,6 +8459,7 @@
           <span class="hljs-attr">&quot;nationalNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;whatsAppId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
         }
       ],
@@ -8327,7 +8467,8 @@
         {
           <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-          <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+          <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
         }
       ],
       <span class="hljs-attr">&quot;work&quot;</span>: [
@@ -8363,6 +8504,18 @@
                     <dt data-property-name="agentApp">
                       <span class="json-property-name">agentApp:</span>
                       <span class="json-property-type">boolean</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="appHook">
+                      <span class="json-property-name">appHook:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="appHookFrwrd">
+                      <span class="json-property-name">appHookFrwrd:</span>
+                      <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
@@ -8404,12 +8557,6 @@
                     </dt>
                     <dt data-property-name="keyVersion">
                       <span class="json-property-name">keyVersion:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-required"></span>
-                    </dt>
-                    <dt data-property-name="outboundhook">
-                      <span class="json-property-name">outboundhook:</span>
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
@@ -8461,6 +8608,8 @@
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">&quot;agentApp&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+  <span class="hljs-attr">&quot;appHook&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;appHookFrwrd&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;appMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;appType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;forward&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -8468,7 +8617,6 @@
   <span class="hljs-attr">&quot;key&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;keyName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;keyVersion&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;outboundhook&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;props&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
   <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;readOnly&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
@@ -8536,6 +8684,16 @@
                       <p>location-name</p>
                       <small>undefined</small>
                     </dd>
+                    <dt data-property-name="url" class="has-description">
+                      <span class="json-property-name">url:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>location-url</p>
+                      <small>undefined</small>
+                    </dd>
                   </dl>
                 </section>
               </div>
@@ -8549,7 +8707,8 @@
   <span class="hljs-attr">&quot;address&quot;</span>: <span class="hljs-string">&quot;1 Hacker Way, Menlo Park, CA, 94025&quot;</span>,
   <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">12.90909</span>,
   <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">6.90808</span>,
-  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Main Building&quot;</span>
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Main Building&quot;</span>,
+  <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;Location URL&quot;</span>
 }
 </code></pre> </body>
                   </html>
@@ -8669,6 +8828,12 @@
                       <p>Language of Template to pick</p>
                       <small>Language is an optional param which fallback to en, in all the scenarios of missing params/template lang will ignored when template.id is provided</small>
                     </dd>
+                    <dt data-property-name="linked">
+                      <span class="json-property-name">linked:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
                   </dl>
                 </section>
               </div>
@@ -8685,7 +8850,8 @@
     <span class="hljs-attr">&quot;currency&quot;</span>: <span class="hljs-string">&quot;INR&quot;</span>
   },
   <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;60d236c6142e53561cb7716c&quot;</span>,
-  <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en_US&quot;</span>
+  <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en_US&quot;</span>,
+  <span class="hljs-attr">&quot;linked&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
 }
 </code></pre> </body>
                   </html>
@@ -10274,6 +10440,16 @@
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
+                    <dt data-property-name="route">
+                      <span class="json-property-name">route:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/MessageRouter">MessageRouter</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
                     <dt data-property-name="session">
                       <span class="json-property-name">session:</span>
                       <span class="json-property-type">
@@ -10347,11 +10523,20 @@
   <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;eventCode&quot;</span>: <span class="hljs-string">&quot;SESSION_ROUTED&quot;</span>,
   <span class="hljs-attr">&quot;eventId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;route&quot;</span>: {
+    <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;routerId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;senderApp&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;senderType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
   <span class="hljs-attr">&quot;session&quot;</span>: {
     <span class="hljs-attr">&quot;agent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;bot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;dept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;firstMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+    <span class="hljs-attr">&quot;initMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
     <span class="hljs-attr">&quot;mode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
@@ -10469,6 +10654,27 @@
               <div class="doc-copy">
                 <section class="json-schema-properties">
                   <dl>
+                    <dt data-property-name="attachments">
+                      <span class="json-property-name">attachments:</span>
+                      <span class="json-property-type">
+                        <span class="json-schema-ref-array">
+                          <a class="json-schema-ref" href="#/definitions/InBoundMsgMedia">InBoundMsgMedia</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">
+                          <span class="">
+                            <a class="json-schema-ref" href="#/definitions/InBoundMsgMedia">InBoundMsgMedia</a>
+                          </span>
+                        </span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
                     <dt data-property-name="audio">
                       <span class="json-property-name">audio:</span>
                       <span class="json-property-type">
@@ -10654,6 +10860,18 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;attachments&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
+      <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
+      <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
+      <span class="hljs-attr">&quot;linkSecure&quot;</span>: <span class="hljs-string">&quot;https://link-to-media-file-url&quot;</span>,
+      <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
+      <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+    }
+  ],
   <span class="hljs-attr">&quot;audio&quot;</span>: {
     <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
     <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
@@ -10691,7 +10909,8 @@
     <span class="hljs-attr">&quot;address&quot;</span>: <span class="hljs-string">&quot;1 Hacker Way, Menlo Park, CA, 94025&quot;</span>,
     <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">12.90909</span>,
     <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">6.90808</span>,
-    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Main Building&quot;</span>
+    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Main Building&quot;</span>,
+    <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;Location URL&quot;</span>
   },
   <span class="hljs-attr">&quot;messageIdExt&quot;</span>: <span class="hljs-number">1234567</span>,
   <span class="hljs-attr">&quot;originalMessage&quot;</span>: {},
@@ -11250,11 +11469,20 @@
       <span class="hljs-attr">&quot;contactId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;eventCode&quot;</span>: <span class="hljs-string">&quot;SESSION_ROUTED&quot;</span>,
       <span class="hljs-attr">&quot;eventId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;route&quot;</span>: {
+        <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;routerId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderApp&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;senderType&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
       <span class="hljs-attr">&quot;session&quot;</span>: {
         <span class="hljs-attr">&quot;agent&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;bot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;dept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;firstMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+        <span class="hljs-attr">&quot;initMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
         <span class="hljs-attr">&quot;mode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
@@ -11285,6 +11513,18 @@
   ],
   <span class="hljs-attr">&quot;messages&quot;</span>: [
     {
+      <span class="hljs-attr">&quot;attachments&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
+          <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
+          <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2121212</span>,
+          <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://link-to-media-file-url&quot;</span>,
+          <span class="hljs-attr">&quot;linkSecure&quot;</span>: <span class="hljs-string">&quot;https://link-to-media-file-url&quot;</span>,
+          <span class="hljs-attr">&quot;mime_type&quot;</span>: <span class="hljs-string">&quot;video/mp4&quot;</span>,
+          <span class="hljs-attr">&quot;sha256&quot;</span>: <span class="hljs-string">&quot;m3232kaoe4belrr&quot;</span>,
+          <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;image&quot;</span>
+        }
+      ],
       <span class="hljs-attr">&quot;audio&quot;</span>: {
         <span class="hljs-attr">&quot;caption&quot;</span>: <span class="hljs-string">&quot;document-caption&quot;</span>,
         <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;document-filename&quot;</span>,
@@ -11322,7 +11562,8 @@
         <span class="hljs-attr">&quot;address&quot;</span>: <span class="hljs-string">&quot;1 Hacker Way, Menlo Park, CA, 94025&quot;</span>,
         <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">12.90909</span>,
         <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">6.90808</span>,
-        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Main Building&quot;</span>
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Main Building&quot;</span>,
+        <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;Location URL&quot;</span>
       },
       <span class="hljs-attr">&quot;messageIdExt&quot;</span>: <span class="hljs-number">1234567</span>,
       <span class="hljs-attr">&quot;originalMessage&quot;</span>: {},
@@ -11628,6 +11869,12 @@
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
+                    <dt data-property-name="routerId">
+                      <span class="json-property-name">routerId:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
                     <dt data-property-name="sendMode">
                       <span class="json-property-name">sendMode:</span>
                       <span class="json-property-type">string</span>
@@ -11663,6 +11910,7 @@
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;routerId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;senderApp&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -11708,6 +11956,12 @@
                     </dt>
                     <dt data-property-name="firstMessage">
                       <span class="json-property-name">firstMessage:</span>
+                      <span class="json-property-type">boolean</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="initMessage">
+                      <span class="json-property-name">initMessage:</span>
                       <span class="json-property-type">boolean</span>
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
@@ -11763,6 +12017,7 @@
   <span class="hljs-attr">&quot;bot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;dept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;firstMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+  <span class="hljs-attr">&quot;initMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
   <span class="hljs-attr">&quot;mode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
@@ -12065,6 +12320,16 @@
                       </span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dt data-property-name="location">
+                      <span class="json-property-name">location:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/CommonMsgLocation">CommonMsgLocation</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
                     <dt data-property-name="mask" class="has-description">
                       <span class="json-property-name">mask:</span>
                       <span class="json-property-type">boolean</span>
@@ -12175,6 +12440,13 @@
     <span class="hljs-attr">&quot;filename&quot;</span>: <span class="hljs-string">&quot;your-video-caption&quot;</span>,
     <span class="hljs-attr">&quot;link&quot;</span>: <span class="hljs-string">&quot;http(s)://the-url&quot;</span>
   },
+  <span class="hljs-attr">&quot;location&quot;</span>: {
+    <span class="hljs-attr">&quot;address&quot;</span>: <span class="hljs-string">&quot;1 Hacker Way, Menlo Park, CA, 94025&quot;</span>,
+    <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">12.90909</span>,
+    <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">6.90808</span>,
+    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Main Building&quot;</span>,
+    <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;Location URL&quot;</span>
+  },
   <span class="hljs-attr">&quot;mask&quot;</span>: <span class="hljs-literal">false</span>,
   <span class="hljs-attr">&quot;options&quot;</span>: {
     <span class="hljs-attr">&quot;buttons&quot;</span>: [
@@ -12195,7 +12467,8 @@
       <span class="hljs-attr">&quot;currency&quot;</span>: <span class="hljs-string">&quot;INR&quot;</span>
     },
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;60d236c6142e53561cb7716c&quot;</span>,
-    <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en_US&quot;</span>
+    <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en_US&quot;</span>,
+    <span class="hljs-attr">&quot;linked&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
   },
   <span class="hljs-attr">&quot;text&quot;</span>: {
     <span class="hljs-attr">&quot;body&quot;</span>: <span class="hljs-string">&quot;your-text-message-content&quot;</span>
@@ -12851,7 +13124,8 @@
           <span class="hljs-attr">&quot;currency&quot;</span>: <span class="hljs-string">&quot;INR&quot;</span>
         },
         <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;60d236c6142e53561cb7716c&quot;</span>,
-        <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en_US&quot;</span>
+        <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en_US&quot;</span>,
+        <span class="hljs-attr">&quot;linked&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
       },
       <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
@@ -12869,7 +13143,8 @@
       <span class="hljs-attr">&quot;currency&quot;</span>: <span class="hljs-string">&quot;INR&quot;</span>
     },
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;60d236c6142e53561cb7716c&quot;</span>,
-    <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en_US&quot;</span>
+    <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en_US&quot;</span>,
+    <span class="hljs-attr">&quot;linked&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
   },
   <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;lines&quot;</span>: [
@@ -12897,6 +13172,7 @@
   <span class="hljs-attr">&quot;replyIdExt&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;route&quot;</span>: {
     <span class="hljs-attr">&quot;queueCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;routerId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;sendMode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;senderApp&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;senderCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -12907,6 +13183,7 @@
     <span class="hljs-attr">&quot;bot&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;dept&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;firstMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+    <span class="hljs-attr">&quot;initMessage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
     <span class="hljs-attr">&quot;mode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;resolved&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
@@ -12940,6 +13217,7 @@
           <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;street&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;zip&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
         }
       ],
@@ -12954,7 +13232,8 @@
         {
           <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-          <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+          <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
         }
       ],
       <span class="hljs-attr">&quot;ims&quot;</span>: [
@@ -12975,7 +13254,8 @@
       <span class="hljs-attr">&quot;name&quot;</span>: {
         <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
         <span class="hljs-attr">&quot;formattedName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-        <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;middleName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
       },
       <span class="hljs-attr">&quot;phones&quot;</span>: [
         {
@@ -12986,6 +13266,7 @@
           <span class="hljs-attr">&quot;nationalNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;whatsAppId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
         }
       ],
@@ -12993,7 +13274,8 @@
         {
           <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
           <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-          <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+          <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
         }
       ],
       <span class="hljs-attr">&quot;work&quot;</span>: [
@@ -13062,6 +13344,12 @@
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
+                    <dt data-property-name="uuid">
+                      <span class="json-property-name">uuid:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
                     <dt data-property-name="zip">
                       <span class="json-property-name">zip:</span>
                       <span class="json-property-type">string</span>
@@ -13084,6 +13372,7 @@
   <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;street&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;zip&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
 }
 </code></pre> </body>
@@ -13176,6 +13465,12 @@
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
+                    <dt data-property-name="uuid">
+                      <span class="json-property-name">uuid:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
                   </dl>
                 </section>
               </div>
@@ -13188,7 +13483,8 @@
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
 }
 </code></pre> </body>
                   </html>
@@ -13294,6 +13590,12 @@
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
+                    <dt data-property-name="middleName">
+                      <span class="json-property-name">middleName:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
                   </dl>
                 </section>
               </div>
@@ -13306,7 +13608,8 @@
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;formattedName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;middleName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
 }
 </code></pre> </body>
                   </html>
@@ -13370,6 +13673,12 @@
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
+                    <dt data-property-name="uuid">
+                      <span class="json-property-name">uuid:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
                     <dt data-property-name="whatsAppId">
                       <span class="json-property-name">whatsAppId:</span>
                       <span class="json-property-type">string</span>
@@ -13393,6 +13702,7 @@
   <span class="hljs-attr">&quot;nationalNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;whatsAppId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
 }
 </code></pre> </body>
@@ -13656,6 +13966,7 @@
       <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;street&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;zip&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
@@ -13670,7 +13981,8 @@
     {
       <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;ims&quot;</span>: [
@@ -13691,7 +14003,8 @@
   <span class="hljs-attr">&quot;name&quot;</span>: {
     <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;formattedName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;middleName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
   },
   <span class="hljs-attr">&quot;phones&quot;</span>: [
     {
@@ -13702,6 +14015,7 @@
       <span class="hljs-attr">&quot;nationalNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;whatsAppId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
@@ -13709,7 +14023,8 @@
     {
       <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;work&quot;</span>: [
@@ -13758,6 +14073,12 @@
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-required"></span>
                     </dt>
+                    <dt data-property-name="uuid">
+                      <span class="json-property-name">uuid:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
                   </dl>
                 </section>
               </div>
@@ -13770,7 +14091,8 @@
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
 }
 </code></pre> </body>
                   </html>
@@ -14027,7 +14349,8 @@
       <span class="hljs-attr">&quot;currency&quot;</span>: <span class="hljs-string">&quot;INR&quot;</span>
     },
     <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;60d236c6142e53561cb7716c&quot;</span>,
-    <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en_US&quot;</span>
+    <span class="hljs-attr">&quot;lang&quot;</span>: <span class="hljs-string">&quot;en_US&quot;</span>,
+    <span class="hljs-attr">&quot;linked&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
   },
   <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;url&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
@@ -14160,6 +14483,22 @@
                       <p>Session to be routed</p>
                       <small>undefined</small>
                     </dd>
+                    <dt data-property-name="skills" class="has-description">
+                      <span class="json-property-name">skills:</span>
+                      <span class="json-property-type">string[]</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Agent Skills, applicable only if queue type is Agent</p>
+                      <small>undefined</small>
+                    </dd>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
                     <dt data-property-name="team" class="has-description">
                       <span class="json-property-name">team:</span>
                       <span class="json-property-type">string</span>
@@ -14183,6 +14522,10 @@
   <span class="hljs-attr">&quot;params&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
   <span class="hljs-attr">&quot;queue&quot;</span>: <span class="hljs-string">&quot;external_bot&quot;</span>,
   <span class="hljs-attr">&quot;sessionId&quot;</span>: <span class="hljs-string">&quot;61f3810a02e14c0877fc1a32&quot;</span>,
+  <span class="hljs-attr">&quot;skills&quot;</span>: [
+    <span class="hljs-string">&quot;dental&quot;</span>,
+    <span class="hljs-string">&quot;ortho&quot;</span>
+  ],
   <span class="hljs-attr">&quot;team&quot;</span>: <span class="hljs-string">&quot;external_bot&quot;</span>
 }
 </code></pre> </body>
