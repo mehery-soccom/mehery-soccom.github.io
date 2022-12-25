@@ -26,6 +26,45 @@ Message API calls are sent to the **/api/v1/message/send** endpoint regardless o
 }
 ```
 
+### Image Message
+#### Sample Request : 
+##### POST : /api/v1/message/send
+```javascript
+{
+  "channelId": "91SERVICENUMBER",
+  "to": {
+    "email": "string",
+    "name": "string",
+    "phone": "string"
+  },
+  "type": "image",
+  "image": {
+    "caption": "your-video-caption",
+    "filename": "your-video-caption",
+    "link": "http(s)://the-url"
+  }
+}
+```
+### Video Message
+#### Sample Request : 
+##### POST : /api/v1/message/send
+```javascript
+{
+  "channelId": "91SERVICENUMBER",
+  "to": {
+    "email": "string",
+    "name": "string",
+    "phone": "string"
+  },
+  "type": "video",
+  "video": {
+    "caption": "your-video-caption",
+    "filename": "your-video-caption",
+    "link": "http(s)://the-url"
+  }
+}
+```
+
 ### Template Message
 You can create templates in *MeherY Admin Panel* under HSM templates. Once template is created you can use any of the following paramenter to select template :-  
   1. _Template ID_ 
@@ -37,28 +76,7 @@ In additon to template, you can custom variables in _data_, which will be suppli
 
 <img width="600" alt="Screenshot 2022-02-16 at 6 14 24 PM" src="https://user-images.githubusercontent.com/5462166/154267267-f035746b-a9eb-47d7-b193-f6a2403a6910.png">
 
-
-#### Sample Request 1 : 
-##### POST : /api/v1/message/send
-```javascript
-{
-  "channelId": "91SERVICENUMBER",
-  "to": {
-    "email": "john.doe@example.com",
-    "name": "John Doe",
-    "phone": "919988776655"
-  },
-  "type": "template",
-  "template": {
-    "data": {
-      "amount": 10,
-      "currency": "INR"
-    },
-    "id": "60d236c6142e53561cb7716c"
-  }
-}
-```
-#### Sample Request 2 : 
+#### Sample Request 1: 
 ##### POST : /api/v1/message/send
 ```javascript
 {
@@ -79,6 +97,81 @@ In additon to template, you can custom variables in _data_, which will be suppli
   }
 }
 ```
-
-
-
+#### Sample Request 2 : with image 
+##### POST : /api/v1/message/send
+```javascript
+{
+  "channelId": "91SERVICENUMBER",
+  "to": {
+    "email": "john.doe@example.com",
+    "name": "John Doe",
+    "phone": "919988776655"
+  },
+  "type": "template",
+  "template": {
+    "data": {
+      "amount": 10,
+      "currency": "INR"
+    },
+    "code": "transaction_acknowledgment",
+    "lang" : "en"
+  },
+  "image": {
+    "caption": "your-image-caption",
+    "filename": "your-image-caption",
+    "link": "http(s)://the-url"
+  }
+}
+```
+#### Sample Request 3 : with video 
+##### POST : /api/v1/message/send
+```javascript
+{
+  "channelId": "91SERVICENUMBER",
+  "to": {
+    "email": "john.doe@example.com",
+    "name": "John Doe",
+    "phone": "919988776655"
+  },
+  "type": "template",
+  "template": {
+    "data": {
+      "amount": 10,
+      "currency": "INR"
+    },
+    "code": "transaction_acknowledgment",
+    "lang" : "en"
+  },
+  "video": {
+    "caption": "your-video-caption",
+    "filename": "your-video-caption",
+    "link": "http(s)://the-url"
+  }
+}
+```
+#### Sample Request 4 : with document 
+##### POST : /api/v1/message/send
+```javascript
+{
+  "channelId": "91SERVICENUMBER",
+  "to": {
+    "email": "john.doe@example.com",
+    "name": "John Doe",
+    "phone": "919988776655"
+  },
+  "type": "template",
+  "template": {
+    "data": {
+      "amount": 10,
+      "currency": "INR"
+    },
+    "code": "transaction_acknowledgment",
+    "lang" : "en"
+  },
+ "document": {
+    "caption": "your-video-caption",
+    "filename": "your-video-caption",
+    "link": "http(s)://the-url"
+  }
+}
+```
