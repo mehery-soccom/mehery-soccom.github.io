@@ -6,7 +6,7 @@ nav_order: 2
 has_children: true
 ---
 # API Integration
-Before you can integrate or access any of our APIs, you must first register a **_domain_** with us and create an App. These documents explain how to create, configure app and how to integrate your application with our multichannel API's.
+Before you can integrate or access any of our APIs, you must first register a **_domain_** with us and create an App. These documents explain how to create, configure app and how to integrate your application with our multichannel API's. ( For complete guide visit [Full Documentation](/server-xms/public2/index.html?shell#send-message) )
 
 ### Domain
 Your domain is unique name you get when you register with us. Your team will use it to login.
