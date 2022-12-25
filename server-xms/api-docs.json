@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "All the requests are required to be authorized using an API Key authentication. \n Adding *x-api-key* in the header with your unique API Key as a value will grant access.\n To get your *x-api-key* [visit documentation](/server-xms/)",
-    "version": "1.0 - 2022-12-23 14:25 UTC",
+    "version": "1.0 - 2022-12-24 22:13 UTC",
     "title": "Messaging APIs",
     "termsOfService": "Terms of service",
     "contact": {},
@@ -2351,6 +2351,61 @@
       },
       "title": "ClientApp"
     },
+    "CommonMsgContactCard": {
+      "type": "object",
+      "required": [
+        "addresses",
+        "birthday",
+        "emails",
+        "ims",
+        "name",
+        "org",
+        "phones",
+        "urls"
+      ],
+      "properties": {
+        "addresses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OutBoundMsgContactAddress"
+          }
+        },
+        "birthday": {
+          "type": "string"
+        },
+        "emails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OutBoundMsgContactEmail"
+          }
+        },
+        "ims": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OutBoundMsgContactSocial"
+          }
+        },
+        "name": {
+          "$ref": "#/definitions/OutBoundMsgContactName"
+        },
+        "org": {
+          "$ref": "#/definitions/OutBoundMsgContactOrg"
+        },
+        "phones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OutBoundMsgContactPhone"
+          }
+        },
+        "urls": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OutBoundMsgContactUrl"
+          }
+        }
+      },
+      "title": "CommonMsgContactCard"
+    },
     "CommonMsgLocation": {
       "type": "object",
       "required": [
@@ -3814,6 +3869,7 @@
       "type": "object",
       "required": [
         "channelId",
+        "contacts",
         "location",
         "mask",
         "to",
@@ -3827,6 +3883,12 @@
           "type": "string",
           "example": "91SERVICENUMBER",
           "description": "The ID that identifies the channel over which the message should be sent."
+        },
+        "contacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CommonMsgContactCard"
+          }
         },
         "document": {
           "$ref": "#/definitions/OutBoundMsgMedia"
@@ -3879,6 +3941,172 @@
         }
       },
       "title": "OutBoundMsg"
+    },
+    "OutBoundMsgContactAddress": {
+      "type": "object",
+      "required": [
+        "city",
+        "country",
+        "country_code",
+        "state",
+        "street",
+        "type",
+        "zip"
+      ],
+      "properties": {
+        "city": {
+          "type": "string",
+          "example": "Menlo Park"
+        },
+        "country": {
+          "type": "string",
+          "example": "United States"
+        },
+        "country_code": {
+          "type": "string",
+          "example": "us"
+        },
+        "state": {
+          "type": "string",
+          "example": "CA"
+        },
+        "street": {
+          "type": "string",
+          "example": "1 Hacker Way"
+        },
+        "type": {
+          "type": "string",
+          "example": "HOME"
+        },
+        "zip": {
+          "type": "string",
+          "example": 94025
+        }
+      },
+      "title": "OutBoundMsgContactAddress"
+    },
+    "OutBoundMsgContactEmail": {
+      "type": "object",
+      "required": [
+        "email",
+        "type"
+      ],
+      "properties": {
+        "email": {
+          "type": "string",
+          "example": "test@whatsapp.com"
+        },
+        "type": {
+          "type": "string",
+          "example": "WORK"
+        }
+      },
+      "title": "OutBoundMsgContactEmail"
+    },
+    "OutBoundMsgContactName": {
+      "type": "object",
+      "required": [
+        "first_name",
+        "formatted_name",
+        "last_name"
+      ],
+      "properties": {
+        "first_name": {
+          "type": "string",
+          "example": "John"
+        },
+        "formatted_name": {
+          "type": "string",
+          "example": "John Smith"
+        },
+        "last_name": {
+          "type": "string",
+          "example": "Smith"
+        }
+      },
+      "title": "OutBoundMsgContactName"
+    },
+    "OutBoundMsgContactOrg": {
+      "type": "object",
+      "required": [
+        "company",
+        "department",
+        "title"
+      ],
+      "properties": {
+        "company": {
+          "type": "string",
+          "example": "WhatsApp"
+        },
+        "department": {
+          "type": "string",
+          "example": "Design"
+        },
+        "title": {
+          "type": "string",
+          "example": "Manager"
+        }
+      },
+      "title": "OutBoundMsgContactOrg"
+    },
+    "OutBoundMsgContactPhone": {
+      "type": "object",
+      "required": [
+        "phone",
+        "type",
+        "wa_id"
+      ],
+      "properties": {
+        "phone": {
+          "type": "string",
+          "example": "+1 (940) 555-1234"
+        },
+        "type": {
+          "type": "string",
+          "example": "HOME"
+        },
+        "wa_id": {
+          "type": "string",
+          "example": 16505551234
+        }
+      },
+      "title": "OutBoundMsgContactPhone"
+    },
+    "OutBoundMsgContactSocial": {
+      "type": "object",
+      "required": [
+        "service",
+        "userid"
+      ],
+      "properties": {
+        "service": {
+          "type": "string",
+          "example": "FACEBOOK"
+        },
+        "userid": {
+          "type": "string",
+          "example": "https://www.facebook.com"
+        }
+      },
+      "title": "OutBoundMsgContactSocial"
+    },
+    "OutBoundMsgContactUrl": {
+      "type": "object",
+      "required": [
+        "type",
+        "url"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "example": "WORK"
+        },
+        "url": {
+          "type": "string",
+          "example": "https://www.facebook.com"
+        }
+      },
+      "title": "OutBoundMsgContactUrl"
     },
     "OutBoundMsgMedia": {
       "type": "object",
