@@ -15,7 +15,7 @@ rm server-xms/api-docs-raw-io.json
 
 node bin/spectacle  server-xms/api-docs-xyz.json -t server-xms/public -f index.html 
 
-widdershins --summary server-xms/api-docs.json -o reslate/source/index.md \
+widdershins --summary server-xms/api-docs-xyz.json -o reslate/source/index.md \
 --language_tabs 'shell:Shell' 'http:HTTP' 'javascript:JS'  'python:Python' 'ruby:Ruby'  'php:PHP' 'java:Java'  'go:Go' 'csharp:C#'
 
 cd reslate

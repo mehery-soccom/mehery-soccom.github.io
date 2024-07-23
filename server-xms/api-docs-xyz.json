@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "All the requests are required to be authorized using an API Key authentication. \n Adding *x-api-key* in the header with your unique API Key as a value will grant access.\n To get your *x-api-key* [visit documentation](/server-xms/)",
-    "version": "1.0 - 2023-10-06 13:49 UTC",
+    "version": "1.0 - 2024-07-23 08:31 UTC",
     "title": "Messaging APIs",
     "termsOfService": "Terms of service",
     "contact": {},
@@ -2152,6 +2152,7 @@
     "Attachment": {
       "type": "object",
       "required": [
+        "attachmentId",
         "mediaCaption",
         "mediaCode",
         "mediaId",
@@ -2159,10 +2160,17 @@
         "mediaName",
         "mediaSrc",
         "mediaSubType",
+        "mediaTemplate",
+        "mediaTemplateStyle",
         "mediaType",
         "mediaURL"
       ],
       "properties": {
+        "attachmentId": {
+          "type": "string",
+          "example": "23m234233232323",
+          "description": "Unique Attachment Id"
+        },
         "mediaCaption": {
           "type": "string",
           "example": "Transaction Receipt",
@@ -2199,8 +2207,19 @@
           "description": "Media SubType Type",
           "enum": [
             "STORY_MENTION",
-            "SHARE etc"
+            "SHARE",
+            "bg_voice etc"
           ]
+        },
+        "mediaTemplate": {
+          "type": "string",
+          "example": "Hi <b>John</b>, this is your <i>image</i>",
+          "description": "Media Template"
+        },
+        "mediaTemplateStyle": {
+          "type": "string",
+          "example": "background-color:white;width:400px;min-height:200px",
+          "description": "Media Template Wrapper"
         },
         "mediaType": {
           "type": "string",
@@ -2212,7 +2231,8 @@
             "TEXT",
             "PDF",
             "VIDEO",
-            "URL"
+            "URL",
+            "AUDIO"
           ]
         },
         "mediaURL": {
@@ -2388,6 +2408,7 @@
         "readOnly",
         "secret",
         "shared",
+        "type",
         "webhook"
       ],
       "properties": {
@@ -2438,6 +2459,9 @@
         },
         "shared": {
           "type": "boolean"
+        },
+        "type": {
+          "type": "string"
         },
         "webhook": {
           "type": "string"
@@ -2541,9 +2565,20 @@
     "CommonMsgOptions": {
       "type": "object",
       "required": [
+        "buttonDisplayScheme",
         "buttons"
       ],
       "properties": {
+        "buttonDisplayScheme": {
+          "type": "string",
+          "example": "auto",
+          "description": "Button Display Scheme",
+          "enum": [
+            "auto",
+            "list",
+            "buttons"
+          ]
+        },
         "buttons": {
           "type": "array",
           "items": {
@@ -4262,12 +4297,24 @@
     "OutBoundReciept": {
       "type": "object",
       "required": [
-        "id"
+        "id",
+        "templateCode",
+        "templateId",
+        "type"
       ],
       "properties": {
         "id": {
           "type": "string",
           "example": "gBEGkYiEB1VXAglK1ZEqA1YKPrU"
+        },
+        "templateCode": {
+          "type": "string"
+        },
+        "templateId": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
         }
       },
       "title": "OutBoundReciept"
@@ -4278,6 +4325,7 @@
         "action",
         "attachments",
         "attempt",
+        "campaignTitle",
         "collapseId",
         "contact",
         "contacts",
@@ -4288,6 +4336,8 @@
         "formatType",
         "from",
         "fromName",
+        "groupId",
+        "groupName",
         "hsm",
         "id",
         "lines",
@@ -4333,6 +4383,9 @@
           "type": "integer",
           "format": "int32"
         },
+        "campaignTitle": {
+          "type": "string"
+        },
         "collapseId": {
           "type": "string"
         },
@@ -4367,6 +4420,12 @@
           "type": "string"
         },
         "fromName": {
+          "type": "string"
+        },
+        "groupId": {
+          "type": "string"
+        },
+        "groupName": {
           "type": "string"
         },
         "hsm": {
@@ -4798,6 +4857,7 @@
       "required": [
         "company",
         "department",
+        "label",
         "title"
       ],
       "properties": {
@@ -4805,6 +4865,9 @@
           "type": "string"
         },
         "department": {
+          "type": "string"
+        },
+        "label": {
           "type": "string"
         },
         "title": {
@@ -5172,7 +5235,8 @@
           "enum": [
             "QUICK_REPLY",
             "URL",
-            "PHONE_NUMBER"
+            "PHONE_NUMBER",
+            "LOCATION_REQUEST"
           ]
         },
         "url": {
