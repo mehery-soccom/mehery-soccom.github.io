@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Message Types
-parent: Guides
+parent: Guide
 nav_order: 2
 has_children: true
 ---

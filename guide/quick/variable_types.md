@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Variable
-parent: Guides
-nav_order: 2
+parent: Guide
+nav_order: 3
 has_children: true
 ---
 # Variables
