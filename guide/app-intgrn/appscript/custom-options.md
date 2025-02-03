@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Custom Options
-parent: App Integration
-nav_order: 2
+parent: App Script
+nav_order: 1
 ---
 # Custom Options
 
