@@ -46,27 +46,28 @@ To use webchat you will need to add WebChat keys. To get Webchat keys, go to adm
 ## Config Options
 ```javascript
   {
-    "domain" : "abcorp.mehery.com",
-    "channelId" : "web:mywebsite.com",
-    "channelKey" : "R45j45omwpaoifbtqlp",
-    "config" : {
-      "header.bg.color" : "#000",
-      "header.text.color" : "#ffffff",
-      "header.icon.url" : "https://cdn.jsdelivr.net/gh/mehery-soccom/mehery-web-dist@834bfa2c3b8060cac2ebcd7778758d6021be2dca/dist/logo/logo-tiny-o.png",
-      "header.title.text" : "Support",
+    "chatWindow.theme.color": "#b98e33",
 
-      "launcher.bg.color" : "#000",
-      
-      "messageList.bg.color" : "#ffffff",
-      
-      "sentMessage.bg.color" : "#4e8cff",
-      "sentMessage.text.color" : "#ffffff",
-      
-      "receivedMessage.bg.color" : "#eaeaea",
-      "receivedMessage.text.color" : "#222222",
-      
-      "userInput.bg.color" : "#f4f7f9",
-      "userInput.text.color" : "#565867"
+    "header.text.color" : "#ffffff",
+    // Use a square image to avoid distortion
+    "header.icon.url" : "https://cdn.jsdelivr.net/gh/mehery-soccom/mehery-web-dist@834bfa2c3b8060cac2ebcd7778758d6021be2dca/dist/logo/logo-tiny-o.png",
+    "header.title.text" : "Support",
+
+    "launcher.bg.color" : "#b98e33",
+    // Use a square image to avoid distortion
+    "launcher.icon.url" : "https://cdn.jsdelivr.net/gh/mehery-soccom/mehery-web-dist@834bfa2c3b8060cac2ebcd7778758d6021be2dca/dist/logo/logo-tiny-o.png",
+    "launcher.autoOpen.active": "true",
+
+    "messageList.bg.color" : "#ffffff",
+
+    "sentMessage.text.color" : "#ffffff",
+
+    "receivedMessage.bg.color" : "#eaeaea",
+    "receivedMessage.text.color" : "#222222",
+
+    "userInput.bg.color" : "#f4f7f9",
+    "userInput.text.color" : "#565867",
+    "userInput.button.color" : "#ffffff"
     }
   }
 
