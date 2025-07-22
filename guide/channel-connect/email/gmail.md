@@ -31,14 +31,13 @@ nav_order: 2
 For detailed information, refer to [Google's documentation on reauthentication policy](https://support.google.com/a/answer/9368756).
 
 ## Steps to Connect Gmail with MeherY
-
-1. Navigate to the **Channels** section on the left panel.  
-2. Click **Add Channel** and select **Email**.  
-3. In the modal that appears, select **Gmail**.  
-4. Choose **Auto Configure Email**.  
-5. Click **Sign in with Gmail**.  
-6. Sign in with your Google account credentials and complete the authentication process.  
-7. If you use a Google Workspace account, MeherY will automatically mark it as **Trusted** to prevent repeated authentication prompts.  
+1. Go to the Mehery Admin Panel
+2. Navigate to the **Channels** section on the left panel.  
+3. Click **Add Channel** and select **Email**.  
+4. In the modal that appears, select **Gmail**.  
+5. Choose **Auto Configure Email**.  
+6. Click **Sign in with Gmail**.  
+7. Sign in with your Google account credentials and complete the authentication process.   
 8. Once authentication succeeds, you will be redirected back to the **MeherY Channels** page.  
 9. Your connected Gmail address should now appear in the list.
 
