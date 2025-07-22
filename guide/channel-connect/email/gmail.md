@@ -1,31 +1,48 @@
 ---
-layout: default
-title: GMail integration
-parent: Channel Integration
-nav_order: 2
+layout: default  
+title: Gmail Integration  
+parent: Channel Integration  
+nav_order: 2  
 ---
-# GMail integration
 
-## Prerequisite
-1. Verified Google Account
-2. Access to MeherY Client-Hub.
+# Gmail Integration
 
-## Steps
-To link Google account with MeherY:
-1. Open Google Account, https://myaccount.google.com/security complete 2 – step verification & generate App Password (for mail) and note down it for future purpose.
-2. Go to admin panel, Channels -> add channel -> Email
-  - _Desc_ – Name of Channel as per your requirement
-  - _Channel Code_ – Enter any code as per your requirement
-  - _Default Queue_ – Select queue where you want inbound conversation to be handle
-  - _POP3 Host_ – pop.gmail.com
-  - _POP3 Port_ – 995
-  - _Pop3 user_ – enter your email id which you want to integrate
-  - _POP3 Password_ – enter your app password which you have created
-  - _Please Enable (ON)_ – POP3 TLS, SMTP Auth, SMTP TLS
-  - _SMTP Host_ – smtp.gmail.com
-  - _SMTP Port_ – 587
-  - _SMTP User_ - enter your same email id
-  - _SMTP Password_ - enter your app password which you have created
+## Prerequisites
+- A verified Google Account.  
+- If using a Google Workspace (organizational) account, ensure that the MeherY app (MeherYSoccom) is marked as **Trusted** and the reauthentication policy is set properly to avoid frequent sign-in prompts. Failure to do so will result in 401 errors after 12 hours of logging in, causing the service to go down and require repeated reauthentication.
+
+### How to Mark the MeherY App as Trusted and Configure Reauthentication Policy in Google Workspace
+
+#### Mark MeherY as a Trusted App
+1. Sign in to your Google Admin console at [admin.google.com](https://admin.google.com) using an administrator account.  
+2. From the Admin console Home page, go to **Security** > **Access and Data Control** > **API Controls**.  
+3. Click **Manage Third-Party App Access** to see the list of configured apps.  
+4. Locate **MeherYSoccom** in the list of apps.  
+5. Change the access level of MeherYSoccom to **Trusted**.  
+6. Save your changes.
+
+#### Configure the Reauthentication Policy
+7. From the Admin console Home page, go to **Security** > **Access and Data Control** > **Google Cloud session control**.  
+8. Under **Reauthentication policy**, select **Require reauthentication** and choose the **Reauthentication frequency** from the drop-down list (minimum 1 hour, maximum 24 hours).  
+9. Check the **Exempt trusted apps** box to exempt trusted apps from reauthentication.  
+10. Save your changes.
+
+For detailed information, refer to [Google's documentation on reauthentication policy](https://support.google.com/a/answer/9368756).
+
+## Steps to Connect Gmail with MeherY
+
+1. Navigate to the **Channels** section on the left panel.  
+2. Click **Add Channel** and select **Email**.  
+3. In the modal that appears, select **Gmail**.  
+4. Choose **Auto Configure Email**.  
+5. Click **Sign in with Gmail**.  
+6. Sign in with your Google account credentials and complete the authentication process.  
+7. If you use a Google Workspace account, MeherY will automatically mark it as **Trusted** to prevent repeated authentication prompts.  
+8. Once authentication succeeds, you will be redirected back to the **MeherY Channels** page.  
+9. Your connected Gmail address should now appear in the list.
+
 ## Functionality
-  Customers can connect for their queries with user by using integrated email channel.
-  Users can send their queries, multiple attachments, images, voice note, revert on mails to the agent. Also agent can revert with their solutions to the customers by attaching files, images.
+
+Once integrated, the Gmail channel enables two-way communication through MeherY using this email address.
+
+---
