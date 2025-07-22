@@ -30,10 +30,12 @@ While tracking open rates offers valuable insights, there are situations where t
 
 MeherY lets you control open rate tracking easily:
 
-1. Open the **Admin Panel** in your MeherY dashboard.  
+1. Open the **Admin Panel** in your MeherY dashboard(https://{your domain name}.mehery.com/admin/app/setup/agent-panel).  
 2. Go to the **Config Setup** section.  
 3. Under the **Default** tab, find the **Message Tracker** option.  
 4. Toggle it off to disable open rate tracking for all outgoing emails.
+
+<img width="725" alt="Message Tracker" src="/content/static//design/msgTrckr.png">
 
 > **Note:** Disabling tracking removes the tracking pixel from emails, so open rates will no longer be tracked.
 
