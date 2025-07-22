@@ -16,7 +16,7 @@ Tracking CTA button interactions helps you measure engagement and the effectiven
 
 ## Types of CTA Button Actions in Template Creation
 
-While creating email templates(https://{{your domain name}}.mehery.xyz/admin/app/admins/tmpl/pushtemplate/edit/new), when adding buttons, you have three types of options accessible via the **gear icon** under the **Quick Reply** type:
+While creating email templates(https://{your domain name}.mehery.xyz/admin/app/admins/tmpl/pushtemplate/edit/new), when adding buttons, you have three types of options accessible via the **gear icon** under the **Quick Reply** type:
 
 <img width="725" alt="CTA button types" src="/content/static//design/CTA -1.png">
 ### 1. External Link
