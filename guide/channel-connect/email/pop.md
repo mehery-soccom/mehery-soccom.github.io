@@ -1,8 +1,9 @@
 ---
 layout: default
-title: GMail integration with POP
-parent: Channel Integration
-nav_order: 2
+title: POP3
+parent: Email
+grand_parent: Channel Integration
+nav_order: 4
 ---
 # GMail integration
 

@@ -1,9 +1,11 @@
 ---
-layout: default
-title: GMail integration with POP
-parent: Channel Integration
-nav_order: 2
+layout: default  
+title: IMAP
+parent: Email
+grand_parent: Channel Integration
+nav_order: 3
 ---
+
 # IMAP & SMTP Configuration Guide
 
 This document provides step-by-step instructions to configure IMAP and SMTP settings and generate app passwords for Gmail and Yahoo accounts. These settings are required for secure email integration with Mehery Smart Conversations.
@@ -71,5 +73,3 @@ This document provides step-by-step instructions to configure IMAP and SMTP sett
 - Save app passwords securely; they cannot be retrieved after closing the generation window. If lost, generate a new one.
 
 ---
-
-Confidential – For distribution to customers of Mehery Smart Conversations only.

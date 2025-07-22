@@ -1,8 +1,9 @@
 ---
 layout: default  
-title: Outlook Integration  
-parent: Channel Integration  
-nav_order: 2  
+title: Outlook
+parent: Email
+grand_parent: Channel Integration
+nav_order: 1
 ---
 
 # Outlook Integration

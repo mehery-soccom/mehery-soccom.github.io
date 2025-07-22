@@ -1,8 +1,9 @@
 ---
 layout: default  
-title: Gmail Integration  
-parent: Channel Integration  
-nav_order: 2  
+title: GMail  
+parent: Email
+grand_parent: Channel Integration
+nav_order: 2
 ---
 
 # Gmail Integration
