@@ -22,7 +22,8 @@ Message API calls are sent to the **/api/v1/message/send** endpoint regardless o
   "type": "text",
   "text": {
     "body": "your-text-message-content"
-  }
+  },
+  "subject": "Test email subject"
 }
 ```
 
