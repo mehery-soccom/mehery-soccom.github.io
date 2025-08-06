@@ -57,7 +57,7 @@ widdershins --summary server-xms/api-docs-xyz.json -o reslate/source/index.md \
 echo "CREATING DOCS ..... reslate... -> MD"
 cd reslate
 npm i
-npm run build2
+npm run build
 cd ..
 echo "CREATING DOCS ..... DONE"
 
