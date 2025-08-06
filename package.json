@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "node bin/spectacle -l test/fixtures/cheese.png test/fixtures/cheese.yml",
+    "build2": "node bin/spectacle server-xms/api-docs-xyz.json -t server-xms/public -f index.html",
     "test": "mocha && node bin/spectacle -l test/fixtures/cheese.png test/fixtures/cheese.yml",
     "develop": "spectacle -d",
     "start": "spectacle -s"
