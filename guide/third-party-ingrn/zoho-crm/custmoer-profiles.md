@@ -2,7 +2,7 @@
 layout: default
 title: Integration with MeherY Customer Profiles
 parent: ZOHO CRM
-grand_parent: Channel Integration
+grand_parent: Third Party Integration
 nav_order: 5
 ---
 
