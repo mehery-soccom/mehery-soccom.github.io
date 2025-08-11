@@ -75,12 +75,14 @@ It allows you to automatically create or update customer profiles in MeherY when
    - **Type**: `Form-Data`  
    - **Body**: Map Zoho CRM fields to MeherY fields. Refer to the mapping rules below:
 
-> **Important:** Failing to correctly configure **any** of the critical steps below may result in sync failures or incomplete data synchronization between Zoho CRM and MeherY:  
-> 1. The field to be mapped must be present in MeherY customer master fields.  
-> 2. The parameter name must match the **code** of the field in the MeherY customer master fields; otherwise, values will not update correctly.  
-> 3. For **unique emails and phone numbers**, use parameter names like `phone1`, `phone2`, `email1`, `email2`.  
-> 4. For **non-unique or repeated** phones/emails, use `altPhone1`, `altEmail1`. These appear under Alternate Phone/Email in MeherY.  
-> 5. Date parameters must be formatted as `MM-DD-YY`.
+      > **Important:** Failing to correctly configure **any** of the critical steps below may result in sync failures or incomplete data synchronization between Zoho CRM and MeherY:  
+      > 1. The field to be mapped must be present in MeherY customer master fields.  
+      > 2. The parameter name must match the **code** of the field in the MeherY customer master fields; otherwise, values will not update correctly.  
+      > 3. For first name, use `firstName` and for last name, use `lastName`.  
+      > 4. For **unique emails and phone numbers**, use parameter names like `phone1`, `phone2`, `email1`, `email2`.  
+      > 5. For **non-unique or repeated** phones/emails, use `altPhone1`, `altEmail1`. These appear under Alternate Phone/Email in MeherY.  
+      > 6. Date parameters must be formatted as `MM-DD-YY`.
+
 
 ---
 
