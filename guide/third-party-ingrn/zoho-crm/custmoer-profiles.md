@@ -60,11 +60,11 @@ It allows you to automatically create or update customer profiles in MeherY when
    - **Name**: `Push to MeherY`  
    - **URL to Notify**:  
      ```
-     https://<your-mehery-domain>/xms/data/api/v1/profile/update?tnt=<your-tenant-code>
+     https://<your-mehery-domain>/nexus/xms/api/v1/profile/update?tnt=<your-tenant-code>
      ```  
      Example:  
      ```
-     https://demo.mehery.com/xms/data/api/v1/profile/update?tnt=demo
+     https://demo.mehery.com/nexus/xms/api/v1/profile/update?tnt=demo
      ```  
    - **Authorization Type**: `General`  
    - **Headers**:  
