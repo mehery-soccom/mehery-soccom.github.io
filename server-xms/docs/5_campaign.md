@@ -69,4 +69,5 @@ Message API calls are sent to the **/api/v1/create/campaign**  See the [Full Doc
       "contactType": WHATSAPP
     }
 
+
 ```
