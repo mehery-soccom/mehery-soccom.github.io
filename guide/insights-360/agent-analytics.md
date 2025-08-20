@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Dashboard
+title: Agent Analytics
 parent: Insights 360
 nav_order: 4
 ---
