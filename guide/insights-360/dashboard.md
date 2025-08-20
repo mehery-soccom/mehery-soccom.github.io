@@ -46,30 +46,37 @@ Key highlights include:
 ## 📊 Dashboard Metrics Explained  
 
 ### 🤵 Agent Metrics  
-| Metric | Description |
-|--------|-------------|
-| **Agent - Open** | Number of conversations currently assigned to an agent and actively being handled. |
-| **Agent - Resolved** | Count of conversations successfully closed by agents within the defined workflow. |
-| **Agent - Expired** | Conversations that were left unresolved or inactive beyond the set timeout period. |
+
+| Metric                  | Description                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| **Agent - Open**        | Number of conversations currently assigned to an agent and actively being handled. |
+| **Agent - Resolved**    | Count of conversations successfully closed by agents within the defined workflow. |
+| **Agent - Expired**     | Conversations that were left unresolved or inactive beyond the set timeout period. |
 | **Agent Satisfaction Score** | The average post-conversation rating provided by customers for agent-handled interactions. |
 
+---
+
 ### 🤖 BOT Metrics  
-| Metric | Description |
-|--------|-------------|
-| **BOT - Open** | Number of active conversations currently being managed by the BOT. |
-| **BOT - Resolved** | Count of conversations successfully resolved by the BOT without requiring escalation to a human agent. |
-| **BOT - Closed** | Number of conversations where the BOT session ended in full closure. |
+
+| Metric                  | Description                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| **BOT - Open**          | Number of active conversations currently being managed by the BOT. |
+| **BOT - Resolved**      | Count of conversations successfully resolved by the BOT without requiring escalation to a human agent. |
+| **BOT - Closed**        | Number of conversations where the BOT session ended in full closure. |
 | **BOT Satisfaction Score** | The average rating provided by customers for BOT-handled conversations. |
 
+---
+
 ### 📈 Performance & Engagement Metrics  
-| Metric | Description |
-|--------|-------------|
-| **Lead Messenger %** | Share of the channel contributing the largest volume of conversations. |
-| **Average Start Lag** | Average time taken by an agent or BOT to send the first response after receiving a customer message. |
-| **Average Response Lag** | Average delay between a customer query and the next reply from an agent or BOT. |
+
+| Metric                       | Description                                                                 |
+|------------------------------|-----------------------------------------------------------------------------|
+| **Lead Messenger %**         | Share of the channel contributing the largest volume of conversations. |
+| **Average Start Lag**        | Average time taken by an agent or BOT to send the first response after receiving a customer message. |
+| **Average Response Lag**     | Average delay between a customer query and the next reply from an agent or BOT. |
 | **Average Conversation Duration** | The average amount of time a conversation remains active until resolution. |
-| **Total Conversations** | The overall number of conversations in MeherY within the chosen timeframe. |
-| **Unique Conversations** | Distinct customer interactions counted per day, excluding duplicates. |
+| **Total Conversations**      | The overall number of conversations in MeherY within the chosen timeframe. |
+| **Unique Conversations**     | Distinct customer interactions counted per day, excluding duplicates. |
 
 ---
 
