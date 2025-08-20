@@ -24,7 +24,7 @@ The Agent Data table displays live and historical performance metrics for each a
 | **No. of Conversations.** | Total number of conversations assigned to the agent in the selected date range. |
 | **Avg Start Lag** | Average delay before the agent sends the first reply after receiving a new customer message. |
 | **Avg Response Time** | Average time taken by the agent to respond during an active conversation. |
-| **Duration** | Total time conversations remained open with the agent. Displayed in hours (h), minutes (m), or days (d). |
+| **Average Conversation Duration** | Average time an agent was involved in a conversation. Displayed in hours (h), minutes (m), or days (d). |
 | **Open** | Number of ongoing conversations active with the agent. |
 | **Resolved** | Count of conversations successfully closed by the agent. |
 | **Expired** | Conversations that went inactive or unresolved beyond the set timeout. |

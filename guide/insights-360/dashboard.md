@@ -60,9 +60,9 @@ The MeherY Dashboard provides powerful analytics to monitor **agent and BOT perf
 | Metric                       | Description                                                                 |
 |------------------------------|-----------------------------------------------------------------------------|
 | **Lead Messenger %**         | Share of the channel contributing the largest volume of conversations. |
-| **Average Start Lag**        | Average time taken by an agent or BOT to send the first response after receiving a customer message. |
-| **Average Response Lag**     | Average delay between a customer query and the next reply from an agent or BOT. |
-| **Average Conversation Duration** | The average amount of time a conversation remains active until resolution. |
+| **Average Start Lag**        | Average time taken by an agent to send the first response after receiving a customer message. |
+| **Average Response Lag**     | Average delay between a customer query and the next reply from an agent. |
+| **Average Conversation Duration** | Average time an agent was involved in a conversation. |
 | **Total Conversations**      | The overall number of conversations in MeherY within the chosen timeframe. |
 | **Unique Conversations**     | Distinct customer interactions counted per day, excluding duplicates. |
 
