@@ -5,70 +5,63 @@ nav_order: 2
 has_children: true
 ---
 
-# Insights 360  
-<img width="725" alt="MeherY Smart Analytics" src="/content/static/design/analytics.png">
+# 📊 Insights 360  
+<img width="725" alt="MeherY Smart Analytics" src="/content/static/design/analytics.png">  
 
-## Comprehensive Analytics for Smarter Decisions  
-**Insights 360** is your command center for customer engagement intelligence.  
-It delivers **real-time, data-driven analytics** that help you measure, track, and optimize every interaction—whether handled by agents, BOTs, or campaigns.  
-By unifying all your performance data into a single view, Insights 360 empowers teams to make **smarter, faster, and evidence-based decisions**.  
+## Your Command Center for Customer Engagement Intelligence  
+**Insights 360** transforms raw data into actionable intelligence.  
+Track, measure, and optimize every customer interaction—from agent conversations to bot-handled queries and marketing campaigns—all within a single unified view.  
+Make smarter, faster, evidence-based decisions that move your business forward.  
 
 ---
 
-## 🌟 Key Capabilities  
+## 🌟 Key Features  
 
-### 📊 Conversational Analytics  
-- Gain a **complete overview of inbound and outbound conversations** across all connected channels.  
-- Track **agent efficiency, workload distribution, and response quality** to ensure service-level compliance.  
-- Identify recurring **customer behavior trends** and leverage insights to improve engagement strategies.  
-- Pinpoint **bottlenecks in resolution flow** where conversations are delayed, expired, or escalated.  
+### 1. Dashboard  
+Gain a unified, **real-time view** of your customer engagement ecosystem.  
+The MeherY Dashboard provides powerful analytics to monitor **agent and bot performance, campaign effectiveness, customer satisfaction, and channel efficiency** across all connected platforms.  
+Empower your business with **data-driven insights** that maximize productivity, customer experience, and ROI.  
 
 ---
 
 ### 📈 Channel-Specific Daily Analytics  
-- View **hourly and daily breakdowns** of message flow to understand when customers are most active.  
-- Compare **inbound vs. outbound message volumes** to analyze channel efficiency.  
-- Benchmark channel performance (e.g., WhatsApp vs. Instagram vs. Web) to ensure resources are allocated optimally.  
-- Detect **seasonal spikes or anomalies** in usage patterns to proactively plan support coverage.  
+### 2. Agent Analytics  
+Boost productivity and excellence by deep-diving into individual performance.  
+
+**Track Agent Performance:**  
+- **Productivity** → Conversations handled per agent and workload distribution.  
+- **Speed & Quality** → First response time, average response time and average conversation duration.  
+- **Customer Impact** → Customer satisfaction (CSAT) trends and feedback analysis. 
 
 ---
 
-### 📣 Campaign Analytics  
-- Monitor campaign KPIs in real-time: **sent, delivered, read, and response metrics**.  
-- Drill down into **audience engagement rates** to assess campaign resonance.  
-- Export or schedule **detailed campaign reports** for offline analysis and cross-team sharing.  
-- Use insights to **optimize messaging frequency, timing, and targeting** for maximum ROI.  
+### 3. Campaign Analytics  
+Measure the effectiveness of your marketing and engagement initiatives from impression to conversion.  
+
+**Evaluate Campaign Performance:**  
+- **Message Funnel** → Track campaign performance across key stages: *Sent, Delivered, Read, and Replied*.  
+- **CTA Analytics** → View detailed insights of each contact who clicked a CTA button, including the button name and click timestamp.  
+- **Campaign Stats** → Access individual-level message status with precise timestamps for complete delivery and engagement tracking.  
 
 ---
 
-### 💬 Meta WABA Template Analytics  
-- Analyze WhatsApp Business API (**WABA**) template performance across all campaigns.  
-- Track key metrics: **delivery, read, reply, cost, and usage count**.  
-- Identify **high-performing templates** that drive engagement and optimize or retire underperformers.  
-- Enable **A/B testing** of template variations to continuously refine outreach effectiveness.  
-- Improve cost efficiency by mapping **spend vs. customer impact** across template categories.  
+### 4. Meta WABA Template Analytics  
+Optimize your WhatsApp Business API strategy with detailed template performance analytics.  
+
+**Analyze Template Effectiveness:**  
+- **Performance Metrics** → Track template sends, deliveries, reads, and responses.  
+- **Financials** → View cost and usage breakdown per template.  
+- **Comparative Analysis** → Identify top-performing vs. underperforming templates.  
+- **CTA Insights** → Monitor the number of clicks for each CTA button associated with the template.  
 
 ---
 
-### 🤖 BOT Analytics  
-- Track how BOTs handle conversations, from initiation to resolution.  
-- Measure **BOT efficiency, fallback rates, and escalation frequency**.  
-- Evaluate **customer satisfaction scores (CSAT)** for BOT-driven interactions.  
-- Continuously refine **BOT flows** by analyzing drop-off points and unhandled queries.  
-- Balance automation with human intervention to ensure seamless customer experiences.  
+## 🎯 The Insights 360 Advantage  
+- **Centralized Intelligence** → A single source of truth for all engagement metrics.  
+- **Actionable Analytics** → Move beyond reporting to uncover clear, practical insights.  
+- **Performance Optimization** → Continuously enhance team efficiency and campaign outcomes.  
+- **Enhanced Customer Experience** → Use insights to build stronger customer relationships.  
 
 ---
 
-## 🚀 Turning Data into Actionable Insights  
-Insights 360 is more than just reporting—it’s a **decision-making engine**.  
-By combining analytics across agents, campaigns, channels, and BOTs, businesses can:  
-
-- **Improve operational efficiency** by identifying top performers and addressing underperformance.  
-- **Enhance customer satisfaction** with faster resolutions and personalized engagement.  
-- **Optimize automation** by refining BOT flows where human escalation is needed.  
-- **Maximize ROI** by doubling down on high-performing campaigns, channels, or templates.  
-- **Predict and plan** with historical data trends, ensuring the right resources are in place during peak demand.  
-
----
-
-**With Insights 360, every interaction becomes measurable, and every decision becomes smarter.**
+**With Insights 360, every interaction is measurable, and every decision is informed.**
