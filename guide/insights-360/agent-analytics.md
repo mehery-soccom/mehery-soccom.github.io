@@ -2,7 +2,7 @@
 layout: default
 title: Agent Analytics
 parent: Insights 360
-nav_order: 4
+nav_order: 2
 ---
 
 # 👤 Agent Analytics  

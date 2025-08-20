@@ -3,7 +3,7 @@
 layout: default
 title: Campaign Analytics
 parent: Insights 360
-nav_order: 5
+nav_order: 3
 ---
 
 # 📣 Campaign Analytics  
