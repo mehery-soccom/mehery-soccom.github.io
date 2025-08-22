@@ -11,6 +11,8 @@ nav_order: 3
 The **Campaign Analytics** module provides end-to-end visibility into outbound campaign performance across all supported channels, including **WhatsApp, Email, and SMS**.  
 It enables businesses to measure **delivery, engagement, and failure trends**, ensuring better optimization of outreach strategies.  
 
+<img width="725" alt="Campaign Analytics" src="/content/static//design/campaign-analytics.jpeg">
+
 ---
 
 ## 📊 Campaign Statistics  

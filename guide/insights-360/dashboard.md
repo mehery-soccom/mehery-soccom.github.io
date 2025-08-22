@@ -9,6 +9,8 @@ nav_order: 1
 Gain a unified, **real-time view** of your customer engagement ecosystem.  
 The MeherY Dashboard provides powerful analytics to monitor **agent and BOT performance, campaign effectiveness, customer satisfaction, and channel efficiency** across all your connected platforms. It empowers businesses to make **data-driven decisions** by surfacing actionable insights that optimize productivity, customer experience, and return on investment.  
 
+<img width="725" alt="MeherY Smart Dashboard" src="/content/static//design/dashboard full page.jpeg">
+
 ---
 
 ## 🔑 Key Features at a Glance  

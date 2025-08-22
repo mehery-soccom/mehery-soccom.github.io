@@ -10,6 +10,8 @@ nav_order: 2
 The **Agent Analytics** page provides deep visibility into the performance of individual agents and teams within **MeherY Insights360**.  
 It helps managers and admins track **conversation handling, responsiveness, efficiency, and customer feedback**, enabling data-driven workforce management.  
 
+<img width="725" alt="Agent Analytics" src="/content/static//design/agent-analytics.jpeg">
+
 ---
 
 ## 📑 Agent Data Table  
