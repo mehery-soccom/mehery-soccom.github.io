@@ -15,21 +15,21 @@ The MeherY Dashboard provides powerful analytics to monitor **agent and BOT perf
 
 ## 🔑 Key Features at a Glance  
 
-📈 **Multi-Channel Analytics**: Track performance across WhatsApp, Instagram, Web, and other integrated channels. Drill down into a single channel or view consolidated results.  
+1. **Multi-Channel Analytics**: Track performance across WhatsApp, Instagram, Web, and other integrated channels. Drill down into a single channel or view consolidated results.  
 
-🏆 **Lead Messenger Identification**: Quickly determine which channel is generating the highest number of customer conversations and contributing most to business growth.  
+2. **Lead Messenger Identification**: Quickly determine which channel is generating the highest number of customer conversations and contributing most to business growth.  
 
-👥 **Agent & Team Performance**: Gain visibility into the efficiency of individual agents or entire teams with metrics around active, resolved, and expired conversations.  
+3. **Agent & Team Performance**: Gain visibility into the efficiency of individual agents or entire teams with metrics around active, resolved, and expired conversations.  
 
-🤖 **BOT Efficiency Analytics**: Understand how automation is performing by reviewing conversation resolution rates, customer satisfaction scores, and escalation patterns.  
+4. **BOT Efficiency Analytics**: Understand how automation is performing by reviewing conversation resolution rates, customer satisfaction scores, and escalation patterns.  
 
-😊 **Customer Satisfaction (CSAT) Tracking**: Capture structured feedback at the end of conversations and analyze scores for both agent- and BOT-handled interactions.  
+5. **Customer Satisfaction (CSAT) Tracking**: Capture structured feedback at the end of conversations and analyze scores for both agent- and BOT-handled interactions.  
 
-📣 **Campaign Performance Monitoring**: Evaluate outbound campaign success using delivery, read, and reply rates to understand audience engagement.  
+6. **Campaign Performance Monitoring**: Evaluate outbound campaign success using delivery, read, and reply rates to understand audience engagement.  
 
-⏱️ **Conversation Lag & Duration**: Measure how quickly responses are initiated, track ongoing responsiveness, and calculate average conversation lengths to identify bottlenecks.  
+7. **Conversation Lag & Duration**: Measure how quickly responses are initiated, track ongoing responsiveness, and calculate average conversation lengths to identify bottlenecks.  
 
-📊 **Conversation Trends Visualization**: Use interactive graphs that display the **number of conversations per agent** over time. Users can alse see a detailed breakdown of **open, resolved, and expired counts**, making it easier to monitor workloads and efficiency.  
+8. **Conversation Trends Visualization**: Use interactive graphs that display the **number of conversations per agent** over time. Users can alse see a detailed breakdown of **open, resolved, and expired counts**, making it easier to monitor workloads and efficiency.  
 
 ---
 
