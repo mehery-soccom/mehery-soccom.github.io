@@ -21,14 +21,14 @@ The Agent Data table displays live and historical performance metrics for each a
 | **Agent** | Name/identifier of the agent handling conversations. |
 | **Team** | The assigned team (e.g., Tech Support, Sales). |
 | **Status** | Agent availability status indicator. |
-| **No. of Conversations.** | Total number of conversations assigned to the agent in the selected date range. |
-| **Avg Start Lag** | Average delay before the agent sends the first reply after receiving a new customer message. |
+| **No. of Conversations** | Total number of conversations assigned to the agent in the selected date range. |
+| **Avg Start Lag** |Average time taken by an agent to send the first response after receiving a customer message or after the chat is being assigned to him. |
 | **Avg Response Time** | Average time taken by the agent to respond during an active conversation. |
-| **Average Conversation Duration** | Average time an agent was involved in a conversation. Displayed in hours (h), minutes (m), or days (d). |
-| **Open** | Number of ongoing conversations active with the agent. |
-| **Resolved** | Count of conversations successfully closed by the agent. |
-| **Expired** | Conversations that went inactive or unresolved beyond the set timeout. |
-| **Feedback** | Average customer feedback score. |
+| **Average Conversation Duration** | Average time that an agent spends in each conversation. |
+| **Open** | Number of conversations assigned to an agent and actively being handled. <br>• **Today**: Live, real-time active conversations. <br>• **Historical**: Sum of conversations that were neither resolved nor closed during the given period. |
+| **Resolved** | Count of conversations successfully resiloved by the agent. |
+| **Expired** | Conversations that went unresolved or inactive beyond the set timeout. |
+| **Feedback** | Average customer feedback score for conversations involving the agent. |
 
 ---
 

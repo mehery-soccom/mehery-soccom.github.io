@@ -37,10 +37,10 @@ The MeherY Dashboard provides powerful analytics to monitor **agent and BOT perf
 
 | Metric                  | Description                                                                 |
 |-------------------------|-----------------------------------------------------------------------------|
-| **Agent - Open**        | Number of conversations currently assigned to an agent and actively being handled. |
-| **Agent - Resolved**    | Count of conversations successfully closed by agents within the defined workflow. |
-| **Agent - Expired**     | Conversations that were left unresolved or inactive beyond the set timeout period. |
-| **Agent Satisfaction Score** | The average post-conversation rating provided by customers for agent-handled interactions. |
+| **Agent - Open**        | Number of conversations assigned to an agent and actively being handled. <br>• **Today**: Live, real-time active conversations. <br>• **Historical**: Sum of conversations that were neither resolved nor closed during the given period. |
+| **Agent - Resolved**    | Count of conversations successfully resolved by agent.|
+| **Agent - Expired**     | Conversations left unresolved or inactive beyond the set timeout period.|
+| **Agent Satisfaction Score** | Average customer feedback score for conversations involving the agent interactions. |
 
 ---
 
@@ -48,10 +48,10 @@ The MeherY Dashboard provides powerful analytics to monitor **agent and BOT perf
 
 | Metric                  | Description                                                                 |
 |-------------------------|-----------------------------------------------------------------------------|
-| **BOT - Open**          | Number of active conversations currently being managed by the BOT. |
-| **BOT - Resolved**      | Count of conversations successfully resolved by the BOT. |
-| **BOT - Closed**        | Number of conversations where the BOT session is closed. |
-| **BOT Satisfaction Score** | The average rating provided by customers for BOT-handled conversations. |
+| **BOT - Open**          |Number of conversations assigned to a BOT and actively being handled. <br>• **Today**: Live, real-time active conversations. <br>• **Historical**: Sum of conversations that were neither resolved nor closed during the given period. |
+| **BOT - Resolved**      | Count of conversations successfully resolved by the BOT.|
+| **BOT - Closed**        | Number of conversations where the BOT session is closed.|
+| **BOT Satisfaction Score** | Average customer feedback score for conversations involving the BOT interactions.|
 
 ---
 
@@ -60,11 +60,11 @@ The MeherY Dashboard provides powerful analytics to monitor **agent and BOT perf
 | Metric                       | Description                                                                 |
 |------------------------------|-----------------------------------------------------------------------------|
 | **Lead Messenger %**         | Share of the channel contributing the largest volume of conversations. |
-| **Average Start Lag**        | Average time taken by an agent to send the first response after receiving a customer message. |
-| **Average Response Lag**     | Average delay between a customer query and the next reply from an agent. |
-| **Average Conversation Duration** | Average time an agent was involved in a conversation. |
+| **Average Start Lag**        | Average time taken by an agent to send the first response after receiving a customer message or after the chat is being assigned to him. |
+| **Average Response Lag**     | Average delay between a customer message and the next reply from an agent who is handling the conversation. |
+| **Average Conversation Duration** | Average time that an agent spends in each conversation. |
 | **Total Conversations**      | The overall number of conversations in MeherY within the chosen timeframe. |
-| **Unique Conversations**     | Distinct customer interactions counted per day, excluding duplicates. |
+| **Unique Conversations**     | Number of distinct customers who engaged in a conversation during a calendar day, irrespective of the number of interactions. |
 
 ---
 
