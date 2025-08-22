@@ -84,16 +84,16 @@ Monitor the effectiveness of outbound campaigns with a full set of delivery and 
 The dashboard includes powerful filtering options so users can focus on the most relevant data:  
 
 - **Channel Filter**: View analytics across all channels or drill into one channel, such as WhatsApp or Instagram.  
-- **Agent & Team Filter**: Compare the performance of individuals versus teams, helping to identify coaching opportunities or resource gaps.  
+- **Agent & Team Filter**: View analytics across all agents, specific teams, or an individual agent, according to your requirements.  
 - **Date Range Selector**: Select timeframes ranging from last 7 days to custom quarterly or yearly reports for deeper historical analysis.  
 
 ---
 
 ## 🚀 Strategic Benefits  
-
-- **Improve Operational Efficiency**: Identify top-performing agents and teams, coach underperformers, and allocate resources based on conversation demand.  
+ 
 - **Enhance Customer Experience**: Use CSAT trends, lag times, and resolution data to fix bottlenecks and provide faster, more satisfying service.  
 - **Optimize Automation**: Analyze unresolved queries and negative satisfaction scores to refine BOT conversation flows and escalation logic.  
 - **Maximize Campaign ROI**: Redirect budget to high-performing channels, campaigns, or templates that generate strong customer engagement.  
 - **Enable Data-Driven Decision-Making**: Replace assumptions with evidence-based insights, enabling leadership teams to act with confidence.  
 - **Balance Workloads**: With agent conversation graphs, visualize how interactions are distributed across team members to ensure effective distribution for maximum output.  
+- **Improve Operational Efficiency**: Identify top-performing agents and teams, coach underperformers, and allocate resources based on conversation demand. 

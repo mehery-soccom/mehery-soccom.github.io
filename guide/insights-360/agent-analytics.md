@@ -43,8 +43,8 @@ The Agent Data table displays live and historical performance metrics for each a
 ---
 
 ## 🚀 Benefits  
-
-- **Optimize Staffing**: Identify underutilized agents and redistribute workloads.  
+  
 - **Improve Service Quality**: Reduce lag and response times to enhance customer satisfaction.  
+- **Optimize Staffing**: Identify underutilized agents and redistribute workloads.
 - **Data-Driven Coaching**: Use insights to coach agents on responsiveness, resolution, and handling complex queries.  
 - **Track Accountability**: Transparent tracking ensures agents are aligned with the organizational goals.  
