@@ -67,7 +67,7 @@ The MeherY Dashboard provides powerful analytics to monitor **agent and BOT perf
 | **Average Conversation Duration** | Average time that an agent spends in each conversation. |
 | **Total Conversations**      | The total number of conversations initiated in MeherY within the chosen timeframe. |
 | **Unique Conversations**     | Number of distinct contacts for whom a new conversation was initiated (either by the contact or by the business) during a calendar day. For timeframes longer than a day, this is the sum of the daily unique conversations.|
-| **Daily Active Users**       | Number of distinct contacts who actively exchanged messages (either inbound or outbound) during a calendar day. For timeframes longer than a day, this is the  **sum of the daily active users**.  <br><br>⚠️ **Note:** DAU is available only for *completed days* (yesterday or earlier). For the ongoing day, it will always show **0**. ||
+| **Daily Active Users**       | Number of distinct contacts who actively exchanged messages (either inbound or outbound) during a calendar day. For timeframes longer than a day, this is the  **sum of the daily active users**. <br><br>⚠️ **Note:** DAU is available only for *completed days* (yesterday or earlier). For the ongoing day, it will always show **0**. |
 
 ---
 
