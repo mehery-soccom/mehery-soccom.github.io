@@ -65,9 +65,9 @@ The MeherY Dashboard provides powerful analytics to monitor **agent and BOT perf
 | **Average Start Lag**        | Average time taken by an agent to send the first response after receiving a customer message or after the chat is being assigned to him. |
 | **Average Response Lag**     | Average delay between a customer message and the next reply from an agent who is handling the conversation. |
 | **Average Conversation Duration** | Average time that an agent spends in each conversation. |
-| **Total Conversations**      | The overall number of conversations in MeherY within the chosen timeframe. |
-| **Unique Conversations**     | Number of distinct contacts for whom a new conversation was initiated (either by the contact or by business) during a calendar day, counted once per contact regardless of number of interactions.|
-| **Daily Active Users**       | Number of distinct contacts who actively exchanged messages (either Inbound or Outbound) during a calendar day, counted once per contact regardless of number of interactions.|
+| **Total Conversations**      | The total number of conversations initiated in MeherY within the chosen timeframe. |
+| **Unique Conversations**     | Number of distinct contacts for whom a new conversation was initiated (either by the contact or by the business) during a calendar day. For timeframes longer than a day, this is the sum of the daily unique conversations.|
+| **Daily Active Users**       | Number of distinct contacts who actively exchanged messages (either inbound or outbound) during a calendar day. For timeframes longer than a day, this is the  **sum of the daily active users**.  <br><br>⚠️ **Note:** DAU is available only for *completed days* (yesterday or earlier). For the ongoing day, it will always show **0**. ||
 
 ---
 
