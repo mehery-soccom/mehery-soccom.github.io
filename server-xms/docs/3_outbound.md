@@ -176,3 +176,48 @@ In additon to template, you can custom variables in _data_, which will be suppli
   }
 }
 ```
+#### Sample Request 5: push
+##### POST : /api/v1/message/send
+```javascript
+{
+  "channelId": "91SERVICENUMBER",
+  "to": {
+    "code": "<user_id>",
+    // or
+    "filter: {
+      "platform": ["ios"]
+    }
+  },
+  "type": "push",
+  "template": {
+    "data": {
+      "amount": 10,
+      "currency": "INR"
+    },
+    "code": "transaction_acknowledgment",
+    "lang" : "en"
+  }
+}
+```
+#### Sample Request 6: push activity
+##### POST : /api/v1/message/send
+```javascript
+{
+  "channelId": "91SERVICENUMBER",
+  "to": {
+    "code": "<user_id>",
+  },
+  "type": "activity",
+  "activity": {
+    "activityId": "<activity_id>" // used incase of updating the on-going activity
+  },
+  "template": {
+    "data": {
+      "amount": 10,
+      "currency": "INR"
+    },
+    "code": "transaction_acknowledgment",
+    "lang" : "en"
+  }
+}
+```
