@@ -184,7 +184,7 @@ In additon to template, you can custom variables in _data_, which will be suppli
   "to": {
     "code": "<user_id>",
     // or
-    "filter: {
+    "filter": {
       "platform": ["ios"]
     }
   },
