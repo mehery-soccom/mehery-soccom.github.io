@@ -1821,42 +1821,73 @@
         "obzect",
         "possibleValues"
       ],
-      "properties": {
-        "body": {
-          "type": "object"
-        },
-        "code": {
-          "type": "string"
-        },
-        "codeKey": {
-          "type": "string"
-        },
-        "codes": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "description": {
-          "type": "string"
-        },
-        "descriptionKey": {
-          "type": "string"
-        },
-        "field": {
-          "type": "string"
-        },
-        "obzect": {
-          "type": "string"
-        },
-        "possibleValues": {
-          "type": "array",
-          "items": {
-            "type": "object"
-          }
-        }
-      },
-      "title": "ApiFieldError"
+  "properties": {
+  "body": {
+    "type": "object",
+    "description": "Optional payload with extra validation context."
+  },
+  "code": {
+    "type": "string",
+    "description": "Internal error code, if available."
+  },
+  "codeKey": {
+    "type": "string",
+    "description": "Validation key for client-side error handling.",
+    "enum": [
+      "INVALID_URL",
+      "URL_VALIDATION_ERROR",
+      "CHANNEL_MISSING",
+      "CHANNEL_NOT_FOUND",
+      "CHANNEL_DISABLED",
+      "CAMPAIGN_ID",
+      "INVALID_EMAIL",
+      "MESSAGE_NOT_FOUND",
+      "TYPE_MISSING",
+      "TEXT_DETAILS_MISSING",
+      "TEMPLATE_DETAILS_MISSING",
+      "TEMPLATE_NOT_FOUND",
+      "DOCUMENT_DETAILS_MISSING",
+      "IMAGE_DETAILS_MISSING",
+      "VIDEO_DETAILS_MISSING",
+      "AUDIO_DETAILS_MISSING",
+      "LOCATION_DETAILS_MISSING",
+      "CONTACTS_DETAILS_MISSING",
+      "CLIENT_APP_DISABLED",
+      "INSUFFICIENT_CONTACT_DETAILS"
+    ]
+  },
+  "codes": {
+    "type": "array",
+    "items": {
+      "type": "string"
+    },
+    "description": "Additional error codes related to the same failure."
+  },
+  "description": {
+    "type": "string",
+    "description": "Error detail for debugging."
+  },
+  "descriptionKey": {
+    "type": "string",
+    "description": "Localization/message template key, if configured."
+  },
+  "field": {
+    "type": "string",
+    "description": "Request field path that failed validation."
+  },
+  "obzect": {
+    "type": "string",
+    "description": "Request object name associated with the error."
+  },
+  "possibleValues": {
+    "type": "array",
+    "items": {
+      "type": "object"
+    },
+    "description": "Allowed values for enum/choice validation failures."
+  }
+},
+    "title": "ApiFieldError"
     },
     "ApiOutBoundMsg": {
       "type": "object",
