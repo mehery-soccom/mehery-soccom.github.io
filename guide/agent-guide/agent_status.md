@@ -16,6 +16,8 @@ Status Indicators:
 - Orange question mark – Agent is idle (based on configuration)
 - Red minus sign – Agent is unavailable but still logged in
 
+---
+
 Configuration Behavior:
 
 These statuses depend on the Agent Assignment settings in the Config Setup
