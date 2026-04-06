@@ -8,7 +8,7 @@ has_children: true
 # Agent Status
 Displays the real-time availability of agents in the Mehery Portal.
 
-Status Indicators:
+## Status Indicators:
 - Green group icon – Represents a team
 - Green tick – Agent is available and logged in
 - Orange tick – Agent is available but logged out (based on configuration)
@@ -18,7 +18,7 @@ Status Indicators:
 
 ---
 
-Configuration Behavior:
+## Configuration Behavior:
 
 These statuses depend on the Agent Assignment settings in the Config Setup
 
