@@ -24,7 +24,7 @@ The Feedback Management Dashboard provides a dual-layered view of your customer 
 ## 🪜 Status Analytics  
 Focuses on the **Operational Workflow** of your feedback loop.  
 
-<img width="725" alt="Status Analytics Overview" src="content/static/feedback/fmStatus.png">
+<img width="725" alt="Status Analytics Overview" src="/content/static/feedback/fmStatus.png">
 
 ### Workflow Metrics  
 This section counts submissions across your defined lifecycle stages:
@@ -41,7 +41,7 @@ A comprehensive table showing how statuses are distributed across different coll
 ## 📉 Segmentation Analytics  
 Focuses on the **Quality of Experience** within a selected time range.  
 
-<img width="725" alt="Segmentation Analytics Overview" src="content/static/feedback/fmSeg.png">
+<img width="725" alt="Segmentation Analytics Overview" src="/content/static/feedback/fmSeg.png">
 
 ### Performance Segments  
 Using the date-range filter, the system segments feedback based on the scores provided by customers:
