@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Agent Panel from CRM
+title: Agent connect with external entity
 parent: Third Party Integration
 nav_order: 3
 has_children: true
 ---
-# Agent Panel from CRM
+# Agent connect with external entity
 
-CRM will call browser URL with some encoded Information.
+External entity can call browser URL with some encoded Information.
 
 Scenarios:
 
@@ -25,7 +25,7 @@ User Profile Does Not Exist in the System
 - If the user's profile does not exist in the system, accessing the URL will automatically create the profile in the Admin Portal and redirect the user to the Agent Portal. The chat window will open with the user's code/name pre-filled.
 
 ---
-CRM will need to call the below mentioned URL in the format specified:
+External entity will need to call the below mentioned URL in the format specified:
 
 https://{customer domain name}.mehery.com/agent/app/home/CHATBOX/chat_to_customer/{base64_encoded_number}.  
 
