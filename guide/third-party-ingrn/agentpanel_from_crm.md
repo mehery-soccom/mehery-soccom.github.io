@@ -2,7 +2,7 @@
 layout: default
 title: Agent Panel from CRM
 parent: Third Party Integration
-nav_order: 2
+nav_order: 3
 has_children: true
 ---
 # Agent Panel from CRM
