@@ -1,6 +1,6 @@
 # Mac installation
 
-npm install -g widdershins
+#npm install -g widdershins
 brew install jq
 
 brew install ruby

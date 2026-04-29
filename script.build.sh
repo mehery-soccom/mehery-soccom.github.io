@@ -51,7 +51,7 @@ echo "CREATING DOCS ..... spectacle... -> HTML"
 node bin/spectacle  server-xms/api-docs-xyz.json -t server-xms/public -f index.html 
 
 echo "CREATING DOCS ..... widdershins... -> MD"
-widdershins --summary server-xms/api-docs-xyz.json -o reslate/source/index.md \
+npx widdershins --summary server-xms/api-docs-xyz.json -o reslate/source/index.md \
 --language_tabs 'shell:Shell' 'http:HTTP' 'javascript:JS'  'python:Python' 'ruby:Ruby'  'php:PHP' 'java:Java'  'go:Go' 'csharp:C#'
 
 echo "CREATING DOCS ..... reslate... -> MD"
