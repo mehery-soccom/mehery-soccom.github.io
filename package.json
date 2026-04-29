@@ -64,7 +64,8 @@
     "node-sass": "^9.0.0",
     "sync-request": "^6.0.0",
     "tmp": "0.0.33",
-    "trace": "^3.1.0"
+    "trace": "^3.1.0",
+    "widdershins": "^4.0.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",
