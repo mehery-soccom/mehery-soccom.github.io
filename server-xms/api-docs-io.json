@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "All the requests are required to be authorized using an API Key authentication. \n Adding *x-api-key* in the header with your unique API Key as a value will grant access.\n To get your *x-api-key* [visit documentation](/server-xms/)",
-    "version": "1.0 - 2025-08-06 06:15 UTC",
+    "version": "1.0 - 2026-04-24 17:01 UTC",
     "title": "Messaging APIs",
     "termsOfService": "Terms of service",
     "contact": {},
@@ -23,6 +23,10 @@
       "description": "Contact API can be used:\n* to modify contact details and prefs.\n"
     },
     {
+      "name": "Data Management",
+      "description": "Data Management"
+    },
+    {
       "name": "Digital Analytics",
       "description": "Analytics APIS"
     },
@@ -41,6 +45,10 @@
     {
       "name": "Native API's Proxy",
       "description": "Use Native Structure for Channel API's"
+    },
+    {
+      "name": "Nexuz Customer Management",
+      "description": "Customer Management"
     },
     {
       "name": "Outbound Messages",
@@ -432,6 +440,71 @@
         }
       }
     },
+    "/api/v1/contact/looup": {
+      "get": {
+        "tags": [
+          "Contact Management"
+        ],
+        "summary": "Contact Lookup",
+        "operationId": "contactLookUpUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "key",
+            "in": "query",
+            "description": "key",
+            "required": false,
+            "type": "string",
+            "default": "csid"
+          },
+          {
+            "name": "value",
+            "in": "query",
+            "description": "value",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "description": "API Key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "x-api-id",
+            "in": "header",
+            "description": "API Id",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResultsMetaCompactResponse«PBContactDoc,object»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "X_API_KEY": []
+          }
+        ]
+      }
+    },
     "/api/v1/contact/prefs/lang": {
       "post": {
         "tags": [
@@ -540,10 +613,17 @@
             ]
           },
           {
+            "name": "contactType",
+            "in": "query",
+            "description": "contactType",
+            "required": true,
+            "type": "string"
+          },
+          {
             "name": "channelId",
             "in": "query",
             "description": "channelId",
-            "required": true,
+            "required": false,
             "type": "string"
           },
           {
@@ -1522,6 +1602,72 @@
         ]
       }
     },
+    "/data/api/v1/profile/update": {
+      "post": {
+        "tags": [
+          "Data Management"
+        ],
+        "summary": "Push Profile Updates",
+        "description": "This API can be used to upload profile details",
+        "operationId": "updateProfileUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "profileUpdate",
+            "description": "profileUpdate",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/MapModel"
+            }
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "description": "API Key",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "x-api-id",
+            "in": "header",
+            "description": "API Id",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse«MapModel,object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "X_API_KEY": []
+          }
+        ]
+      }
+    },
     "/integration/{key}/**": {
       "get": {
         "tags": [
@@ -1791,6 +1937,152 @@
           }
         ]
       }
+    },
+    "/xms/nexuz/api/v1/customer/profile/{profileId}": {
+      "post": {
+        "tags": [
+          "Nexuz Customer Management"
+        ],
+        "summary": "Profile Creation",
+        "description": "This API can be used to create customer profile",
+        "operationId": "createCustomerProfileUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "profileId",
+            "in": "path",
+            "description": "profileId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "profileUpdate",
+            "description": "profileUpdate",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NexuzCustomerUpdate"
+            }
+          },
+          {
+            "name": "x-api-id",
+            "in": "header",
+            "description": "API Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "description": "API Key",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse«NexuzCustomerUpdate,object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "X_API_KEY": []
+          }
+        ]
+      }
+    },
+    "/xms/nexuz/api/v1/customer/profile/{profile_id}": {
+      "put": {
+        "tags": [
+          "Nexuz Customer Management"
+        ],
+        "summary": "Profile Updates",
+        "description": "This API can be used to update customer profile",
+        "operationId": "updateCustomerProfileUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "profileId",
+            "in": "path",
+            "description": "profileId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "profileUpdate",
+            "description": "profileUpdate",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NexuzCustomerUpdate"
+            }
+          },
+          {
+            "name": "x-api-id",
+            "in": "header",
+            "description": "API Id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "description": "API Key",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse«NexuzCustomerUpdate,object»"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "X_API_KEY": []
+          }
+        ]
+      }
     }
   },
   "securityDefinitions": {
@@ -1812,7 +2104,8 @@
         "descriptionKey",
         "field",
         "obzect",
-        "possibleValues"
+        "possibleValues",
+        "traceId"
       ],
       "properties": {
         "body": {
@@ -1847,6 +2140,9 @@
           "items": {
             "type": "object"
           }
+        },
+        "traceId": {
+          "type": "string"
         }
       },
       "title": "ApiFieldError"
@@ -1863,7 +2159,13 @@
       ],
       "properties": {
         "activity": {
-          "type": "object"
+          "$ref": "#/definitions/OutBoundMsgActivity"
+        },
+        "attachments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Attachment"
+          }
         },
         "audio": {
           "$ref": "#/definitions/OutBoundMsgMedia"
@@ -2907,6 +3209,266 @@
       },
       "title": "ApiResponse«HSMTemplateDoc,object»"
     },
+    "ApiResponse«MapModel,object»": {
+      "type": "object",
+      "required": [
+        "data",
+        "details",
+        "error",
+        "errors",
+        "exception",
+        "extra",
+        "logs",
+        "message",
+        "messageKey",
+        "meta",
+        "pagination",
+        "params",
+        "path",
+        "query",
+        "redirectUrl",
+        "results",
+        "serverVersion",
+        "status",
+        "statusKey",
+        "timestamp",
+        "traceid",
+        "traces",
+        "warningKey",
+        "warnings"
+      ],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/MapModel"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "error": {
+          "type": "string"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ApiFieldError"
+          }
+        },
+        "exception": {
+          "type": "string"
+        },
+        "extra": {
+          "type": "object"
+        },
+        "logs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "message": {
+          "type": "string",
+          "example": "This is success message in plain english"
+        },
+        "messageKey": {
+          "type": "string",
+          "example": "MESSAGE_SUCCESS:MOBILE:12"
+        },
+        "meta": {
+          "type": "object"
+        },
+        "pagination": {
+          "$ref": "#/definitions/ApiPagination"
+        },
+        "params": {
+          "type": "object"
+        },
+        "path": {
+          "type": "string",
+          "example": "/postman/email/send"
+        },
+        "query": {
+          "type": "object"
+        },
+        "redirectUrl": {
+          "type": "string",
+          "example": "/go/to/some/other/url.html"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MapModel"
+          }
+        },
+        "serverVersion": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "example": 200
+        },
+        "statusKey": {
+          "type": "string",
+          "example": "SUCCESS"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1541276788518
+        },
+        "traceid": {
+          "type": "string"
+        },
+        "traces": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "warningKey": {
+          "type": "string"
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ApiFieldError"
+          }
+        }
+      },
+      "title": "ApiResponse«MapModel,object»"
+    },
+    "ApiResponse«NexuzCustomerUpdate,object»": {
+      "type": "object",
+      "required": [
+        "data",
+        "details",
+        "error",
+        "errors",
+        "exception",
+        "extra",
+        "logs",
+        "message",
+        "messageKey",
+        "meta",
+        "pagination",
+        "params",
+        "path",
+        "query",
+        "redirectUrl",
+        "results",
+        "serverVersion",
+        "status",
+        "statusKey",
+        "timestamp",
+        "traceid",
+        "traces",
+        "warningKey",
+        "warnings"
+      ],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/NexuzCustomerUpdate"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "error": {
+          "type": "string"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ApiFieldError"
+          }
+        },
+        "exception": {
+          "type": "string"
+        },
+        "extra": {
+          "type": "object"
+        },
+        "logs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "message": {
+          "type": "string",
+          "example": "This is success message in plain english"
+        },
+        "messageKey": {
+          "type": "string",
+          "example": "MESSAGE_SUCCESS:MOBILE:12"
+        },
+        "meta": {
+          "type": "object"
+        },
+        "pagination": {
+          "$ref": "#/definitions/ApiPagination"
+        },
+        "params": {
+          "type": "object"
+        },
+        "path": {
+          "type": "string",
+          "example": "/postman/email/send"
+        },
+        "query": {
+          "type": "object"
+        },
+        "redirectUrl": {
+          "type": "string",
+          "example": "/go/to/some/other/url.html"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NexuzCustomerUpdate"
+          }
+        },
+        "serverVersion": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "example": 200
+        },
+        "statusKey": {
+          "type": "string",
+          "example": "SUCCESS"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1541276788518
+        },
+        "traceid": {
+          "type": "string"
+        },
+        "traces": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "warningKey": {
+          "type": "string"
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ApiFieldError"
+          }
+        }
+      },
+      "title": "ApiResponse«NexuzCustomerUpdate,object»"
+    },
     "ApiResponse«OutBoundReciept,object»": {
       "type": "object",
       "required": [
@@ -3326,6 +3888,59 @@
       },
       "title": "ApiResultsMetaCompactResponse«MsgChannel,object»"
     },
+    "ApiResultsMetaCompactResponse«PBContactDoc,object»": {
+      "type": "object",
+      "required": [
+        "message",
+        "messageKey",
+        "meta",
+        "pagination",
+        "results",
+        "status",
+        "statusKey",
+        "timestamp",
+        "traceid"
+      ],
+      "properties": {
+        "message": {
+          "type": "string",
+          "example": "This is success message in plain english"
+        },
+        "messageKey": {
+          "type": "string",
+          "example": "MESSAGE_SUCCESS:MOBILE:12"
+        },
+        "meta": {
+          "type": "object"
+        },
+        "pagination": {
+          "$ref": "#/definitions/ApiPagination"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PBContactDoc"
+          }
+        },
+        "status": {
+          "type": "string",
+          "example": 200
+        },
+        "statusKey": {
+          "type": "string",
+          "example": "SUCCESS"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1541276788518
+        },
+        "traceid": {
+          "type": "string"
+        }
+      },
+      "title": "ApiResultsMetaCompactResponse«PBContactDoc,object»"
+    },
     "ApprovedChannels": {
       "type": "object",
       "required": [
@@ -3516,6 +4131,7 @@
         "action",
         "attachments",
         "bulkSessionId",
+        "call",
         "contact",
         "form",
         "logs",
@@ -3557,6 +4173,9 @@
         },
         "bulkSessionId": {
           "type": "string"
+        },
+        "call": {
+          "$ref": "#/definitions/MessageCall"
         },
         "contact": {
           "$ref": "#/definitions/ContactDTO"
@@ -3926,12 +4545,12 @@
         },
         "latitude": {
           "type": "string",
-          "example": 12.90909,
+          "example": 12.909090,
           "description": "latitude"
         },
         "longitude": {
           "type": "string",
-          "example": 6.90808,
+          "example": 6.908080,
           "description": "longitude"
         },
         "name": {
@@ -4132,7 +4751,8 @@
         "profilePic",
         "sessionId",
         "tenant",
-        "userid"
+        "userid",
+        "vcallMeta"
       ],
       "properties": {
         "channelType": {
@@ -4242,6 +4862,9 @@
         },
         "userid": {
           "type": "string"
+        },
+        "vcallMeta": {
+          "$ref": "#/definitions/VCallMeta"
         }
       },
       "title": "ContactDTO"
@@ -4584,6 +5207,7 @@
         "model",
         "name",
         "options",
+        "profileVarMap",
         "readonly",
         "template",
         "title",
@@ -4655,6 +5279,9 @@
           "type": "string"
         },
         "options": {
+          "type": "object"
+        },
+        "profileVarMap": {
           "type": "object"
         },
         "readonly": {
@@ -4879,7 +5506,8 @@
             "MESSAGE_OUTBOUND",
             "REPLY_TIMEOUT",
             "INBOUND_TIMEOUT",
-            "OUTBOUND_TIMEOUT"
+            "OUTBOUND_TIMEOUT",
+            "SEND_TIMEOUT"
           ]
         }
       },
@@ -5296,6 +5924,53 @@
         "type": "string"
       }
     },
+    "MessageCall": {
+      "type": "object",
+      "required": [
+        "agentId",
+        "direction",
+        "duration",
+        "endStamp",
+        "event",
+        "id",
+        "sdpType",
+        "status",
+        "timestamp"
+      ],
+      "properties": {
+        "agentId": {
+          "type": "string"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "duration": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "endStamp": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "event": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "sdpType": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "MessageCall"
+    },
     "MessagePrompt": {
       "type": "object",
       "required": [
@@ -5324,6 +5999,8 @@
         "bulkId",
         "imageUrl",
         "info",
+        "mediaCaption",
+        "mediaName",
         "mediaType",
         "mediaUrl",
         "messageId",
@@ -5347,6 +6024,12 @@
         },
         "info": {
           "type": "object"
+        },
+        "mediaCaption": {
+          "type": "string"
+        },
+        "mediaName": {
+          "type": "string"
         },
         "mediaType": {
           "type": "string"
@@ -5613,6 +6296,40 @@
       },
       "title": "MsgSession"
     },
+    "NexuzCustomerUpdate": {
+      "type": "object",
+      "required": [
+        "additionalInfo",
+        "code",
+        "emails",
+        "name",
+        "phones"
+      ],
+      "properties": {
+        "additionalInfo": {
+          "type": "object"
+        },
+        "code": {
+          "type": "string"
+        },
+        "emails": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PBEmail"
+          }
+        },
+        "name": {
+          "type": "string"
+        },
+        "phones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PBPhone"
+          }
+        }
+      },
+      "title": "NexuzCustomerUpdate"
+    },
     "OutBoundContact": {
       "type": "object",
       "required": [
@@ -5644,6 +6361,15 @@
         }
       },
       "title": "OutBoundContact"
+    },
+    "OutBoundMsgActivity": {
+      "type": "object",
+      "properties": {
+        "activityId": {
+          "type": "string"
+        }
+      },
+      "title": "OutBoundMsgActivity"
     },
     "OutBoundMsgContactAddress": {
       "type": "object",
@@ -5897,6 +6623,7 @@
         "contact",
         "contacts",
         "csid",
+        "dump",
         "files",
         "filters",
         "footer",
@@ -5983,6 +6710,9 @@
         },
         "csid": {
           "type": "string"
+        },
+        "dump": {
+          "$ref": "#/definitions/RestMapModel"
         },
         "files": {
           "type": "array",
@@ -6140,6 +6870,7 @@
             "RPLD",
             "NSENT",
             "BLCKD",
+            "BNCD",
             "LIMIT",
             "FAILD",
             "DELTD",
@@ -6230,6 +6961,52 @@
       },
       "title": "PBAddress"
     },
+    "PBContactDoc": {
+      "type": "object",
+      "required": [
+        "contactId",
+        "csid",
+        "email",
+        "name",
+        "phone",
+        "type"
+      ],
+      "properties": {
+        "contactId": {
+          "type": "string"
+        },
+        "csid": {
+          "type": "string"
+        },
+        "email": {
+          "$ref": "#/definitions/PBEmail"
+        },
+        "name": {
+          "$ref": "#/definitions/PBName"
+        },
+        "phone": {
+          "$ref": "#/definitions/PBPhone"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "SMS",
+            "OA",
+            "EMAIL",
+            "WHATSAPP",
+            "PUSH",
+            "FACEBOOK",
+            "TELEGRAM",
+            "WEBSITE",
+            "TWITTER",
+            "INSTAGRAM",
+            "DUMMY",
+            "EMPTY"
+          ]
+        }
+      },
+      "title": "PBContactDoc"
+    },
     "PBDate": {
       "type": "object",
       "required": [
@@ -6274,7 +7051,8 @@
         "email",
         "label",
         "type",
-        "uuid"
+        "uuid",
+        "verified"
       ],
       "properties": {
         "email": {
@@ -6288,6 +7066,9 @@
         },
         "uuid": {
           "type": "string"
+        },
+        "verified": {
+          "type": "boolean"
         }
       },
       "title": "PBEmail"
@@ -6355,6 +7136,7 @@
         "phone",
         "type",
         "uuid",
+        "verified",
         "whatsAppId"
       ],
       "properties": {
@@ -6381,6 +7163,9 @@
         },
         "uuid": {
           "type": "string"
+        },
+        "verified": {
+          "type": "boolean"
         },
         "whatsAppId": {
           "type": "string"
@@ -6653,6 +7438,42 @@
         }
       },
       "title": "PostManFile"
+    },
+    "RestMapModel": {
+      "type": "object",
+      "required": [
+        "meta",
+        "request",
+        "response"
+      ],
+      "properties": {
+        "meta": {
+          "type": "object"
+        },
+        "request": {
+          "$ref": "#/definitions/RestObjectRequest«MapModel»"
+        },
+        "response": {
+          "$ref": "#/definitions/RestObjectRequest«MapModel»"
+        }
+      },
+      "title": "RestMapModel"
+    },
+    "RestObjectRequest«MapModel»": {
+      "type": "object",
+      "required": [
+        "body",
+        "status"
+      ],
+      "properties": {
+        "body": {
+          "$ref": "#/definitions/MapModel"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "title": "RestObjectRequest«MapModel»"
     },
     "SessionAssigned": {
       "type": "object",
@@ -6951,6 +7772,23 @@
         }
       },
       "title": "TptInfo"
+    },
+    "VCallMeta": {
+      "type": "object",
+      "required": [
+        "grantedAt",
+        "permission"
+      ],
+      "properties": {
+        "grantedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "permission": {
+          "type": "boolean"
+        }
+      },
+      "title": "VCallMeta"
     },
     "WebhookUrlRequest": {
       "type": "object",
