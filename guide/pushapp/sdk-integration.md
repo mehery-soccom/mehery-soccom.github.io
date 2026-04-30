@@ -40,27 +40,16 @@ For each app, you can add one or more platforms:
 
 ### Platform Setup Requirements
 
-#### 📱 Android
-
-Provide:
-
+- Platform Type ( ios, android )
 - Package name (Bundle ID)
-- Firebase configuration:
-  - FCM Service Account (`service-account.json` file)
-
----
-
-#### 🍎 iOS
-
-Provide:
-
-- Bundle ID
 - Firebase configuration:
   - FCM Service Account (`service-account.json` file)
 - APNs configuration:
   - Auth Key (`.p8` file)
   - Key ID
   - Team ID
+
+[guide on how to acquire Firebase and APNs files](https://www.canva.com/design/DAHHA1LCgRw/tJZPeXPvHogkjxBybsO1Zw/edit)
 
 ---
 

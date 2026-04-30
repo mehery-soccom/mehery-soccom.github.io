@@ -108,7 +108,7 @@ Once SDK is integrated:
 
 You can also create and update user data using APIs.
 
-👉 [Full API Documentation](/server-xms/public2/index.html?shell#send-message)
+👉 [Full API Documentation](/server-xms/public2/index.html?shell#profile-creation)
 
 ---
 
