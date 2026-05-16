@@ -46,6 +46,7 @@ To connect your customer to your agent on AgentDesk, all you need to do is creat
 {
   "queue": "agent_desk",
   "sessionId": "61f3810a02e14c0877fc1a32",
+  "team": "sales",
   "agent": "bob"
 }
 ```
