@@ -88,8 +88,8 @@ Choose the SDK based on your platform:
 
 ### Cross-Platform SDKs
 
-- Flutter (iOS) → [View Documentation](#)
-- Flutter (Android) → [View Documentation](#)
+- Flutter → [View Documentation](./flutter-sdk/)
+- Ionic / Capacitor (iOS & Android) → [View Documentation](./ionic-sdk/)
 - React Native (iOS) → [View Documentation](#)
 - React Native (Android) → [View Documentation](#)
 
