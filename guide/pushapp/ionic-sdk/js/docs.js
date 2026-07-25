@@ -170,6 +170,156 @@ async function fetchMarkdown(repoPath) {
   return res.text();
 }
 
+/** Vendor → PushApp.sendEvent examples (embedded in this HTML docs shell). */
+const CUSTOM_EVENT_MIGRATE = `
+If you already fire events from another SDK, keep the same event names and properties and swap the call to \`PushApp.sendEvent\` — minimal code change.
+
+**Braze**
+
+\`\`\`typescript
+// Before
+Braze.logCustomEvent('custom_event_with_properties', {
+  key1: 'value1',
+  key2: ['value2', 'value3'],
+  key3: false,
+});
+
+// After
+import { PushApp } from 'pushapp-ionic';
+
+await PushApp.sendEvent({
+  eventName: 'custom_event_with_properties',
+  eventData: {
+    key1: 'value1',
+    key2: ['value2', 'value3'],
+    key3: false,
+  },
+});
+\`\`\`
+
+**CleverTap**
+
+\`\`\`typescript
+// Before
+var props = { Name: 'XYZ', Price: 123 };
+CleverTap.recordEvent('Product Viewed', props);
+
+// After
+import { PushApp } from 'pushapp-ionic';
+
+const props = { Name: 'XYZ', Price: 123 };
+await PushApp.sendEvent({
+  eventName: 'Product Viewed',
+  eventData: props,
+});
+\`\`\`
+
+**MoEngage**
+
+\`\`\`typescript
+// Before
+let properties = new MoEProperties();
+properties.addAttribute('quantity', 1);
+properties.addAttribute('product', 'iPhone');
+properties.addAttribute('currency', 'dollar');
+properties.addAttribute('price', 699);
+properties.addAttribute('new_item', true);
+properties.addAttribute('models', ['iPhone15', 'iPhone14']);
+ReactMoE.trackEvent('Purchase', properties);
+
+// After
+import { PushApp } from 'pushapp-ionic';
+
+await PushApp.sendEvent({
+  eventName: 'Purchase',
+  eventData: {
+    quantity: 1,
+    product: 'iPhone',
+    currency: 'dollar',
+    price: 699,
+    new_item: true,
+    models: ['iPhone15', 'iPhone14'],
+  },
+});
+\`\`\`
+
+**WebEngage**
+
+\`\`\`typescript
+// Before
+webengage.track(eventName, eventData);
+
+// After
+import { PushApp } from 'pushapp-ionic';
+
+await PushApp.sendEvent({
+  eventName,
+  eventData,
+});
+\`\`\`
+
+**AppsFlyer**
+
+\`\`\`typescript
+// Before
+appsFlyer.logEvent('af_purchase', {
+  af_revenue: 49.99,
+  af_currency: 'USD',
+  af_content_id: 'prod_99',
+});
+
+// After
+import { PushApp } from 'pushapp-ionic';
+
+await PushApp.sendEvent({
+  eventName: 'af_purchase',
+  eventData: {
+    af_revenue: 49.99,
+    af_currency: 'USD',
+    af_content_id: 'prod_99',
+  },
+});
+\`\`\`
+
+**Adjust**
+
+\`\`\`typescript
+// Before
+Adjust.trackEvent(new AdjustEvent('abc123'));
+// Map partner/callback params into a plain object:
+
+// After
+import { PushApp } from 'pushapp-ionic';
+
+await PushApp.sendEvent({
+  eventName: 'purchase_completed',
+  eventData: {
+    revenue: 49.99,
+    currency: 'USD',
+    product_id: 'prod_99',
+  },
+});
+\`\`\`
+
+Optional shared wrapper so existing call sites barely change:
+
+\`\`\`typescript
+import { PushApp } from 'pushapp-ionic';
+
+export async function track(
+  eventName: string,
+  eventData?: Record<string, unknown>
+) {
+  await PushApp.sendEvent({ eventName, eventData });
+}
+\`\`\`
+`.trim();
+
+/** Append vendor → sendEvent examples directly under Track custom events. */
+function withCustomEventMigrate(md) {
+  return `${md.trim()}\n\n${CUSTOM_EVENT_MIGRATE}`;
+}
+
 function renderHome(container) {
   container.innerHTML = `
     <div class="hero">
@@ -268,6 +418,9 @@ async function loadPage(pageId) {
     let md = await fetchMarkdown(page.repoPath);
     if (page.start || page.end) {
       md = extractSection(md, page.start, page.end);
+    }
+    if (pageId === 'implementation') {
+      md = withCustomEventMigrate(md);
     }
     container.innerHTML = `<article class="doc-content">${marked.parse(md)}</article>`;
     attachCopyButtons(container);

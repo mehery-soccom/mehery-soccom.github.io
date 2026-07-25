@@ -153,6 +153,126 @@ async function fetchMarkdown(repoPath) {
   return res.text();
 }
 
+/** Vendor → pushApp.sendEvent examples (embedded in this HTML docs shell). */
+const CUSTOM_EVENT_MIGRATE = `
+If you already fire events from another SDK, keep the same event names and properties and swap the call to \`pushApp.sendEvent\` — minimal code change.
+
+**Braze**
+
+\`\`\`dart
+// Before
+braze.logCustomEvent('custom_event_with_properties', {
+  'key1': 'value1',
+  'key2': ['value2', 'value3'],
+  'key3': false,
+});
+
+// After
+await pushApp.sendEvent('custom_event_with_properties', {
+  'key1': 'value1',
+  'key2': ['value2', 'value3'],
+  'key3': false,
+});
+\`\`\`
+
+**CleverTap**
+
+\`\`\`dart
+// Before
+final props = {'Name': 'XYZ', 'Price': 123};
+ClevertapPlugin.recordEvent('Product Viewed', props);
+
+// After
+final props = {'Name': 'XYZ', 'Price': 123};
+await pushApp.sendEvent('Product Viewed', props);
+\`\`\`
+
+**MoEngage**
+
+\`\`\`dart
+// Before
+final properties = MoEProperties()
+  ..addAttribute('quantity', 1)
+  ..addAttribute('product', 'iPhone')
+  ..addAttribute('currency', 'dollar')
+  ..addAttribute('price', 699)
+  ..addAttribute('new_item', true)
+  ..addAttribute('models', ['iPhone15', 'iPhone14']);
+MoEngagePlugin().trackEvent('Purchase', properties);
+
+// After
+await pushApp.sendEvent('Purchase', {
+  'quantity': 1,
+  'product': 'iPhone',
+  'currency': 'dollar',
+  'price': 699,
+  'new_item': true,
+  'models': ['iPhone15', 'iPhone14'],
+});
+\`\`\`
+
+**WebEngage**
+
+\`\`\`dart
+// Before
+WebEngagePlugin.track(eventName, eventData);
+
+// After
+await pushApp.sendEvent(eventName, eventData);
+\`\`\`
+
+**AppsFlyer**
+
+\`\`\`dart
+// Before
+appsflyerSdk.logEvent('af_purchase', {
+  'af_revenue': 49.99,
+  'af_currency': 'USD',
+  'af_content_id': 'prod_99',
+});
+
+// After
+await pushApp.sendEvent('af_purchase', {
+  'af_revenue': 49.99,
+  'af_currency': 'USD',
+  'af_content_id': 'prod_99',
+});
+\`\`\`
+
+**Adjust**
+
+\`\`\`dart
+// Before
+final event = AdjustEvent('abc123');
+Adjust.trackEvent(event);
+// Map partner/callback params into a plain Map:
+
+// After
+await pushApp.sendEvent('purchase_completed', {
+  'revenue': 49.99,
+  'currency': 'USD',
+  'product_id': 'prod_99',
+});
+\`\`\`
+
+Optional shared wrapper so existing call sites barely change:
+
+\`\`\`dart
+Future<void> track(String eventName, [Map<String, dynamic>? eventData]) {
+  return pushApp.sendEvent(eventName, eventData ?? {});
+}
+\`\`\`
+`.trim();
+
+/** Insert vendor → sendEvent examples directly under Custom events (2.7). */
+function withCustomEventMigrate(md) {
+  const marker = '## 2.8 Example Implementation file layout';
+  if (md.includes(marker)) {
+    return md.replace(marker, `${CUSTOM_EVENT_MIGRATE}\n\n---\n\n${marker}`);
+  }
+  return `${md.trim()}\n\n${CUSTOM_EVENT_MIGRATE}`;
+}
+
 function renderHome(container) {
   container.innerHTML = `
     <div class="hero">
@@ -255,6 +375,9 @@ async function loadPage(pageId) {
     }
     // Fix checklist wording for Flutter hosts
     md = md.replace(/Your Ionic\/Capacitor app/g, 'Your Flutter app');
+    if (pageId === 'implementation') {
+      md = withCustomEventMigrate(md);
+    }
     container.innerHTML = `<article class="doc-content">${marked.parse(md)}</article>`;
     attachCopyButtons(container);
     if (window.hljs) {
